@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" fill="none">
+  <defs>
+    <linearGradient id="body" x1="120" y1="90" x2="1080" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3a4350"/>
+      <stop offset="0.45" stop-color="#1b2129"/>
+      <stop offset="1" stop-color="#0c0f14"/>
+    </linearGradient>
+    <linearGradient id="bodyTop" x1="300" y1="120" x2="900" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5a6675"/>
+      <stop offset="1" stop-color="#2a313b"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="400" y1="120" x2="780" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#aeb9c6"/>
+      <stop offset="1" stop-color="#4a5663"/>
+    </linearGradient>
+    <radialGradient id="rim" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d8dde3"/>
+      <stop offset="0.6" stop-color="#9aa1a9"/>
+      <stop offset="1" stop-color="#2c3138"/>
+    </radialGradient>
+    <linearGradient id="sill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#11151b"/>
+      <stop offset="1" stop-color="#05070a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ground contact shadow -->
+  <ellipse cx="600" cy="430" rx="520" ry="34" fill="#000" opacity="0.28"/>
+
+  <!-- main body -->
+  <path d="M70 330
+           C 90 300, 150 292, 210 288
+           C 250 245, 320 214, 430 206
+           L 520 150
+           C 560 126, 640 120, 720 126
+           C 820 134, 900 160, 950 196
+           C 1010 206, 1080 226, 1120 262
+           C 1150 286, 1150 312, 1132 332
+           C 1120 344, 1090 350, 1060 350
+           L 150 350
+           C 100 350, 64 346, 70 330 Z"
+        fill="url(#body)"/>
+
+  <!-- shoulder highlight -->
+  <path d="M250 246 C 330 220, 460 210, 560 212 C 700 214, 860 232, 952 198
+           C 900 162, 820 136, 720 128 C 640 122, 560 128, 522 150 L 432 206
+           C 350 214, 290 232, 250 246 Z"
+        fill="url(#bodyTop)" opacity="0.9"/>
+
+  <!-- greenhouse / windows -->
+  <path d="M455 200 L 535 156 C 568 138, 636 134, 700 138 C 760 142, 818 160, 858 188
+           C 800 196, 720 200, 640 200 Z"
+        fill="url(#glass)" opacity="0.92"/>
+  <!-- window divider (B pillar) -->
+  <path d="M648 138 L 648 200" stroke="#1b2129" stroke-width="7" opacity="0.7"/>
+
+  <!-- lower sill / rocker -->
+  <path d="M210 332 L 1040 332 L 1020 352 L 210 352 Z" fill="url(#sill)"/>
+
+  <!-- red taillight -->
+  <path d="M1118 262 C 1140 274, 1150 292, 1146 308 L 1100 304 C 1098 288, 1104 274, 1118 262 Z"
+        fill="#d5001c"/>
+  <!-- headlight -->
+  <path d="M150 300 C 175 292, 198 292, 214 296 L 210 312 C 188 308, 166 308, 150 314 Z"
+        fill="#eef3f8" opacity="0.9"/>
+
+  <!-- front wheel -->
+  <g>
+    <circle cx="330" cy="350" r="104" fill="#0a0d11"/>
+    <circle cx="330" cy="350" r="60" fill="url(#rim)"/>
+    <circle cx="330" cy="350" r="16" fill="#1b2129"/>
+    <g stroke="#2c3138" stroke-width="8">
+      <path d="M330 296 L330 404"/>
+      <path d="M283 323 L377 377"/>
+      <path d="M283 377 L377 323"/>
+    </g>
+  </g>
+
+  <!-- rear wheel -->
+  <g>
+    <circle cx="905" cy="350" r="104" fill="#0a0d11"/>
+    <circle cx="905" cy="350" r="60" fill="url(#rim)"/>
+    <circle cx="905" cy="350" r="16" fill="#1b2129"/>
+    <g stroke="#2c3138" stroke-width="8">
+      <path d="M905 296 L905 404"/>
+      <path d="M858 323 L952 377"/>
+      <path d="M858 377 L952 323"/>
+    </g>
+  </g>
+
+  <!-- wheel arch outlines -->
+  <path d="M226 350 A 104 104 0 0 1 434 350" stroke="#05070a" stroke-width="10" fill="none"/>
+  <path d="M801 350 A 104 104 0 0 1 1009 350" stroke="#05070a" stroke-width="10" fill="none"/>
+</svg>

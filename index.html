@@ -63,14 +63,17 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero" id="hero">
-      <video
-        class="hero__video"
-        autoplay muted loop playsinline
-        poster="assets/hero-poster.svg"
-        id="heroVideo">
-        <source src="assets/hero.mp4" type="video/mp4" />
-      </video>
-      <div class="hero__scrim"></div>
+      <!-- Clipped background layer (video stays inside the panel) -->
+      <div class="hero__bg">
+        <video
+          class="hero__video"
+          autoplay muted loop playsinline
+          poster="assets/hero-poster.svg"
+          id="heroVideo">
+          <source src="assets/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__scrim"></div>
+      </div>
 
       <div class="hero__content">
         <p class="hero__eyebrow">The new</p>
@@ -82,13 +85,18 @@
         </div>
       </div>
 
-      <div class="hero__bar">
-        <div class="hero__stat"><strong>639</strong><span>PS</span></div>
-        <div class="hero__stat"><strong>3.3</strong><span>s · 0–100 km/h</span></div>
-        <div class="hero__stat"><strong>613</strong><span>km range</span></div>
-        <div class="hero__stat"><strong>260</strong><span>km/h</span></div>
-      </div>
+      <!-- Transparent car that breaks out beyond the panel border.
+           Swap to a real cut-out: change src to "assets/car.png". -->
+      <img class="hero__car" src="assets/car.svg" alt="VANTÉ Volt" />
     </section>
+
+    <!-- Spec strip sits below the hero, under the breakout car -->
+    <div class="hero__bar">
+      <div class="hero__stat"><strong>639</strong><span>PS</span></div>
+      <div class="hero__stat"><strong>3.3</strong><span>s · 0–100 km/h</span></div>
+      <div class="hero__stat"><strong>613</strong><span>km range</span></div>
+      <div class="hero__stat"><strong>260</strong><span>km/h</span></div>
+    </div>
 
     <!-- Intro statement -->
     <section class="intro">

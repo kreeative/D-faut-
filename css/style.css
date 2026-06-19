@@ -192,25 +192,47 @@ a.util__item:hover { color: #fff; }
   min-height: calc(100svh - var(--nav-h));
   display: flex;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;            /* allow the car to break the border */
   background: #d9dde1;
+}
+/* Clipped layer keeps the video/scrim inside the panel */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
 }
 .hero__video {
   position: absolute;
   inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  z-index: 0;
 }
 .hero__scrim {
   position: absolute;
   inset: 0;
-  z-index: 1;
   background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.15) 45%, rgba(0,0,0,0.05) 100%);
+}
+
+/* The breakout car — overflows past the bottom of the hero panel */
+.hero__car {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: -6%;
+  width: min(1180px, 92vw);
+  transform: translateX(-50%);
+  pointer-events: none;
+  filter: drop-shadow(0 38px 34px rgba(0,0,0,0.35));
+  animation: carIn 1.1s var(--ease) both;
+}
+@keyframes carIn {
+  from { opacity: 0; transform: translate(-50%, 26px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
 }
 .hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 6;
   max-width: var(--maxw);
   width: 100%;
   margin: 0 auto;
@@ -226,16 +248,14 @@ a.util__item:hover { color: #fff; }
 .hero__actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.9rem; }
 
 .hero__bar {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  z-index: 2;
-  background: rgba(14,14,18,0.85);
-  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 1;
+  background: var(--bg-dark);
   color: #fff;
   display: flex;
   justify-content: center;
   gap: clamp(1.5rem, 6vw, 5rem);
-  padding: 1.1rem var(--pad);
+  padding: 1.4rem var(--pad);
   flex-wrap: wrap;
 }
 .hero__stat { display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -481,6 +501,11 @@ a.util__item:hover { color: #fff; }
   .gallery__grid { grid-template-columns: 1fr; }
   .gallery__item--wide { grid-column: span 1; }
   .footer__inner { grid-template-columns: 1fr; }
+
+  /* Hero: stack text at top, car breaks out lower */
+  .hero { align-items: flex-start; }
+  .hero__content { padding-top: clamp(2rem, 12vw, 5rem); }
+  .hero__car { width: 116vw; bottom: -3%; }
 }
 
 /* ============================================================
