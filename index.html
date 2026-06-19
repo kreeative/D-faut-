@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VANTÉ — the art of motion. A luxury marque defined by precision, power, and timeless design." />
+  <title>VANTÉ — The Art of Motion</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__brand" aria-label="VANTÉ home">VANTÉ</a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#models" class="nav__link">Models</a>
+        <a href="#showcase" class="nav__link">Showcase</a>
+        <a href="#heritage" class="nav__link">Heritage</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+
+      <a href="#contact" class="nav__cta">Reserve</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <video
+        class="hero__video"
+        autoplay muted loop playsinline
+        poster="assets/hero-poster.svg"
+        id="heroVideo">
+        <source src="assets/hero.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal" data-reveal>New · 2026 Collection</p>
+        <h1 class="hero__title reveal" data-reveal>
+          THE ART<br />OF MOTION
+        </h1>
+        <p class="hero__sub reveal" data-reveal>
+          Engineered without compromise. Designed to be remembered.
+        </p>
+        <div class="hero__actions reveal" data-reveal>
+          <a href="#models" class="btn btn--solid">Explore the Range</a>
+          <a href="#showcase" class="btn btn--ghost">Watch the Film</a>
+        </div>
+      </div>
+
+      <a href="#models" class="hero__scroll" aria-label="Scroll down">
+        <span class="hero__scroll-line"></span>
+        <span class="hero__scroll-text">Scroll</span>
+      </a>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Precision</span><span>·</span><span>Power</span><span>·</span>
+        <span>Presence</span><span>·</span><span>Performance</span><span>·</span>
+        <span>Precision</span><span>·</span><span>Power</span><span>·</span>
+        <span>Presence</span><span>·</span><span>Performance</span><span>·</span>
+      </div>
+    </div>
+
+    <!-- Intro statement -->
+    <section class="statement">
+      <p class="statement__text reveal" data-reveal>
+        For over six decades, <strong>VANTÉ</strong> has pursued a single
+        obsession — the perfect intersection of <em>emotion</em> and
+        <em>engineering</em>.
+      </p>
+    </section>
+
+    <!-- Models / Product grid -->
+    <section class="models" id="models">
+      <div class="section-head">
+        <span class="section-head__kicker reveal" data-reveal>01 — The Range</span>
+        <h2 class="section-head__title reveal" data-reveal>Choose Your Machine</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal" data-reveal>
+          <div class="card__media" data-tilt>
+            <div class="card__img" style="--g1:#1a1f24;--g2:#0c0e10;">
+              <span class="card__badge">GT</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">VANTÉ GT-S</h3>
+            <p class="card__spec">630 hp · 0–100 in 3.1s · 330 km/h</p>
+            <a href="#contact" class="card__link">Configure →</a>
+          </div>
+        </article>
+
+        <article class="card reveal" data-reveal>
+          <div class="card__media" data-tilt>
+            <div class="card__img" style="--g1:#221a1a;--g2:#0c0e10;">
+              <span class="card__badge">Coupé</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">VANTÉ Aero</h3>
+            <p class="card__spec">510 hp · 0–100 in 3.6s · 305 km/h</p>
+            <a href="#contact" class="card__link">Configure →</a>
+          </div>
+        </article>
+
+        <article class="card reveal" data-reveal>
+          <div class="card__media" data-tilt>
+            <div class="card__img" style="--g1:#171f1c;--g2:#0c0e10;">
+              <span class="card__badge">EV</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">VANTÉ Volt</h3>
+            <p class="card__spec">760 hp · 0–100 in 2.6s · 260 km/h</p>
+            <a href="#contact" class="card__link">Configure →</a>
+          </div>
+        </article>
+
+        <article class="card reveal" data-reveal>
+          <div class="card__media" data-tilt>
+            <div class="card__img" style="--g1:#1d1a22;--g2:#0c0e10;">
+              <span class="card__badge">Spyder</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">VANTÉ Roadster</h3>
+            <p class="card__spec">580 hp · 0–100 in 3.4s · 312 km/h</p>
+            <a href="#contact" class="card__link">Configure →</a>
+          </div>
+        </article>
+
+        <article class="card reveal" data-reveal>
+          <div class="card__media" data-tilt>
+            <div class="card__img" style="--g1:#22201a;--g2:#0c0e10;">
+              <span class="card__badge">SUV</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">VANTÉ Terra</h3>
+            <p class="card__spec">650 hp · 0–100 in 3.9s · 290 km/h</p>
+            <a href="#contact" class="card__link">Configure →</a>
+          </div>
+        </article>
+
+        <article class="card reveal" data-reveal>
+          <div class="card__media" data-tilt>
+            <div class="card__img" style="--g1:#1a2226;--g2:#0c0e10;">
+              <span class="card__badge">Track</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__name">VANTÉ RS</h3>
+            <p class="card__spec">720 hp · 0–100 in 2.8s · 345 km/h</p>
+            <a href="#contact" class="card__link">Configure →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Showcase / split feature -->
+    <section class="showcase" id="showcase">
+      <div class="showcase__media reveal" data-reveal>
+        <div class="showcase__visual"></div>
+      </div>
+      <div class="showcase__content">
+        <span class="section-head__kicker reveal" data-reveal>02 — Craft</span>
+        <h2 class="showcase__title reveal" data-reveal>Built by hand.<br />Measured by milliseconds.</h2>
+        <p class="showcase__text reveal" data-reveal>
+          Every VANTÉ is assembled by a single master technician whose
+          signature is engraved beneath the hood. Carbon monocoque,
+          aerospace alloys, and a powertrain refined over ten thousand
+          laps.
+        </p>
+        <div class="stats reveal" data-reveal>
+          <div class="stat">
+            <span class="stat__num" data-count="63">0</span>
+            <span class="stat__label">Years of heritage</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="24">0</span>
+            <span class="stat__label">Le Mans titles</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="100">0</span><span class="stat__suffix">%</span>
+            <span class="stat__label">Hand assembled</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Heritage band -->
+    <section class="heritage" id="heritage">
+      <div class="heritage__inner">
+        <h2 class="heritage__quote reveal" data-reveal>
+          “We do not build cars. We build the reason to take the long way home.”
+        </h2>
+        <p class="heritage__by reveal" data-reveal>— Henri Vanté, Founder, 1963</p>
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="cta" id="contact">
+      <div class="cta__inner">
+        <span class="section-head__kicker reveal" data-reveal>03 — Begin</span>
+        <h2 class="cta__title reveal" data-reveal>Reserve Your VANTÉ</h2>
+        <p class="cta__text reveal" data-reveal>
+          Private viewings available at our ateliers in Milan, Tokyo,
+          and Los Angeles.
+        </p>
+        <form class="cta__form reveal" data-reveal id="reserveForm" novalidate>
+          <input type="email" class="cta__input" placeholder="Your email" aria-label="Email" required />
+          <button type="submit" class="btn btn--solid">Request Invitation</button>
+        </form>
+        <p class="cta__note" id="formNote" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__brand">VANTÉ</span>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#models">Models</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#heritage">Heritage</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="footer__copy">© 2026 VANTÉ Motors. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
