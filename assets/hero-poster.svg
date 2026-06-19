@@ -1,36 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <radialGradient id="glow" cx="68%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#2a2f36"/>
-      <stop offset="45%" stop-color="#14171b"/>
-      <stop offset="100%" stop-color="#0a0b0d"/>
-    </radialGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e7d3a1"/>
-      <stop offset="100%" stop-color="#c8a45c"/>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef1f4"/>
+      <stop offset="55%" stop-color="#dfe3e8"/>
+      <stop offset="100%" stop-color="#c7ccd2"/>
     </linearGradient>
-    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.06"/>
+    <radialGradient id="spot" cx="65%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b7bdc4"/>
+      <stop offset="100%" stop-color="#8b9199"/>
     </linearGradient>
   </defs>
 
-  <rect width="1920" height="1080" fill="url(#glow)"/>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <rect width="1920" height="1080" fill="url(#spot)"/>
 
-  <!-- abstract road / horizon lines -->
-  <g stroke="url(#gold)" stroke-opacity="0.25" stroke-width="1.5" fill="none">
-    <path d="M0 760 L1920 520"/>
-    <path d="M0 880 L1920 620"/>
-    <path d="M0 1010 L1920 740"/>
+  <!-- studio floor -->
+  <rect y="720" width="1920" height="360" fill="url(#floor)"/>
+  <ellipse cx="1120" cy="760" rx="620" ry="70" fill="#000000" opacity="0.10"/>
+
+  <!-- faint car silhouette suggestion -->
+  <g fill="#5b626b" opacity="0.18">
+    <path d="M560 720
+             C 600 660, 700 640, 820 636
+             C 900 600, 1040 588, 1180 596
+             C 1320 600, 1420 636, 1470 660
+             C 1560 668, 1620 690, 1640 720 Z"/>
   </g>
 
-  <!-- light streak -->
-  <rect x="0" y="380" width="1920" height="240" fill="url(#sheen)" transform="skewY(-6 0 500)"/>
-
-  <!-- faint wordmark -->
-  <text x="960" y="600" text-anchor="middle"
-        font-family="Archivo, Arial, sans-serif" font-weight="900"
-        font-size="220" letter-spacing="40"
-        fill="#ffffff" fill-opacity="0.04">VANTÉ</text>
+  <!-- wordmark watermark -->
+  <text x="120" y="980" font-family="Inter, Arial, sans-serif" font-weight="900"
+        font-size="150" letter-spacing="8" fill="#0b0b0d" fill-opacity="0.05">VANTÉ VOLT</text>
 </svg>

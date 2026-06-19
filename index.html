@@ -3,32 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="VANTÉ — the art of motion. A luxury marque defined by precision, power, and timeless design." />
-  <title>VANTÉ — The Art of Motion</title>
+  <meta name="description" content="The new VANTÉ Volt — pure electric performance. Configure yours today." />
+  <title>VANTÉ Volt — Pure Electric Performance</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Progress bar -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <!-- Utility bar -->
+  <div class="util">
+    <div class="util__inner">
+      <span class="util__item">Canada · English</span>
+      <div class="util__group">
+        <a href="#" class="util__item">Find a Dealer</a>
+        <a href="#" class="util__item">Login</a>
+        <a href="#" class="util__item">Search</a>
+      </div>
+    </div>
+  </div>
 
-  <!-- Navigation -->
+  <!-- Main header -->
   <header class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#hero" class="nav__brand" aria-label="VANTÉ home">VANTÉ</a>
+      <a href="#top" class="nav__brand" aria-label="VANTÉ home">VANTÉ</a>
 
       <nav class="nav__links" id="navLinks" aria-label="Primary">
         <a href="#models" class="nav__link">Models</a>
-        <a href="#showcase" class="nav__link">Showcase</a>
-        <a href="#heritage" class="nav__link">Heritage</a>
-        <a href="#contact" class="nav__link">Contact</a>
+        <a href="#highlights" class="nav__link">Highlights</a>
+        <a href="#gallery" class="nav__link">Gallery</a>
+        <a href="#specs" class="nav__link">Specs</a>
+        <a href="#build" class="nav__link">Configure</a>
       </nav>
 
-      <a href="#contact" class="nav__cta">Reserve</a>
+      <a href="#build" class="btn btn--red nav__cta">Build Yours</a>
 
       <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
@@ -36,7 +46,21 @@
     </div>
   </header>
 
-  <main>
+  <!-- Sticky model sub-nav (appears after hero) -->
+  <div class="subnav" id="subnav" aria-hidden="true">
+    <div class="subnav__inner">
+      <span class="subnav__model">VANTÉ Volt</span>
+      <nav class="subnav__links" aria-label="Model sections">
+        <a href="#highlights">Highlights</a>
+        <a href="#models">Models</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#specs">Tech Specs</a>
+      </nav>
+      <a href="#build" class="btn btn--red btn--sm">Build Yours</a>
+    </div>
+  </div>
+
+  <main id="top">
     <!-- Hero -->
     <section class="hero" id="hero">
       <video
@@ -46,204 +70,221 @@
         id="heroVideo">
         <source src="assets/hero.mp4" type="video/mp4" />
       </video>
-      <div class="hero__overlay"></div>
+      <div class="hero__scrim"></div>
 
       <div class="hero__content">
-        <p class="hero__eyebrow reveal" data-reveal>New · 2026 Collection</p>
-        <h1 class="hero__title reveal" data-reveal>
-          THE ART<br />OF MOTION
-        </h1>
-        <p class="hero__sub reveal" data-reveal>
-          Engineered without compromise. Designed to be remembered.
-        </p>
-        <div class="hero__actions reveal" data-reveal>
-          <a href="#models" class="btn btn--solid">Explore the Range</a>
-          <a href="#showcase" class="btn btn--ghost">Watch the Film</a>
+        <p class="hero__eyebrow">The new</p>
+        <h1 class="hero__title">VANTÉ Volt</h1>
+        <p class="hero__sub">Pure electric. Unmistakably VANTÉ.</p>
+        <div class="hero__actions">
+          <a href="#build" class="btn btn--red">Build Yours</a>
+          <a href="#highlights" class="btn btn--dark">Explore</a>
         </div>
       </div>
 
-      <a href="#models" class="hero__scroll" aria-label="Scroll down">
-        <span class="hero__scroll-line"></span>
-        <span class="hero__scroll-text">Scroll</span>
-      </a>
-    </section>
-
-    <!-- Marquee -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Precision</span><span>·</span><span>Power</span><span>·</span>
-        <span>Presence</span><span>·</span><span>Performance</span><span>·</span>
-        <span>Precision</span><span>·</span><span>Power</span><span>·</span>
-        <span>Presence</span><span>·</span><span>Performance</span><span>·</span>
+      <div class="hero__bar">
+        <div class="hero__stat"><strong>639</strong><span>PS</span></div>
+        <div class="hero__stat"><strong>3.3</strong><span>s · 0–100 km/h</span></div>
+        <div class="hero__stat"><strong>613</strong><span>km range</span></div>
+        <div class="hero__stat"><strong>260</strong><span>km/h</span></div>
       </div>
-    </div>
+    </section>
 
     <!-- Intro statement -->
-    <section class="statement">
-      <p class="statement__text reveal" data-reveal>
-        For over six decades, <strong>VANTÉ</strong> has pursued a single
-        obsession — the perfect intersection of <em>emotion</em> and
-        <em>engineering</em>.
-      </p>
+    <section class="intro">
+      <h2 class="intro__text reveal" data-reveal>
+        A new era of driving. Engineered for those who never settle.
+      </h2>
     </section>
 
-    <!-- Models / Product grid -->
+    <!-- Highlights — alternating image/text -->
+    <section class="highlights" id="highlights">
+      <article class="feature">
+        <div class="feature__media reveal" data-reveal>
+          <div class="feature__img feature__img--1"></div>
+        </div>
+        <div class="feature__body reveal" data-reveal>
+          <span class="feature__kicker">Performance</span>
+          <h3 class="feature__title">Instant. Relentless. Electric.</h3>
+          <p class="feature__text">
+            Dual motors deliver 639 PS the moment you ask for it. Launch
+            Control catapults the Volt from 0–100 km/h in just 3.3 seconds —
+            yet refinement never leaves the cabin.
+          </p>
+          <a href="#specs" class="link-arrow">View performance specs</a>
+        </div>
+      </article>
+
+      <article class="feature feature--reverse">
+        <div class="feature__media reveal" data-reveal>
+          <div class="feature__img feature__img--2"></div>
+        </div>
+        <div class="feature__body reveal" data-reveal>
+          <span class="feature__kicker">Design</span>
+          <h3 class="feature__title">Form shaped by the wind.</h3>
+          <p class="feature__text">
+            A silhouette honed in the wind tunnel. Flush handles, an active
+            rear spoiler, and a drag coefficient that sets a new benchmark for
+            the marque — beauty with a measurable purpose.
+          </p>
+          <a href="#gallery" class="link-arrow">Open the gallery</a>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature__media reveal" data-reveal>
+          <div class="feature__img feature__img--3"></div>
+        </div>
+        <div class="feature__body reveal" data-reveal>
+          <span class="feature__kicker">Charging</span>
+          <h3 class="feature__title">Five to eighty in 21 minutes.</h3>
+          <p class="feature__text">
+            An 800-volt architecture means less waiting and more driving.
+            Plug into a high-power charger and recover 300 km of range in the
+            time it takes to enjoy a coffee.
+          </p>
+          <a href="#build" class="link-arrow">Configure charging options</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Model variants -->
     <section class="models" id="models">
       <div class="section-head">
-        <span class="section-head__kicker reveal" data-reveal>01 — The Range</span>
-        <h2 class="section-head__title reveal" data-reveal>Choose Your Machine</h2>
+        <h2 class="section-head__title reveal" data-reveal>Choose your Volt</h2>
+        <p class="section-head__sub reveal" data-reveal>Three expressions of pure electric performance.</p>
       </div>
 
-      <div class="grid">
-        <article class="card reveal" data-reveal>
-          <div class="card__media" data-tilt>
-            <div class="card__img" style="--g1:#1a1f24;--g2:#0c0e10;">
-              <span class="card__badge">GT</span>
+      <div class="models__grid">
+        <article class="model reveal" data-reveal>
+          <div class="model__img model__img--a"></div>
+          <div class="model__body">
+            <h3 class="model__name">VANTÉ Volt</h3>
+            <p class="model__spec">408 PS · 641 km range</p>
+            <p class="model__price">From $98,000</p>
+            <div class="model__actions">
+              <a href="#build" class="btn btn--red btn--sm">Build</a>
+              <a href="#specs" class="link-arrow">Compare</a>
             </div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__name">VANTÉ GT-S</h3>
-            <p class="card__spec">630 hp · 0–100 in 3.1s · 330 km/h</p>
-            <a href="#contact" class="card__link">Configure →</a>
           </div>
         </article>
 
-        <article class="card reveal" data-reveal>
-          <div class="card__media" data-tilt>
-            <div class="card__img" style="--g1:#221a1a;--g2:#0c0e10;">
-              <span class="card__badge">Coupé</span>
+        <article class="model model--featured reveal" data-reveal>
+          <span class="model__flag">Most Popular</span>
+          <div class="model__img model__img--b"></div>
+          <div class="model__body">
+            <h3 class="model__name">VANTÉ Volt 4</h3>
+            <p class="model__spec">516 PS · 613 km range</p>
+            <p class="model__price">From $112,500</p>
+            <div class="model__actions">
+              <a href="#build" class="btn btn--red btn--sm">Build</a>
+              <a href="#specs" class="link-arrow">Compare</a>
             </div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__name">VANTÉ Aero</h3>
-            <p class="card__spec">510 hp · 0–100 in 3.6s · 305 km/h</p>
-            <a href="#contact" class="card__link">Configure →</a>
           </div>
         </article>
 
-        <article class="card reveal" data-reveal>
-          <div class="card__media" data-tilt>
-            <div class="card__img" style="--g1:#171f1c;--g2:#0c0e10;">
-              <span class="card__badge">EV</span>
+        <article class="model reveal" data-reveal>
+          <div class="model__img model__img--c"></div>
+          <div class="model__body">
+            <h3 class="model__name">VANTÉ Volt Turbo</h3>
+            <p class="model__spec">639 PS · 591 km range</p>
+            <p class="model__price">From $148,000</p>
+            <div class="model__actions">
+              <a href="#build" class="btn btn--red btn--sm">Build</a>
+              <a href="#specs" class="link-arrow">Compare</a>
             </div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__name">VANTÉ Volt</h3>
-            <p class="card__spec">760 hp · 0–100 in 2.6s · 260 km/h</p>
-            <a href="#contact" class="card__link">Configure →</a>
-          </div>
-        </article>
-
-        <article class="card reveal" data-reveal>
-          <div class="card__media" data-tilt>
-            <div class="card__img" style="--g1:#1d1a22;--g2:#0c0e10;">
-              <span class="card__badge">Spyder</span>
-            </div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__name">VANTÉ Roadster</h3>
-            <p class="card__spec">580 hp · 0–100 in 3.4s · 312 km/h</p>
-            <a href="#contact" class="card__link">Configure →</a>
-          </div>
-        </article>
-
-        <article class="card reveal" data-reveal>
-          <div class="card__media" data-tilt>
-            <div class="card__img" style="--g1:#22201a;--g2:#0c0e10;">
-              <span class="card__badge">SUV</span>
-            </div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__name">VANTÉ Terra</h3>
-            <p class="card__spec">650 hp · 0–100 in 3.9s · 290 km/h</p>
-            <a href="#contact" class="card__link">Configure →</a>
-          </div>
-        </article>
-
-        <article class="card reveal" data-reveal>
-          <div class="card__media" data-tilt>
-            <div class="card__img" style="--g1:#1a2226;--g2:#0c0e10;">
-              <span class="card__badge">Track</span>
-            </div>
-          </div>
-          <div class="card__body">
-            <h3 class="card__name">VANTÉ RS</h3>
-            <p class="card__spec">720 hp · 0–100 in 2.8s · 345 km/h</p>
-            <a href="#contact" class="card__link">Configure →</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Showcase / split feature -->
-    <section class="showcase" id="showcase">
-      <div class="showcase__media reveal" data-reveal>
-        <div class="showcase__visual"></div>
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+      <div class="section-head">
+        <h2 class="section-head__title reveal" data-reveal>Gallery</h2>
       </div>
-      <div class="showcase__content">
-        <span class="section-head__kicker reveal" data-reveal>02 — Craft</span>
-        <h2 class="showcase__title reveal" data-reveal>Built by hand.<br />Measured by milliseconds.</h2>
-        <p class="showcase__text reveal" data-reveal>
-          Every VANTÉ is assembled by a single master technician whose
-          signature is engraved beneath the hood. Carbon monocoque,
-          aerospace alloys, and a powertrain refined over ten thousand
-          laps.
-        </p>
-        <div class="stats reveal" data-reveal>
-          <div class="stat">
-            <span class="stat__num" data-count="63">0</span>
-            <span class="stat__label">Years of heritage</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num" data-count="24">0</span>
-            <span class="stat__label">Le Mans titles</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num" data-count="100">0</span><span class="stat__suffix">%</span>
-            <span class="stat__label">Hand assembled</span>
-          </div>
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--wide reveal" data-reveal><div class="g g1"></div></div>
+        <div class="gallery__item reveal" data-reveal><div class="g g2"></div></div>
+        <div class="gallery__item reveal" data-reveal><div class="g g3"></div></div>
+        <div class="gallery__item reveal" data-reveal><div class="g g4"></div></div>
+        <div class="gallery__item gallery__item--wide reveal" data-reveal><div class="g g5"></div></div>
+      </div>
+    </section>
+
+    <!-- Tech specs -->
+    <section class="specs" id="specs">
+      <div class="section-head">
+        <h2 class="section-head__title reveal" data-reveal>Technical highlights</h2>
+        <p class="section-head__sub reveal" data-reveal>VANTÉ Volt Turbo</p>
+      </div>
+      <div class="specs__grid">
+        <div class="specbox reveal" data-reveal>
+          <span class="specbox__num"><span data-count="639">0</span></span>
+          <span class="specbox__label">Maximum power (PS)</span>
+        </div>
+        <div class="specbox reveal" data-reveal>
+          <span class="specbox__num"><span data-count="33" data-decimals="1">0</span></span>
+          <span class="specbox__label">0–100 km/h (s)</span>
+        </div>
+        <div class="specbox reveal" data-reveal>
+          <span class="specbox__num"><span data-count="591">0</span></span>
+          <span class="specbox__label">Range WLTP (km)</span>
+        </div>
+        <div class="specbox reveal" data-reveal>
+          <span class="specbox__num"><span data-count="260">0</span></span>
+          <span class="specbox__label">Top speed (km/h)</span>
         </div>
       </div>
     </section>
 
-    <!-- Heritage band -->
-    <section class="heritage" id="heritage">
-      <div class="heritage__inner">
-        <h2 class="heritage__quote reveal" data-reveal>
-          “We do not build cars. We build the reason to take the long way home.”
-        </h2>
-        <p class="heritage__by reveal" data-reveal>— Henri Vanté, Founder, 1963</p>
-      </div>
-    </section>
-
-    <!-- Contact / CTA -->
-    <section class="cta" id="contact">
-      <div class="cta__inner">
-        <span class="section-head__kicker reveal" data-reveal>03 — Begin</span>
-        <h2 class="cta__title reveal" data-reveal>Reserve Your VANTÉ</h2>
-        <p class="cta__text reveal" data-reveal>
-          Private viewings available at our ateliers in Milan, Tokyo,
-          and Los Angeles.
+    <!-- Configurator CTA -->
+    <section class="build" id="build">
+      <div class="build__inner">
+        <h2 class="build__title reveal" data-reveal>Build your VANTÉ Volt</h2>
+        <p class="build__text reveal" data-reveal>
+          Tailor every detail — paint, wheels, interior, and performance —
+          and reserve your build today.
         </p>
-        <form class="cta__form reveal" data-reveal id="reserveForm" novalidate>
-          <input type="email" class="cta__input" placeholder="Your email" aria-label="Email" required />
-          <button type="submit" class="btn btn--solid">Request Invitation</button>
+        <form class="build__form reveal" data-reveal id="reserveForm" novalidate>
+          <input type="email" class="build__input" placeholder="Email address" aria-label="Email" required />
+          <button type="submit" class="btn btn--red">Start Configuration</button>
         </form>
-        <p class="cta__note" id="formNote" role="status"></p>
+        <p class="build__note" id="formNote" role="status"></p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer__inner">
-      <span class="footer__brand">VANTÉ</span>
-      <nav class="footer__links" aria-label="Footer">
-        <a href="#models">Models</a>
-        <a href="#showcase">Showcase</a>
-        <a href="#heritage">Heritage</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <span class="footer__copy">© 2026 VANTÉ Motors. All rights reserved.</span>
+      <div class="footer__col footer__col--brand">
+        <span class="footer__brand">VANTÉ</span>
+        <p class="footer__tag">The art of motion.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Models</h4>
+        <a href="#models">Volt</a>
+        <a href="#models">Volt 4</a>
+        <a href="#models">Volt Turbo</a>
+      </div>
+      <div class="footer__col">
+        <h4>Explore</h4>
+        <a href="#highlights">Highlights</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#specs">Tech Specs</a>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="#">Heritage</a>
+        <a href="#">Careers</a>
+        <a href="#build">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>© 2026 VANTÉ Motors. All rights reserved.</span>
+      <div class="footer__legal">
+        <a href="#">Privacy</a><a href="#">Legal</a><a href="#">Cookies</a>
+      </div>
     </div>
   </footer>
 
