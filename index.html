@@ -61,9 +61,8 @@
   </div>
 
   <main id="top">
-    <!-- Hero -->
+    <!-- Hero (cinematic, Polestar-style) -->
     <section class="hero" id="hero">
-      <!-- Clipped background layer (video stays inside the panel) -->
       <div class="hero__bg">
         <video
           class="hero__video"
@@ -76,27 +75,24 @@
       </div>
 
       <div class="hero__content">
-        <p class="hero__eyebrow">The new</p>
-        <h1 class="hero__title">VANTÉ Volt</h1>
-        <p class="hero__sub">Pure electric. Unmistakably VANTÉ.</p>
+        <p class="hero__eyebrow">VANTÉ Volt</p>
+        <h1 class="hero__title">It didn’t come<br />from the stars.<br />But it looks like it did.</h1>
+        <p class="hero__price">
+          Lease for $649/mo for 48 months with $0 down.<br />
+          Includes $5,000 EV Bonus.<br />
+          Starting from $73,050.<sup>1</sup>
+        </p>
         <div class="hero__actions">
-          <a href="#build" class="btn btn--red">Build Yours</a>
-          <a href="#highlights" class="btn btn--dark">Explore</a>
+          <a href="#models" class="btn btn--line">Shop available cars <span>→</span></a>
+          <a href="#highlights" class="btn btn--line">Discover VANTÉ Volt <span>→</span></a>
         </div>
       </div>
 
-      <!-- Transparent car that breaks out beyond the panel border.
-           Swap to a real cut-out: change src to "assets/car.png". -->
-      <img class="hero__car" src="assets/car.svg" alt="VANTÉ Volt" />
+      <button class="hero__playpause" id="playPause" aria-label="Pause background video" aria-pressed="false">
+        <svg class="icon-pause" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg class="icon-play" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
     </section>
-
-    <!-- Spec strip sits below the hero, under the breakout car -->
-    <div class="hero__bar">
-      <div class="hero__stat"><strong>639</strong><span>PS</span></div>
-      <div class="hero__stat"><strong>3.3</strong><span>s · 0–100 km/h</span></div>
-      <div class="hero__stat"><strong>613</strong><span>km range</span></div>
-      <div class="hero__stat"><strong>260</strong><span>km/h</span></div>
-    </div>
 
     <!-- Intro statement -->
     <section class="intro">

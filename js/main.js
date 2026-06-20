@@ -126,6 +126,31 @@
   }
 
   /* ----------------------------------------------------------
+     Hero video play/pause control
+     ---------------------------------------------------------- */
+  const playPause = document.getElementById("playPause");
+  const heroVideo = document.getElementById("heroVideo");
+  if (playPause && heroVideo) {
+    const setPaused = (paused) => {
+      playPause.classList.toggle("is-paused", paused);
+      playPause.setAttribute("aria-pressed", String(paused));
+      playPause.setAttribute("aria-label", paused ? "Play background video" : "Pause background video");
+    };
+    playPause.addEventListener("click", () => {
+      if (heroVideo.paused) {
+        heroVideo.play();
+        setPaused(false);
+      } else {
+        heroVideo.pause();
+        setPaused(true);
+      }
+    });
+    // Reflect external state changes
+    heroVideo.addEventListener("play", () => setPaused(false));
+    heroVideo.addEventListener("pause", () => setPaused(true));
+  }
+
+  /* ----------------------------------------------------------
      Reserve form (front-end demo)
      ---------------------------------------------------------- */
   const form = document.getElementById("reserveForm");

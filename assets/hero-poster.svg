@@ -1,37 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#eef1f4"/>
-      <stop offset="55%" stop-color="#dfe3e8"/>
-      <stop offset="100%" stop-color="#c7ccd2"/>
+      <stop offset="0%"  stop-color="#20243b"/>
+      <stop offset="32%" stop-color="#4a3f55"/>
+      <stop offset="55%" stop-color="#9c5f48"/>
+      <stop offset="72%" stop-color="#d98f53"/>
+      <stop offset="83%" stop-color="#e9b46c"/>
+      <stop offset="100%" stop-color="#2a1d18"/>
     </linearGradient>
-    <radialGradient id="spot" cx="65%" cy="38%" r="55%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    <radialGradient id="sun" cx="62%" cy="82%" r="40%">
+      <stop offset="0%"  stop-color="#ffe6b0" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#f3b96c" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#f3b96c" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#b7bdc4"/>
-      <stop offset="100%" stop-color="#8b9199"/>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a120f"/>
+      <stop offset="40%" stop-color="#0c0807"/>
+      <stop offset="100%" stop-color="#050403"/>
     </linearGradient>
+    <radialGradient id="tail" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff2b3d"/>
+      <stop offset="100%" stop-color="#b00014" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <rect width="1920" height="1080" fill="url(#sky)"/>
-  <rect width="1920" height="1080" fill="url(#spot)"/>
+  <!-- sky + sun -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#sun)"/>
 
-  <!-- studio floor -->
-  <rect y="720" width="1920" height="360" fill="url(#floor)"/>
-  <ellipse cx="1120" cy="760" rx="620" ry="70" fill="#000000" opacity="0.10"/>
-
-  <!-- faint car silhouette suggestion -->
-  <g fill="#5b626b" opacity="0.18">
-    <path d="M560 720
-             C 600 660, 700 640, 820 636
-             C 900 600, 1040 588, 1180 596
-             C 1320 600, 1420 636, 1470 660
-             C 1560 668, 1620 690, 1640 720 Z"/>
+  <!-- cloud streaks -->
+  <g fill="#3a2b32" opacity="0.5">
+    <ellipse cx="380" cy="150" rx="360" ry="20"/>
+    <ellipse cx="1180" cy="120" rx="420" ry="16"/>
+    <ellipse cx="820" cy="225" rx="520" ry="14"/>
+  </g>
+  <g fill="#21181d" opacity="0.45">
+    <ellipse cx="600" cy="195" rx="300" ry="10"/>
+    <ellipse cx="1300" cy="205" rx="280" ry="12"/>
   </g>
 
-  <!-- wordmark watermark -->
-  <text x="120" y="980" font-family="Inter, Arial, sans-serif" font-weight="900"
-        font-size="150" letter-spacing="8" fill="#0b0b0d" fill-opacity="0.05">VANTÉ VOLT</text>
+  <!-- distant mountains -->
+  <path d="M0 600 L 180 520 L 360 575 L 560 480 L 780 560 L 1000 500 L 1240 565 L 1450 505 L 1600 560 L 1600 640 L 0 640 Z"
+        fill="#2a1c1a" opacity="0.8"/>
+  <path d="M0 630 L 260 560 L 520 612 L 820 545 L 1120 610 L 1400 560 L 1600 605 L 1600 660 L 0 660 Z"
+        fill="#1a1110" opacity="0.9"/>
+
+  <!-- dark foreground -->
+  <rect y="620" width="1600" height="280" fill="url(#ground)"/>
+
+  <!-- car: rear three-quarter silhouette, center-right -->
+  <g transform="translate(840 470)">
+    <!-- taillight glow -->
+    <ellipse cx="150" cy="120" rx="230" ry="60" fill="url(#tail)" opacity="0.6"/>
+    <!-- body -->
+    <path d="M-220 200
+             C -210 150, -150 140, -90 138
+             C -60 96, 10 78, 120 80
+             C 230 82, 320 104, 360 150
+             C 400 158, 430 178, 432 200
+             L 432 214
+             C 432 222, 424 226, 412 226
+             L -208 226
+             C -222 226, -226 214, -220 200 Z"
+          fill="#0a0707"/>
+    <!-- roof/glass subtle -->
+    <path d="M-78 138 C -50 102, 20 86, 120 88 C 210 90, 286 108, 330 144
+             C 250 134, 120 132, 0 134 Z" fill="#161015"/>
+    <!-- horizontal taillight bar -->
+    <rect x="-150" y="150" width="430" height="9" rx="4" fill="#ff2331"/>
+    <rect x="-150" y="150" width="430" height="3" rx="2" fill="#ff8a92"/>
+    <!-- wheels hint -->
+    <ellipse cx="-120" cy="226" rx="70" ry="20" fill="#050303"/>
+    <ellipse cx="300" cy="226" rx="74" ry="20" fill="#050303"/>
+  </g>
 </svg>

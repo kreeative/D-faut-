@@ -113,10 +113,9 @@ a.util__item:hover { color: #fff; }
   justify-content: space-between;
 }
 .nav__brand {
-  font-weight: 900;
-  font-size: 1.45rem;
-  letter-spacing: 0.3em;
-  padding-left: 0.3em;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
 }
 .nav__links { display: flex; gap: 2.2rem; }
 .nav__link {
@@ -192,10 +191,10 @@ a.util__item:hover { color: #fff; }
   min-height: calc(100svh - var(--nav-h));
   display: flex;
   align-items: center;
-  overflow: visible;            /* allow the car to break the border */
-  background: #d9dde1;
+  overflow: hidden;
+  background: #0c0a0d;
+  color: #fff;
 }
-/* Clipped layer keeps the video/scrim inside the panel */
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -208,27 +207,13 @@ a.util__item:hover { color: #fff; }
   width: 100%; height: 100%;
   object-fit: cover;
 }
+/* Cinematic darkening: left for text, bottom vignette */
 .hero__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.15) 45%, rgba(0,0,0,0.05) 100%);
-}
-
-/* The breakout car — overflows past the bottom of the hero panel */
-.hero__car {
-  position: absolute;
-  z-index: 5;
-  left: 50%;
-  bottom: -6%;
-  width: min(1180px, 92vw);
-  transform: translateX(-50%);
-  pointer-events: none;
-  filter: drop-shadow(0 38px 34px rgba(0,0,0,0.35));
-  animation: carIn 1.1s var(--ease) both;
-}
-@keyframes carIn {
-  from { opacity: 0; transform: translate(-50%, 26px); }
-  to   { opacity: 1; transform: translate(-50%, 0); }
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0) 70%),
+    linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0.55) 100%);
 }
 .hero__content {
   position: relative;
@@ -238,29 +223,62 @@ a.util__item:hover { color: #fff; }
   margin: 0 auto;
   padding: 0 var(--pad);
 }
-.hero__eyebrow { font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+.hero__eyebrow {
+  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+}
 .hero__title {
-  font-size: clamp(3rem, 9vw, 7.5rem);
-  font-weight: 900;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.7rem, 3.6vw, 2.9rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  color: rgba(255,255,255,0.82);
+  max-width: 16ch;
 }
-.hero__sub { margin-top: 1rem; font-size: clamp(1.05rem, 2.2vw, 1.5rem); font-weight: 500; color: #2a2a2e; }
-.hero__actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.9rem; }
-
-.hero__bar {
-  position: relative;
-  z-index: 1;
-  background: var(--bg-dark);
+.hero__price {
+  margin-top: 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.55;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  gap: clamp(1.5rem, 6vw, 5rem);
-  padding: 1.4rem var(--pad);
-  flex-wrap: wrap;
 }
-.hero__stat { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.hero__stat strong { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; line-height: 1; }
-.hero__stat span { font-size: 0.74rem; color: #b6b7bc; margin-top: 0.3rem; letter-spacing: 0.02em; }
+.hero__price sup { font-weight: 400; }
+.hero__actions { margin-top: 1.9rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+/* Outlined "ghost" buttons over imagery */
+.btn--line {
+  background: rgba(0,0,0,0.12);
+  color: #fff;
+  border-color: rgba(255,255,255,0.55);
+  backdrop-filter: blur(2px);
+}
+.btn--line span { transition: transform 0.3s var(--ease); }
+.btn--line:hover { background: #fff; color: var(--text); border-color: #fff; }
+.btn--line:hover span { transform: translateX(4px); }
+
+/* Video play/pause control */
+.hero__playpause {
+  position: absolute;
+  z-index: 6;
+  right: clamp(1rem, 4vw, 3rem);
+  bottom: clamp(1.2rem, 4vw, 2.6rem);
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.hero__playpause:hover { background: rgba(255,255,255,0.18); transform: scale(1.06); }
+.hero__playpause svg { fill: currentColor; }
+.hero__playpause .icon-play { display: none; }
+.hero__playpause.is-paused .icon-pause { display: none; }
+.hero__playpause.is-paused .icon-play { display: block; }
 
 /* ============================================================
    Intro statement
