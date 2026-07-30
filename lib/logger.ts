@@ -1,0 +1,12 @@
+type Level = 'info' | 'warn' | 'error';
+
+/**
+ * Structured single-line logging. Vercel and Supabase both index these, so
+ * every automated action stays traceable without a custom dashboard.
+ */
+export function log(level: Level, event: string, data: Record<string, unknown> = {}): void {
+  const line = JSON.stringify({ ts: new Date().toISOString(), level, event, ...data });
+  if (level === 'error') console.error(line);
+  else if (level === 'warn') console.warn(line);
+  else console.log(line);
+}
