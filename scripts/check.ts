@@ -11,9 +11,25 @@ const missing = (m: string) => console.log(`  missing ${m}`);
 
 console.log('\nSleep Engine pre-flight\n');
 
-console.log('Required for a real run:');
-if (config.anthropicApiKey) ok(`ANTHROPIC_API_KEY (model ${config.model}, effort ${config.effort})`);
-else missing('ANTHROPIC_API_KEY  <- without this only `npm run scan:dry` works');
+const { resolveProvider } = await import('../lib/providers/index.ts');
+
+let provider: 'anthropic' | 'gemini';
+try {
+  provider = resolveProvider();
+} catch (err) {
+  console.error(`  ${(err as Error).message}\n`);
+  process.exit(1);
+}
+
+console.log(`Scoring provider: ${provider}${process.env.AI_PROVIDER ? '' : ' (inferred from which key is set)'}`);
+const hasKey = provider === 'gemini' ? !!config.geminiApiKey : !!config.anthropicApiKey;
+if (provider === 'gemini') {
+  if (hasKey) ok(`GEMINI_API_KEY (model ${config.geminiModel})`);
+  else missing('GEMINI_API_KEY  <- free key at aistudio.google.com/apikey');
+} else {
+  if (hasKey) ok(`ANTHROPIC_API_KEY (model ${config.model}, effort ${config.effort})`);
+  else missing('ANTHROPIC_API_KEY  <- console.anthropic.com, or set AI_PROVIDER=gemini');
+}
 
 console.log('\nStorage (one of these):');
 if (config.supabaseUrl && config.supabaseServiceKey) ok('Supabase configured');
@@ -25,8 +41,9 @@ else missing('Notion  <- the ranked list will not be published anywhere');
 if (config.resendApiKey && config.digestTo) ok('Resend');
 else missing('Resend  <- no email digest will be sent');
 
-if (!config.anthropicApiKey) {
-  console.log('\nAdd ANTHROPIC_API_KEY to .env, then run this again.\n');
+if (!hasKey) {
+  console.log('\nAdd the missing key to .env, then run this again.');
+  console.log('Without one, only `npm run scan:dry` works.\n');
   process.exit(1);
 }
 

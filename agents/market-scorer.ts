@@ -1,5 +1,6 @@
 import { config } from '../lib/config.ts';
 import { log } from '../lib/logger.ts';
+import { createJudge, type Judge } from '../lib/providers/index.ts';
 import {
   AXES,
   AUTOMATABILITY_FLOOR,
@@ -95,7 +96,11 @@ export function weightedTotal(scores: Scores): number {
  * this decides. Keeping the accept/reject rule out of the prompt is what makes
  * the automatability floor non-negotiable.
  */
-export function applyRubric(candidate: Candidate, judgement: RawJudgement): ScoredOpportunity {
+export function applyRubric(
+  candidate: Candidate,
+  judgement: RawJudgement,
+  judgeName?: string,
+): ScoredOpportunity {
   const scores = clampScores(judgement.scores);
   const total = weightedTotal(scores);
   const automatability = scores.delivery_automatability;
@@ -111,7 +116,7 @@ export function applyRubric(candidate: Candidate, judgement: RawJudgement): Scor
       : null,
     riskiest_assumption: String(judgement.riskiest_assumption ?? '').trim(),
     one_line_offer: String(judgement.one_line_offer ?? '').trim(),
-    scored_by: config.dryRun ? 'heuristic-dry-run' : config.model,
+    scored_by: judgeName ?? (config.dryRun ? 'heuristic-dry-run' : 'unknown'),
   };
 }
 
@@ -156,63 +161,31 @@ export function scoreHeuristically(candidate: Candidate): RawJudgement {
   };
 }
 
-async function scoreWithClaude(candidate: Candidate): Promise<RawJudgement> {
-  const { default: Anthropic } = await import('@anthropic-ai/sdk');
-  const client = new Anthropic({ apiKey: config.anthropicApiKey });
-
-  const response = await client.messages.create({
-    model: config.model,
-    // Thinking tokens count against this ceiling, so it has room for adaptive
-    // thinking plus the JSON. Too tight and the answer truncates mid-object.
-    max_tokens: 8000,
-    // Adaptive thinking lets the model spend more reasoning on ambiguous
-    // candidates and less on obvious ones, without a fixed budget to tune.
-    thinking: { type: 'adaptive' },
-    output_config: {
-      effort: config.effort,
-      format: { type: 'json_schema', schema: OUTPUT_SCHEMA },
-    },
-    system: [
-      {
-        type: 'text',
-        text: SYSTEM_PROMPT,
-        // The rubric is byte-identical across every candidate in a run, so it
-        // is the natural cache prefix.
-        cache_control: { type: 'ephemeral' },
-      },
-    ],
-    messages: [
-      {
-        role: 'user',
-        content: `Source: ${candidate.source}
+function buildPrompt(candidate: Candidate): string {
+  return `Source: ${candidate.source}
 Title: ${candidate.title}
 Evidence: ${candidate.evidence_urls.join(', ')}
 Community signal: ${candidate.raw_signal}
 
 Body:
-${candidate.body || '(no body text)'}`,
-      },
-    ],
-  } as any);
+${candidate.body || '(no body text)'}`;
+}
 
-  if (response.stop_reason === 'refusal') {
-    // A scoring refusal is a data problem, not an outage. The caller records
-    // the candidate as unscorable rather than failing the run.
-    throw new Error('scorer refused this candidate');
-  }
+/** The same schema goes to both providers unchanged. */
+export function outputSchema(): Record<string, unknown> {
+  return OUTPUT_SCHEMA as unknown as Record<string, unknown>;
+}
 
-  if (response.stop_reason === 'max_tokens') {
-    // Named explicitly: the JSON would be truncated, and a parse error here
-    // would send someone hunting for a schema bug that does not exist.
-    throw new Error('scorer hit max_tokens before completing the JSON object');
-  }
-
-  // Adaptive thinking puts a thinking block ahead of the answer, so the text
-  // block has to be selected rather than indexed.
-  const blocks = response.content as Array<{ type: string; text?: string }>;
-  const text = blocks.find((b) => b.type === 'text' && typeof b.text === 'string')?.text;
-  if (!text) throw new Error('scorer returned no text block');
-  return JSON.parse(text) as RawJudgement;
+async function scoreWithModel(judge: Judge, candidate: Candidate): Promise<RawJudgement> {
+  const result = await judge.judge({
+    system: SYSTEM_PROMPT,
+    user: buildPrompt(candidate),
+    schema: outputSchema(),
+    // Thinking tokens count against this ceiling on both providers, so it has
+    // room for reasoning plus the JSON. Too tight and the object truncates.
+    maxTokens: 8000,
+  });
+  return result as RawJudgement;
 }
 
 /** Bounded-concurrency map. Keeps us inside rate limits without a dependency. */
@@ -230,24 +203,31 @@ async function mapLimit<T, R>(items: T[], limit: number, fn: (item: T) => Promis
 }
 
 export async function scoreCandidates(candidates: Candidate[]): Promise<ScoredOpportunity[]> {
+  if (config.dryRun) {
+    return candidates.map((c) => applyRubric(c, scoreHeuristically(c), 'heuristic-dry-run'));
+  }
+
+  // Built once per run so a misconfigured provider fails immediately, before
+  // any candidate is spent, rather than sixty times over.
+  const judge = await createJudge();
+  log('info', 'scorer.provider', { provider: judge.name, candidates: candidates.length });
+
   return mapLimit(candidates, config.scoreConcurrency, async (candidate) => {
-    if (config.dryRun) return applyRubric(candidate, scoreHeuristically(candidate));
     try {
-      return applyRubric(candidate, await scoreWithClaude(candidate));
+      return applyRubric(candidate, await scoreWithModel(judge, candidate), judge.name);
     } catch (err) {
       // One unscorable candidate is not a scan failure. It is recorded as
-      // rejected with the reason so it shows up in the audit log rather than
+      // rejected with the reason so it lands in the audit log rather than
       // vanishing.
       log('warn', 'scorer.candidate_failed', {
         fingerprint: candidate.fingerprint,
         error: String(err),
       });
-      const fallback = applyRubric(candidate, scoreHeuristically(candidate));
+      const fallback = applyRubric(candidate, scoreHeuristically(candidate), 'failed');
       return {
         ...fallback,
         verdict: 'rejected' as const,
         rejection_reason: `scoring failed: ${err instanceof Error ? err.message : String(err)}`,
-        scored_by: 'failed',
       };
     }
   });

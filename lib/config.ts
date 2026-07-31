@@ -9,6 +9,12 @@ function env(name: string, fallback?: string): string {
   return v;
 }
 
+/**
+ * Credentials are exposed as getters throughout, so they read through to the
+ * environment on every access. Capturing them at import time silently ignores
+ * anything that populates the environment later — a dotenv call, a test, a
+ * runtime override.
+ */
 function optional(name: string): string | undefined {
   const v = process.env[name];
   return v && v.length > 0 ? v : undefined;
@@ -43,18 +49,40 @@ export const config = {
   },
   localStorePath: env('SCAN_LOCAL_STORE_PATH', '.data/scan-state.json'),
 
-  anthropicApiKey: optional('ANTHROPIC_API_KEY'),
-  supabaseUrl: optional('SUPABASE_URL'),
-  supabaseServiceKey: optional('SUPABASE_SERVICE_ROLE_KEY'),
-  resendApiKey: optional('RESEND_API_KEY'),
-  notionApiKey: optional('NOTION_API_KEY'),
-  notionOpportunityDbId: optional('NOTION_OPPORTUNITY_DB_ID'),
+  get anthropicApiKey(): string | undefined {
+    return optional('ANTHROPIC_API_KEY');
+  },
+
+  /** Free tier at aistudio.google.com/apikey — no credit card required. */
+  get geminiApiKey(): string | undefined {
+    return optional('GEMINI_API_KEY');
+  },
+  geminiModel: env('GEMINI_MODEL', 'gemini-2.5-flash'),
+  get supabaseUrl(): string | undefined {
+    return optional('SUPABASE_URL');
+  },
+  get supabaseServiceKey(): string | undefined {
+    return optional('SUPABASE_SERVICE_ROLE_KEY');
+  },
+  get resendApiKey(): string | undefined {
+    return optional('RESEND_API_KEY');
+  },
+  get notionApiKey(): string | undefined {
+    return optional('NOTION_API_KEY');
+  },
+  get notionOpportunityDbId(): string | undefined {
+    return optional('NOTION_OPPORTUNITY_DB_ID');
+  },
 
   digestFrom: env('DIGEST_FROM', 'engine@example.com'),
-  digestTo: optional('DIGEST_TO'),
+  get digestTo(): string | undefined {
+    return optional('DIGEST_TO');
+  },
 
   /** Shared secret so only Vercel Cron can trigger the job route. */
-  cronSecret: optional('CRON_SECRET'),
+  get cronSecret(): string | undefined {
+    return optional('CRON_SECRET');
+  },
 
   /** Hard ceiling on candidates scored per run. Directly caps the API bill. */
   maxCandidates: Number(env('SCAN_MAX_CANDIDATES', '60')),

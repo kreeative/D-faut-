@@ -13,14 +13,33 @@ plainly. Nothing else is sent.
 Three steps, in this order. Only the first costs money, and it costs about a
 dollar.
 
-**1. Get an Anthropic API key.** Sign in at `console.anthropic.com`, open
-**API keys**, create one, and add a small amount of credit under **Billing** —
-$5 covers months of weekly scans. Put it in `.env`:
+**1. Get a key from either provider.** The scorer runs on Anthropic or Gemini;
+pick one.
+
+| | Anthropic | Gemini |
+|---|---|---|
+| Where | `console.anthropic.com` → API keys | `aistudio.google.com/apikey` |
+| Card required | yes | no |
+| Cost per scan | ~$0.70 | likely $0 (free quota) |
+| Env var | `ANTHROPIC_API_KEY` | `GEMINI_API_KEY` |
+
+Gemini is the lower-friction start: a free key, instantly, with no billing
+setup, and at roughly 60 candidates a week the scan should stay inside the free
+quota. Anthropic is the better judge on the one call that matters most —
+deciding whether a deliverable is genuinely automatable — but the rubric is
+explicit enough and the automatability floor is enforced in code, so both
+produce usable rankings.
 
 ```bash
 cp .env.example .env
-# then set ANTHROPIC_API_KEY=sk-ant-...
+# set exactly one of:
+#   ANTHROPIC_API_KEY=sk-ant-...
+#   GEMINI_API_KEY=...
 ```
+
+Leave `AI_PROVIDER` blank and whichever key you set is used. Set it explicitly
+(`anthropic` or `gemini`) if you have both keys and want to force a choice.
+Switching providers later is a one-line change in `.env` — no code edits.
 
 **2. Confirm it works before spending a scan.**
 
@@ -41,7 +60,8 @@ npm run scan:live
 Live Reddit and RSS collection, real scoring, results written to
 `.data/scan-state.json`. **No Supabase, Notion or Resend needed.** Dedupe works
 across runs because the file persists, so a second run the following week only
-scores what is new. Expect a few minutes and roughly $0.70.
+scores what is new. Expect a few minutes, and roughly $0.70 on Anthropic or
+nothing on Gemini's free quota.
 
 Supabase, Notion and email are how this becomes unattended. They are not
 required to see whether the output is any good, which is the only question
@@ -113,6 +133,22 @@ scores, the code decides. A candidate scoring 10 on every other axis and 5 on
 automatability still totals 125 and is still rejected, with the reason recorded.
 That case is covered by a test.
 
+## Swapping the scoring provider
+
+`lib/providers/` holds one small adapter per provider behind a single
+interface: take a system prompt, a user prompt and a JSON schema, return parsed
+JSON. Everything that makes the scan trustworthy — the rubric, the
+automatability gate, score clamping, retries, the offline fallback — sits above
+that line and is provider-agnostic.
+
+Both providers accept the **same** JSON Schema object unchanged (Anthropic via
+`output_config.format`, Gemini via `responseJsonSchema`), so there is no
+translation layer to drift out of sync. Adding a third provider means writing
+one file and one line in `createJudge()`.
+
+The model that actually scored each row is recorded in `scored_by`, so a mixed
+history stays traceable.
+
 ## Sources
 
 **Polled:** Reddit public JSON endpoints (`top/week` across nine subreddits in
@@ -161,9 +197,9 @@ with evidence links. Revisit with a paid data source once revenue justifies one.
 | Supabase | Free | $0 |
 | Resend | Free (3k emails/mo) | $0 |
 | Notion | existing | $0 |
-| Anthropic API | usage | ~$3/mo at 60 candidates/week |
+| Scoring API | usage | ~$3/mo on Anthropic, or $0 on Gemini's free quota |
 
-**Total: roughly $3/month.** Well inside the $150 ceiling. Nothing here needs a
+**Total: roughly $3/month, or $0 if you score on Gemini.** Well inside the $150 ceiling. Nothing here needs a
 paid plan until Phase 1 puts real traffic on it.
 
 ## Operator time
