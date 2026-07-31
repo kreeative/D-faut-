@@ -8,21 +8,59 @@ writes the result to Postgres. The top ten accepted opportunities go to Notion;
 the top three go to the operator's inbox with their riskiest assumption stated
 plainly. Nothing else is sent.
 
-## Running it
+## Getting a real run
+
+Three steps, in this order. Only the first costs money, and it costs about a
+dollar.
+
+**1. Get an Anthropic API key.** Sign in at `console.anthropic.com`, open
+**API keys**, create one, and add a small amount of credit under **Billing** —
+$5 covers months of weekly scans. Put it in `.env`:
+
+```bash
+cp .env.example .env
+# then set ANTHROPIC_API_KEY=sk-ant-...
+```
+
+**2. Confirm it works before spending a scan.**
+
+```bash
+npm run check
+```
+
+This scores one sample candidate and prints the result. It is the cheapest
+possible proof that the key, the model and the schema all line up. If it fails,
+nothing else will work either.
+
+**3. Run the scan for real.**
+
+```bash
+npm run scan:live
+```
+
+Live Reddit and RSS collection, real scoring, results written to
+`.data/scan-state.json`. **No Supabase, Notion or Resend needed.** Dedupe works
+across runs because the file persists, so a second run the following week only
+scores what is new. Expect a few minutes and roughly $0.70.
+
+Supabase, Notion and email are how this becomes unattended. They are not
+required to see whether the output is any good, which is the only question
+worth answering first.
+
+## All commands
 
 ```bash
 npm install
-cp .env.example .env      # fill in keys
-
-npm run scan:dry          # full pipeline, local fixtures, no network, no keys
-npm test                  # 37 tests
-npm run typecheck
-
-npm run scan              # real run
+npm run scan:dry          # fixtures, no network, no keys — proves the wiring
+npm run check             # one sample candidate against the real API
+npm run scan:live         # live sources + real scoring, JSON file on disk
+npm run scan              # live sources + Supabase + Notion + email
 npm run scan -- --reset   # clear the circuit breaker after a failure
+npm test                  # 42 tests
+npm run typecheck
 ```
 
-## Setup
+## Full setup (only needed for unattended weekly runs)
 
 1. **Supabase** — run `supabase/migrations/0001_init.sql`. It creates
    `opportunities`, `events`, `automation_health` and `settings`, and enables

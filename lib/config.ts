@@ -34,6 +34,15 @@ export const config = {
   /** Depth/cost dial. medium is the balance point for a scoring workload. */
   effort: env('ANTHROPIC_EFFORT', 'medium'),
 
+  /**
+   * Persist to a JSON file instead of Supabase. Lets a first real run need
+   * nothing but an Anthropic key.
+   */
+  get localStore(): boolean {
+    return process.env.SCAN_LOCAL_STORE === '1';
+  },
+  localStorePath: env('SCAN_LOCAL_STORE_PATH', '.data/scan-state.json'),
+
   anthropicApiKey: optional('ANTHROPIC_API_KEY'),
   supabaseUrl: optional('SUPABASE_URL'),
   supabaseServiceKey: optional('SUPABASE_SERVICE_ROLE_KEY'),

@@ -20,8 +20,9 @@ Phase 0 is documented in [`docs/PHASE-0.md`](docs/PHASE-0.md). Start there.
 
 ```bash
 npm install
-npm run scan:dry     # see the whole pipeline run with no keys and no network
-npm test
+npm run scan:dry     # whole pipeline, no keys and no network
+npm run check        # confirm your Anthropic key works (one sample candidate)
+npm run scan:live    # a real scan — needs only ANTHROPIC_API_KEY
 ```
 
 ## Layout

@@ -1,8 +1,10 @@
 /**
  * Manual runner.
  *
- *   npm run scan:dry          full pipeline against fixtures, no network, no keys
- *   npm run scan              real run
+ *   npm run scan:dry          fixtures, no network, no keys — proves the wiring
+ *   npm run scan:live         live sources, real scoring, JSON file on disk
+ *                             (needs only ANTHROPIC_API_KEY)
+ *   npm run scan              live sources, Supabase, Notion, email
  *   npm run scan -- --reset   clear the circuit breaker after a failure
  */
 import { config } from '../lib/config.ts';
@@ -10,6 +12,7 @@ import { MAX_TOTAL } from '../lib/types.ts';
 
 const args = new Set(process.argv.slice(2));
 if (args.has('--dry-run')) process.env.SCAN_DRY_RUN = '1';
+if (args.has('--local')) process.env.SCAN_LOCAL_STORE = '1';
 
 const { runMarketScan } = await import('../jobs/market-scan.ts');
 const { createStore } = await import('../lib/store.ts');

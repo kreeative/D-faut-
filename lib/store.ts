@@ -139,10 +139,90 @@ class SupabaseStore implements Store {
   }
 }
 
+
+/**
+ * Persists to a JSON file on disk. This is what makes a first real run cost one
+ * API key instead of four accounts: live sources, real scoring, real dedupe
+ * across runs, and nothing to provision. Swap to Supabase once the scan has
+ * earned its place in the weekly routine.
+ */
+export class FileStore implements Store {
+  private state: {
+    opportunities: ScoredOpportunity[];
+    events: { type: string; payload: Record<string, unknown>; at: string }[];
+    health: Record<string, AutomationHealth>;
+    outbound_enabled: boolean;
+  } | null = null;
+
+  constructor(private path: string) {}
+
+  private async load() {
+    if (this.state) return this.state;
+    const { readFile } = await import('node:fs/promises');
+    try {
+      this.state = JSON.parse(await readFile(this.path, 'utf8'));
+    } catch {
+      // No file yet, or an unreadable one. Either way this is a fresh start.
+      this.state = { opportunities: [], events: [], health: {}, outbound_enabled: true };
+    }
+    return this.state!;
+  }
+
+  private async flush() {
+    const { writeFile, mkdir } = await import('node:fs/promises');
+    const { dirname } = await import('node:path');
+    await mkdir(dirname(this.path), { recursive: true });
+    await writeFile(this.path, JSON.stringify(this.state, null, 2), 'utf8');
+  }
+
+  async knownFingerprints(fingerprints: string[]): Promise<Set<string>> {
+    const state = await this.load();
+    const seen = new Set(state.opportunities.map((o) => o.fingerprint));
+    return new Set(fingerprints.filter((f) => seen.has(f)));
+  }
+
+  async saveOpportunities(rows: ScoredOpportunity[]): Promise<void> {
+    const state = await this.load();
+    // Upsert on fingerprint, matching the Postgres unique constraint so a
+    // re-run behaves the same here as it does in production.
+    const byFingerprint = new Map(state.opportunities.map((o) => [o.fingerprint, o]));
+    for (const row of rows) byFingerprint.set(row.fingerprint, row);
+    state.opportunities = [...byFingerprint.values()];
+    await this.flush();
+  }
+
+  async appendEvent(type: string, payload: Record<string, unknown>): Promise<void> {
+    const state = await this.load();
+    state.events.push({ type, payload, at: new Date().toISOString() });
+    await this.flush();
+  }
+
+  async getHealth(key: string): Promise<AutomationHealth> {
+    const state = await this.load();
+    return (
+      state.health[key] ?? { key, consecutive_failures: 0, disabled_at: null, last_error: null }
+    );
+  }
+
+  async setHealth(health: AutomationHealth): Promise<void> {
+    const state = await this.load();
+    state.health[health.key] = health;
+    await this.flush();
+  }
+
+  async outboundEnabled(): Promise<boolean> {
+    return (await this.load()).outbound_enabled;
+  }
+}
+
 export async function createStore(): Promise<Store> {
   if (config.dryRun) return new MemoryStore();
+  if (config.localStore) return new FileStore(config.localStorePath);
   if (!config.supabaseUrl || !config.supabaseServiceKey) {
-    throw new Error('SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required outside dry-run mode');
+    throw new Error(
+      'No store configured. Either set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY, ' +
+        'or run with --local to persist to a JSON file on disk.',
+    );
   }
   const { createClient } = await import('@supabase/supabase-js');
   return new SupabaseStore(

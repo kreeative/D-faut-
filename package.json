@@ -10,7 +10,9 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "scan:dry": "tsx scripts/scan.ts --dry-run",
-    "scan": "tsx scripts/scan.ts"
+    "scan": "tsx scripts/scan.ts",
+    "check": "tsx scripts/check.ts",
+    "scan:live": "tsx scripts/scan.ts --local"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.68.0",

@@ -162,7 +162,9 @@ async function scoreWithClaude(candidate: Candidate): Promise<RawJudgement> {
 
   const response = await client.messages.create({
     model: config.model,
-    max_tokens: 2000,
+    // Thinking tokens count against this ceiling, so it has room for adaptive
+    // thinking plus the JSON. Too tight and the answer truncates mid-object.
+    max_tokens: 8000,
     // Adaptive thinking lets the model spend more reasoning on ambiguous
     // candidates and less on obvious ones, without a fixed budget to tune.
     thinking: { type: 'adaptive' },
@@ -197,6 +199,12 @@ ${candidate.body || '(no body text)'}`,
     // A scoring refusal is a data problem, not an outage. The caller records
     // the candidate as unscorable rather than failing the run.
     throw new Error('scorer refused this candidate');
+  }
+
+  if (response.stop_reason === 'max_tokens') {
+    // Named explicitly: the JSON would be truncated, and a parse error here
+    // would send someone hunting for a schema bug that does not exist.
+    throw new Error('scorer hit max_tokens before completing the JSON object');
   }
 
   // Adaptive thinking puts a thinking block ahead of the answer, so the text
