@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["claude/kind-hamilton-ba68qk"]
+    branches: ["main", "claude/kind-hamilton-ba68qk"]
   workflow_dispatch:
 
 permissions:
