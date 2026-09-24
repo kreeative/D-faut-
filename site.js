@@ -8,6 +8,36 @@
   var pop = [0.34, 1.56, 0.64, 1];
   function $(s, c) { return (c || document).querySelector(s); }
   function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  // Language: French by default, English on request. The choice is remembered on this device.
+  var I18N = window.CAMELEON_I18N || { fr: {}, en: {} };
+  var lang = 'fr';
+  function t(key) { return (I18N[lang] && I18N[lang][key]) || (I18N.fr && I18N.fr[key]) || ''; }
+  function fill(str, vars) { return str.replace(/\{(\w+)\}/g, function (m, k) { return vars[k] != null ? vars[k] : m; }); }
+  function storedLang() {
+    var q = /[?&]lang=(fr|en)\b/.exec(location.search);
+    if (q) return q[1];
+    try { return localStorage.getItem('cameleon-lang'); } catch (e) { return null; }
+  }
+  function applyLang(next) {
+    lang = next === 'en' ? 'en' : 'fr';
+    root.lang = lang === 'fr' ? 'fr-CA' : 'en-CA';
+    $$('[data-i18n]').forEach(function (el) { var v = t(el.getAttribute('data-i18n')); if (v) el.textContent = v; });
+    $$('[data-i18n-html]').forEach(function (el) { var v = t(el.getAttribute('data-i18n-html')); if (v) el.innerHTML = v; });
+    $$('[data-i18n-attr]').forEach(function (el) {
+      el.getAttribute('data-i18n-attr').split(';').forEach(function (pair) {
+        var p = pair.split(':'); var v = t(p[1].trim()); if (v) el.setAttribute(p[0].trim(), v);
+      });
+    });
+    document.title = t('meta.title');
+    var desc = $('meta[name="description"]');
+    if (desc) desc.setAttribute('content', t('meta.description'));
+    $$('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
+    renderBrand();
+    $$('[data-count]').forEach(function (el) { if (el._done !== false) renderCount(el, +el.getAttribute('data-count')); });
+    try { localStorage.setItem('cameleon-lang', lang); } catch (e) {}
+  }
 
   // Mobile menu
   var nav = $('.nav');
@@ -21,31 +51,41 @@
       a.addEventListener('click', function () { nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); });
     });
   }
+  $$('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b.getAttribute('data-lang') === lang) return;
+      applyLang(b.getAttribute('data-lang'));
+      if (motion) M.animate('main', { opacity: [0.4, 1] }, { duration: 0.35, ease: 'easeOut' });
+    });
+  });
 
   // Brand studio: previews the visitor's brand on the product photos. Runs in the browser only, nothing is sent anywhere.
-  var TEES = { black: 'black', charcoal: 'charcoal', heather: 'heather grey', ecru: 'ecru', mint: 'mint' };
-  var INKS = { mint: ['#aeff6e', 'Mint'], white: ['#fbfbf3', 'White'], camo: ['#2f2e0c', 'Camo'] };
+  var TEES = ['black', 'charcoal', 'heather', 'ecru', 'mint'];
+  var INKS = { mint: '#aeff6e', white: '#fbfbf3', camo: '#2f2e0c' };
   var state = { brand: '', tee: 'black', ink: 'mint', touched: false };
   var input = $('#brandInput');
   var company = $('#quoteForm [name="company"]');
   var autoCompany = '';
 
-  function brandText() { return state.brand.trim() || 'YOUR LOGO'; }
+  function brandText() { return state.brand.trim() || t('brand.default'); }
   function describe() {
-    var tee = TEES[state.tee];
-    return INKS[state.ink][1] + ' ink on ' + (/^[aeiou]/.test(tee) ? 'an ' : 'a ') + tee + ' tee';
+    var tee = t('tee.' + state.tee), ink = t('ink.' + state.ink);
+    return fill(t('describe'), { tee: tee, ink: ink, Ink: cap(ink), a: /^[aeiou]/.test(tee) ? 'an' : 'a' });
   }
+  function teeAlt(name) { var tee = t('tee.' + name); return fill(t('studio.teeAlt'), { tee: tee, Tee: cap(tee) }); }
 
   function renderBrand() {
-    var t = brandText();
-    $$('[data-brand]').forEach(function (el) { el.textContent = t; el.style.setProperty('--len', Math.max(t.length, 6)); });
+    var text = brandText();
+    $$('[data-brand]').forEach(function (el) { el.textContent = text; el.style.setProperty('--len', Math.max(text.length, 6)); });
     $$('[data-brand-svg]').forEach(function (el) {
-      el.textContent = t;
-      if (t.length > 11) { el.setAttribute('textLength', '150'); el.setAttribute('lengthAdjust', 'spacingAndGlyphs'); }
+      el.textContent = text;
+      if (text.length > 11) { el.setAttribute('textLength', '150'); el.setAttribute('lengthAdjust', 'spacingAndGlyphs'); }
       else { el.removeAttribute('textLength'); el.removeAttribute('lengthAdjust'); }
     });
-    var desc = $('[data-preview-desc]');
-    if (desc) desc.textContent = describe();
+    var d = $('[data-preview-desc]');
+    if (d) d.textContent = describe();
+    var current = $('.studio__img.is-current');
+    if (current) current.alt = teeAlt(state.tee);
   }
 
   function pulse() {
@@ -69,8 +109,8 @@
     var finish = function () {
       next.classList.add('is-current'); cur.classList.remove('is-current');
       next.style.zIndex = ''; next.style.opacity = '';
-      next.alt = TEES[name].charAt(0).toUpperCase() + TEES[name].slice(1) + ' t-shirt on a hanger against grey brick, previewing your brand printed on the chest';
-      next.removeAttribute('aria-hidden'); cur.alt = ''; cur.setAttribute('aria-hidden', 'true');
+      next.alt = teeAlt(name); next.removeAttribute('aria-hidden');
+      cur.alt = ''; cur.setAttribute('aria-hidden', 'true');
       swapping = false;
       if (queued && queued !== name) { var q = queued; queued = null; setTee(q); } else { queued = null; }
     };
@@ -85,7 +125,7 @@
   function preloadTees() {
     if (preloaded) return;
     preloaded = true;
-    Object.keys(TEES).forEach(function (n) { var i = new Image(); i.src = 'img/tee-' + n + '.webp'; });
+    TEES.forEach(function (n) { var i = new Image(); i.src = 'img/tee-' + n + '.webp'; });
   }
   var studio = $('#studio');
   if (studio) {
@@ -105,33 +145,40 @@
     radio.addEventListener('change', function () {
       state.touched = true;
       if (radio.name === 'tee') { state.tee = radio.value; setTee(radio.value); }
-      if (radio.name === 'ink') { state.ink = radio.value; root.style.setProperty('--print-ink', INKS[radio.value][0]); pulse(); }
+      if (radio.name === 'ink') { state.ink = radio.value; root.style.setProperty('--print-ink', INKS[radio.value]); pulse(); }
       renderBrand();
     });
   });
 
-  // Quote form: concept only, opens a prefilled email
+  // Quote form: concept only. Opens a pre-filled email with no recipient until Caméléon has its own inbox.
   var form = document.getElementById('quoteForm');
   if (form) {
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
       var d = new FormData(form);
+      var sep = t('mail.sep');
       var lines = [
-        'Product: ' + d.get('product'),
-        'Quantity: ' + d.get('qty'),
-        'Name: ' + d.get('name'),
-        'Company: ' + (d.get('company') || '-'),
-        'Email: ' + d.get('email'),
-        'Need it by: ' + (d.get('date') || '-')
+        t('mail.product') + sep + d.get('product'),
+        t('mail.qty') + sep + d.get('qty'),
+        t('mail.name') + sep + d.get('name'),
+        t('mail.company') + sep + (d.get('company') || '-'),
+        t('mail.email') + sep + d.get('email'),
+        t('mail.date') + sep + (d.get('date') || '-')
       ];
-      if (state.touched) lines.push('Preview: "' + brandText() + '", ' + describe().toLowerCase());
+      if (state.touched) lines.push(t('mail.preview') + sep + '"' + brandText() + '", ' + describe().toLowerCase());
       lines.push('', d.get('notes') || '');
-      var subject = 'Quote request: ' + d.get('product') + ' x ' + d.get('qty');
-      window.location.href = 'mailto:info@wearables.ca?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+      var subject = fill(t('mail.subject'), { product: d.get('product'), qty: d.get('qty') });
+      window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
       form.classList.add('is-sent');
     });
   }
 
+  // Count-up numbers read their prefix/suffix at render time, so a language switch re-renders them correctly
+  function renderCount(el, v) {
+    el.textContent = (el.getAttribute('data-prefix') || '') + Math.round(v) + (el.getAttribute('data-suffix') || '');
+  }
+
+  applyLang(storedLang() || 'fr');
   if (motion) initMotion();
   root.classList.remove('motion-pending');
 
@@ -159,11 +206,10 @@
     // Count-up numbers
     $$('[data-count]').forEach(function (el) {
       var to = +el.getAttribute('data-count');
-      var pre = el.getAttribute('data-prefix') || '';
-      var suf = el.getAttribute('data-suffix') || '';
-      el.textContent = pre + '0' + suf;
+      el._done = false;
+      renderCount(el, 0);
       M.inView(el, function () {
-        M.animate(0, to, { duration: 1.4, ease: ease, onUpdate: function (v) { el.textContent = pre + Math.round(v) + suf; } });
+        M.animate(0, to, { duration: 1.4, ease: ease, onUpdate: function (v) { renderCount(el, v); } }).then(function () { el._done = true; renderCount(el, to); });
       }, { amount: 0.6 });
     });
 

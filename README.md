@@ -1,36 +1,51 @@
-# Caméléon — concept redesign by Kreeative
+# Caméléon — concept by Kreeative
 
-A one-page pitch redesign for SQP Enterprises Inc. (Ajax, ON; today
-[Wearables.ca](https://wearables.ca)), shown under the working name **Caméléon**, prepared
-by [Kreeative](https://kreeative.xyz).
-**This is a design proposal, not the client's official site.**
+A one-page concept site for **Caméléon**, a custom merch brand (apparel, accessories and USB
+drives), designed by [Kreeative](https://kreeative.xyz). It is bilingual, with French by
+default and English one click away.
+**This is a design proposal, not a live business website yet.**
 
-Live: https://wearables-concept.vercel.app
+Live: https://cameleon-concept.vercel.app (once `kreeative/cameleon-concept` is linked to Vercel)
 
 ## Ground rules
 
-- Keep the "Concept redesign by Kreeative" bar, the footer note and
-  `<meta name="robots" content="noindex">` on every page.
-- No real forms that collect data or payments. Until the client signs, the quote
-  form only opens a prefilled email to info@wearables.ca.
+- Keep the concept bar, the footer note and `<meta name="robots" content="noindex">` until
+  the site goes live for real.
+- No real forms that collect data or payments. The quote form opens a pre-filled email.
+  The recipient is left blank until Caméléon has its own inbox; add it in `site.js`
+  (`mailto:` in the quote form handler).
+- The contact section says "coming soon" until Caméléon's details exist. Replace it in
+  `index.html` (`#contact`) and add the strings to `i18n.js`.
 
 ## Stack
 
 Plain static HTML, CSS and JS, with no build step.
 
 ```
-index.html    markup and content
-style.css     brand tokens, layout, responsive rules
-site.js       brand studio, quote form -> prefilled mailto, Motion animations
-favicon.svg   site icon
-img/          product and lifestyle photos (WebP), og.jpg link preview
+index.html    markup, French by default (works without JavaScript)
+i18n.js       every string in French (Quebec) and English
+style.css     palette tokens, layout, responsive rules
+site.js       FR/EN switch, brand studio, quote form -> pre-filled email, Motion animations
+favicon.svg   Caméléon mark (mint tile, curled chameleon-tail spiral)
+img/          black-and-white photos, recoloured tees, og.jpg link preview
 ```
 
-Palette: Printify's brand colours. Mint green `#AEFF6E` for buttons and accents,
-camouflage `#2F2E0C` for text and dark sections, ecru white `#FBFBF3` for the
-background, plus white. Green text uses a deeper `#4A7A12`, because mint on a light
-background is unreadable. Fonts are Inter Tight (display) and Inter (body) from Google
-Fonts. The tokens live in `:root` at the top of `style.css`.
+### Languages
+
+Text is marked with `data-i18n` (plain text), `data-i18n-html` (text with markup) or
+`data-i18n-attr="attribute:key"` (alt, placeholder, aria-label…), and `site.js` swaps in the
+strings from `i18n.js`. The FR | EN switch sits in the header, or inside the menu on
+phones. The choice is remembered on the device, and `?lang=en` or `?lang=fr` links open a
+given language. To edit copy, change it in `i18n.js`, and also in `index.html` for French,
+which is the no-JavaScript fallback.
+
+### Palette
+
+Printify's brand colours. Mint green `#AEFF6E` for buttons and accents, camouflage
+`#2F2E0C` for text and dark sections, ecru white `#FBFBF3` for the background, plus white.
+Green text uses a deeper `#4A7A12`, because mint on a light background is unreadable.
+Fonts are Inter Tight (display) and Inter (body) from Google Fonts. The tokens live in
+`:root` at the top of `style.css`.
 
 Photos are neutral (black and white) so mint stays the only colour. The tee in the brand
 studio is one photo recoloured into black, charcoal, heather grey, ecru and mint on a
@@ -38,11 +53,10 @@ grey brick wall, which keeps the print in the same place on every colour.
 
 ### Brand studio
 
-The hero lets a visitor type their brand, pick a tee colour (black, charcoal, heather,
-ecru, mint) and an ink (mint, white, camo). The name is printed live on the tee, the
-tote, the eco USB drive, the laptop "autorun" screen and the quote preview card, and
-it pre-fills the quote form's Company field and email. It all runs in the browser.
-Nothing is sent or stored.
+The hero lets a visitor type their brand, pick a tee colour and an ink. The name is printed
+live on the tee, the tote, the eco USB drive, the laptop "autorun" screen and the quote
+preview card, and it pre-fills the quote form's Company field and email. It all runs in the
+browser. Nothing is sent or stored.
 
 ### Motion
 
@@ -59,15 +73,15 @@ safety timeout in `<head>` reveals the page if scripts never run.
 
 ```bash
 python3 -m http.server 8000
-# then visit http://localhost:8000
+# then visit http://localhost:8000 (add ?lang=en for English)
 ```
 
-Check both 1440 px and 390 px wide before pushing. There should be no horizontal
-scroll on a phone.
+Check both 1440 px and 390 px wide, in both languages, before pushing. There should be no
+horizontal scroll on a phone.
 
 ## Deploy
 
-The Vercel project `wearables-concept` deploys every push to `main` to production.
+The Vercel project `cameleon-concept` deploys every push to `main` to production.
 
 ## Photo credits
 

@@ -64,10 +64,18 @@ p { margin: 0 0 1em; }
 .brand__spiral { stroke: var(--camo); }
 .brand em { color: var(--accent-text); font-style: normal; }
 .nav__links { display: flex; gap: 26px; font-size: 15px; font-weight: 500; color: var(--ink-60); }
-.nav__links a, .nav__phone { white-space: nowrap; }
+.nav__links a { white-space: nowrap; }
 .nav__links a:hover { color: var(--ink); }
 .nav__actions { display: flex; align-items: center; gap: 16px; }
-.nav__phone { font-weight: 600; font-size: 15px; }
+/* FR | EN switch: in the header on larger screens, inside the menu on phones */
+.lang { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); }
+.lang button {
+  padding: 6px 9px; border: 0; border-radius: 999px; background: none; cursor: pointer;
+  font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--ink-60);
+}
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--ecru); }
+.lang button:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+.lang--menu { display: none; }
 .nav__toggle { display: none; width: 40px; height: 40px; border: 0; background: none; cursor: pointer; padding: 8px; }
 .nav__toggle span { display: block; height: 2px; background: var(--ink); margin: 6px 0; transition: transform .2s; }
 .progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--accent-text); transform: scaleX(0); transform-origin: left; }
@@ -211,7 +219,7 @@ p { margin: 0 0 1em; }
 .feature__photo img { position: absolute; left: 0; top: -7%; width: 100%; height: 114%; object-fit: cover; }
 .eco-drive { position: absolute; left: 7%; bottom: 0; width: 50%; filter: drop-shadow(0 18px 22px rgba(0,0,0,.35)); }
 .eco-badge {
-  position: absolute; display: flex; flex-direction: column; padding: 10px 14px; border-radius: 14px; background: #fff;
+  position: absolute; display: flex; flex-direction: column; max-width: calc(50% - 24px); padding: 10px 14px; border-radius: 14px; background: #fff;
   box-shadow: 0 18px 36px -22px rgba(31,31,31,.6);
 }
 .eco-badge b { font-family: var(--font-display); font-size: 26px; line-height: 1.05; font-variant-numeric: tabular-nums; }
@@ -254,18 +262,17 @@ p { margin: 0 0 1em; }
 }
 .quote__form input:focus, .quote__form select:focus, .quote__form textarea:focus { outline: 2px solid var(--accent-text); outline-offset: 1px; border-color: transparent; }
 .quote__full { grid-column: 1 / -1; }
-.quote__form.is-sent::after { content: "Your email app should be open with the request. We reply within one business day."; grid-column: 1 / -1; font-size: 14px; color: var(--accent-text); font-weight: 600; }
+.quote__form.is-sent::after { content: attr(data-sent); grid-column: 1 / -1; font-size: 14px; color: var(--accent-text); font-weight: 600; }
 
 /* Contact */
 .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-.contact address { font-style: normal; font-size: 18px; margin-bottom: 16px; }
-.contact__lines { font-size: 17px; line-height: 1.7; }
-.contact__lines a { color: var(--accent-text); font-weight: 600; }
-.contact__hours { color: var(--ink-60); }
-.map-bg { fill: var(--sand); } .map-road { stroke: var(--line); } .map-water { stroke: var(--eco); } .map-pin { fill: var(--camo); } .map-dot { fill: var(--accent); } .map-label { fill: var(--ink); }
-.contact__map svg { width: 100%; border-radius: var(--radius); border: 1px solid var(--line); }
-.map-pulse { fill: var(--accent-text); transform-box: fill-box; transform-origin: center; animation: ping 2.4s ease-out infinite; }
-@keyframes ping { from { transform: scale(1); opacity: .5; } to { transform: scale(2.8); opacity: 0; } }
+.contact__text { max-width: 42ch; margin-bottom: 24px; color: var(--ink-60); }
+.contact__art {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 260px;
+  padding: clamp(24px, 4vw, 40px); border-radius: 28px; background: var(--accent); color: var(--camo);
+}
+.contact__art svg { width: clamp(72px, 10vw, 112px); height: auto; stroke: var(--camo); }
+.contact__art p { max-width: 16ch; margin: 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.05; letter-spacing: -0.02em; }
 
 /* Footer */
 .footer { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 28px var(--pad) 40px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-60); }
@@ -277,14 +284,12 @@ p { margin: 0 0 1em; }
 
 /* Responsive */
 @media (max-width: 1280px) {
-  .nav__phone { display: none; }
   .nav__links { gap: 22px; }
 }
 @media (max-width: 1100px) {
   .nav__links { display: none; }
   .nav__toggle { display: block; }
   .nav.is-open .nav__links { display: flex; flex-direction: column; position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--line); padding: 16px var(--pad) 24px; gap: 16px; font-size: 18px; }
-  .nav__phone { display: none; }
 }
 @media (max-width: 1000px) {
   .hero, .feature, .quote, .contact { grid-template-columns: 1fr; }
@@ -317,6 +322,11 @@ p { margin: 0 0 1em; }
   .eco-badge span { font-size: 11px; }
   .quote__form { grid-template-columns: 1fr; padding: 20px; }
 }
+@media (max-width: 480px) {
+  .lang--bar { display: none; }
+  .nav.is-open .lang--menu { display: inline-flex; align-self: flex-start; }
+  .lang--menu button { font-size: 14px; padding: 8px 14px; }
+}
 @media (max-width: 359px) {
   .nav { gap: 8px; }
   .nav__actions { gap: 4px; }
@@ -326,7 +336,7 @@ p { margin: 0 0 1em; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .studio__dot, .map-pulse, .screen__bar::after { animation: none; }
+  .studio__dot, .screen__bar::after { animation: none; }
   .card, .card__media img, .card__zoom, .print { transition: none; }
 }
 

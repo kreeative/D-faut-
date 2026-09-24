@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr-CA">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Caméléon concept — custom-decorated apparel, accessories & USB drives, Ajax ON</title>
-  <meta name="description" content="Concept redesign by Kreeative for SQP Enterprises Inc., under the working name Caméléon. Custom-decorated apparel, accessories and USB flash drives, decoration and set-up included from 12 pieces.">
+  <title>Caméléon — merch personnalisé&nbsp;: vêtements, accessoires et clés USB (concept)</title>
+  <meta name="description" content="Concept par Kreeative. Caméléon&nbsp;: vêtements, accessoires et clés USB personnalisés, décoration et mise en route incluses dès 12 pièces.">
   <meta name="robots" content="noindex">
-  <meta property="og:title" content="Caméléon — concept redesign by Kreeative">
-  <meta property="og:description" content="Caméléon: custom merch that takes on your colours. Live brand preview, clear catalogue, instant quote request, eco USB drives front and centre.">
-  <meta property="og:image" content="https://wearables-concept.vercel.app/img/og.jpg">
+  <meta property="og:title" content="Caméléon — concept par Kreeative">
+  <meta property="og:description" content="Du merch qui prend vos couleurs&nbsp;: aperçu de votre marque en direct, catalogue clair, demande de soumission instantanée. Français et anglais.">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:locale:alternate" content="en_CA">
+  <meta property="og:image" content="https://cameleon-concept.vercel.app/img/og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
@@ -21,32 +23,40 @@
   <!-- Hide animated elements until Motion takes over; always reveal after 3 s in case the script never loads -->
   <script>document.documentElement.classList.add('js', 'motion-pending'); setTimeout(function () { document.documentElement.classList.remove('motion-pending'); }, 3000);</script>
   <script src="https://cdn.jsdelivr.net/npm/motion@13.4.3/dist/motion.js" defer></script>
+  <script src="i18n.js" defer></script>
   <script src="site.js" defer></script>
 </head>
 <body>
 
 <div class="concept-bar" role="note">
-  <span><strong>Concept redesign</strong> prepared by <a href="https://kreeative.xyz">Kreeative</a> for SQP Enterprises Inc. under the working name Caméléon. This is a design proposal, not an official website.</span>
-  <a class="concept-bar__cta" href="https://cal.com/kreeative/quick-chat">Book 15 min with Kee</a>
+  <span data-i18n-html="concept.text"><strong>Concept</strong> préparé par <a href="https://kreeative.xyz">Kreeative</a>. Caméléon est une proposition de design, pas encore un site officiel.</span>
+  <a class="concept-bar__cta" href="https://cal.com/kreeative/quick-chat" data-i18n="concept.cta">Réserver 15 min avec Kee</a>
 </div>
 
 <header class="nav">
-  <a class="brand" href="#top" aria-label="Caméléon home">
+  <a class="brand" href="#top" aria-label="Caméléon, accueil" data-i18n-attr="aria-label:nav.home">
     <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><rect class="brand__tile" x="1" y="1" width="38" height="38" rx="11"/><path class="brand__spiral" d="M20 9.5a10.5 10.5 0 1 0 10.5 10.5c0-4.1-3.4-7.5-7.5-7.5a5.3 5.3 0 0 0-5.3 5.3c0 2.7 2.2 4.9 4.9 4.9 1.9 0 3.4-1.5 3.4-3.4" fill="none" stroke-width="3" stroke-linecap="round"/></svg>
     <span>Caméléon</span>
   </a>
   <nav class="nav__links" id="menu">
-    <a href="#flash-drives">Flash drives</a>
-    <a href="#wearables">Wearables</a>
-    <a href="#accessories">Accessories</a>
-    <a href="#packaging">Packaging</a>
-    <a href="#data">Data services</a>
-    <a href="#contact">Contact</a>
+    <a href="#flash-drives" data-i18n="nav.flash">Clés USB</a>
+    <a href="#wearables" data-i18n="nav.wear">Vêtements</a>
+    <a href="#accessories" data-i18n="nav.acc">Accessoires</a>
+    <a href="#packaging" data-i18n="nav.pack">Emballage</a>
+    <a href="#data" data-i18n="nav.data">Services de données</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+    <div class="lang lang--menu" role="group" aria-label="Langue" data-i18n-attr="aria-label:lang.label">
+      <button type="button" data-lang="fr" lang="fr" aria-pressed="true">Français</button>
+      <button type="button" data-lang="en" lang="en" aria-pressed="false">English</button>
+    </div>
   </nav>
   <div class="nav__actions">
-    <a class="nav__phone" href="tel:+12894044001">(289) 404-4001</a>
-    <a class="btn btn--primary" href="#quote">Get a quote</a>
-    <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
+    <div class="lang lang--bar" role="group" aria-label="Langue" data-i18n-attr="aria-label:lang.label">
+      <button type="button" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn--primary" href="#quote" data-i18n="nav.cta">Soumission</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Menu" data-i18n-attr="aria-label:nav.menu"><span></span><span></span></button>
   </div>
   <div class="progress" aria-hidden="true"></div>
 </header>
@@ -56,17 +66,17 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero__copy">
-      <p class="eyebrow" data-hero>Ajax, Ontario · Shipping across Canada</p>
-      <h1 data-hero>Your logo on the things people actually keep.</h1>
-      <p class="lead" data-hero>Custom-decorated wearables, accessories and USB flash drives for teams, events and brands. <strong>Decoration and set-up are included</strong> from 12 pieces, so the price you see is the price you pay.</p>
+      <p class="eyebrow" data-hero data-i18n="hero.eyebrow">Du merch qui prend vos couleurs</p>
+      <h1 data-hero data-i18n="hero.title">Votre logo sur les objets qu’on garde vraiment.</h1>
+      <p class="lead" data-hero data-i18n-html="hero.lead">Vêtements, accessoires et clés USB personnalisés pour les équipes, les événements et les marques. <strong>Décoration et mise en route incluses</strong> dès 12 pièces&nbsp;: le prix affiché, c’est le prix payé.</p>
       <div class="hero__actions" data-hero>
-        <a class="btn btn--primary btn--lg" href="#quote">Request a quote</a>
-        <a class="btn btn--ghost btn--lg" href="#catalogue">Browse the catalogue</a>
+        <a class="btn btn--primary btn--lg" href="#quote" data-i18n="hero.cta1">Demander une soumission</a>
+        <a class="btn btn--ghost btn--lg" href="#catalogue" data-i18n="hero.cta2">Voir le catalogue</a>
       </div>
       <ul class="hero__proof" data-hero>
-        <li><b data-count="12" data-suffix="+">12+</b> pieces, decoration included</li>
-        <li><b data-count="48" data-suffix=" h">48 h</b> proof turnaround</li>
-        <li><b>Eco</b> plant-based USB options</li>
+        <li><b data-count="12" data-suffix="+">12+</b> <span data-i18n="hero.proof1">pièces, décoration incluse</span></li>
+        <li><b data-count="48" data-suffix=" h">48 h</b> <span data-i18n="hero.proof2">pour recevoir l’épreuve</span></li>
+        <li><b data-i18n="hero.proof3b">Éco</b> <span data-i18n="hero.proof3">clés USB d’origine végétale</span></li>
       </ul>
     </div>
 
@@ -74,62 +84,62 @@
       <div class="studio__stage">
         <figure class="studio__main">
           <div class="studio__photo">
-            <img class="studio__img is-current" src="img/tee-black.webp" width="800" height="1000" alt="Black t-shirt on a hanger against grey brick, previewing your brand printed on the chest" fetchpriority="high">
+            <img class="studio__img is-current" src="img/tee-black.webp" width="800" height="1000" alt="T-shirt noir sur un cintre devant un mur de briques gris, avec l’aperçu de votre marque imprimée sur la poitrine" fetchpriority="high">
             <img class="studio__img" alt="" aria-hidden="true" width="800" height="1000">
           </div>
-          <span class="print print--tee" data-brand aria-hidden="true">YOUR LOGO</span>
-          <figcaption class="studio__tag"><span class="studio__dot"></span>Live preview</figcaption>
+          <span class="print print--tee" data-brand aria-hidden="true">VOTRE LOGO</span>
+          <figcaption class="studio__tag"><span class="studio__dot"></span><span data-i18n="studio.live">Aperçu en direct</span></figcaption>
         </figure>
         <div class="float float--usb">
           <figure class="mini mini--usb">
-            <img src="img/usb.webp" width="800" height="600" alt="Silver metal USB flash drive" decoding="async">
-            <figcaption>Engraved USB</figcaption>
+            <img src="img/usb.webp" width="800" height="600" alt="Clé USB en métal argenté" decoding="async" data-i18n-attr="alt:studio.usbAlt">
+            <figcaption data-i18n="studio.usbCap">Clé USB gravée</figcaption>
           </figure>
         </div>
         <div class="float float--tote">
           <figure class="mini mini--tote">
-            <img src="img/tote.webp" width="800" height="1000" alt="Natural jute tote bag previewing your brand" decoding="async">
-            <span class="print print--tote" data-brand aria-hidden="true">YOUR LOGO</span>
-            <figcaption>Jute tote</figcaption>
+            <img src="img/tote.webp" width="800" height="1000" alt="Sac fourre-tout en jute avec l’aperçu de votre marque" decoding="async" data-i18n-attr="alt:studio.toteAlt">
+            <span class="print print--tote" data-brand aria-hidden="true">VOTRE LOGO</span>
+            <figcaption data-i18n="studio.toteCap">Sac en jute</figcaption>
           </figure>
         </div>
       </div>
 
-      <div class="studio__controls" role="group" aria-label="Preview your brand">
+      <div class="studio__controls" role="group" aria-label="Prévisualiser votre marque" data-i18n-attr="aria-label:studio.group">
         <label class="studio__field">
-          <span>Try your brand</span>
-          <input id="brandInput" type="text" maxlength="18" placeholder="YOUR LOGO" autocomplete="organization" spellcheck="false">
+          <span data-i18n="studio.try">Essayez votre marque</span>
+          <input id="brandInput" type="text" maxlength="18" placeholder="VOTRE LOGO" autocomplete="organization" spellcheck="false" data-i18n-attr="placeholder:studio.placeholder">
         </label>
         <fieldset class="swatches" data-group="tee">
-          <legend>Tee</legend>
-          <label title="Black"><input type="radio" name="tee" value="black" checked><span style="--c:#161616"></span><em class="sr">Black</em></label>
-          <label title="Charcoal"><input type="radio" name="tee" value="charcoal"><span style="--c:#3d3d3c"></span><em class="sr">Charcoal</em></label>
-          <label title="Heather grey"><input type="radio" name="tee" value="heather"><span style="--c:#8f8f8c"></span><em class="sr">Heather grey</em></label>
-          <label title="Ecru"><input type="radio" name="tee" value="ecru"><span style="--c:#edece2"></span><em class="sr">Ecru</em></label>
-          <label title="Mint"><input type="radio" name="tee" value="mint"><span style="--c:#aeff6e"></span><em class="sr">Mint</em></label>
+          <legend data-i18n="studio.tee">T-shirt</legend>
+          <label title="Noir" data-i18n-attr="title:sw.black"><input type="radio" name="tee" value="black" checked><span style="--c:#161616"></span><em class="sr" data-i18n="sw.black">Noir</em></label>
+          <label title="Charbon" data-i18n-attr="title:sw.charcoal"><input type="radio" name="tee" value="charcoal"><span style="--c:#3d3d3c"></span><em class="sr" data-i18n="sw.charcoal">Charbon</em></label>
+          <label title="Gris chiné" data-i18n-attr="title:sw.heather"><input type="radio" name="tee" value="heather"><span style="--c:#8f8f8c"></span><em class="sr" data-i18n="sw.heather">Gris chiné</em></label>
+          <label title="Écru" data-i18n-attr="title:sw.ecru"><input type="radio" name="tee" value="ecru"><span style="--c:#edece2"></span><em class="sr" data-i18n="sw.ecru">Écru</em></label>
+          <label title="Menthe" data-i18n-attr="title:sw.mint"><input type="radio" name="tee" value="mint"><span style="--c:#aeff6e"></span><em class="sr" data-i18n="sw.mint">Menthe</em></label>
         </fieldset>
         <fieldset class="swatches" data-group="ink">
-          <legend>Ink</legend>
-          <label title="Mint"><input type="radio" name="ink" value="mint" checked><span style="--c:#aeff6e"></span><em class="sr">Mint ink</em></label>
-          <label title="White"><input type="radio" name="ink" value="white"><span style="--c:#fbfbf3"></span><em class="sr">White ink</em></label>
-          <label title="Camo"><input type="radio" name="ink" value="camo"><span style="--c:#2f2e0c"></span><em class="sr">Camo ink</em></label>
+          <legend data-i18n="studio.ink">Encre</legend>
+          <label title="Encre menthe" data-i18n-attr="title:sw.inkMint"><input type="radio" name="ink" value="mint" checked><span style="--c:#aeff6e"></span><em class="sr" data-i18n="sw.inkMint">Encre menthe</em></label>
+          <label title="Encre blanche" data-i18n-attr="title:sw.inkWhite"><input type="radio" name="ink" value="white"><span style="--c:#fbfbf3"></span><em class="sr" data-i18n="sw.inkWhite">Encre blanche</em></label>
+          <label title="Encre camo" data-i18n-attr="title:sw.inkCamo"><input type="radio" name="ink" value="camo"><span style="--c:#2f2e0c"></span><em class="sr" data-i18n="sw.inkCamo">Encre camo</em></label>
         </fieldset>
       </div>
     </div>
   </section>
 
   <!-- WHO IT'S FOR -->
-  <section class="uses" aria-label="Who we make it for">
-    <p class="uses__label">Made for</p>
+  <section class="uses" aria-label="Pour qui on le fait" data-i18n-attr="aria-label:uses.aria">
+    <p class="uses__label" data-i18n="uses.label">Conçu pour</p>
     <div class="marquee">
       <div class="marquee__track">
-        <span class="chip"><img src="img/use-events.webp" width="240" height="240" alt="" loading="lazy">Trade shows &amp; events</span>
-        <span class="chip"><img src="img/use-crews.webp" width="240" height="240" alt="" loading="lazy">Crews &amp; hi-vis</span>
-        <span class="chip"><img src="img/use-schools.webp" width="240" height="240" alt="" loading="lazy">Schools</span>
-        <span class="chip"><img src="img/use-sports.webp" width="240" height="240" alt="" loading="lazy">Sports clubs</span>
-        <span class="chip"><img src="img/use-corporate.webp" width="240" height="240" alt="" loading="lazy">Corporate onboarding</span>
-        <span class="chip"><img src="img/use-community.webp" width="240" height="240" alt="" loading="lazy">Charity &amp; community</span>
-        <span class="chip"><img src="img/use-streetwear.webp" width="240" height="240" alt="" loading="lazy">Caps &amp; merch drops</span>
+        <span class="chip"><img src="img/use-events.webp" width="240" height="240" alt="" loading="lazy"><span data-i18n="uses.events">Salons et événements</span></span>
+        <span class="chip"><img src="img/use-crews.webp" width="240" height="240" alt="" loading="lazy"><span data-i18n="uses.crews">Chantiers et haute visibilité</span></span>
+        <span class="chip"><img src="img/use-schools.webp" width="240" height="240" alt="" loading="lazy"><span data-i18n="uses.schools">Écoles</span></span>
+        <span class="chip"><img src="img/use-sports.webp" width="240" height="240" alt="" loading="lazy"><span data-i18n="uses.sports">Clubs sportifs</span></span>
+        <span class="chip"><img src="img/use-corporate.webp" width="240" height="240" alt="" loading="lazy"><span data-i18n="uses.corporate">Accueil des employés</span></span>
+        <span class="chip"><img src="img/use-community.webp" width="240" height="240" alt="" loading="lazy"><span data-i18n="uses.community">Organismes et communauté</span></span>
+        <span class="chip"><img src="img/use-streetwear.webp" width="240" height="240" alt="" loading="lazy"><span data-i18n="uses.streetwear">Casquettes et collections</span></span>
       </div>
     </div>
   </section>
@@ -137,57 +147,57 @@
   <!-- CATALOGUE -->
   <section class="section" id="catalogue">
     <div class="section__head" data-reveal>
-      <p class="eyebrow">Catalogue</p>
-      <h2>Five ways to put your brand in someone's hands</h2>
+      <p class="eyebrow" data-i18n="cat.eyebrow">Catalogue</p>
+      <h2 data-i18n="cat.title">Cinq façons de mettre votre marque entre leurs mains</h2>
     </div>
     <div class="cards" data-stagger>
       <a class="card card--feature" id="flash-drives" href="#quote">
-        <div class="card__media"><img src="img/card-flash.webp" width="900" height="600" alt="USB flash drive plugged into a laptop on a wooden desk" loading="lazy" decoding="async"></div>
+        <div class="card__media"><img src="img/card-flash.webp" width="900" height="600" alt="Clé USB branchée dans un ordinateur portable sur un bureau en bois" loading="lazy" decoding="async" data-i18n-attr="alt:cat.flash.alt"></div>
         <div class="card__body">
-          <h3>Flash drives</h3>
-          <p>Classic, swivel, card, wood and plant-starch eco drives from 1 GB to 128 GB. Laser engraving or full-colour print.</p>
-          <span class="card__link">From 12 pieces →</span>
+          <h3 data-i18n="cat.flash.title">Clés USB</h3>
+          <p data-i18n="cat.flash.text">Classiques, pivotantes, format carte, en bois ou éco en amidon végétal, de 1&nbsp;Go à 128&nbsp;Go. Gravure laser ou impression pleine couleur.</p>
+          <span class="card__link" data-i18n="cat.flash.link">Dès 12 pièces →</span>
         </div>
       </a>
       <a class="card" id="wearables" href="#quote">
-        <div class="card__media"><img src="img/card-wearables.webp" width="900" height="600" alt="Blank t-shirts in assorted colours on wooden hangers" loading="lazy" decoding="async"></div>
+        <div class="card__media"><img src="img/card-wearables.webp" width="900" height="600" alt="T-shirts vierges sur des cintres en bois" loading="lazy" decoding="async" data-i18n-attr="alt:cat.wear.alt"></div>
         <div class="card__body">
-          <h3>Wearables</h3>
-          <p>T-shirts, polos, hoodies, caps and hi-vis. Screen print, embroidery or heat transfer, matched to your Pantone.</p>
-          <span class="card__link">See decoration options →</span>
+          <h3 data-i18n="cat.wear.title">Vêtements</h3>
+          <p data-i18n="cat.wear.text">T-shirts, polos, cotons ouatés, casquettes et vêtements haute visibilité. Sérigraphie, broderie ou transfert à chaud, assortis à votre Pantone.</p>
+          <span class="card__link" data-i18n="cat.wear.link">Voir les options de décoration →</span>
         </div>
       </a>
       <a class="card" id="accessories" href="#quote">
-        <div class="card__media"><img src="img/card-accessories.webp" width="900" height="600" alt="Open notebook, highlighters and a coffee on a desk" loading="lazy" decoding="async"></div>
+        <div class="card__media"><img src="img/card-accessories.webp" width="900" height="600" alt="Carnet ouvert, surligneurs et café sur un bureau" loading="lazy" decoding="async" data-i18n-attr="alt:cat.acc.alt"></div>
         <div class="card__body">
-          <h3>Accessories</h3>
-          <p>Lanyards, drinkware, power banks, pens, notebooks and tech gifts. Bundled kits for onboarding and events.</p>
-          <span class="card__link">Build a kit →</span>
+          <h3 data-i18n="cat.acc.title">Accessoires</h3>
+          <p data-i18n="cat.acc.text">Cordons, articles pour boissons, batteries portables, stylos, carnets et cadeaux techno. Trousses prêtes pour l’accueil des employés et les événements.</p>
+          <span class="card__link" data-i18n="cat.acc.link">Monter une trousse →</span>
         </div>
       </a>
       <a class="card" id="packaging" href="#quote">
-        <div class="card__media"><img src="img/card-packaging.webp" width="900" height="600" alt="Hands holding a kraft gift box tied with a ribbon" loading="lazy" decoding="async"></div>
+        <div class="card__media"><img src="img/card-packaging.webp" width="900" height="600" alt="Mains tenant une boîte-cadeau en carton nouée d’un ruban" loading="lazy" decoding="async" data-i18n-attr="alt:cat.pack.alt"></div>
         <div class="card__body">
-          <h3>Packaging</h3>
-          <p>Gift boxes, tins, sleeves and printed inserts so the unboxing feels as considered as the product.</p>
-          <span class="card__link">Packaging options →</span>
+          <h3 data-i18n="cat.pack.title">Emballage</h3>
+          <p data-i18n="cat.pack.text">Boîtes-cadeaux, boîtes en métal, fourreaux et encarts imprimés, pour un déballage aussi soigné que le produit.</p>
+          <span class="card__link" data-i18n="cat.pack.link">Options d’emballage →</span>
         </div>
       </a>
       <a class="card" id="data" href="#quote">
         <div class="card__media">
           <div class="card__zoom">
-            <img src="img/card-data.webp" width="900" height="600" alt="Laptop on a wooden table showing a custom autorun welcome screen" loading="lazy" decoding="async">
+            <img src="img/card-data.webp" width="900" height="600" alt="Ordinateur portable sur une table en bois affichant un écran de bienvenue autorun personnalisé" loading="lazy" decoding="async" data-i18n-attr="alt:cat.data.alt">
             <div class="screen" aria-hidden="true">
-              <b data-brand>YOUR LOGO</b>
-              <span>Welcome kit · autorun</span>
+              <b data-brand>VOTRE LOGO</b>
+              <span data-i18n="cat.data.screen">Trousse de bienvenue · autorun</span>
               <i class="screen__bar"></i>
             </div>
           </div>
         </div>
         <div class="card__body">
-          <h3>Data services</h3>
-          <p>Pre-loading files, autorun menus, custom volume labels, locked partitions and duplication at any quantity.</p>
-          <span class="card__link">How pre-loading works →</span>
+          <h3 data-i18n="cat.data.title">Services de données</h3>
+          <p data-i18n="cat.data.text">Préchargement de fichiers, menus autorun, noms de volume personnalisés, partitions verrouillées et duplication en toute quantité.</p>
+          <span class="card__link" data-i18n="cat.data.link">Comment fonctionne le préchargement →</span>
         </div>
       </a>
     </div>
@@ -196,108 +206,92 @@
   <!-- ECO FEATURE -->
   <section class="feature">
     <div class="feature__art">
-      <figure class="feature__photo"><img src="img/eco.webp" width="1000" height="750" alt="Fresh green leaves on a dark wooden table" loading="lazy" decoding="async" data-parallax></figure>
+      <figure class="feature__photo"><img src="img/eco.webp" width="1000" height="750" alt="Feuilles sur une table en bois foncé" loading="lazy" decoding="async" data-parallax data-i18n-attr="alt:eco.alt"></figure>
       <svg class="eco-drive" viewBox="0 0 230 90" aria-hidden="true">
         <rect x="4" y="12" width="170" height="66" rx="18" fill="#aeff6e" stroke="#2f2e0c" stroke-opacity=".18" stroke-width="2"/>
         <rect x="174" y="24" width="42" height="42" rx="5" fill="#ececec" stroke="#2f2e0c" stroke-width="4"/>
         <rect x="186" y="33" width="9" height="8" fill="#2f2e0c"/><rect x="186" y="50" width="9" height="8" fill="#2f2e0c"/>
-        <text x="89" y="53" text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="800" font-size="21" fill="#2f2e0c" data-brand-svg>YOUR LOGO</text>
+        <text x="89" y="53" text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="800" font-size="21" fill="#2f2e0c" data-brand-svg>VOTRE LOGO</text>
       </svg>
-      <div class="eco-badge eco-badge--a"><b data-count="70" data-suffix="%">70%</b><span>plant materials</span></div>
-      <div class="eco-badge eco-badge--b"><b data-count="40" data-prefix="−" data-suffix="%">−40%</b><span>plastic vs. standard</span></div>
+      <div class="eco-badge eco-badge--a"><b data-count="70" data-suffix="&nbsp;%" data-i18n-attr="data-suffix:eco.suffix">70&nbsp;%</b><span data-i18n="eco.badgeA">matières végétales</span></div>
+      <div class="eco-badge eco-badge--b"><b data-count="40" data-prefix="−" data-suffix="&nbsp;%" data-i18n-attr="data-suffix:eco.suffix">−40&nbsp;%</b><span data-i18n="eco.badgeB">de plastique</span></div>
     </div>
     <div class="feature__copy" data-reveal>
-      <p class="eyebrow">New · Eco-friendly USB</p>
-      <h2>Go green with your next promotion</h2>
-      <p>Our plant-starch drives are made from a mix of <strong>70% plant materials</strong> like corn and potatoes and 30% fillers for strength and heat tolerance, using up to <strong>40% less plastic</strong> than a standard drive. Same capacities, same decoration, better story.</p>
+      <p class="eyebrow" data-i18n="eco.eyebrow">Nouveau · Clé USB écologique</p>
+      <h2 data-i18n="eco.title">Passez au vert pour votre prochaine promo</h2>
+      <p data-i18n-html="eco.text">Nos clés en amidon végétal sont faites d’un mélange de <strong>70&nbsp;% de matières végétales</strong>, comme le maïs et la pomme de terre, et de 30&nbsp;% de charges pour la solidité et la résistance à la chaleur. Elles utilisent jusqu’à <strong>40&nbsp;% moins de plastique</strong> qu’une clé standard. Mêmes capacités, même décoration, meilleure histoire.</p>
       <ul class="checks">
-        <li>Stick, swivel, card and brick shapes</li>
-        <li>Engraved or printed logo included</li>
-        <li>Kraft gift box available to match</li>
+        <li data-i18n="eco.check1">Formats bâton, pivotant, carte et brique</li>
+        <li data-i18n="eco.check2">Logo gravé ou imprimé inclus</li>
+        <li data-i18n="eco.check3">Boîte-cadeau kraft assortie disponible</li>
       </ul>
-      <a class="btn btn--primary" href="#quote">Quote eco drives</a>
+      <a class="btn btn--primary" href="#quote" data-i18n="eco.cta">Soumission pour clés éco</a>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
   <section class="section section--dark" id="how">
     <div class="section__head" data-reveal>
-      <p class="eyebrow">How it works</p>
-      <h2>From logo to delivery in four steps</h2>
+      <p class="eyebrow" data-i18n="how.eyebrow">Comment ça marche</p>
+      <h2 data-i18n="how.title">Du logo à la livraison en quatre étapes</h2>
     </div>
     <div class="steps__line" aria-hidden="true"><i></i></div>
     <ol class="steps" data-stagger>
-      <li><figure class="step__media"><img src="img/step-pick.webp" width="720" height="480" alt="Folded blank t-shirts in assorted colours" loading="lazy" decoding="async"></figure><span>01</span><h3>Pick your products</h3><p>Choose from the catalogue or tell us the occasion and budget. We'll suggest a mix.</p></li>
-      <li><figure class="step__media"><img src="img/step-artwork.webp" width="720" height="480" alt="Designer working on a laptop at a wooden desk" loading="lazy" decoding="async"></figure><span>02</span><h3>Send your artwork</h3><p>Logo in any format. We clean it up and match your brand colours at no charge.</p></li>
-      <li><figure class="step__media"><img src="img/step-proof.webp" width="720" height="480" alt="Embroidery hoop with stitched fabric next to a coffee" loading="lazy" decoding="async"></figure><span>03</span><h3>Approve the proof</h3><p>A digital mock-up within 48 hours. Nothing goes to production until you say yes.</p></li>
-      <li><figure class="step__media"><img src="img/step-delivered.webp" width="720" height="480" alt="Packing an order into a cardboard shipping box" loading="lazy" decoding="async"></figure><span>04</span><h3>Delivered</h3><p>Decorated, packed and shipped from Ajax. Rush options for tight event dates.</p></li>
+      <li><figure class="step__media"><img src="img/step-pick.webp" width="720" height="480" alt="T-shirts vierges pliés" loading="lazy" decoding="async" data-i18n-attr="alt:how.s1.alt"></figure><span>01</span><h3 data-i18n="how.s1.title">Choisissez vos produits</h3><p data-i18n="how.s1.text">Choisissez dans le catalogue ou dites-nous l’occasion et le budget. On vous propose un assortiment.</p></li>
+      <li><figure class="step__media"><img src="img/step-artwork.webp" width="720" height="480" alt="Designer au travail sur un ordinateur portable, sur un bureau en bois" loading="lazy" decoding="async" data-i18n-attr="alt:how.s2.alt"></figure><span>02</span><h3 data-i18n="how.s2.title">Envoyez votre logo</h3><p data-i18n="how.s2.text">Votre logo, dans n’importe quel format. On le nettoie et on l’assortit à vos couleurs, sans frais.</p></li>
+      <li><figure class="step__media"><img src="img/step-proof.webp" width="720" height="480" alt="Cercle à broder avec du tissu brodé, à côté d’un café" loading="lazy" decoding="async" data-i18n-attr="alt:how.s3.alt"></figure><span>03</span><h3 data-i18n="how.s3.title">Approuvez l’épreuve</h3><p data-i18n="how.s3.text">Une maquette numérique en 48 heures. Rien ne part en production sans votre accord.</p></li>
+      <li><figure class="step__media"><img src="img/step-delivered.webp" width="720" height="480" alt="Préparation d’une commande dans une boîte d’expédition" loading="lazy" decoding="async" data-i18n-attr="alt:how.s4.alt"></figure><span>04</span><h3 data-i18n="how.s4.title">Livré</h3><p data-i18n="how.s4.text">Décoré, emballé et expédié. Options express pour les échéances serrées.</p></li>
     </ol>
   </section>
 
   <!-- QUOTE -->
   <section class="section quote" id="quote">
     <div class="quote__intro" data-reveal>
-      <p class="eyebrow">Get a quote</p>
-      <h2>Tell us what you need. We'll reply within one business day.</h2>
-      <p>No account, no minimum-order surprises. Twelve pieces and up, decoration included.</p>
+      <p class="eyebrow" data-i18n="quote.eyebrow">Soumission</p>
+      <h2 data-i18n="quote.title">Dites-nous ce qu’il vous faut. On vous répond en un jour ouvrable.</h2>
+      <p data-i18n="quote.text">Pas de compte, pas de surprise sur le minimum. Dès douze pièces, décoration incluse.</p>
       <div class="preview-card">
         <img src="img/tee-black.webp" width="800" height="1000" alt="" data-preview-img>
         <div>
-          <span class="preview-card__label">Your preview</span>
-          <b data-brand>YOUR LOGO</b>
-          <small data-preview-desc>Mint ink on a black tee</small>
+          <span class="preview-card__label" data-i18n="quote.previewLabel">Votre aperçu</span>
+          <b data-brand>VOTRE LOGO</b>
+          <small data-preview-desc>Encre menthe sur un t-shirt noir</small>
         </div>
-        <a class="preview-card__edit" href="#studio">Edit</a>
+        <a class="preview-card__edit" href="#studio" data-i18n="quote.edit">Modifier</a>
       </div>
-      <p class="quote__note">In the finished site this form lands straight in your inbox and CRM. In this concept it opens an email to info@wearables.ca.</p>
+      <p class="quote__note" data-i18n="quote.note">Dans le site final, ce formulaire arrive directement dans votre boîte de réception et votre CRM. Dans ce concept, il ouvre un courriel prérempli.</p>
     </div>
-    <form class="quote__form" id="quoteForm" data-reveal>
-      <label>Product<select name="product" required><option value="">Choose…</option><option>USB flash drives</option><option>Eco USB drives</option><option>T-shirts / hoodies</option><option>Caps / beanies</option><option>Bags / totes</option><option>Accessories kit</option><option>Packaging only</option><option>Data pre-loading</option></select></label>
-      <label>Quantity<input name="qty" type="number" min="12" placeholder="e.g. 50" required></label>
-      <label>Your name<input name="name" type="text" required></label>
-      <label>Company<input name="company" type="text"></label>
-      <label>Email<input name="email" type="email" required></label>
-      <label>Need it by<input name="date" type="date"></label>
-      <label class="quote__full">Anything else? (colours, logo placement, capacity…)<textarea name="notes" rows="3"></textarea></label>
-      <button class="btn btn--primary btn--lg quote__full" type="submit">Send quote request</button>
+    <form class="quote__form" id="quoteForm" data-reveal data-sent="Votre application de courriel devrait s’ouvrir avec la demande. On vous répond en un jour ouvrable." data-i18n-attr="data-sent:form.sent">
+      <label><span data-i18n="form.product">Produit</span><select name="product" required><option value="" data-i18n="form.choose">Choisir…</option><option data-i18n="form.opt.usb">Clés USB</option><option data-i18n="form.opt.eco">Clés USB écologiques</option><option data-i18n="form.opt.tees">T-shirts / cotons ouatés</option><option data-i18n="form.opt.caps">Casquettes / tuques</option><option data-i18n="form.opt.bags">Sacs / fourre-tout</option><option data-i18n="form.opt.kit">Trousse d’accessoires</option><option data-i18n="form.opt.pack">Emballage seulement</option><option data-i18n="form.opt.data">Préchargement de données</option></select></label>
+      <label><span data-i18n="form.qty">Quantité</span><input name="qty" type="number" min="12" placeholder="ex. 50" required data-i18n-attr="placeholder:form.qtyPh"></label>
+      <label><span data-i18n="form.name">Votre nom</span><input name="name" type="text" required></label>
+      <label><span data-i18n="form.company">Entreprise</span><input name="company" type="text"></label>
+      <label><span data-i18n="form.email">Courriel</span><input name="email" type="email" required></label>
+      <label><span data-i18n="form.date">Date souhaitée</span><input name="date" type="date"></label>
+      <label class="quote__full"><span data-i18n="form.notes">Autre chose? (couleurs, emplacement du logo, capacité…)</span><textarea name="notes" rows="3"></textarea></label>
+      <button class="btn btn--primary btn--lg quote__full" type="submit" data-i18n="form.submit">Envoyer la demande</button>
     </form>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT: Caméléon's own details go here once they exist -->
   <section class="section contact" id="contact">
     <div class="contact__block" data-reveal>
-      <p class="eyebrow">Visit or call</p>
-      <h2>SQP Enterprises Inc.</h2>
-      <address>
-        220 Clements Road West, Unit 12<br>
-        Ajax, Ontario L1S 3K5, Canada
-      </address>
-      <p class="contact__lines">
-        <a href="tel:+12894044001">Tel (289) 404-4001</a><br>
-        <span>Fax (905) 428-9846</span><br>
-        <a href="mailto:info@wearables.ca">info@wearables.ca</a>
-      </p>
-      <p class="contact__hours">Mon–Fri 9:00–17:00 · Pickup available</p>
+      <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+      <h2 data-i18n="contact.title">Parlons de votre projet</h2>
+      <p class="contact__text" data-i18n="contact.text">Coordonnées à venir. En attendant, envoyez-nous votre demande de soumission.</p>
+      <a class="btn btn--primary" href="#quote" data-i18n="contact.cta">Demander une soumission</a>
     </div>
-    <div class="contact__map" aria-hidden="true" data-reveal>
-      <svg viewBox="0 0 400 260">
-        <rect class="map-bg" width="400" height="260"/>
-        <path class="map-road" d="M0 120h400M0 180h400M80 0v260M200 0v260M320 0v260" stroke-width="6"/>
-        <path class="map-water" d="M0 60c100 20 200-20 400 10" stroke-width="16" fill="none"/>
-        <circle class="map-pulse" cx="228" cy="150" r="14" opacity=".35"/>
-        <circle class="map-pin" cx="228" cy="150" r="14"/><circle class="map-dot" cx="228" cy="150" r="5"/>
-        <text class="map-label" x="246" y="156" font-family="Inter, sans-serif" font-size="13">220 Clements Rd W</text>
-      </svg>
+    <div class="contact__art" aria-hidden="true" data-reveal>
+      <svg viewBox="0 0 40 40"><path d="M20 9.5a10.5 10.5 0 1 0 10.5 10.5c0-4.1-3.4-7.5-7.5-7.5a5.3 5.3 0 0 0-5.3 5.3c0 2.7 2.2 4.9 4.9 4.9 1.9 0 3.4-1.5 3.4-3.4" fill="none" stroke-width="3" stroke-linecap="round"/></svg>
+      <p data-i18n="contact.tagline">Du merch qui prend vos couleurs.</p>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div>
-    <strong>Caméléon</strong> · SQP Enterprises Inc. · Ajax, Ontario
-  </div>
-  <div class="footer__concept">
-    Concept redesign by <a href="https://kreeative.xyz">Kreeative</a>. Want it built and live in three weeks? <a href="https://cal.com/kreeative/quick-chat">Book a call</a> · <a href="https://kreeative.xyz/pricing/">Pricing</a>
+  <div data-i18n-html="footer.brand"><strong>Caméléon</strong> · Merch personnalisé</div>
+  <div class="footer__concept" data-i18n-html="footer.concept">
+    Concept par <a href="https://kreeative.xyz">Kreeative</a>. Vous le voulez en ligne en trois semaines? <a href="https://cal.com/kreeative/quick-chat">Réserver un appel</a> · <a href="https://kreeative.xyz/pricing/">Tarifs</a>
   </div>
 </footer>
 
