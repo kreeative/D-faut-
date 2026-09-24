@@ -1,0 +1,287 @@
+{
+ "eggs": {
+  "source": "pexels",
+  "id": 13376483,
+  "page": "https://www.pexels.com/photo/a-frying-pan-with-bacon-and-eggs-13376483/",
+  "license": "Pexels License",
+  "source_size": [
+   3000,
+   2000
+  ],
+  "box": [
+   470,
+   0,
+   2000
+  ]
+ },
+ "pancakes": {
+  "source": "pexels",
+  "id": 8366817,
+  "page": "https://www.pexels.com/photo/close-up-photo-of-food-on-plate-8366817/",
+  "license": "Pexels License",
+  "source_size": [
+   3000,
+   2000
+  ],
+  "box": [
+   398,
+   0,
+   2000
+  ]
+ },
+ "acai": {
+  "source": "pexels",
+  "id": 14167805,
+  "page": "https://www.pexels.com/photo/close-up-of-an-acai-bowl-14167805/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   2625
+  ],
+  "box": [
+   0,
+   112,
+   2400
+  ]
+ },
+ "yogurt": {
+  "source": "pexels",
+  "id": 8892364,
+  "page": "https://www.pexels.com/photo/strawberries-and-blueberries-on-white-ceramic-plate-8892364/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   3600
+  ],
+  "box": [
+   0,
+   477,
+   2400
+  ]
+ },
+ "buddha": {
+  "source": "pexels",
+  "id": 1640777,
+  "page": "https://www.pexels.com/photo/flat-lay-photography-of-vegetable-salad-on-plate-1640777/",
+  "license": "Pexels License",
+  "source_size": [
+   4000,
+   2667
+  ],
+  "box": [
+   1829,
+   534,
+   2133
+  ]
+ },
+ "poke-a": {
+  "source": "pexels",
+  "id": 4828145,
+  "page": "https://www.pexels.com/photo/overhead-shot-of-a-poke-bowl-with-chopsticks-4828145/",
+  "license": "Pexels License",
+  "source_size": [
+   2000,
+   3000
+  ],
+  "box": [
+   374,
+   985,
+   1600
+  ]
+ },
+ "poke-b": {
+  "source": "pexels",
+  "id": 4828099,
+  "page": "https://www.pexels.com/photo/overhead-shot-of-a-poke-bowl-with-seaweed-4828099/",
+  "license": "Pexels License",
+  "source_size": [
+   2000,
+   3000
+  ],
+  "box": [
+   310,
+   1050,
+   1500
+  ]
+ },
+ "salad": {
+  "source": "pexels",
+  "id": 9544258,
+  "page": "https://www.pexels.com/photo/flat-lay-photography-of-vegetable-salad-on-white-ceramic-plate-9544258/",
+  "license": "Pexels License",
+  "source_size": [
+   3000,
+   2000
+  ],
+  "box": [
+   32,
+   0,
+   2000
+  ]
+ },
+ "ramen": {
+  "source": "pexels",
+  "id": 20802552,
+  "page": "https://www.pexels.com/photo/top-view-of-a-bowl-of-ramen-20802552/",
+  "license": "Pexels License",
+  "source_size": [
+   3600,
+   2026
+  ],
+  "box": [
+   787,
+   0,
+   2026
+  ]
+ },
+ "skewers": {
+  "source": "pexels",
+  "id": 6419704,
+  "page": "https://www.pexels.com/photo/kebabs-on-top-of-green-vegetables-and-sliced-tomatoes-6419704/",
+  "license": "Pexels License",
+  "source_size": [
+   2000,
+   3000
+  ],
+  "box": [
+   0,
+   500,
+   2000
+  ]
+ },
+ "burger-a": {
+  "source": "pexels",
+  "id": 4109136,
+  "page": "https://www.pexels.com/photo/burgers-on-white-ceramic-plate-4109136/",
+  "license": "Pexels License",
+  "source_size": [
+   3000,
+   2000
+  ],
+  "box": [
+   650,
+   70,
+   1700
+  ]
+ },
+ "burger-b": {
+  "source": "pexels",
+  "id": 32072842,
+  "page": "https://www.pexels.com/photo/flat-lay-of-burgers-cap-and-camera-on-a-table-32072842/",
+  "license": "Pexels License",
+  "source_size": [
+   5000,
+   3333
+  ],
+  "box": [
+   1067,
+   1167,
+   2166
+  ]
+ },
+ "cake": {
+  "source": "pexels",
+  "id": 24247232,
+  "page": "https://www.pexels.com/photo/top-view-of-a-piece-of-chocolate-cake-on-a-plate-24247232/",
+  "license": "Pexels License",
+  "source_size": [
+   3000,
+   4000
+  ],
+  "box": [
+   150,
+   950,
+   2700
+  ]
+ },
+ "dome": {
+  "source": "pexels",
+  "id": 12622394,
+  "page": "https://www.pexels.com/photo/overhead-shot-of-dessert-on-a-plate-12622394/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   3200
+  ],
+  "box": [
+   0,
+   400,
+   2400
+  ]
+ },
+ "matcha": {
+  "source": "pexels",
+  "id": 12201275,
+  "page": "https://www.pexels.com/photo/a-matcha-latte-and-a-fruit-juice-on-a-table-12201275/",
+  "license": "Pexels License",
+  "source_size": [
+   3000,
+   4000
+  ],
+  "box": [
+   330,
+   1588,
+   2400
+  ]
+ },
+ "lemonade-a": {
+  "source": "pexels",
+  "id": 4021872,
+  "page": "https://www.pexels.com/photo/glass-of-fresh-cocktail-and-pieces-of-lemon-4021872/",
+  "license": "Pexels License",
+  "source_size": [
+   6000,
+   4000
+  ],
+  "box": [
+   2510,
+   160,
+   2000
+  ]
+ },
+ "lemonade-b": {
+  "source": "pexels",
+  "id": 6794879,
+  "page": "https://www.pexels.com/photo/lime-lemonade-in-crystal-glass-6794879/",
+  "license": "Pexels License",
+  "source_size": [
+   3000,
+   2000
+  ],
+  "box": [
+   368,
+   0,
+   2000
+  ]
+ },
+ "coffee-a": {
+  "source": "pexels",
+  "id": 544113,
+  "page": "https://www.pexels.com/photo/coffee-cup-with-latte-art-froth-on-white-surface-544113/",
+  "license": "Pexels License",
+  "source_size": [
+   2976,
+   2976
+  ],
+  "box": [
+   372,
+   401,
+   2232
+  ]
+ },
+ "coffee-b": {
+  "source": "pexels",
+  "id": 414605,
+  "page": "https://www.pexels.com/photo/ceramic-cup-with-coffee-late-art-414605/",
+  "license": "Pexels License",
+  "source_size": [
+   3000,
+   2001
+  ],
+  "box": [
+   469,
+   0,
+   2001
+  ]
+ }
+}
