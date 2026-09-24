@@ -1,7 +1,8 @@
-# Wearables.ca — concept redesign by Kreeative
+# Caméléon — concept redesign by Kreeative
 
-A one-page pitch redesign of [Wearables.ca](https://wearables.ca) for SQP Enterprises Inc.
-(Ajax, ON), prepared by [Kreeative](https://kreeative.xyz).
+A one-page pitch redesign for SQP Enterprises Inc. (Ajax, ON; today
+[Wearables.ca](https://wearables.ca)), shown under the working name **Caméléon**, prepared
+by [Kreeative](https://kreeative.xyz).
 **This is a design proposal, not the client's official site.**
 
 Live: https://wearables-concept.vercel.app
@@ -25,15 +26,23 @@ favicon.svg   site icon
 img/          product and lifestyle photos (WebP), og.jpg link preview
 ```
 
-Brand: orange `#f28c28`, charcoal `#1f1f1f`, Inter Tight (display) and Inter (body)
-from Google Fonts. Tokens live in `:root` at the top of `style.css`.
+Palette: Printify's brand colours. Mint green `#AEFF6E` for buttons and accents,
+camouflage `#2F2E0C` for text and dark sections, ecru white `#FBFBF3` for the
+background, plus white. Green text uses a deeper `#4A7A12`, because mint on a light
+background is unreadable. Fonts are Inter Tight (display) and Inter (body) from Google
+Fonts. The tokens live in `:root` at the top of `style.css`.
+
+Photos are neutral (black and white) so mint stays the only colour. The tee in the brand
+studio is one photo recoloured into black, charcoal, heather grey, ecru and mint on a
+grey brick wall, which keeps the print in the same place on every colour.
 
 ### Brand studio
 
-The hero lets a visitor type their brand, pick a tee colour and an ink colour. The
-name is printed live on the tee, the jute tote, the eco USB drive, the laptop
-"autorun" screen and the quote preview card, and it pre-fills the quote form's
-Company field and email. It all runs in the browser. Nothing is sent or stored.
+The hero lets a visitor type their brand, pick a tee colour (black, charcoal, heather,
+ecru, mint) and an ink (mint, white, camo). The name is printed live on the tee, the
+tote, the eco USB drive, the laptop "autorun" screen and the quote preview card, and
+it pre-fills the quote form's Company field and email. It all runs in the browser.
+Nothing is sent or stored.
 
 ### Motion
 
@@ -63,15 +72,15 @@ The Vercel project `wearables-concept` deploys every push to `main` to productio
 ## Photo credits
 
 All photos are licensed for commercial use and none need attribution. The
-photographers are credited here anyway. The images were cropped, resized and
-converted to WebP.
+photographers are credited here anyway. The images were cropped, converted to black
+and white (the tees recoloured) and saved as WebP.
 
 **[Burst by Shopify](https://burst.shopify.com)**: free for commercial use under the
 Burst licence.
 
 | File | Photo |
 | --- | --- |
-| `tee-grey`, `tee-cobalt`, `tee-green`, `tee-teal`, `tee-purple` | [Grey](https://burst.shopify.com/photos/grey-t-shirt), [cobalt](https://burst.shopify.com/photos/cobalt-blue-t-shirt), [green](https://burst.shopify.com/photos/green-t-shirt), [teal](https://burst.shopify.com/photos/teal-t-shirt), [purple](https://burst.shopify.com/photos/purple-t-shirt) t-shirts |
+| `tee-black`, `tee-charcoal`, `tee-heather`, `tee-ecru`, `tee-mint` | [Grey t-shirt](https://burst.shopify.com/photos/grey-t-shirt), recoloured |
 | `card-wearables` | [Rack of blank t-shirts](https://burst.shopify.com/photos/rack-of-blank-tshirts) |
 | `card-accessories` | [Notebook and coffee](https://burst.shopify.com/photos/notebook-and-coffee) |
 | `card-packaging` | [Gift package in hand](https://burst.shopify.com/photos/gift-package-in-hand) |

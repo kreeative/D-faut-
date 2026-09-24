@@ -23,15 +23,18 @@
   }
 
   // Brand studio: previews the visitor's brand on the product photos. Runs in the browser only, nothing is sent anywhere.
-  var TEES = { grey: 'heather grey', cobalt: 'cobalt', green: 'forest green', teal: 'teal', purple: 'plum' };
-  var INKS = { orange: ['#f28c28', 'Orange'], white: ['#fbf8f2', 'White'], charcoal: ['#1f1f1f', 'Charcoal'] };
-  var state = { brand: '', tee: 'grey', ink: 'orange', touched: false };
+  var TEES = { black: 'black', charcoal: 'charcoal', heather: 'heather grey', ecru: 'ecru', mint: 'mint' };
+  var INKS = { mint: ['#aeff6e', 'Mint'], white: ['#fbfbf3', 'White'], camo: ['#2f2e0c', 'Camo'] };
+  var state = { brand: '', tee: 'black', ink: 'mint', touched: false };
   var input = $('#brandInput');
   var company = $('#quoteForm [name="company"]');
   var autoCompany = '';
 
   function brandText() { return state.brand.trim() || 'YOUR LOGO'; }
-  function describe() { return INKS[state.ink][1] + ' ink on a ' + TEES[state.tee] + ' tee'; }
+  function describe() {
+    var tee = TEES[state.tee];
+    return INKS[state.ink][1] + ' ink on ' + (/^[aeiou]/.test(tee) ? 'an ' : 'a ') + tee + ' tee';
+  }
 
   function renderBrand() {
     var t = brandText();
@@ -66,7 +69,7 @@
     var finish = function () {
       next.classList.add('is-current'); cur.classList.remove('is-current');
       next.style.zIndex = ''; next.style.opacity = '';
-      next.alt = TEES[name].charAt(0).toUpperCase() + TEES[name].slice(1) + ' t-shirt on a hanger, previewing your brand printed on the chest';
+      next.alt = TEES[name].charAt(0).toUpperCase() + TEES[name].slice(1) + ' t-shirt on a hanger against grey brick, previewing your brand printed on the chest';
       next.removeAttribute('aria-hidden'); cur.alt = ''; cur.setAttribute('aria-hidden', 'true');
       swapping = false;
       if (queued && queued !== name) { var q = queued; queued = null; setTee(q); } else { queued = null; }
