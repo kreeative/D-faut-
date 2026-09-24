@@ -24,7 +24,7 @@ Opening `index.html` straight from disk works too.
 
 - **Menu**: category chips, search, a "Chef's pick" feature card, favorites,
   "in your cart" badges and an open/closed status in the restaurant's time zone.
-- **Dish detail**: large plate with floating garnish, prep time, dietary tags,
+- **Dish detail**: a large top-down photo of the dish, prep time, dietary tags,
   option groups (single choice or "up to N" extras with prices), special
   instructions, quantity and a live total.
 - **Cart**: quantity steppers, dine in / pickup / delivery, table number,
@@ -55,9 +55,9 @@ Everything a restaurant changes lives in **`js/config.js`**:
 | `taxRate`, `promoCodes` | Tax line and discount codes (`percent` or free `delivery`) |
 | `categories`, `dishes` | The menu. Each dish has a price, description, prep minutes, kcal, tags, allergens and option groups |
 
-Dish images are looked up at `assets/dishes/<dish-id>.webp`. Set `image` on a dish
-to use another file. Photos work best as top-down shots cut out on a transparent
-background, about 800×800px.
+Each dish's photo is read from `assets/dishes/<dish-id>.webp`. A 400px copy in
+`assets/dishes/thumbs/` is used for the menu grid, cart and order history. Set
+`image` (and optionally `thumb`) on a dish to use other files.
 
 ### Table QR codes
 
@@ -78,16 +78,35 @@ tracker work. To take real orders:
 Online payment (Stripe, Square, …) would go in the checkout step. The app
 deliberately never asks for card details in the page itself.
 
-## Illustrations
+## Photos
 
-The dish and garnish artwork is generated from code in `tools/illustrations/`
-(top-down plates, bowls and glasses drawn as SVG, then exported to transparent
-WebP). To tweak a dish and re-export:
+The dish photos are free stock photos from [Pexels](https://www.pexels.com/),
+used under the [Pexels License](https://www.pexels.com/license/). They are free to
+use commercially and need no attribution. Each source page below names its
+photographer. Each photo is cropped to its plate, bowl or cup and cut out as a
+circle on a transparent background.
 
-```bash
-npm i -D playwright && npx playwright install chromium
-node tools/illustrations/export.cjs          # or: … export.cjs smash-burger --svg
-```
+| Dish | Source photo |
+| --- | --- |
+| Bacon & Egg Skillet | [A frying pan with bacon and eggs](https://www.pexels.com/photo/a-frying-pan-with-bacon-and-eggs-13376483/) |
+| Fig & Berry Pancakes | [Close-up photo of food on plate](https://www.pexels.com/photo/close-up-photo-of-food-on-plate-8366817/) |
+| Yogurt & Granola Bowl | [Strawberries and blueberries on white ceramic plate](https://www.pexels.com/photo/strawberries-and-blueberries-on-white-ceramic-plate-8892364/) |
+| Garden Buddha Bowl | [Flat lay photography of vegetable salad on plate](https://www.pexels.com/photo/flat-lay-photography-of-vegetable-salad-on-plate-1640777/) |
+| Prawn Poke Bowl | [Overhead shot of a poke bowl with chopsticks](https://www.pexels.com/photo/overhead-shot-of-a-poke-bowl-with-chopsticks-4828145/) |
+| Açaí Bowl | [Close-up of an açaí bowl](https://www.pexels.com/photo/close-up-of-an-acai-bowl-14167805/) |
+| Tonkotsu Ramen | [Top view of a bowl of ramen](https://www.pexels.com/photo/top-view-of-a-bowl-of-ramen-20802552/) |
+| Lamb Kofta Skewers | [Kebabs on top of green vegetables and sliced tomatoes](https://www.pexels.com/photo/kebabs-on-top-of-green-vegetables-and-sliced-tomatoes-6419704/) |
+| Cheeseburger Duo | [Burgers on white ceramic plate](https://www.pexels.com/photo/burgers-on-white-ceramic-plate-4109136/) |
+| Chocolate Truffle Cake | [Top view of a piece of chocolate cake on a plate](https://www.pexels.com/photo/top-view-of-a-piece-of-chocolate-cake-on-a-plate-24247232/) |
+| Chocolate Sphere | [Overhead shot of dessert on a plate](https://www.pexels.com/photo/overhead-shot-of-dessert-on-a-plate-12622394/) |
+| Matcha Latte | [A matcha latte and a fruit juice on a table](https://www.pexels.com/photo/a-matcha-latte-and-a-fruit-juice-on-a-table-12201275/) |
+| Mint Lemonade | [Glass of fresh cocktail and pieces of lemon](https://www.pexels.com/photo/glass-of-fresh-cocktail-and-pieces-of-lemon-4021872/) |
+| Flat White | [Coffee cup with latte art froth on white surface](https://www.pexels.com/photo/coffee-cup-with-latte-art-froth-on-white-surface-544113/) |
+
+A real restaurant should swap these for photos of its own dishes, so guests get
+what they see. To match the look, shoot each dish from directly above. Crop a
+square around the plate, cut it out as a circle on a transparent background, and
+save it as an 800×800 WebP. Save a 400×400 copy in `thumbs/`.
 
 ## Structure
 
@@ -100,7 +119,6 @@ restaurant/
   js/store.js             cart, pricing (in cents), hours, slots, orders, storage
   js/views.js             HTML templates for every screen
   js/app.js               routing, events, panels, animations
-  assets/dishes/          dish illustrations (WebP)
-  assets/garnish/         floating garnish for the detail view
-  tools/illustrations/    generator for the artwork
+  assets/dishes/          dish photos, cut out as circles (800px WebP)
+  assets/dishes/thumbs/   400px copies for the menu grid, cart and orders
 ```

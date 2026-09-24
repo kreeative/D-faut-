@@ -60,8 +60,14 @@
     return '<span class="status status--closed"><i></i>Closed · opens ' + esc(when) + "</span>";
   }
 
-  function dishImg(d, cls, eager) {
-    return '<img class="dish-img ' + (cls || "") + '" src="' + esc(d.image) + '" alt="" width="400" height="400" ' +
+  /* Menu plates use the 400px thumbnail, or the 800px photo on dense screens */
+  function srcset(d, sizes) {
+    return d.thumb === d.image ? "" :
+      ' srcset="' + esc(d.thumb) + " 400w, " + esc(d.image) + ' 800w" sizes="' + sizes + '"';
+  }
+
+  function dishImg(d, cls, eager, sizes) {
+    return '<img class="dish-img ' + (cls || "") + '" src="' + esc(d.thumb) + '"' + srcset(d, sizes) + ' alt="" width="400" height="400" ' +
       (eager ? 'fetchpriority="high"' : 'loading="lazy"') + ' decoding="async">';
   }
 
@@ -72,7 +78,7 @@
     const n = S.qtyInCart(d.id);
     return (
       '<article class="card" style="--i:' + i + '">' +
-      '<div class="card__media">' + dishImg(d, "", i < 4) + "</div>" +
+      '<div class="card__media">' + dishImg(d, "", i < 4, "150px") + "</div>" +
       '<div class="card__body">' +
       '<h3 class="card__title"><a class="card__link" href="#/dish/' + d.id + '">' + esc(d.name) + "</a></h3>" +
       '<p class="card__desc">' + esc(d.short) + "</p>" +
@@ -93,7 +99,7 @@
       '<div class="feature__foot"><span class="price">' + S.money(S.cents(d.price)) + '</span><span class="feature__time">' +
       icon("clock") + d.minutes + " min</span></div>" +
       "</div>" +
-      '<div class="feature__media">' + dishImg(d, "", true) + "</div>" +
+      '<div class="feature__media">' + dishImg(d, "", true, "200px") + "</div>" +
       "</article>"
     );
   }
@@ -231,7 +237,7 @@
     const pr = S.orderProgress(o);
     const thumbs = o.lines.slice(0, 3).map((l) => {
       const d = S.dish(l.dishId);
-      return d ? '<img src="' + esc(d.image) + '" alt="" width="80" height="80" loading="lazy">' : "";
+      return d ? '<img src="' + esc(d.thumb) + '" alt="" width="80" height="80" loading="lazy">' : "";
     }).join("");
     const items = o.lines.map((l) => l.qty + " × " + l.name).join(", ");
     return (
@@ -353,7 +359,6 @@
   }
 
   function dishView(d, draft, { isDefault = false } = {}) {
-    const garnish = (d.garnish || []).slice(0, 3);
     const unit = S.unitPrice(d, draft.choices);
     return (
       '<div class="pview pview--dish" data-view="dish" data-id="' + d.id + '">' +
@@ -369,7 +374,6 @@
       "</div></div></header>" +
       '<div class="dish-hero">' +
       '<img class="dish-img dish-hero__img" src="' + esc(d.image) + '" alt="' + esc(d.name) + ', seen from above" width="800" height="800" fetchpriority="high">' +
-      garnish.map((g, i) => '<img class="garnish garnish--' + (i + 1) + '" src="assets/garnish/' + esc(g) + '.webp" alt="" width="120" height="120">').join("") +
       "</div>" +
       '<div class="dish-body">' +
       '<div class="dish-title"><h2 id="dishTitle" tabindex="-1">' + esc(d.name) + "</h2>" +
@@ -403,7 +407,7 @@
     const details = l.details.concat(l.note ? ["“" + l.note + "”"] : []);
     return (
       '<li class="line' + (highlight ? " is-new" : "") + '" data-key="' + esc(l.key) + '">' +
-      '<a class="line__media" href="#/dish/' + l.dishId + '" tabindex="-1" aria-hidden="true"><img class="dish-img" src="' + esc(l.dish.image) + '" alt="" width="120" height="120" loading="lazy"></a>' +
+      '<a class="line__media" href="#/dish/' + l.dishId + '" tabindex="-1" aria-hidden="true"><img class="dish-img" src="' + esc(l.dish.thumb) + '" alt="" width="120" height="120" loading="lazy"></a>' +
       '<div class="line__info"><p class="line__name">' + esc(l.dish.name) + "</p>" +
       (details.length ? '<p class="line__details">' + esc(details.join(" · ")) + "</p>" : "") +
       '<p class="line__price price">' + S.money(l.total) + "</p></div>" +
@@ -615,7 +619,7 @@
       '<div class="track">' +
       '<div class="track__ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="track__bg" cx="60" cy="60" r="56"/>' +
       '<circle class="track__fg" cx="60" cy="60" r="56" pathLength="100" data-ring style="stroke-dasharray:' + (pr.progress * 100).toFixed(1) + ' 100"/></svg>' +
-      '<img class="dish-img track__img' + (pr.done ? "" : " is-spinning") + '" src="' + esc(first.image) + '" alt="" width="400" height="400"></div>' +
+      '<img class="dish-img track__img' + (pr.done ? "" : " is-spinning") + '" src="' + esc(first.thumb) + '"' + srcset(first, "190px") + ' alt="" width="400" height="400"></div>' +
       '<p class="track__stage" data-track-stage>' + esc(pr.labels[pr.stage]) + "</p>" +
       '<h3 class="track__title" data-track-title aria-live="polite">' + esc(txt.title) + "</h3>" +
       '<p class="track__eta" data-track-eta>' + esc(txt.eta) + "</p></div>" +

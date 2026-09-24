@@ -690,16 +690,6 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   filter: var(--dish-shadow);
   animation: spin-in 1.1s var(--ease) both;
 }
-.garnish {
-  position: absolute;
-  filter: drop-shadow(6px 12px 10px rgba(60, 30, 16, 0.25));
-  animation: float 6s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-.garnish--1 { left: 1%; top: 72%; width: 22%; rotate: -18deg; animation-delay: -1s; }
-.garnish--2 { right: 0; top: 36%; width: 15%; rotate: 24deg; animation-delay: -3s; }
-.garnish--3 { right: 3%; top: 74%; width: 12%; rotate: -40deg; animation-delay: -4.5s; }
-
 .dish-body { position: relative; }
 .dish-title { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
 .dish-title h2 { font-size: 28px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; text-wrap: balance; }

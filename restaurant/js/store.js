@@ -52,7 +52,12 @@
      Menu
      ---------------------------------------------------------- */
   const dishes = R.dishes.map((d) =>
-    Object.assign({ image: "assets/dishes/" + d.id + ".webp", options: [], tags: [], allergens: [], garnish: [] }, d)
+    Object.assign({
+      image: "assets/dishes/" + d.id + ".webp",
+      // A dish with its own `image` and no `thumb` uses that image everywhere
+      thumb: d.image || "assets/dishes/thumbs/" + d.id + ".webp",
+      options: [], tags: [], allergens: [],
+    }, d)
   );
   const byId = new Map(dishes.map((d) => [d.id, d]));
   const cents = (n) => Math.round((n || 0) * 100);

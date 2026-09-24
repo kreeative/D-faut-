@@ -36,7 +36,7 @@
     headline: "Delicious Food",
     tagline: "We make fresh and healthy food",
     about:
-      "A neighbourhood kitchen cooking seasonal bowls, charcoal grill plates and all-day breakfast. " +
+      "A neighborhood kitchen cooking all-day brunch, seasonal bowls, ramen and charcoal grill plates. " +
       "Everything is made to order with produce from farms within 100 miles.",
     address: {
       line1: "48 Orchard Street",
@@ -81,7 +81,7 @@
        on its own. Turn off once js/store.js talks to a real backend. */
     demo: true,
 
-    featured: "sunrise-egg-bowl",
+    featured: "bacon-egg-skillet",
 
     tags: {
       v: { label: "Vegetarian", short: "V" },
@@ -93,101 +93,89 @@
 
     categories: [
       { id: "all", name: "All", icon: "catAll" },
+      { id: "brunch", name: "Brunch", icon: "catBrunch" },
       { id: "bowls", name: "Bowls", icon: "catBowl" },
       { id: "mains", name: "Mains", icon: "catMains" },
-      { id: "burgers", name: "Burgers", icon: "catBurger" },
       { id: "desserts", name: "Desserts", icon: "catDessert" },
       { id: "drinks", name: "Drinks", icon: "catDrink" },
     ],
 
+    /* Each dish's photo is read from assets/dishes/<id>.webp, with a smaller
+       copy in assets/dishes/thumbs/. Set `image` (and `thumb`) to use other files. */
     dishes: [
       {
-        id: "sunrise-egg-bowl", category: "bowls",
-        name: "Sunrise Egg Bowl", short: "Eggs, tomato & crispy bacon", price: 15,
+        id: "bacon-egg-skillet", category: "brunch",
+        name: "Bacon & Egg Skillet", short: "Four sunny eggs & crispy bacon", price: 15,
         description:
-          "Two sunny-side eggs over wilted spinach with crispy bacon, heirloom tomato, cucumber and fresh sage. " +
-          "Our chef's special: light, packed with protein and cooked the moment you order.",
-        minutes: 25, kcal: 520, tags: ["gf"], allergens: ["Egg"],
-        garnish: ["spinach", "basil", "sage"],
+          "Four free-range eggs fried sunny side up over crispy smoked bacon, finished with cracked black pepper. " +
+          "Our chef's pick: cooked in a hot skillet the moment you order.",
+        minutes: 20, kcal: 690, tags: ["gf"], allergens: ["Egg"],
         options: [
           {
             id: "eggs", name: "Eggs", type: "single", required: true,
             choices: [
               { id: "sunny", name: "Sunny side up", default: true },
+              { id: "over-easy", name: "Over easy" },
               { id: "scrambled", name: "Scrambled" },
-              { id: "poached", name: "Poached" },
             ],
           },
           {
             id: "extras", name: "Extras", type: "multi", max: 3,
             choices: [
-              { id: "avocado", name: "Avocado", price: 2 },
-              { id: "egg", name: "Extra egg", price: 1.5 },
               { id: "toast", name: "Sourdough toast", price: 2.5 },
+              { id: "avocado", name: "Avocado", price: 2 },
+              { id: "tomatoes", name: "Grilled tomatoes", price: 1.5 },
               { id: "halloumi", name: "Swap bacon for halloumi", price: 1 },
             ],
           },
         ],
       },
       {
-        id: "grilled-chicken-salad", category: "bowls",
-        name: "Grilled Chicken Salad", short: "Chargrilled chicken & greens", price: 12,
+        id: "berry-pancakes", category: "brunch",
+        name: "Fig & Berry Pancakes", short: "Figs, berries & maple syrup", price: 11.5,
         description:
-          "Chargrilled free-range chicken breast on crisp leaves with cherry tomatoes, red onion and our lemon-herb dressing.",
-        minutes: 20, kcal: 430, tags: ["gf", "df"], allergens: ["Mustard"],
-        garnish: ["basil", "tomato", "spinach"],
+          "Fluffy buttermilk pancakes piled with fresh figs, cherries, strawberries and blueberries, with warm maple syrup on the side.",
+        minutes: 15, kcal: 620, tags: ["v"], allergens: ["Wheat", "Milk", "Egg"],
         options: [
           {
-            id: "dressing", name: "Dressing", type: "single", required: true,
+            id: "extras", name: "Extras", type: "multi", max: 2,
             choices: [
-              { id: "lemon", name: "Lemon herb", default: true },
-              { id: "honey", name: "Honey mustard" },
-              { id: "balsamic", name: "Balsamic" },
-            ],
-          },
-          {
-            id: "extras", name: "Extras", type: "multi", max: 3,
-            choices: [
-              { id: "avocado", name: "Avocado", price: 2 },
-              { id: "feta", name: "Feta", price: 1.5 },
-              { id: "quinoa", name: "Quinoa", price: 2 },
+              { id: "cream", name: "Whipped cream", price: 1 },
+              { id: "icecream", name: "Scoop of vanilla ice cream", price: 2 },
+              { id: "pancake", name: "Extra pancake", price: 2.5 },
             ],
           },
         ],
       },
       {
-        id: "salmon-poke-bowl", category: "bowls",
-        name: "Salmon Poke Bowl", short: "Salmon, avocado & mango", price: 16.5,
+        id: "yogurt-granola-bowl", category: "brunch",
+        name: "Yogurt & Granola Bowl", short: "Greek yogurt, granola & berries", price: 8.5,
         description:
-          "Sushi-grade salmon over seasoned rice with avocado, mango, edamame, cucumber, seaweed salad and a sesame-soy dressing.",
-        minutes: 15, kcal: 610, tags: ["df"], allergens: ["Fish", "Soy", "Sesame"],
-        garnish: ["lime", "chili", "basil"],
+          "Thick Greek yogurt with our honey-toasted oat granola, raspberries and blackberries.",
+        minutes: 5, kcal: 410, tags: ["v"], allergens: ["Milk", "Oats"],
         options: [
           {
-            id: "base", name: "Base", type: "single", required: true,
+            id: "yogurt", name: "Yogurt", type: "single", required: true,
             choices: [
-              { id: "sushi", name: "Sushi rice", default: true },
-              { id: "brown", name: "Brown rice" },
-              { id: "greens", name: "Mixed greens" },
+              { id: "greek", name: "Greek yogurt", default: true },
+              { id: "coconut", name: "Coconut yogurt", price: 0.5 },
             ],
           },
           {
-            id: "extras", name: "Extras", type: "multi", max: 3,
+            id: "extras", name: "Extras", type: "multi", max: 2,
             choices: [
-              { id: "salmon", name: "Extra salmon", price: 4 },
-              { id: "avocado", name: "Extra avocado", price: 2 },
-              { id: "mayo", name: "Spicy mayo", price: 0.5 },
+              { id: "berries", name: "Extra berries", price: 1.5 },
+              { id: "honey", name: "Drizzle of honey", price: 0.5 },
             ],
           },
         ],
       },
       {
         id: "garden-buddha-bowl", category: "bowls",
-        name: "Garden Buddha Bowl", short: "Quinoa, sweet potato & tahini", price: 13.5,
+        name: "Garden Buddha Bowl", short: "Roasted veg, quinoa & herbs", price: 13.5,
         description:
-          "Roasted sweet potato, crispy chickpeas, kale, red cabbage and avocado over lemony quinoa, finished with tahini.",
-        minutes: 15, kcal: 560, tags: ["vg", "gf", "df"], allergens: ["Sesame"],
-        garnish: ["spinach", "tomato", "lemon"],
+          "Roasted broccoli, carrots, Brussels sprouts, peppers and zucchini over lemony quinoa, finished with fresh parsley and tahini.",
+        minutes: 15, kcal: 540, tags: ["vg", "gf", "df"], allergens: ["Sesame"],
         options: [
           {
             id: "protein", name: "Add protein", type: "single", required: true,
@@ -200,155 +188,174 @@
         ],
       },
       {
-        id: "garlic-chicken-skewers", category: "mains",
-        name: "Garlic Chicken Skewers", short: "Spicy with garlic", price: 14,
+        id: "prawn-poke-bowl", category: "bowls",
+        name: "Prawn Poke Bowl", short: "King prawns, avocado & chili", price: 16.5,
         description:
-          "Four skewers of chicken thigh marinated in garlic, chilli and lemon, grilled over charcoal and served with herbs.",
-        minutes: 25, kcal: 480, tags: ["gf", "df", "spicy"], allergens: [],
-        garnish: ["chili", "lemon", "basil"],
+          "Sesame king prawns over sushi rice with avocado, seaweed salad, carrot, fresh chili and crushed peanuts, dressed with soy and sesame.",
+        minutes: 15, kcal: 580, tags: ["df"], allergens: ["Crustaceans", "Soy", "Sesame", "Peanuts"],
         options: [
-          SPICE,
           {
-            id: "side", name: "Side", type: "single", required: true,
+            id: "base", name: "Base", type: "single", required: true,
             choices: [
-              { id: "none", name: "No side", default: true },
-              { id: "fries", name: "Fries", price: 3 },
-              { id: "rice", name: "Jasmine rice", price: 2.5 },
-              { id: "salad", name: "Side salad", price: 3 },
+              { id: "sushi", name: "Sushi rice", default: true },
+              { id: "brown", name: "Brown rice" },
+              { id: "greens", name: "Mixed greens" },
+            ],
+          },
+          {
+            id: "extras", name: "Extras", type: "multi", max: 3,
+            choices: [
+              { id: "prawns", name: "Extra prawns", price: 4 },
+              { id: "avocado", name: "Extra avocado", price: 2 },
+              { id: "mayo", name: "Spicy mayo", price: 0.5 },
             ],
           },
         ],
       },
       {
-        id: "spicy-miso-ramen", category: "mains",
-        name: "Spicy Miso Ramen", short: "Chashu, soft egg & corn", price: 17,
+        id: "acai-bowl", category: "bowls",
+        name: "Açaí Bowl", short: "Berries, granola & mint", price: 10.5,
         description:
-          "Wavy noodles in a rich spicy miso broth with braised pork chashu, a marinated soft egg, sweet corn, nori and scallions.",
-        minutes: 20, kcal: 720, tags: ["spicy"], allergens: ["Wheat", "Egg", "Soy", "Sesame"],
-        garnish: ["chili", "basil", "lime"],
+          "Thick açaí and berry blend topped with crunchy granola, blueberries, raspberries, blackberries, coconut flakes and fresh mint.",
+        minutes: 8, kcal: 430, tags: ["v"], allergens: ["Oats"],
         options: [
-          SPICE,
+          {
+            id: "extras", name: "Extras", type: "multi", max: 2,
+            choices: [
+              { id: "pb", name: "Peanut butter drizzle", price: 1 },
+              { id: "banana", name: "Sliced banana", price: 0.75 },
+              { id: "chia", name: "Chia seeds", price: 0.5 },
+            ],
+          },
+        ],
+      },
+      {
+        id: "tonkotsu-ramen", category: "mains",
+        name: "Tonkotsu Ramen", short: "Chashu, soft egg & bamboo", price: 17,
+        description:
+          "Springy noodles in a creamy pork-bone broth simmered for 12 hours, with rolled chashu pork, a marinated soft egg, " +
+          "bamboo shoots, spinach, wood-ear mushrooms, fish cake and scallions.",
+        minutes: 20, kcal: 760, tags: [], allergens: ["Wheat", "Egg", "Soy", "Fish", "Sesame"],
+        options: [
+          {
+            id: "broth", name: "Broth", type: "single", required: true,
+            choices: [
+              { id: "classic", name: "Classic", default: true },
+              { id: "spicy", name: "Spicy, with chili oil" },
+            ],
+          },
           {
             id: "extras", name: "Extras", type: "multi", max: 3,
             choices: [
               { id: "egg", name: "Extra soft egg", price: 1.5 },
               { id: "chashu", name: "Extra chashu", price: 3.5 },
               { id: "noodles", name: "Extra noodles", price: 2 },
+              { id: "corn", name: "Buttered corn", price: 1 },
             ],
           },
         ],
       },
       {
-        id: "smash-burger", category: "burgers",
-        name: "Double Smash Burger", short: "Two patties, cheddar & fries", price: 13,
+        id: "lamb-kofta-skewers", category: "mains",
+        name: "Lamb Kofta Skewers", short: "Spiced lamb, tomatoes & arugula", price: 16,
         description:
-          "Two crisp-edged beef patties, aged cheddar, lettuce, pickles and house sauce in a toasted sesame bun. Served with fries and ketchup.",
+          "Two chargrilled skewers of hand-minced lamb with parsley, cumin and sumac, served on arugula with heirloom cherry tomatoes, fresh chili and cilantro.",
+        minutes: 25, kcal: 640, tags: ["gf", "df", "spicy"], allergens: [],
+        options: [
+          SPICE,
+          {
+            id: "side", name: "Side", type: "single", required: true,
+            choices: [
+              { id: "none", name: "No side", default: true },
+              { id: "flatbread", name: "Warm flatbread", price: 2.5 },
+              { id: "fries", name: "Fries", price: 3 },
+              { id: "rice", name: "Saffron rice", price: 2.5 },
+            ],
+          },
+        ],
+      },
+      {
+        id: "cheeseburger-duo", category: "mains",
+        name: "Cheeseburger Duo", short: "Two cheeseburgers & house sauce", price: 14,
+        description:
+          "Two griddled beef cheeseburgers with melted cheddar, pickles and our house sauce, one in a sesame bun and one in soft brioche.",
         minutes: 15, kcal: 980, tags: [], allergens: ["Wheat", "Milk", "Egg", "Sesame", "Mustard"],
-        garnish: ["tomato", "basil", "chili"],
         options: [
           {
             id: "extras", name: "Extras", type: "multi", max: 3,
             choices: [
               { id: "bacon", name: "Smoked bacon", price: 2 },
-              { id: "patty", name: "Third patty", price: 3.5 },
+              { id: "fries", name: "Add fries", price: 3 },
               { id: "jalapeno", name: "Jalapeños", price: 0.75 },
             ],
           },
-          {
-            id: "side", name: "Side", type: "single", required: true,
-            choices: [
-              { id: "fries", name: "Fries", default: true },
-              { id: "salad", name: "Side salad" },
-              { id: "sweet", name: "Sweet potato fries", price: 1.5 },
-            ],
-          },
         ],
       },
       {
-        id: "halloumi-burger", category: "burgers",
-        name: "Halloumi Burger", short: "Grilled halloumi & side salad", price: 12.5,
+        id: "chocolate-truffle-cake", category: "desserts",
+        name: "Chocolate Truffle Cake", short: "Dark chocolate & salted caramel", price: 8.5,
         description:
-          "Chargrilled halloumi, roasted red pepper, rocket and garlic aioli in a glazed brioche bun, with a crisp side salad.",
-        minutes: 15, kcal: 760, tags: ["v"], allergens: ["Wheat", "Milk", "Egg"],
-        garnish: ["tomato", "spinach", "basil"],
+          "A tall slice of dark chocolate truffle cake with piped ganache, finished with chocolate sauce and dots of salted caramel.",
+        minutes: 5, kcal: 560, tags: ["v"], allergens: ["Wheat", "Milk", "Egg"],
         options: [
           {
             id: "extras", name: "Extras", type: "multi", max: 2,
             choices: [
-              { id: "avocado", name: "Avocado", price: 2 },
-              { id: "fries", name: "Add fries", price: 3 },
-            ],
-          },
-        ],
-      },
-      {
-        id: "berry-pancakes", category: "desserts",
-        name: "Berry Pancakes", short: "Maple, butter & fresh berries", price: 9.5,
-        description:
-          "A stack of three fluffy buttermilk pancakes with maple syrup, whipped butter, blueberries and strawberries.",
-        minutes: 15, kcal: 640, tags: ["v"], allergens: ["Wheat", "Milk", "Egg"],
-        garnish: ["blueberry", "strawberry", "mint"],
-        options: [
-          {
-            id: "extras", name: "Extras", type: "multi", max: 2,
-            choices: [
-              { id: "cream", name: "Whipped cream", price: 1 },
               { id: "icecream", name: "Scoop of vanilla ice cream", price: 2 },
+              { id: "cream", name: "Whipped cream", price: 1 },
             ],
           },
         ],
       },
       {
-        id: "molten-lava-cake", category: "desserts",
-        name: "Molten Lava Cake", short: "Warm chocolate & vanilla", price: 8,
+        id: "chocolate-sphere", category: "desserts",
+        name: "Chocolate Sphere", short: "Chocolate dome, cocoa soil & cream", price: 11,
         description:
-          "Dark chocolate cake with a molten centre, served warm with vanilla bean ice cream and fresh raspberries.",
-        minutes: 12, kcal: 590, tags: ["v"], allergens: ["Wheat", "Milk", "Egg"],
-        garnish: ["raspberry", "mint", "raspberry"],
+          "A glossy dark chocolate dome over chocolate mousse, on a trail of cocoa soil with vanilla cream, orange gel, blueberries and edible flowers.",
+        minutes: 10, kcal: 480, tags: ["v"], allergens: ["Wheat", "Milk", "Egg"],
         options: [],
       },
       {
-        id: "acai-bowl", category: "desserts",
-        name: "Açaí Bowl", short: "Banana, granola & berries", price: 10.5,
+        id: "matcha-latte", category: "drinks",
+        name: "Matcha Latte", short: "Ceremonial matcha & steamed milk", price: 5.5,
         description:
-          "Thick açaí and berry blend topped with banana, crunchy granola, strawberries, blueberries, coconut, chia and a drizzle of honey.",
-        minutes: 8, kcal: 420, tags: ["v"], allergens: ["Oats"],
-        garnish: ["blueberry", "banana", "strawberry"],
+          "Stone-ground ceremonial matcha whisked to order and topped with silky steamed milk. Also good iced.",
+        minutes: 5, kcal: 140, tags: ["v", "gf"], allergens: ["Milk"],
         options: [
+          DRINK_SIZE,
+          MILK,
           {
-            id: "extras", name: "Extras", type: "multi", max: 2,
+            id: "serve", name: "Serve", type: "single", required: true,
             choices: [
-              { id: "pb", name: "Peanut butter", price: 1 },
-              { id: "noHoney", name: "Swap honey for agave (vegan)" },
+              { id: "hot", name: "Hot", default: true },
+              { id: "iced", name: "Iced" },
             ],
           },
         ],
-      },
-      {
-        id: "iced-matcha-latte", category: "drinks",
-        name: "Iced Matcha Latte", short: "Ceremonial matcha & milk", price: 5.5,
-        description:
-          "Stone-ground ceremonial matcha whisked to order and poured over ice with your choice of milk.",
-        minutes: 5, kcal: 140, tags: ["v", "gf"], allergens: ["Milk"],
-        garnish: ["ice", "mint", "lime"],
-        options: [DRINK_SIZE, MILK],
       },
       {
         id: "mint-lemonade", category: "drinks",
         name: "Mint Lemonade", short: "Fresh lemon & garden mint", price: 4.5,
         description:
-          "Freshly squeezed lemons shaken with garden mint, a touch of cane sugar and sparkling water.",
+          "Freshly squeezed lemons muddled with garden mint and a touch of cane sugar, served over ice.",
         minutes: 3, kcal: 110, tags: ["vg", "gf", "df"], allergens: [],
-        garnish: ["lemon", "mint", "ice"],
-        options: [DRINK_SIZE],
+        options: [
+          DRINK_SIZE,
+          {
+            id: "style", name: "Style", type: "single", required: true,
+            choices: [
+              { id: "still", name: "Still", default: true },
+              { id: "sparkling", name: "Sparkling" },
+            ],
+          },
+        ],
       },
       {
         id: "flat-white", category: "drinks",
-        name: "Flat White", short: "Double ristretto & silky milk", price: 4,
+        name: "Flat White", short: "Double ristretto & velvet milk", price: 4,
         description:
-          "A double ristretto with velvety steamed milk, served with one of our almond biscuits.",
-        minutes: 4, kcal: 120, tags: ["v", "gf"], allergens: ["Milk", "Almonds"],
-        garnish: ["bean", "bean", "bean"],
+          "A double ristretto with velvety steamed milk, poured with latte art.",
+        minutes: 4, kcal: 120, tags: ["v", "gf"], allergens: ["Milk"],
         options: [
           MILK,
           {
