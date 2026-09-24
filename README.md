@@ -95,7 +95,7 @@ Burst licence.
 | File | Photo |
 | --- | --- |
 | `tee-black`, `tee-charcoal`, `tee-heather`, `tee-ecru`, `tee-mint` | [Grey t-shirt](https://burst.shopify.com/photos/grey-t-shirt), recoloured |
-| `card-wearables` | [Rack of blank t-shirts](https://burst.shopify.com/photos/rack-of-blank-tshirts) |
+| `card-apparel` | [Rack of blank t-shirts](https://burst.shopify.com/photos/rack-of-blank-tshirts) |
 | `card-accessories` | [Notebook and coffee](https://burst.shopify.com/photos/notebook-and-coffee) |
 | `card-packaging` | [Gift package in hand](https://burst.shopify.com/photos/gift-package-in-hand) |
 | `card-data` | [Laptop computer on wooden table](https://burst.shopify.com/photos/laptop-computer-on-wooden-table) |
