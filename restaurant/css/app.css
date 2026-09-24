@@ -1103,9 +1103,10 @@ html.sheet-open .toast.is-on { transform: translate(-50%, 0); }
 .flyer { position: fixed; z-index: 90; pointer-events: none; filter: var(--dish-shadow); }
 
 /* ---------- Motion ---------- */
-@keyframes rise { from { opacity: 0; transform: translateY(20px); } }
-@keyframes pv-in { from { opacity: 0; transform: translateY(12px); } }
-@keyframes spin-in { from { opacity: 0; transform: rotate(-80deg) scale(0.8); } }
+/* entrances start visible, so the first frame is never empty */
+@keyframes rise { from { opacity: 0.55; transform: translateY(18px); } }
+@keyframes pv-in { from { opacity: 0.5; transform: translateY(10px); } }
+@keyframes spin-in { from { opacity: 0.5; transform: rotate(-80deg) scale(0.82); } }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes float {
   from { transform: translate3d(0, -7px, 0) rotate(-7deg); }
