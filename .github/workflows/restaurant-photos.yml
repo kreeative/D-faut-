@@ -1,0 +1,42 @@
+name: Restaurant photos
+
+# Fetches free-licence food photos for restaurant/ (see restaurant/tools/photos/fetch.py).
+on:
+  push:
+    branches: ["claude/restaurant-food-ordering-app-2jft1i"]
+    paths:
+      - "restaurant/tools/photos/queries.json"
+      - "restaurant/tools/photos/picks.json"
+      - "restaurant/tools/photos/fetch.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: restaurant-photos
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow
+        run: pip install pillow
+
+      - name: Fetch photos
+        run: python restaurant/tools/photos/fetch.py
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add restaurant/tools/photos
+          if git diff --cached --quiet; then echo "Nothing new to commit"; exit 0; fi
+          git commit -m "Fetch restaurant photos from Unsplash"
+          git push
