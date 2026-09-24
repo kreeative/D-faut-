@@ -305,10 +305,31 @@ p { margin: 0 0 1em; }
   .nav__actions .btn { padding: 9px 14px; font-size: 14px; white-space: nowrap; }
   .brand { font-size: 20px; gap: 8px; }
   .brand__mark { width: 28px; height: 28px; }
-  .studio__stage { padding: 20px 9% 34px 11%; }
-  .mini { border-width: 3px; border-radius: 14px; }
-  .mini figcaption { font-size: 10px; padding: 2px 7px; left: 5px; bottom: 5px; }
-  .studio__controls { grid-template-columns: minmax(0, 1fr) auto; gap: 12px 16px; }
+  /* Hero: the headline sits on the full-width product photo, the studio controls come right below.
+     The two wrappers step aside so their parts can share one grid. */
+  .hero { grid-template-columns: var(--pad) minmax(0, 1fr) var(--pad); grid-template-rows: 1fr auto auto auto; gap: 0; padding: 0 0 40px; }
+  .hero__copy, .studio { display: contents; }
+  .studio__stage { grid-column: 1 / -1; grid-row: 1 / 5; align-self: stretch; display: flex; flex-direction: column; min-width: 0; padding: 0; }
+  .studio__main { flex: 1; min-height: clamp(600px, calc(100svh - 170px), 720px); aspect-ratio: auto; border-radius: 0; box-shadow: none; container-type: size; }
+  /* Darkens the lower part of the photo so the text stays readable on every tee colour; the print stays above it */
+  .studio__main::after {
+    content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: linear-gradient(to top, rgba(29, 28, 7, .92) 0, rgba(29, 28, 7, .8) 300px, rgba(29, 28, 7, 0) 420px);
+  }
+  /* The photo is cropped to fill the height, so the print follows the photo's size, not the frame's width */
+  .print--tee { font-size: min(max(8.4cqw, 6.72cqh), calc(max(62cqw, 49.6cqh) / var(--len, 9))); }
+  .studio__tag { top: 16px; left: var(--pad); }
+  .float { display: none; }
+  .hero .eyebrow, .hero h1, .hero__actions { grid-column: 2; position: relative; z-index: 3; }
+  .hero .eyebrow { grid-row: 2; color: var(--accent); }
+  .hero h1 { grid-row: 3; margin-bottom: 18px; color: var(--ecru); font-size: clamp(34px, 9.6vw, 44px); }
+  .hero__actions { grid-row: 4; flex-direction: column; gap: 10px; margin: 0 0 28px; }
+  .hero__actions .btn { width: 100%; padding: 14px 20px; }
+  .hero .btn--ghost { border-color: rgba(251, 251, 243, .6); color: var(--ecru); }
+  .hero .btn--ghost:hover { background: var(--ecru); color: var(--ink); }
+  .studio__controls { grid-column: 2; grid-row: 5; min-width: 0; margin-top: 16px; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 16px; }
+  .hero .lead { grid-column: 2; grid-row: 6; margin: 28px 0 0; }
+  .hero__proof { grid-column: 2; grid-row: 7; margin-top: 24px; }
   .swatches { gap: 6px; }
   .studio__field { grid-column: 1 / -1; }
   .uses { flex-direction: column; align-items: flex-start; gap: 10px; padding-left: 0; }
@@ -333,6 +354,7 @@ p { margin: 0 0 1em; }
   .nav__actions .btn { padding: 8px 11px; font-size: 13px; }
   .brand { font-size: 17px; gap: 6px; }
   .brand__mark { width: 24px; height: 24px; }
+  .hero h1 { font-size: 30px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

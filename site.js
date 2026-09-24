@@ -127,7 +127,7 @@
     preloaded = true;
     TEES.forEach(function (n) { var i = new Image(); i.src = 'img/tee-' + n + '.webp'; });
   }
-  var studio = $('#studio');
+  var studio = $('.studio');
   if (studio) {
     studio.addEventListener('pointerenter', preloadTees);
     studio.addEventListener('focusin', preloadTees);
