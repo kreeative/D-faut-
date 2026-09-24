@@ -109,21 +109,30 @@ def run_sheets():
 
 
 def run_download():
+    """Download each pick, crop a square around the dish and save it at <=1600px."""
     picks = json.load(open(os.path.join(HERE, "picks.json")))
     os.makedirs(os.path.join(STAGING, "full"), exist_ok=True)
     credits = {}
     for key, c in picks.items():
         try:
-            im, final = fetch(c, 1600)
+            im, final = fetch(c, c.get("w", 2400))
         except Exception as e:
-            log("FAIL", key, c, e)
+            log("FAIL", key, c["id"], e)
             continue
-        im.save(os.path.join(STAGING, "full", key + ".jpg"), quality=90)
+        W, H = im.size
+        side = int(min(W, H) * c.get("side", 1.0))
+        x0 = int(min(max(c.get("cx", 0.5) * W - side / 2, 0), W - side))
+        y0 = int(min(max(c.get("cy", 0.5) * H - side / 2, 0), H - side))
+        crop = im.crop((x0, y0, x0 + side, y0 + side))
+        if side > 1600:
+            crop = crop.resize((1600, 1600), Image.LANCZOS)
+        crop.save(os.path.join(STAGING, "full", key + ".jpg"), quality=88)
         page = ("https://www.pexels.com/photo/%s-%d/" % (c.get("slug", "photo"), c["id"]) if c["src"] == "pexels"
                 else "https://unsplash.com/photos/%s" % c["id"])
         credits[key] = {"source": c["src"], "id": c["id"], "page": page,
-                        "license": "Pexels License" if c["src"] == "pexels" else "Unsplash License"}
-        log("ok  ", key, c["src"], c["id"], im.size)
+                        "license": "Pexels License" if c["src"] == "pexels" else "Unsplash License",
+                        "source_size": [W, H], "box": [x0, y0, side]}
+        log("ok  ", key, c["id"], "source %dx%d" % (W, H), "crop %d at %d,%d" % (side, x0, y0))
     json.dump(credits, open(os.path.join(HERE, "credits.json"), "w"), indent=1)
 
 
