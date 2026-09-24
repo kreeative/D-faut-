@@ -1,19 +1,22 @@
 """Fetch free food photos for the Basil & Bloom app.
 
-Runs in GitHub Actions (see .github/workflows/restaurant-photos.yml).
+Runs in GitHub Actions (see .github/workflows/restaurant-photos.yml), because
+the development sandbox cannot reach photo sites.
 
-search mode   (no picks.json): looks up candidates on Unsplash for every entry in
-              queries.json, keeps only photos under the free Unsplash License
-              (no Unsplash+), and writes labelled contact sheets to staging/sheets/.
+sheets mode   (no picks.json): downloads a small version of every candidate in
+              sources.json and writes labelled contact sheets to staging/sheets/.
 download mode (picks.json present): downloads the chosen photos at 1600px into
               staging/full/ and records credits in credits.json.
+
+Sources: Pexels (Pexels License) and Unsplash (Unsplash License). Both allow
+free commercial use without attribution; credits are kept anyway.
 """
 import io
 import json
 import os
+import re
 import sys
 import time
-import urllib.parse
 import urllib.request
 
 from PIL import Image, ImageDraw, ImageFont
@@ -24,36 +27,49 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/126.0 Safari/537.36")
 
 
-def get(url, accept="application/json", tries=3):
+def log(*a):
+    print(*a, flush=True)
+
+
+def get(url, tries=2):
     last = None
     for i in range(tries):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": accept})
-            with urllib.request.urlopen(req, timeout=40) as r:
-                return r.read()
-        except Exception as e:  # network hiccups, 429s
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "image/avif,image/webp,image/*,*/*"})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return r.read(), r.geturl()
+        except Exception as e:
             last = e
-            time.sleep(2 + i * 3)
+            time.sleep(1 + i * 2)
     raise last
 
 
-def sized(raw_url, **params):
-    parts = urllib.parse.urlsplit(raw_url)
-    q = dict(urllib.parse.parse_qsl(parts.query))
-    q.update({k: str(v) for k, v in params.items()})
-    return urllib.parse.urlunsplit(parts._replace(query=urllib.parse.urlencode(q)))
+def pexels_urls(c, w):
+    i, slug = c["id"], c.get("slug", "")
+    q = "?auto=compress&cs=tinysrgb&w=%d" % w
+    yield "https://images.pexels.com/photos/%d/pexels-photo-%d.jpeg%s" % (i, i, q)
+    yield "https://images.pexels.com/photos/%d/pexels-photo-%d.png%s" % (i, i, q)
+    if slug:
+        yield "https://images.pexels.com/photos/%d/free-photo-of-%s.jpeg%s" % (i, slug, q)
+        yield "https://images.pexels.com/photos/%d/pexels-photo-%d/free-photo-of-%s.jpeg%s" % (i, i, slug, q)
 
 
-def is_free(p):
-    raw = (p.get("urls") or {}).get("raw", "")
-    return not p.get("premium") and not p.get("plus") and "plus.unsplash.com" not in raw
+def unsplash_urls(c, w):
+    yield "https://unsplash.com/photos/%s/download?force=true&w=%d" % (c["id"], w)
 
 
-def search(query, per_page=24):
-    url = "https://unsplash.com/napi/search/photos?" + urllib.parse.urlencode(
-        {"query": query, "per_page": per_page, "page": 1})
-    data = json.loads(get(url))
-    return [p for p in data.get("results", []) if is_free(p)]
+def fetch(c, w):
+    urls = pexels_urls(c, w) if c["src"] == "pexels" else unsplash_urls(c, w)
+    errors = []
+    for u in urls:
+        try:
+            data, final = get(u)
+            im = Image.open(io.BytesIO(data))
+            im.load()
+            return im.convert("RGB"), final
+        except Exception as e:
+            errors.append("%s -> %s" % (u.split("?")[0][-60:], e))
+    raise RuntimeError("; ".join(errors))
 
 
 def font(size):
@@ -63,82 +79,51 @@ def font(size):
         return ImageFont.load_default()
 
 
-def sheet(key, cands, tile=260, cols=5):
-    rows = (len(cands) + cols - 1) // cols
-    img = Image.new("RGB", (cols * tile, rows * (tile + 22)), (238, 238, 238))
-    draw = ImageDraw.Draw(img)
-    f = font(15)
-    for i, c in enumerate(cands):
-        x, y = (i % cols) * tile, (i // cols) * (tile + 22)
-        try:
-            th = Image.open(io.BytesIO(get(sized(c["raw"], w=tile * 2, q=70, fm="jpg", fit="max"), "image/*")))
-            th = th.convert("RGB")
-            th.thumbnail((tile - 8, tile - 8))
-            img.paste(th, (x + (tile - th.width) // 2, y + (tile - th.height) // 2))
-        except Exception as e:
-            draw.text((x + 10, y + 10), "failed: %s" % e, fill=(200, 0, 0), font=f)
-        draw.text((x + 6, y + tile + 2), "%d  %s" % (i + 1, c["id"]), fill=(20, 20, 20), font=f)
+def run_sheets():
+    sources = json.load(open(os.path.join(HERE, "sources.json")))
     os.makedirs(os.path.join(STAGING, "sheets"), exist_ok=True)
-    img.save(os.path.join(STAGING, "sheets", key + ".jpg"), quality=78, optimize=True)
-
-
-def run_search():
-    queries = json.load(open(os.path.join(HERE, "queries.json")))
-    out = {}
-    for key, qs in queries.items():
-        seen, cands = set(), []
-        limit = 10 if key.startswith("garnish") else 15
-        for q in qs:
+    status = {}
+    tile, cols = 300, 3
+    for key, cands in sources.items():
+        rows = (len(cands) + cols - 1) // cols
+        sheet = Image.new("RGB", (cols * tile, rows * (tile + 24)), (236, 236, 236))
+        draw = ImageDraw.Draw(sheet)
+        f = font(16)
+        status[key] = []
+        for n, c in enumerate(cands):
+            x, y = (n % cols) * tile, (n // cols) * (tile + 24)
+            label = "%d %s %s" % (n + 1, c["src"][0], c["id"])
             try:
-                results = search(q)
+                im, final = fetch(c, 600)
+                im.thumbnail((tile - 6, tile - 6))
+                sheet.paste(im, (x + (tile - im.width) // 2, y + (tile - im.height) // 2))
+                status[key].append({"n": n + 1, "ok": True, **c, "url": final.split("?")[0]})
+                log("ok  ", key, label)
             except Exception as e:
-                print("search failed", key, q, e)
-                continue
-            for p in results:
-                if p["id"] in seen:
-                    continue
-                seen.add(p["id"])
-                cands.append({
-                    "id": p["id"], "query": q,
-                    "alt": p.get("alt_description") or p.get("description") or "",
-                    "width": p.get("width"), "height": p.get("height"),
-                    "raw": p["urls"]["raw"],
-                    "page": (p.get("links") or {}).get("html", ""),
-                    "author": (p.get("user") or {}).get("name", ""),
-                    "author_url": ((p.get("user") or {}).get("links") or {}).get("html", ""),
-                })
-            time.sleep(1)
-        cands = cands[:limit]
-        out[key] = cands
-        print("%-24s %d candidates" % (key, len(cands)))
-        if cands:
-            sheet(key, cands)
-    json.dump(out, open(os.path.join(STAGING, "candidates.json"), "w"), indent=1)
+                draw.text((x + 8, y + 8), "failed", fill=(200, 0, 0), font=f)
+                status[key].append({"n": n + 1, "ok": False, **c, "error": str(e)[:300]})
+                log("FAIL", key, label, str(e)[:300])
+            draw.text((x + 6, y + tile + 3), label, fill=(20, 20, 20), font=f)
+        sheet.save(os.path.join(STAGING, "sheets", key + ".jpg"), quality=76, optimize=True)
+    json.dump(status, open(os.path.join(STAGING, "status.json"), "w"), indent=1)
 
 
 def run_download():
     picks = json.load(open(os.path.join(HERE, "picks.json")))
     os.makedirs(os.path.join(STAGING, "full"), exist_ok=True)
     credits = {}
-    for key, pid in picks.items():
-        p = json.loads(get("https://unsplash.com/napi/photos/" + pid))
-        if not is_free(p):
-            print("skipping non-free photo", key, pid)
+    for key, c in picks.items():
+        try:
+            im, final = fetch(c, 1600)
+        except Exception as e:
+            log("FAIL", key, c, e)
             continue
-        data = get(sized(p["urls"]["raw"], w=1600, q=86, fm="jpg", fit="max"), "image/*")
-        im = Image.open(io.BytesIO(data)).convert("RGB")
         im.save(os.path.join(STAGING, "full", key + ".jpg"), quality=90)
-        try:  # let Unsplash count the download, as their guidelines ask
-            get((p.get("links") or {}).get("download_location", ""))
-        except Exception:
-            pass
-        user = p.get("user") or {}
-        credits[key] = {
-            "photo": (p.get("links") or {}).get("html", ""), "id": pid,
-            "author": user.get("name", ""), "author_url": (user.get("links") or {}).get("html", ""),
-            "license": "Unsplash License (https://unsplash.com/license)",
-        }
-        print("downloaded", key, pid, im.size)
+        page = ("https://www.pexels.com/photo/%s-%d/" % (c.get("slug", "photo"), c["id"]) if c["src"] == "pexels"
+                else "https://unsplash.com/photos/%s" % c["id"])
+        credits[key] = {"source": c["src"], "id": c["id"], "page": page,
+                        "license": "Pexels License" if c["src"] == "pexels" else "Unsplash License"}
+        log("ok  ", key, c["src"], c["id"], im.size)
     json.dump(credits, open(os.path.join(HERE, "credits.json"), "w"), indent=1)
 
 
@@ -147,5 +132,5 @@ if __name__ == "__main__":
     if os.path.exists(os.path.join(HERE, "picks.json")):
         run_download()
     else:
-        run_search()
+        run_sheets()
     sys.exit(0)

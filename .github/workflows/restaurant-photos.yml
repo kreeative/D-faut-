@@ -1,11 +1,11 @@
 name: Restaurant photos
 
-# Fetches free-licence food photos for restaurant/ (see restaurant/tools/photos/fetch.py).
+# Fetches free-licence food photos (Pexels / Unsplash) for restaurant/. See restaurant/tools/photos/fetch.py.
 on:
   push:
     branches: ["claude/restaurant-food-ordering-app-2jft1i"]
     paths:
-      - "restaurant/tools/photos/queries.json"
+      - "restaurant/tools/photos/sources.json"
       - "restaurant/tools/photos/picks.json"
       - "restaurant/tools/photos/fetch.py"
 
@@ -38,5 +38,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add restaurant/tools/photos
           if git diff --cached --quiet; then echo "Nothing new to commit"; exit 0; fi
-          git commit -m "Fetch restaurant photos from Unsplash"
+          git commit -m "Fetch restaurant photos"
           git push
