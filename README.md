@@ -16,6 +16,13 @@ frameworks, no build step.
 - **Fully responsive** — mobile slide-in menu, fluid `clamp()` type, and a
   `prefers-reduced-motion` path that disables animation.
 
+## Also in this repo: Basil & Bloom ordering app
+
+[`restaurant/`](restaurant/) holds a separate project: a frosted-glass web app for
+ordering food from a single restaurant, covering the menu, dish options, cart,
+checkout and live order tracking. It is also vanilla HTML/CSS/JS with no build
+step. See [`restaurant/README.md`](restaurant/README.md).
+
 ## Run it
 
 It's a static site — just open `index.html`, or serve the folder:
