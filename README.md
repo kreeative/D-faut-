@@ -1,5 +1,9 @@
 # VANTÉ — Luxury Brand Website
 
+> **New:** [`invitations/`](invitations/) contains two animated wedding
+> invitation templates (Bordeaux & Olive), a showcase page and a guest-link
+> tool. See [`invitations/README.md`](invitations/README.md).
+
 A dark, elegant, single-page luxury marque site inspired by high-end automotive
 brands (Porsche-style). Built with **modern CSS and vanilla JavaScript** — no
 frameworks, no build step.

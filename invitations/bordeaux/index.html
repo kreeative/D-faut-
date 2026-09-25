@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <!-- ✏️ Link previews (WhatsApp, iMessage, Facebook…). Edit the texts, and once the
+       invitation is online replace assets/share.jpg with its full https:// address. -->
+  <title>Amélie & Julien — Wedding Invitation</title>
+  <meta name="description" content="You're invited to the wedding of Amélie & Julien — Saturday, June 19, 2027 in Bordeaux." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Amélie & Julien — You're invited" />
+  <meta property="og:description" content="Saturday, June 19, 2027 · Bordeaux, France. Tap to open your invitation." />
+  <meta property="og:image" content="assets/share.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#4b0a0f" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%238c1c24'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%235a0b12' stroke-width='3'/%3E%3Cpath d='M32 44s-11-6.6-11-14a6 6 0 0 1 11-3.3A6 6 0 0 1 43 30c0 7.4-11 14-11 14z' fill='%23f6eddc'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=La+Belle+Aurore&family=Montserrat:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="config.js"></script>
+  <script src="js/invite.js" defer></script>
+</head>
+<!-- ✏️ You don't need to edit this file: every text and photo comes from config.js -->
+<body class="is-sealed">
+  <noscript><p class="noscript">Please enable JavaScript to open this invitation.</p></noscript>
+
+  <div class="backdrop" aria-hidden="true"><img data-src="backdrop" alt="" /></div>
+
+  <!-- Reusable drawings -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="waxOuter" cx="36%" cy="30%" r="78%">
+        <stop offset="0" stop-color="#c8434d" />
+        <stop offset=".42" stop-color="#951f29" />
+        <stop offset="1" stop-color="#560a11" />
+      </radialGradient>
+      <radialGradient id="waxInner" cx="42%" cy="36%" r="72%">
+        <stop offset="0" stop-color="#a62a34" />
+        <stop offset="1" stop-color="#6a1018" />
+      </radialGradient>
+      <pattern id="rope" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(42)">
+        <rect width="5" height="5" fill="#b89260" /><rect width="2" height="5" fill="#8d6838" /><rect x="3.2" width=".8" height="5" fill="#dcc08f" />
+      </pattern>
+      <radialGradient id="brass" cx="38%" cy="32%" r="70%">
+        <stop offset="0" stop-color="#fff2c9" />
+        <stop offset=".35" stop-color="#d9b56a" />
+        <stop offset=".8" stop-color="#9c7433" />
+        <stop offset="1" stop-color="#6e4f1f" />
+      </radialGradient>
+    </defs>
+    <symbol id="seal" viewBox="0 0 120 120">
+      <path fill="url(#waxOuter)" d="M117.2,60L118.7,63.1L118.8,66.2L117.5,69.1L115.4,71.8L113.4,74.3L112.1,76.9L111.5,79.8L111.1,82.7L110.1,85.5L108.2,87.8L105.8,89.7L103.2,91.4L101,93.2L99,95.2L97.2,97.2L95.2,99.1L93,100.8L90.9,102.5L89.1,104.8L87.6,107.7L86,111.1L84.1,114.1L81.5,115.9L78.3,116.2L74.9,115.4L71.5,114.3L68.5,113.7L65.7,113.8L62.8,114.4L60,114.7L57.2,114.4L54.4,113.5L51.7,112.5L49,111.7L46.2,111.3L43.5,110.9L40.8,110.1L38.2,108.9L35.8,107.5L33.1,106.5L30,106.2L26.4,106.2L22.8,105.9L19.8,104.6L17.9,102.1L17,98.7L16.7,95.1L16.3,91.8L15.3,89L13.9,86.6L12.4,84.2L11.3,81.7L10.6,79L9.8,76.3L8.8,73.7L7.4,71.2L6,68.5L5.2,65.8L5.2,62.9L5.6,60L5.8,57.2L5.3,54.2L4,51.1L2.7,47.8L2.4,44.6L3.5,41.6L5.9,39.2L9,37.3L12,35.5L14.3,33.6L16,31.4L17.6,29.2L19.3,27L21.2,25L22.9,22.9L24.4,20.5L25.8,17.7L27.2,14.9L29.2,12.6L31.8,11.2L34.7,10.4L37.6,9.8L40.3,8.6L42.7,6.7L45.1,4.4L47.8,2.6L50.8,2L54,2.8L57.1,4.5L60,6.2L62.8,7.5L65.4,8.2L68.1,8.7L70.8,9.2L73.4,9.9L76.1,10.4L79.1,10.3L82.3,9.9L85.7,9.6L88.9,9.9L91.5,11.4L93.5,13.9L95.1,16.6L96.9,19L99.2,20.8L101.9,22.3L104.6,23.9L106.6,26.1L107.6,29.1L107.8,32.4L107.8,35.7L108,38.6L108.7,41.3L109.5,43.9L110.2,46.5L110.8,49.2L111.6,51.8L113,54.4L115,57.1L117.2,60Z" />
+      <circle cx="60" cy="60" r="41" fill="url(#waxInner)" />
+      <circle cx="60" cy="60" r="41" fill="none" stroke="#45060c" stroke-opacity=".6" stroke-width="2.2" />
+      <circle cx="60" cy="60" r="43.6" fill="none" stroke="#ec8990" stroke-opacity=".32" stroke-width="1.4" />
+      <circle cx="60" cy="60" r="34.5" fill="none" stroke="#45060c" stroke-opacity=".35" stroke-width="1" stroke-dasharray="1.4 2.6" />
+      <text class="seal-mono" x="61" y="61" dy=".36em" text-anchor="middle" fill="#4d070d">A&amp;J</text>
+      <text class="seal-mono" x="59.2" y="59.2" dy=".36em" text-anchor="middle" fill="#d0666e" fill-opacity=".45">A&amp;J</text>
+      <text class="seal-mono" x="60" y="60" dy=".36em" text-anchor="middle" fill="#7b131c">A&amp;J</text>
+      <path d="M26 42c6-15 22-24 40-24" fill="none" stroke="#fff" stroke-opacity=".33" stroke-width="3.2" stroke-linecap="round" />
+      <ellipse cx="38" cy="30" rx="7" ry="3" fill="#fff" fill-opacity=".35" transform="rotate(-38 38 30)" />
+    </symbol>
+    <symbol id="tack" viewBox="0 0 40 40">
+      <ellipse cx="23" cy="25" rx="13" ry="11" fill="#000" fill-opacity=".22" />
+      <circle cx="19" cy="18" r="14" fill="url(#brass)" />
+      <circle cx="19" cy="18" r="9.5" fill="none" stroke="#7a5724" stroke-opacity=".45" />
+      <ellipse cx="14" cy="12" rx="4.5" ry="2.6" fill="#fff" fill-opacity=".6" transform="rotate(-30 14 12)" />
+    </symbol>
+    <symbol id="mappin" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z" /></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21.2l-1.4-1.3C5.4 15.3 2 12.2 2 8.4 2 5.3 4.4 3 7.5 3c1.7 0 3.4.8 4.5 2.1C13.1 3.8 14.8 3 16.5 3 19.6 3 22 5.3 22 8.4c0 3.8-3.4 6.9-8.6 11.5L12 21.2z" /></symbol>
+    <symbol id="calendar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v10a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5zM4 10h16M8.5 3v4M15.5 3v4" /><path d="M12 17.2l-.6-.5c-2-1.8-3.3-3-3.3-4.4a1.9 1.9 0 0 1 3.9-.7 1.9 1.9 0 0 1 3.9.7c0 1.4-1.3 2.6-3.3 4.4z" /></symbol>
+    <symbol id="vinyl" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#141010" /><circle cx="24" cy="24" r="17" fill="none" stroke="#3a3030" stroke-width=".8" /><circle cx="24" cy="24" r="13" fill="none" stroke="#3a3030" stroke-width=".8" /><circle cx="24" cy="24" r="8" fill="#8c1c24" /><circle cx="24" cy="24" r="1.8" fill="#f6eddc" /><path d="M11 13a17 17 0 0 1 9-5" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.6" stroke-linecap="round" /></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></symbol>
+    <symbol id="chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+  </svg>
+
+  <!-- ============ 1. THE ENVELOPE ============ -->
+  <section class="intro" id="intro" aria-label="Your invitation">
+    <div class="intro__inner">
+      <p class="intro__kicker" data-t="envelope.kicker"></p>
+      <p class="intro__names" data-t="couple.names"></p>
+
+      <div class="envelope" id="envelope">
+        <div class="envelope__back"></div>
+        <div class="envelope__letter">
+          <p class="letter__kicker" data-t="envelope.letterTitle"></p>
+          <p class="letter__names" data-t="couple.names"></p>
+          <p class="letter__text" data-t="envelope.letterText"></p>
+          <p class="letter__date" data-t="event.dateText"></p>
+        </div>
+        <div class="envelope__pocket">
+          <div class="stamp envelope__stamp"><span class="stamp__inner"><svg class="stamp__heart"><use href="#heart" /></svg><span data-t="envelope.stampText"></span></span></div>
+          <p class="envelope__address">
+            <span class="envelope__to" data-t="envelope.toLabel"></span>
+            <span class="envelope__guest" data-guest></span>
+          </p>
+        </div>
+        <div class="envelope__flap"><span class="flap__face flap__face--out"></span><span class="flap__face flap__face--in"></span></div>
+        <button class="seal-btn" id="sealBtn" type="button" aria-label="Open the invitation">
+          <span class="seal-btn__ring"></span>
+          <svg class="seal-btn__half seal-btn__half--l" viewBox="0 0 120 120"><use href="#seal" /></svg>
+          <svg class="seal-btn__half seal-btn__half--r" viewBox="0 0 120 120"><use href="#seal" /></svg>
+        </button>
+      </div>
+
+      <p class="intro__hint" data-t="envelope.hint"></p>
+      <p class="intro__date" data-t="event.dateText"></p>
+    </div>
+  </section>
+
+  <main class="book" id="top">
+    <!-- ============ 2. MAIN CARD ============ -->
+    <article class="hero" id="home">
+      <svg class="bow" viewBox="0 0 240 230" aria-hidden="true">
+        <g class="bow__all">
+          <path class="twine" d="M-6 36C44 40 102 56 150 70" />
+          <g class="bow__tails">
+            <path class="twine" d="M150 70c-8 26 2 46-2 70s-10 44 2 64" />
+            <path class="twine" d="M150 70c12 24 30 38 38 60 5 13 6 26 12 40" />
+          </g>
+          <path class="twine" d="M150 70c-30-30-62-48-74-36-14 14 20 40 74 36z" />
+          <path class="twine" d="M150 70c30-6 60 10 54 32-6 20-40 4-54-32z" />
+          <ellipse cx="150" cy="70" rx="8" ry="6.4" fill="#8a6537" />
+          <ellipse cx="148" cy="68" rx="3.5" ry="2.2" fill="#e8cc9a" opacity=".7" />
+        </g>
+      </svg>
+
+      <div class="hero__top">
+        <nav class="hero__nav" aria-label="Sections">
+          <a href="#story" data-t="hero.nav.0"></a>
+          <a href="#details" data-t="hero.nav.1"></a>
+          <a href="#rsvp" data-t="hero.nav.2"></a>
+        </nav>
+        <h1 class="title">
+          <span class="title__kicker" data-t="hero.kicker"></span>
+          <span class="title__script" data-t="hero.script"></span>
+          <span class="title__overlay" data-t="hero.overlay"></span>
+        </h1>
+        <p class="hero__subline" data-t="hero.subline"></p>
+        <p class="pill"><span data-t="hero.datePill.0"></span><i></i><span data-t="hero.datePill.1"></span></p>
+      </div>
+
+      <div class="collage">
+        <figure class="print-photo strip strip--a" data-photo><img data-src="hero.photos.stripTop" alt="" /></figure>
+        <figure class="print-photo strip strip--b" data-photo><img data-src="hero.photos.stripBottom" alt="" /></figure>
+        <svg class="collage__seal" viewBox="0 0 120 120" aria-hidden="true"><use href="#seal" /></svg>
+        <p class="lyrics" data-lines="hero.lyrics" aria-hidden="true"></p>
+        <div class="note-wrap">
+          <div class="note"><p data-t="hero.note"></p></div>
+          <svg class="note__tack" viewBox="0 0 40 40" aria-hidden="true"><use href="#tack" /></svg>
+        </div>
+        <figure class="snap snap--l" data-photo><img data-src="hero.photos.left" alt="" /></figure>
+        <figure class="snap snap--r" data-photo><img data-src="hero.photos.right" alt="" /></figure>
+
+        <svg class="rings" viewBox="0 0 170 110" aria-hidden="true">
+          <defs>
+            <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7a5a1f" /><stop offset=".25" stop-color="#f8e7a9" /><stop offset=".45" stop-color="#c99a3e" />
+              <stop offset=".62" stop-color="#fff4cf" /><stop offset=".8" stop-color="#a57b2f" /><stop offset="1" stop-color="#e7c776" />
+            </linearGradient>
+            <clipPath id="ringFront"><rect x="95" y="50" width="40" height="60" /></clipPath>
+          </defs>
+          <ellipse cx="110" cy="62" rx="46" ry="30" fill="#000" opacity=".16" transform="translate(5 9)" />
+          <ellipse cx="62" cy="64" rx="46" ry="30" fill="#000" opacity=".16" transform="translate(5 9)" />
+          <ellipse class="ring" cx="62" cy="58" rx="44" ry="29" transform="rotate(-10 62 58)" />
+          <ellipse class="ring ring--hi" cx="62" cy="58" rx="44" ry="29" transform="rotate(-10 62 58)" />
+          <ellipse class="ring" cx="108" cy="52" rx="42" ry="28" transform="rotate(12 108 52)" />
+          <ellipse class="ring ring--hi" cx="108" cy="52" rx="42" ry="28" transform="rotate(12 108 52)" />
+          <g clip-path="url(#ringFront)">
+            <ellipse class="ring" cx="62" cy="58" rx="44" ry="29" transform="rotate(-10 62 58)" />
+            <ellipse class="ring ring--hi" cx="62" cy="58" rx="44" ry="29" transform="rotate(-10 62 58)" />
+          </g>
+          <path class="sparkle" d="M128 14l2.4 7.6L138 24l-7.6 2.4L128 34l-2.4-7.6L118 24l7.6-2.4z" fill="#fff" />
+          <path class="sparkle sparkle--2" d="M30 72l1.6 5L37 79l-5.4 1.6L30 86l-1.6-5.4L23 79l5.4-2z" fill="#fff" />
+        </svg>
+
+        <div class="print" id="print" aria-hidden="true"><img alt="" /></div>
+        <button class="camera" id="camera" type="button" aria-label="Take a photo">
+          <svg viewBox="0 0 200 190" aria-hidden="true">
+            <defs>
+              <linearGradient id="camBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3f" /><stop offset="1" stop-color="#1b1b1e" /></linearGradient>
+              <radialGradient id="lens" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#6c6fa0" /><stop offset=".35" stop-color="#26264a" /><stop offset="1" stop-color="#050510" /></radialGradient>
+              <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f4f4" /><stop offset=".5" stop-color="#9a9a9e" /><stop offset="1" stop-color="#e6e6e8" /></linearGradient>
+            </defs>
+            <rect x="12" y="44" width="176" height="132" rx="16" fill="url(#camBody)" />
+            <rect x="12" y="12" width="176" height="44" rx="12" fill="#232327" />
+            <rect x="24" y="20" width="30" height="20" rx="4" fill="#0b0b10" stroke="#555" />
+            <rect class="cam-flash" x="112" y="18" width="64" height="26" rx="4" fill="url(#chrome)" />
+            <g stroke="#7d7d82" stroke-width="1" opacity=".6"><path d="M118 22v18M124 22v18M130 22v18M136 22v18M142 22v18M148 22v18M154 22v18M160 22v18M166 22v18M172 22v18" /></g>
+            <g><rect x="26" y="62" width="5" height="20" fill="#d9453a" /><rect x="31" y="62" width="5" height="20" fill="#f08a2c" /><rect x="36" y="62" width="5" height="20" fill="#f3c63f" /><rect x="41" y="62" width="5" height="20" fill="#56a347" /><rect x="46" y="62" width="5" height="20" fill="#3a78c2" /></g>
+            <circle cx="84" cy="112" r="42" fill="#111114" />
+            <circle cx="84" cy="112" r="34" fill="#2a2a30" stroke="#444" stroke-width="2" />
+            <circle cx="84" cy="112" r="25" fill="url(#lens)" />
+            <path d="M70 100a19 19 0 0 1 16-8" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="3" stroke-linecap="round" />
+            <circle cx="96" cy="124" r="3" fill="#fff" fill-opacity=".35" />
+            <circle cx="160" cy="84" r="9" fill="#0d0d12" stroke="#555" />
+            <circle cx="160" cy="116" r="8" fill="#c7372f" />
+            <circle cx="158" cy="114" r="2.6" fill="#fff" fill-opacity=".45" />
+            <rect x="40" y="166" width="120" height="6" rx="3" fill="#050505" />
+          </svg>
+          <span class="camera__hint" data-t="hero.cameraHint"></span>
+        </button>
+
+        <p class="nametag" data-t="hero.nameTag"></p>
+        <p class="location"><svg aria-hidden="true"><use href="#mappin" /></svg><b data-t="hero.locationLabel"></b>&nbsp;<span data-t="hero.location"></span></p>
+      </div>
+    </article>
+
+    <!-- ============ 3. COUNTDOWN TICKET ============ -->
+    <section class="ticket" id="countdown" data-reveal="rise">
+      <div class="ticket__main">
+        <h2 class="script-title script-title--cream" data-t="countdown.title"></h2>
+        <p class="ticket__sub" data-t="countdown.subtitle"></p>
+        <div class="countdown" id="countdownGrid">
+          <div class="cd"><span class="cd__n" data-cd="0">00</span><span class="cd__l" data-t="countdown.labels.0"></span></div>
+          <div class="cd"><span class="cd__n" data-cd="1">00</span><span class="cd__l" data-t="countdown.labels.1"></span></div>
+          <div class="cd"><span class="cd__n" data-cd="2">00</span><span class="cd__l" data-t="countdown.labels.2"></span></div>
+          <div class="cd"><span class="cd__n" data-cd="3">00</span><span class="cd__l" data-t="countdown.labels.3"></span></div>
+        </div>
+        <p class="countdown__after" id="countdownAfter" hidden data-t="countdown.after"></p>
+        <div class="cal">
+          <button class="btn btn--cream" id="calBtn" type="button" aria-expanded="false" aria-controls="calMenu">
+            <svg aria-hidden="true"><use href="#calendar" /></svg><span data-t="countdown.calendarButton"></span>
+          </button>
+          <div class="cal__menu" id="calMenu" hidden>
+            <a id="calGoogle" href="#" target="_blank" rel="noopener" data-t="countdown.googleLabel"></a>
+            <button id="calIcs" type="button" data-t="countdown.appleLabel"></button>
+          </div>
+        </div>
+      </div>
+      <div class="ticket__stub" aria-hidden="true">
+        <span class="stub__admit" data-t="countdown.admit"></span>
+        <svg class="stub__heart"><use href="#heart" /></svg>
+        <span class="stub__date" data-t="footer.date"></span>
+      </div>
+    </section>
+
+    <!-- ============ 4. OUR STORY ============ -->
+    <section class="paper story" id="story">
+      <h2 class="script-title" data-t="story.title" data-reveal="fade"></h2>
+      <p class="lead" data-t="story.intro" data-reveal="fade"></p>
+      <ol class="chapters" id="chapters"></ol>
+      <template id="tplChapter">
+        <li class="chapter" data-reveal="drop">
+          <figure class="polaroid" data-photo><span class="tape"></span><img alt="" /><figcaption></figcaption></figure>
+          <div class="chapter__text">
+            <p class="chapter__date"></p>
+            <h3 class="chapter__title"></h3>
+            <p class="chapter__body"></p>
+          </div>
+        </li>
+      </template>
+    </section>
+
+    <!-- ============ 5. DETAILS (hanging tags + dress code) ============ -->
+    <section class="details" id="details">
+      <h2 class="script-title script-title--cream" data-t="details.title" data-reveal="fade"></h2>
+      <div class="tags" id="tags">
+        <svg class="tags__line" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true"><path class="twine" d="M-10 8C120 34 280 34 410 8" /></svg>
+      </div>
+      <template id="tplTag">
+        <article class="tag" data-reveal="swing">
+          <span class="tag__string"></span>
+          <div class="tag__card">
+            <span class="tag__hole"></span>
+            <h3 class="tag__label"></h3>
+            <p class="tag__time"></p>
+            <p class="tag__place"></p>
+            <p class="tag__address"></p>
+            <a class="tag__map" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#mappin" /></svg><span></span></a>
+          </div>
+        </article>
+      </template>
+
+      <div class="paper dress" data-reveal="rise">
+        <h3 class="script-title" data-t="dressCode.title"></h3>
+        <p class="dress__text" data-t="dressCode.text"></p>
+        <ul class="chips" id="chips"></ul>
+      </div>
+    </section>
+
+    <!-- ============ 6. ORDER OF THE DAY ============ -->
+    <section class="notepad" id="schedule" data-reveal="rise">
+      <h2 class="script-title" data-t="schedule.title"></h2>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- ============ 7. GOOD TO KNOW ============ -->
+    <section class="notes" id="notes">
+      <h2 class="script-title script-title--cream" data-t="notes.title" data-reveal="fade"></h2>
+      <div class="notes__grid" id="notesGrid"></div>
+    </section>
+
+    <!-- ============ 8. GALLERY FILM STRIP ============ -->
+    <section class="film" id="gallery">
+      <h2 class="script-title script-title--cream" data-t="gallery.title" data-reveal="fade"></h2>
+      <div class="film__strip" data-reveal="fade"><div class="film__track" id="filmTrack"></div></div>
+    </section>
+
+    <!-- ============ 9. RSVP POSTCARD ============ -->
+    <section class="rsvp-wrap" id="rsvp">
+      <div class="postcard" id="postcard" data-reveal="rise">
+        <div class="postcard__head">
+          <div>
+            <h2 class="script-title" data-t="rsvp.title"></h2>
+            <p class="postcard__deadline" data-t="rsvp.deadline"></p>
+          </div>
+          <div class="postcard__stamps" aria-hidden="true">
+            <div class="stamp"><span class="stamp__inner"><svg class="stamp__heart"><use href="#heart" /></svg><span data-t="envelope.stampText"></span></span></div>
+            <svg class="postmark" viewBox="0 0 120 120">
+              <defs><path id="pmCircle" d="M60 60m-40 0a40 40 0 1 1 80 0a40 40 0 1 1-80 0" /></defs>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="2" />
+              <circle cx="60" cy="60" r="30" fill="none" stroke="currentColor" stroke-width="1.4" />
+              <text font-size="11.5" letter-spacing="2" fill="currentColor"><textPath href="#pmCircle" id="postmarkText">BORDEAUX · 2027 ·</textPath></text>
+              <path d="M112 44c-8 5-16-5-24 0M112 60c-8 5-16-5-24 0M112 76c-8 5-16-5-24 0" fill="none" stroke="currentColor" stroke-width="2" transform="translate(30 0)" />
+              <path d="M46 60l8 8 16-18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+
+        <form class="rsvp" id="rsvpForm" novalidate>
+          <label class="field">
+            <span class="field__label" data-t="rsvp.labels.name"></span>
+            <input class="field__input" name="name" autocomplete="name" required data-ph="rsvp.labels.namePlaceholder" />
+          </label>
+          <fieldset class="choice">
+            <legend class="field__label" data-t="rsvp.labels.attending"></legend>
+            <label class="choice__opt"><input type="radio" name="attending" value="yes" required /><span class="choice__box"><svg><use href="#heart" /></svg></span><span data-t="rsvp.labels.yes"></span></label>
+            <label class="choice__opt"><input type="radio" name="attending" value="no" /><span class="choice__box"><svg><use href="#heart" /></svg></span><span data-t="rsvp.labels.no"></span></label>
+          </fieldset>
+          <div class="rsvp__more" id="rsvpMore"><div class="rsvp__more-inner">
+            <div class="field">
+              <span class="field__label" id="guestsLabel" data-t="rsvp.labels.guests"></span>
+              <div class="stepper" role="group" aria-labelledby="guestsLabel">
+                <button type="button" data-step="-1" aria-label="−1">−</button>
+                <output id="guestsOut" aria-live="polite">1</output>
+                <button type="button" data-step="1" aria-label="+1">+</button>
+              </div>
+              <input type="hidden" name="guests" id="guestsInput" value="1" />
+            </div>
+            <label class="field">
+              <span class="field__label" data-t="rsvp.labels.diet"></span>
+              <input class="field__input" name="diet" data-ph="rsvp.labels.dietPlaceholder" />
+            </label>
+            <label class="field">
+              <span class="field__label" data-t="rsvp.labels.song"></span>
+              <input class="field__input" name="song" data-ph="rsvp.labels.songPlaceholder" />
+            </label>
+          </div></div>
+          <label class="field">
+            <span class="field__label" data-t="rsvp.labels.message"></span>
+            <textarea class="field__input" name="message" rows="3" data-ph="rsvp.labels.messagePlaceholder"></textarea>
+          </label>
+          <p class="rsvp__error" id="rsvpError" role="alert" hidden></p>
+          <button class="btn btn--wine" id="rsvpSubmit" type="submit"><span data-t="rsvp.labels.submit"></span><svg aria-hidden="true"><use href="#heart" /></svg></button>
+        </form>
+
+        <div class="thanks" id="thanks" hidden>
+          <svg class="thanks__seal" viewBox="0 0 120 120" aria-hidden="true"><use href="#seal" /></svg>
+          <h3 class="script-title" id="thanksTitle" tabindex="-1"></h3>
+          <p class="thanks__text" id="thanksText"></p>
+          <p class="thanks__note" id="thanksNote"></p>
+          <button class="btn btn--ghost" id="rsvpAgain" type="button" data-t="rsvp.labels.again"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 10. FOOTER ============ -->
+    <footer class="foot" data-reveal="fade">
+      <svg class="foot__seal" viewBox="0 0 120 120" aria-hidden="true"><use href="#seal" /></svg>
+      <p class="foot__kicker" data-t="footer.kicker"></p>
+      <p class="foot__names" data-t="couple.names"></p>
+      <p class="foot__date" data-t="footer.date"></p>
+      <p class="foot__tag" data-t="footer.hashtag"></p>
+      <p class="foot__credit" id="credit" hidden><a target="_blank" rel="noopener"></a></p>
+    </footer>
+  </main>
+
+  <a class="chip" id="rsvpChip" href="#rsvp"><svg aria-hidden="true"><use href="#heart" /></svg><span data-t="rsvpChip"></span></a>
+  <button class="music" id="musicBtn" type="button" hidden aria-pressed="false"><svg aria-hidden="true"><use href="#vinyl" /></svg></button>
+  <audio id="music" loop preload="none"></audio>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo" hidden>
+    <button class="lightbox__btn lightbox__close" type="button" data-lb="close"><svg aria-hidden="true"><use href="#close" /></svg></button>
+    <button class="lightbox__btn lightbox__prev" type="button" data-lb="prev"><svg aria-hidden="true"><use href="#chev" /></svg></button>
+    <figure class="lightbox__fig"><img alt="" /><figcaption></figcaption></figure>
+    <button class="lightbox__btn lightbox__next" type="button" data-lb="next"><svg aria-hidden="true"><use href="#chev" /></svg></button>
+  </div>
+
+  <div class="flash" id="flash" aria-hidden="true"></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+</body>
+</html>

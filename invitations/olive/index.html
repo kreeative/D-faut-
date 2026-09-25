@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <!-- ✏️ Link previews (WhatsApp, iMessage, Facebook…). Edit the texts, and once the
+       invitation is online replace assets/share.jpg with its full https:// address. -->
+  <title>Sofia & Matteo — Wedding Invitation</title>
+  <meta name="description" content="Join Sofia & Matteo for their wedding on Saturday, 18 September 2027 at Lake Como, Italy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sofia & Matteo — You're invited" />
+  <meta property="og:description" content="Saturday, 18 September 2027 · Lake Como, Italy. Open your invitation." />
+  <meta property="og:image" content="assets/share.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#3d4430" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='32' rx='22' ry='28' fill='%233d4430'/%3E%3Cellipse cx='32' cy='32' rx='17' ry='23' fill='none' stroke='%23e9dfc4' stroke-width='2'/%3E%3Cpath d='M32 42s-8-4.8-8-10.2a4.4 4.4 0 0 1 8-2.4 4.4 4.4 0 0 1 8 2.4C40 37.2 32 42 32 42z' fill='%23e9dfc4'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="config.js"></script>
+  <script src="js/invite.js" defer></script>
+</head>
+<!-- ✏️ You don't need to edit this file: every text and photo comes from config.js -->
+<body class="is-sealed">
+  <noscript><p class="noscript">Please enable JavaScript to open this invitation.</p></noscript>
+
+  <!-- Reusable drawings -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="goldWax" cx="36%" cy="30%" r="78%">
+        <stop offset="0" stop-color="#f3dea5" />
+        <stop offset=".45" stop-color="#c4a15c" />
+        <stop offset="1" stop-color="#7d6230" />
+      </radialGradient>
+      <radialGradient id="goldWaxIn" cx="42%" cy="36%" r="72%">
+        <stop offset="0" stop-color="#dcbd78" />
+        <stop offset="1" stop-color="#9c7c3c" />
+      </radialGradient>
+      <linearGradient id="swanBody" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fdfcf8" /><stop offset="1" stop-color="#ddd8c9" />
+      </linearGradient>
+    </defs>
+    <symbol id="crest" viewBox="0 0 120 150">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path class="draw" pathLength="1" stroke-width="1.1" d="M60 22a40 52 0 1 0 0 104a40 52 0 1 0 0-104z" />
+        <path class="draw" pathLength="1" stroke-width=".6" d="M60 26a36 48 0 1 0 0 96a36 48 0 1 0 0-96z" />
+        <path class="draw" pathLength="1" stroke-width="1.1" d="M56 138C24 134 6 102 16 50" />
+        <path class="draw" pathLength="1" stroke-width="1.1" d="M64 138C96 134 114 102 104 50" />
+        <path class="draw draw--leaves" pathLength="1" stroke-width=".9" d="M46.8 136Q41 134.7 38.1 140Q44 141.3 46.8 136M38 132Q39.7 124.9 34.5 119.8Q32.8 126.9 38 132M30.4 126.1Q24 122.5 17.5 126Q23.9 129.6 30.4 126.1M24 118.5Q28.3 114.1 25.6 108.6Q21.2 113 24 118.5M19 109.2Q17.3 104.5 12.7 106.4Q14.4 111.1 19 109.2M15.5 98.3Q20.1 97.4 18.6 93Q13.9 93.8 15.5 98.3M13.6 85.7Q12.8 80.2 7.2 80Q8 85.5 13.6 85.7M13.4 71.7Q20.1 70.1 21.9 63.3Q15.1 64.9 13.4 71.7M14.9 56.1Q14.2 48.7 7.5 45.3Q8.3 52.7 14.9 56.1M16 50Q20.7 44.8 18.3 38.2Q13.6 43.4 16 50" />
+        <path class="draw draw--leaves" pathLength="1" stroke-width=".9" d="M73.2 136Q79 134.7 81.9 140Q76 141.3 73.2 136M82 132Q80.3 124.9 85.5 119.8Q87.2 126.9 82 132M89.6 126.1Q96 122.5 102.5 126Q96.1 129.6 89.6 126.1M96 118.5Q91.7 114.1 94.4 108.6Q98.8 113 96 118.5M101 109.2Q102.7 104.5 107.3 106.4Q105.6 111.1 101 109.2M104.5 98.3Q99.9 97.4 101.4 93Q106.1 93.8 104.5 98.3M106.4 85.7Q107.2 80.2 112.8 80Q112 85.5 106.4 85.7M106.6 71.7Q99.9 70.1 98.1 63.3Q104.9 64.9 106.6 71.7M105.1 56.1Q105.8 48.7 112.5 45.3Q111.7 52.7 105.1 56.1M104 50Q99.3 44.8 101.7 38.2Q106.4 43.4 104 50" />
+        <path class="draw" pathLength="1" stroke-width=".9" d="M60 23.5c-2.4-3.2-7-2-7 1.6 0 2.8 4 5.4 7 7.4 3-2 7-4.6 7-7.4 0-3.6-4.6-4.8-7-1.6z" />
+      </g>
+      <g class="crest__mono" fill="currentColor">
+        <text class="crest__l crest__l--1" x="44" y="82" text-anchor="middle">S</text>
+        <text class="crest__amp" x="60" y="92" text-anchor="middle">&amp;</text>
+        <text class="crest__l crest__l--2" x="76" y="82" text-anchor="middle">M</text>
+      </g>
+    </symbol>
+    <symbol id="sprig" viewBox="0 0 240 40">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path class="draw" pathLength="1" stroke-width="1.1" d="M8 24C60 30 90 14 118 20M232 24C180 30 150 14 122 20" />
+        <path class="draw draw--leaves" pathLength="1" stroke-width="1" d="M23 25.2Q29.3 24.5 30.9 18.4Q24.6 19.1 23 25.2M42.3 25.1Q45.2 32.3 52.8 33.9Q49.9 26.8 42.3 25.1M59.6 23.6Q66.9 20.7 68.6 13Q61.4 16 59.6 23.6M75.1 21.6Q77.6 27.6 84.1 27.8Q81.7 21.7 75.1 21.6M89.2 19.6Q94.4 19.1 94 14Q88.9 14.5 89.2 19.6M102.3 18.6Q102.4 23.6 107.2 23.1Q107.2 18.2 102.3 18.6M114.6 19.4Q120.5 19.7 122.3 14.1Q116.4 13.8 114.6 19.4M118 20Q123.6 24.9 130.7 22.7Q125.1 17.8 118 20M217 25.2Q215.4 19.1 209.1 18.4Q210.7 24.5 217 25.2M197.7 25.1Q190.1 26.8 187.2 33.9Q194.8 32.3 197.7 25.1M180.4 23.6Q178.6 16 171.4 13Q173.1 20.7 180.4 23.6M164.9 21.6Q158.3 21.7 155.9 27.8Q162.4 27.6 164.9 21.6M150.8 19.6Q151.1 14.5 146 14Q145.6 19.1 150.8 19.6M137.7 18.6Q132.8 18.2 132.8 23.1Q137.6 23.6 137.7 18.6M125.4 19.4Q123.6 13.8 117.7 14.1Q119.5 19.7 125.4 19.4M122 20Q114.9 17.8 109.3 22.7Q116.4 24.9 122 20" />
+      </g>
+      <circle cx="120" cy="20" r="3.2" fill="currentColor" />
+    </symbol>
+    <symbol id="seal" viewBox="0 0 120 120">
+      <path fill="url(#goldWax)" d="M117.2,60L118.7,63.1L118.8,66.2L117.5,69.1L115.4,71.8L113.4,74.3L112.1,76.9L111.5,79.8L111.1,82.7L110.1,85.5L108.2,87.8L105.8,89.7L103.2,91.4L101,93.2L99,95.2L97.2,97.2L95.2,99.1L93,100.8L90.9,102.5L89.1,104.8L87.6,107.7L86,111.1L84.1,114.1L81.5,115.9L78.3,116.2L74.9,115.4L71.5,114.3L68.5,113.7L65.7,113.8L62.8,114.4L60,114.7L57.2,114.4L54.4,113.5L51.7,112.5L49,111.7L46.2,111.3L43.5,110.9L40.8,110.1L38.2,108.9L35.8,107.5L33.1,106.5L30,106.2L26.4,106.2L22.8,105.9L19.8,104.6L17.9,102.1L17,98.7L16.7,95.1L16.3,91.8L15.3,89L13.9,86.6L12.4,84.2L11.3,81.7L10.6,79L9.8,76.3L8.8,73.7L7.4,71.2L6,68.5L5.2,65.8L5.2,62.9L5.6,60L5.8,57.2L5.3,54.2L4,51.1L2.7,47.8L2.4,44.6L3.5,41.6L5.9,39.2L9,37.3L12,35.5L14.3,33.6L16,31.4L17.6,29.2L19.3,27L21.2,25L22.9,22.9L24.4,20.5L25.8,17.7L27.2,14.9L29.2,12.6L31.8,11.2L34.7,10.4L37.6,9.8L40.3,8.6L42.7,6.7L45.1,4.4L47.8,2.6L50.8,2L54,2.8L57.1,4.5L60,6.2L62.8,7.5L65.4,8.2L68.1,8.7L70.8,9.2L73.4,9.9L76.1,10.4L79.1,10.3L82.3,9.9L85.7,9.6L88.9,9.9L91.5,11.4L93.5,13.9L95.1,16.6L96.9,19L99.2,20.8L101.9,22.3L104.6,23.9L106.6,26.1L107.6,29.1L107.8,32.4L107.8,35.7L108,38.6L108.7,41.3L109.5,43.9L110.2,46.5L110.8,49.2L111.6,51.8L113,54.4L115,57.1L117.2,60Z" />
+      <circle cx="60" cy="60" r="41" fill="url(#goldWaxIn)" />
+      <circle cx="60" cy="60" r="41" fill="none" stroke="#6e5424" stroke-opacity=".55" stroke-width="2" />
+      <circle cx="60" cy="60" r="43.6" fill="none" stroke="#fff3cf" stroke-opacity=".45" stroke-width="1.4" />
+      <path d="M36 70c8 10 40 10 48 0M40 74l-4-8M80 74l4-8" fill="none" stroke="#6e5424" stroke-opacity=".5" stroke-width="1.6" stroke-linecap="round" />
+      <text class="seal-mono" x="61" y="58" dy=".36em" text-anchor="middle" fill="#5e4718" fill-opacity=".6">S M</text>
+      <text class="seal-mono" x="60" y="57" dy=".36em" text-anchor="middle" fill="#8a6c30">S M</text>
+      <path d="M26 42c6-15 22-24 40-24" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="3.2" stroke-linecap="round" />
+    </symbol>
+    <symbol id="swan" viewBox="-160 -170 170 176" overflow="visible">
+      <path d="M0 -6C2 -20 -4 -32 -14 -36C-30 -44 -60 -46 -90 -44C-112 -42 -128 -50 -141 -64C-143 -50 -139 -36 -130 -26C-116 -8 -90 0 -60 0C-30 0 -6 2 0 -6Z" fill="url(#swanBody)" />
+      <path d="M-22 -35C-52 -44 -92 -38 -128 -52M-40 -26C-66 -28 -96 -24 -122 -38" fill="none" stroke="#cdc7b7" stroke-width="1.3" stroke-linecap="round" />
+      <g fill="none" stroke="#fbfaf6" stroke-linecap="round">
+        <path pathLength="100" stroke-width="16" stroke-dasharray="20 999" d="M-12 -28C-44 -62 -70 -118 -48 -148C-34 -166 -12 -162 -10 -142" />
+        <path pathLength="100" stroke-width="13.5" stroke-dasharray="36 999" d="M-12 -28C-44 -62 -70 -118 -48 -148C-34 -166 -12 -162 -10 -142" />
+        <path pathLength="100" stroke-width="11.5" stroke-dasharray="54 999" d="M-12 -28C-44 -62 -70 -118 -48 -148C-34 -166 -12 -162 -10 -142" />
+        <path pathLength="100" stroke-width="10" stroke-dasharray="72 999" d="M-12 -28C-44 -62 -70 -118 -48 -148C-34 -166 -12 -162 -10 -142" />
+        <path stroke-width="8.5" d="M-12 -28C-44 -62 -70 -118 -48 -148C-34 -166 -12 -162 -10 -142" />
+      </g>
+      <path d="M-16 -40C-42 -70 -58 -112 -46 -140" fill="none" stroke="#d9d3c3" stroke-width="1.3" stroke-linecap="round" opacity=".8" />
+      <ellipse cx="-10" cy="-139" rx="9" ry="6.6" transform="rotate(52 -10 -139)" fill="#fbfaf6" />
+      <path d="M-6 -134L2 -122L-10 -130Z" fill="#dd7a35" />
+      <circle cx="-7" cy="-134.5" r="2.4" fill="#1d1d1d" />
+      <circle cx="-13.5" cy="-142" r="1.3" fill="#1d1d1d" />
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 40 14"><path d="M1 7Q20-3 39 7Q20 17 1 7Z" /><path d="M3 7H37" stroke="rgba(0,0,0,.18)" stroke-width=".8" /></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z" /></symbol>
+    <symbol id="calendar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v10a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5zM4 10h16M8.5 3v4M15.5 3v4" /></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21.2l-1.4-1.3C5.4 15.3 2 12.2 2 8.4 2 5.3 4.4 3 7.5 3c1.7 0 3.4.8 4.5 2.1C13.1 3.8 14.8 3 16.5 3 19.6 3 22 5.3 22 8.4c0 3.8-3.4 6.9-8.6 11.5L12 21.2z" /></symbol>
+    <symbol id="note" viewBox="0 0 24 24"><path d="M9 18.5a3 3 0 1 1-2-2.8V5.5l11-2.5v12.5a3 3 0 1 1-2-2.8V7.2l-7 1.6z" /></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></symbol>
+    <symbol id="chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+  </svg>
+
+  <!-- ============ 1. THE GATEFOLD COVER ============ -->
+  <section class="gate" id="gate" aria-label="Your invitation">
+    <div class="gate__door gate__door--l"><svg class="gate__sprig gate__sprig--t"><use href="#sprig" /></svg><svg class="gate__sprig gate__sprig--b"><use href="#sprig" /></svg></div>
+    <div class="gate__door gate__door--r"><svg class="gate__sprig gate__sprig--t"><use href="#sprig" /></svg><svg class="gate__sprig gate__sprig--b"><use href="#sprig" /></svg></div>
+    <div class="gate__card">
+      <button class="gate__seal" id="gateSeal" type="button" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#seal" /></svg></button>
+      <svg class="crest gate__crest" aria-hidden="true"><use href="#crest" /></svg>
+      <p class="caps gate__kicker" data-t="cover.kicker"></p>
+      <h1 class="gate__names">
+        <span class="gate__name" data-t="couple.first"></span>
+        <span class="gate__amp">&amp;</span>
+        <span class="gate__name" data-t="couple.second"></span>
+      </h1>
+      <p class="gate__line" data-t="cover.line"></p>
+      <p class="caps gate__date" data-t="event.dateText"></p>
+      <p class="gate__dear"><span data-t="cover.dear"></span> <span data-guest></span>,</p>
+      <button class="btn btn--olive gate__open" id="gateOpen" type="button"><span data-t="cover.button"></span></button>
+    </div>
+  </section>
+
+  <!-- ============ 2. NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <nav class="nav__inner" aria-label="Sections">
+      <ul class="nav__links nav__links--l" id="navL"></ul>
+      <a class="nav__crest" href="#top" aria-label="Top"><svg class="crest"><use href="#crest" /></svg></a>
+      <ul class="nav__links nav__links--r" id="navR"></ul>
+      <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr" data-t="menuLabel"></span></button>
+    </nav>
+  </header>
+  <div class="menu" id="menu" hidden>
+    <svg class="crest menu__crest" aria-hidden="true"><use href="#crest" /></svg>
+    <ul class="menu__links" id="menuLinks"></ul>
+  </div>
+
+  <main id="top">
+    <!-- ============ 3. HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__media" aria-hidden="true">
+        <picture>
+          <source media="(max-aspect-ratio: 4/5)" data-srcset="hero.photoTall" />
+          <img class="hero__img" data-src="hero.photoWide" alt="" />
+        </picture>
+      </div>
+      <div class="hero__fx" aria-hidden="true">
+        <span class="ray ray--1"></span><span class="ray ray--2"></span><span class="ray ray--3"></span>
+        <span class="mist mist--1"></span><span class="mist mist--2"></span>
+        <div class="motes" id="motes"></div>
+        <div class="leaves" id="leaves"></div>
+      </div>
+      <div class="swans" id="swans" aria-hidden="true">
+        <svg class="swans__pair" viewBox="-175 -178 350 190">
+          <use href="#swan" x="-160" y="-170" width="170" height="176" />
+          <use href="#swan" x="-160" y="-170" width="170" height="176" transform="scale(-1 1)" />
+        </svg>
+        <svg class="swans__pair swans__reflection" viewBox="-175 -178 350 190">
+          <use href="#swan" x="-160" y="-170" width="170" height="176" />
+          <use href="#swan" x="-160" y="-170" width="170" height="176" transform="scale(-1 1)" />
+        </svg>
+        <span class="ripple"></span><span class="ripple ripple--2"></span>
+      </div>
+      <div class="hero__content">
+        <p class="caps hero__kicker" data-t="hero.kicker"></p>
+        <h2 class="hero__names">
+          <span class="hero__name" data-t="couple.first"></span>
+          <span class="hero__amp">&amp;</span>
+          <span class="hero__name" data-t="couple.second"></span>
+        </h2>
+        <p class="caps hero__meta"><span data-t="event.dateText"></span><i></i><span data-t="event.place"></span></p>
+      </div>
+      <a class="hero__scroll" href="#welcome"><span class="caps" data-t="hero.scroll"></span><i></i></a>
+    </section>
+
+    <!-- ============ 4. WELCOME ============ -->
+    <section class="welcome section--olive" id="welcome">
+      <p class="watermark" data-t="welcome.watermark" data-parallax="-0.12" aria-hidden="true"></p>
+      <div class="wrap wrap--narrow" data-reveal>
+        <svg class="sprig" aria-hidden="true"><use href="#sprig" /></svg>
+        <h2 class="caps welcome__title" data-t="welcome.title"></h2>
+        <p class="welcome__text" data-t="welcome.text"></p>
+        <p class="welcome__signoff" data-t="welcome.signoff"></p>
+        <p class="script welcome__names"><span data-t="couple.first"></span> &amp; <span data-t="couple.second"></span></p>
+      </div>
+    </section>
+
+    <!-- ============ 5. STORY ============ -->
+    <section class="story" id="story">
+      <div class="wrap">
+        <header class="heading" data-reveal>
+          <h2 class="caps heading__caps" data-t="story.title"></h2>
+          <p class="script heading__script" data-t="story.script"></p>
+        </header>
+        <div class="story__grid">
+          <div class="story__text" data-reveal><p data-t="story.text"></p></div>
+          <div class="story__photos">
+            <figure class="story__photo story__photo--1" data-reveal="wipe" data-parallax="0.06" data-photo><img data-src="story.photos.0" alt="" /></figure>
+            <figure class="story__photo story__photo--2" data-reveal="wipe" data-parallax="-0.08" data-photo><img data-src="story.photos.1" alt="" /></figure>
+          </div>
+        </div>
+        <ol class="milestones" id="milestones"></ol>
+      </div>
+    </section>
+
+    <!-- ============ 6. COUNTDOWN ============ -->
+    <section class="countdown section--stone" id="countdown">
+      <div class="wrap" data-reveal>
+        <p class="script countdown__script" data-t="countdown.script"></p>
+        <h2 class="caps countdown__title" data-t="countdown.title"></h2>
+        <div class="counter" id="counter">
+          <div class="counter__unit"><span class="counter__n" data-cd="0">00</span><span class="caps counter__l" data-t="countdown.labels.0"></span></div>
+          <div class="counter__unit"><span class="counter__n" data-cd="1">00</span><span class="caps counter__l" data-t="countdown.labels.1"></span></div>
+          <div class="counter__unit"><span class="counter__n" data-cd="2">00</span><span class="caps counter__l" data-t="countdown.labels.2"></span></div>
+          <div class="counter__unit"><span class="counter__n" data-cd="3">00</span><span class="caps counter__l" data-t="countdown.labels.3"></span></div>
+        </div>
+        <p class="countdown__after" id="countdownAfter" hidden data-t="countdown.after"></p>
+        <div class="cal">
+          <button class="btn btn--line" id="calBtn" type="button" aria-expanded="false" aria-controls="calMenu"><svg aria-hidden="true"><use href="#calendar" /></svg><span data-t="countdown.calendarButton"></span></button>
+          <div class="cal__menu" id="calMenu" hidden>
+            <a id="calGoogle" href="#" target="_blank" rel="noopener" data-t="countdown.googleLabel"></a>
+            <button id="calIcs" type="button" data-t="countdown.appleLabel"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. VENUE ============ -->
+    <section class="venue section--olive" id="venue">
+      <div class="wrap venue__grid">
+        <div class="venue__photo" data-reveal="tilt"><figure class="scallop" data-photo><img data-src="venue.photo" alt="" /></figure></div>
+        <div class="venue__text" data-reveal>
+          <p class="script venue__script" data-t="venue.script"></p>
+          <h2 class="venue__name" data-t="venue.name"></h2>
+          <p class="caps venue__address" data-t="venue.address"></p>
+          <a class="btn btn--line btn--light" id="venueMap" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pin" /></svg><span data-t="venue.mapLabel"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. DETAILS + SCHEDULE ============ -->
+    <section class="details" id="details">
+      <div class="wrap wrap--narrow" id="detailsList"></div>
+      <div class="wrap schedule" id="schedule">
+        <header class="heading" data-reveal>
+          <p class="script heading__script heading__script--solo" data-t="schedule.script"></p>
+          <h2 class="caps heading__caps heading__caps--small" data-t="schedule.title"></h2>
+        </header>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- ============ 9. GALLERY ============ -->
+    <section class="gallery section--stone" id="gallery">
+      <div class="wrap">
+        <header class="heading" data-reveal>
+          <p class="script heading__script heading__script--solo" data-t="gallery.script"></p>
+          <h2 class="caps heading__caps heading__caps--small" data-t="gallery.title"></h2>
+        </header>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ 10. RSVP ============ -->
+    <section class="rsvp" id="rsvp">
+      <div class="rsvp__bg" aria-hidden="true"><img data-src="hero.photoWide" alt="" /></div>
+      <div class="wrap rsvp__wrap">
+        <header class="heading heading--light" data-reveal>
+          <p class="script heading__script heading__script--solo" data-t="rsvp.script"></p>
+          <h2 class="caps heading__caps heading__caps--small" data-t="rsvp.deadline"></h2>
+        </header>
+
+        <button class="envelope" id="envelope" type="button" data-reveal>
+          <span class="envelope__back"></span>
+          <span class="envelope__card">
+            <svg class="crest envelope__crest" aria-hidden="true"><use href="#crest" /></svg>
+            <span class="script envelope__card-title" data-t="rsvp.script"></span>
+          </span>
+          <span class="envelope__front"></span>
+          <span class="envelope__flap"></span>
+          <span class="envelope__seal"><svg viewBox="0 0 120 120"><use href="#seal" /></svg></span>
+          <span class="caps envelope__hint" data-t="rsvp.envelopeHint"></span>
+        </button>
+
+        <div class="card" id="rsvpCard" hidden>
+          <span class="card__corner card__corner--tl"></span><span class="card__corner card__corner--tr"></span>
+          <span class="card__corner card__corner--bl"></span><span class="card__corner card__corner--br"></span>
+          <form class="form" id="rsvpForm" novalidate>
+            <svg class="crest form__crest" aria-hidden="true"><use href="#crest" /></svg>
+            <h3 class="caps form__title" data-t="rsvp.title"></h3>
+            <label class="field">
+              <span class="caps field__label" data-t="rsvp.labels.name"></span>
+              <input class="field__input" name="name" autocomplete="name" required data-ph="rsvp.labels.namePlaceholder" />
+            </label>
+            <label class="field">
+              <span class="caps field__label" data-t="rsvp.labels.email"></span>
+              <input class="field__input" name="email" type="email" autocomplete="email" data-ph="rsvp.labels.emailPlaceholder" />
+            </label>
+            <fieldset class="field choice">
+              <legend class="caps field__label" data-t="rsvp.labels.attending"></legend>
+              <div class="choice__row">
+                <label class="choice__opt"><input type="radio" name="attending" value="yes" required /><span data-t="rsvp.labels.yes"></span></label>
+                <label class="choice__opt"><input type="radio" name="attending" value="no" /><span data-t="rsvp.labels.no"></span></label>
+              </div>
+            </fieldset>
+            <div class="form__more"><div class="form__more-inner">
+              <label class="field" id="guestsField">
+                <span class="caps field__label" data-t="rsvp.labels.guests"></span>
+                <select class="field__input" name="guests" id="guestsSelect"></select>
+              </label>
+              <label class="field">
+                <span class="caps field__label" data-t="rsvp.labels.diet"></span>
+                <input class="field__input" name="diet" data-ph="rsvp.labels.dietPlaceholder" />
+              </label>
+              <label class="field">
+                <span class="caps field__label" data-t="rsvp.labels.song"></span>
+                <input class="field__input" name="song" data-ph="rsvp.labels.songPlaceholder" />
+              </label>
+            </div></div>
+            <label class="field">
+              <span class="caps field__label" data-t="rsvp.labels.message"></span>
+              <textarea class="field__input" name="message" rows="3" data-ph="rsvp.labels.messagePlaceholder"></textarea>
+            </label>
+            <p class="form__error" id="rsvpError" role="alert" hidden></p>
+            <button class="btn btn--olive form__submit" id="rsvpSubmit" type="submit"><span data-t="rsvp.labels.submit"></span></button>
+          </form>
+          <div class="thanks" id="thanks" hidden>
+            <svg class="thanks__seal" viewBox="0 0 120 120" aria-hidden="true"><use href="#seal" /></svg>
+            <h3 class="script thanks__title" id="thanksTitle" tabindex="-1"></h3>
+            <p class="thanks__text" id="thanksText"></p>
+            <p class="caps thanks__note" id="thanksNote"></p>
+            <button class="btn btn--line" id="rsvpAgain" type="button" data-t="rsvp.labels.again"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 11. FAQ ============ -->
+    <section class="faq" id="faq">
+      <div class="wrap wrap--narrow">
+        <header class="heading" data-reveal>
+          <p class="script heading__script heading__script--solo" data-t="faq.script"></p>
+          <h2 class="caps heading__caps heading__caps--small" data-t="faq.title"></h2>
+        </header>
+        <div class="accordion" id="accordion"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 12. FOOTER ============ -->
+  <footer class="foot section--olive">
+    <svg class="crest foot__crest" aria-hidden="true"><use href="#crest" /></svg>
+    <p class="script foot__names"><span data-t="couple.first"></span> &amp; <span data-t="couple.second"></span></p>
+    <p class="caps foot__date" data-t="footer.date"></p>
+    <p class="foot__tag" data-t="footer.hashtag"></p>
+    <p class="foot__credit" id="credit" hidden><a target="_blank" rel="noopener"></a></p>
+  </footer>
+
+  <a class="chip caps" id="rsvpChip" href="#rsvp" data-t="rsvpChip"></a>
+  <button class="music" id="musicBtn" type="button" hidden aria-pressed="false"><svg aria-hidden="true"><use href="#note" /></svg><span class="music__bars"><i></i><i></i><i></i></span></button>
+  <audio id="music" loop preload="none"></audio>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo" hidden>
+    <button class="lightbox__btn lightbox__close" type="button" data-lb="close"><svg aria-hidden="true"><use href="#close" /></svg></button>
+    <button class="lightbox__btn lightbox__prev" type="button" data-lb="prev"><svg aria-hidden="true"><use href="#chev" /></svg></button>
+    <figure class="lightbox__fig"><img alt="" /><figcaption></figcaption></figure>
+    <button class="lightbox__btn lightbox__next" type="button" data-lb="next"><svg aria-hidden="true"><use href="#chev" /></svg></button>
+  </div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+</body>
+</html>
