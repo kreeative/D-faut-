@@ -6,8 +6,10 @@
 
    Tips
    • Line breaks: use \n inside a text, e.g. "Line one\nLine two".
-   • Photos: put your images in assets/photos/ and update the paths.
-     The hero has two versions: "wide" (computers) and "tall" (phones).
+   • Photos: the demo uses free Pexels photos as placeholders. Put the
+     couple's photos in assets/photos/ and write their paths instead,
+     e.g. "assets/photos/lake.jpg". The hero has two versions: "wide"
+     (computers) and "tall" (phones); you can use the same photo twice.
    • Personal links: add ?to=Name to the invitation link and the card
      greets that guest, e.g. https://your-site.com/?to=Anna%20%26%20Luca
    • To hide an optional section, set it to null (e.g. faq: null).
@@ -56,9 +58,9 @@ window.INVITE = {
   /* Hero ------------------------------------------------------------------ */
   hero: {
     kicker: "The wedding of",
-    photoWide: "assets/photos/hero-wide.jpg",
-    photoTall: "assets/photos/hero-tall.jpg",
-    swans: true,                 // the two animated swans on the lake
+    photoWide: "https://images.pexels.com/photos/5066936/pexels-photo-5066936.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    photoTall: "https://images.pexels.com/photos/5066936/pexels-photo-5066936.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1920&fit=crop",
+    swans: false,                // true = two animated drawn swans on the water (for photos without a subject)
     scroll: "Scroll",
   },
 
@@ -75,7 +77,10 @@ window.INVITE = {
     title: "Every love story is beautiful",
     script: "But ours is my favourite",
     text: "Sofia and Matteo met in the most unexpected way — reaching for the very last umbrella in a tiny Florentine bookshop during a summer storm.\n\nWhat started as a polite argument turned into an espresso, then a dinner, then a love story. Over the years they travelled, laughed, built a home and planted a garden full of olive trees.\n\nNow they can't wait to celebrate this beautiful chapter with the people who mean the most to them.",
-    photos: ["assets/photos/story-1.jpg", "assets/photos/story-2.jpg"],
+    photos: [
+      "https://images.pexels.com/photos/20811239/pexels-photo-20811239.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "https://images.pexels.com/photos/10612263/pexels-photo-10612263.jpeg?auto=compress&cs=tinysrgb&w=800",
+    ],
     milestones: [
       { year: "2019", title: "The last umbrella", text: "A summer storm in Florence." },
       { year: "2022", title: "Our first olive tree", text: "Planted on a Sunday in April." },
@@ -99,7 +104,7 @@ window.INVITE = {
     script: "The Venue",
     name: "Villa Serena",
     address: "Via del Lago 12\n22021 Bellagio (CO)\nLake Como, Italy",
-    photo: "assets/photos/venue.jpg",
+    photo: "https://images.pexels.com/photos/29901032/pexels-photo-29901032.jpeg?auto=compress&cs=tinysrgb&w=900",
     mapLabel: "Google Maps",
     map: "https://www.google.com/maps/search/?api=1&query=Bellagio%2C%20Lake%20Como%2C%20Italy",
   },
@@ -146,12 +151,12 @@ window.INVITE = {
     script: "Moments",
     title: "A few of our favourite things",
     photos: [
-      { src: "assets/photos/gallery-1.jpg", caption: "Lemons from the garden" },
-      { src: "assets/photos/gallery-2.jpg", caption: "Evening lights" },
-      { src: "assets/photos/gallery-3.jpg", caption: "Sunset sail" },
-      { src: "assets/photos/gallery-4.jpg", caption: "Villa Serena" },
-      { src: "assets/photos/gallery-5.jpg", caption: "Olive branch shadows" },
-      { src: "assets/photos/gallery-6.jpg", caption: "Morning espresso" },
+      { src: "https://images.pexels.com/photos/6478/pexels-photo-6478.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Lemons from the garden" },
+      { src: "https://images.pexels.com/photos/28976220/pexels-photo-28976220.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Dinner under the stars" },
+      { src: "https://images.pexels.com/photos/29087666/pexels-photo-29087666.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Bellagio at sunset" },
+      { src: "https://images.pexels.com/photos/306066/pexels-photo-306066.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Ivory roses" },
+      { src: "https://images.pexels.com/photos/30178762/pexels-photo-30178762.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "The villa gardens" },
+      { src: "https://images.pexels.com/photos/4637844/pexels-photo-4637844.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Sì!" },
     ],
   },
 

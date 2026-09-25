@@ -43,13 +43,15 @@ Opening `index.html` straight from the file system also works. Only the
    schedule, story, FAQ, colours for the dress code, RSVP settings. Every
    field has a comment. Use `\n` for a line break; set an optional section to
    `null` to hide it.
-3. **Replace the photos** in `assets/photos/`. Keep the same file names, or
-   change the paths in `config.js`. Compress them to about 1600px wide
-   (~200 KB) for fast loading.
+3. **Replace the photos.** The demos use free Pexels photos, linked by URL, as
+   placeholders. Put the couple's photos in `assets/photos/` and write their
+   paths in `config.js` (e.g. `"assets/photos/kiss.jpg"`). Compress them to about
+   1600px wide (~200 KB) for fast loading.
    - Bordeaux turns the photo-booth strip and bottom-left photo black & white
      automatically. Set `hero.blackAndWhite: false` to keep colour.
    - Olive has two hero photos: `photoWide` (computers) and `photoTall`
-     (phones). Set `hero.swans: false` if the couple's photo already has a subject in it.
+     (phones). `hero.swans: true` adds two animated drawn swans on the water,
+     nice over a plain lake or landscape photo.
 4. **Edit the `<title>` and `og:` tags** at the top of `index.html`. These
    control the text shown when the link is shared on WhatsApp, iMessage or
    Instagram. Once online, change `og:image` to the full address, e.g.
@@ -164,7 +166,19 @@ new colourway, e.g. a navy Bordeaux or a blush Olive, and sell it as a variant.
 
 ## About the demo photos
 
-The demo photos (champagne, sparkler heart, candles, lake, villa…) were
-generated from scratch for these templates. There are no stock or third-party
-images, so they are safe to use in your listings and demos. Replace them with
-the couple's photos for each order.
+The demo photos are free stock photos from [Pexels](https://www.pexels.com),
+linked directly by URL (see `config.js`). The Pexels license allows free
+commercial use without attribution. You may not sell the photos themselves,
+and the people in them must not appear to endorse your product. They are
+placeholders only: every client order uses the couple's own photos, saved in
+`assets/photos/`.
+
+To swap a demo photo, open it on pexels.com and copy its number from the
+address (e.g. `…/photo/two-cups-of-coffee-on-table-2575835/` → `2575835`). Then use:
+
+```
+https://images.pexels.com/photos/2575835/pexels-photo-2575835.jpeg?auto=compress&cs=tinysrgb&w=1200
+```
+
+`assets/share.jpg` (the link-preview image) is a render of the invitation's own
+envelope or cover, so you can keep it for every client.

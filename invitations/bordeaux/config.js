@@ -6,8 +6,9 @@
 
    Tips
    • Line breaks: use \n inside a text, e.g. "Line one\nLine two".
-   • Photos: put your images in assets/photos/ and update the paths.
-     Portrait photos work best for the story and gallery.
+   • Photos: the demo uses free Pexels photos as placeholders. Put the
+     couple's photos in assets/photos/ and write their paths instead,
+     e.g. "assets/photos/kiss.jpg". Portrait photos suit the story/gallery.
    • Personal links: add ?to=Name to the invitation link and the
      envelope is addressed to that guest, e.g.
        https://your-site.com/?to=Sophie%20%26%20Tom
@@ -61,17 +62,17 @@ window.INVITE = {
     // The faded handwriting behind the note (a poem, your vows, a lyric you wrote…)
     lyrics: "Every day with you\nfeels like a love letter\nwritten in candlelight\nsealed with a kiss\nand sent to forever\nall my love, always",
     photos: {
-      stripTop: "assets/photos/strip-1.jpg",
-      stripBottom: "assets/photos/strip-2.jpg",
-      left: "assets/photos/moment-1.jpg",
-      right: "assets/photos/moment-2.jpg",
+      stripTop: "https://images.pexels.com/photos/9883883/pexels-photo-9883883.jpeg?auto=compress&cs=tinysrgb&w=900",
+      stripBottom: "https://images.pexels.com/photos/10001039/pexels-photo-10001039.jpeg?auto=compress&cs=tinysrgb&w=900",
+      left: "https://images.pexels.com/photos/30538464/pexels-photo-30538464.jpeg?auto=compress&cs=tinysrgb&w=900",
+      right: "https://images.pexels.com/photos/17542167/pexels-photo-17542167.jpeg?auto=compress&cs=tinysrgb&w=900",
     },
     cameraHint: "tap me",
     blackAndWhite: true,            // photo-booth strip + left photo in black & white
   },
 
   /* Blurred photo behind everything */
-  backdrop: "assets/photos/backdrop.jpg",
+  backdrop: "https://images.pexels.com/photos/19679440/pexels-photo-19679440.jpeg?auto=compress&cs=tinysrgb&w=1280",
 
   /* Countdown ------------------------------------------------------------ */
   countdown: {
@@ -91,21 +92,21 @@ window.INVITE = {
     intro: "Three little moments that led to one big day.",
     chapters: [
       {
-        photo: "assets/photos/story-1.jpg",
+        photo: "https://images.pexels.com/photos/2575835/pexels-photo-2575835.jpeg?auto=compress&cs=tinysrgb&w=900",
         caption: "the first coffee",
         date: "Spring 2019",
         title: "One table left",
         text: "A rainy Tuesday and a café with a single free table. Julien asked if the seat was taken. Five hours and three cappuccinos later, neither of us wanted to leave.",
       },
       {
-        photo: "assets/photos/story-2.jpg",
+        photo: "https://images.pexels.com/photos/11034720/pexels-photo-11034720.jpeg?auto=compress&cs=tinysrgb&w=900",
         caption: "our first sunset",
         date: "Summer 2021",
         title: "Golden hour",
         text: "A tiny sailboat, a borrowed bottle of Bordeaux and the whole Atlantic turning gold. Somewhere between the waves we both knew.",
       },
       {
-        photo: "assets/photos/story-3.jpg",
+        photo: "https://images.pexels.com/photos/3156648/pexels-photo-3156648.jpeg?auto=compress&cs=tinysrgb&w=900",
         caption: "oui, oui, oui!",
         date: "December 2025",
         title: "The question",
@@ -175,14 +176,14 @@ window.INVITE = {
   gallery: {
     title: "Moments",
     photos: [
-      { src: "assets/photos/strip-1.jpg", caption: "Cheers to us" },
-      { src: "assets/photos/story-1.jpg", caption: "Where it all began" },
-      { src: "assets/photos/moment-2.jpg", caption: "Candlelight evenings" },
-      { src: "assets/photos/strip-2.jpg", caption: "Sparks, always" },
-      { src: "assets/photos/story-2.jpg", caption: "Golden hour" },
-      { src: "assets/photos/moment-1.jpg", caption: "Champagne tower" },
-      { src: "assets/photos/story-3.jpg", caption: "Forever starts now" },
-      { src: "assets/photos/backdrop.jpg", caption: "See you on the dance floor" },
+      { src: "https://images.pexels.com/photos/5834736/pexels-photo-5834736.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Cheers to us" },
+      { src: "https://images.pexels.com/photos/2575835/pexels-photo-2575835.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Where it all began" },
+      { src: "https://images.pexels.com/photos/17542167/pexels-photo-17542167.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Evenings like this" },
+      { src: "https://images.pexels.com/photos/10001039/pexels-photo-10001039.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Always you" },
+      { src: "https://images.pexels.com/photos/11034720/pexels-photo-11034720.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Golden hour" },
+      { src: "https://images.pexels.com/photos/30538464/pexels-photo-30538464.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Pop the champagne" },
+      { src: "https://images.pexels.com/photos/3156648/pexels-photo-3156648.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "Forever starts now" },
+      { src: "https://images.pexels.com/photos/19679440/pexels-photo-19679440.jpeg?auto=compress&cs=tinysrgb&w=1200", caption: "See you on the dance floor" },
     ],
   },
 
