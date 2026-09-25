@@ -24,7 +24,8 @@ Opening `index.html` straight from disk works too.
 
 - **Menu**: category chips, search, a "Chef's pick" feature card, favorites,
   "in your cart" badges and an open/closed status in the restaurant's time zone.
-- **Dish detail**: a large top-down photo of the dish, prep time, dietary tags,
+- **Dish detail**: a large top-down photo of the dish that spins and shrinks
+  into the header as you scroll the details, prep time, dietary tags,
   option groups (single choice or "up to N" extras with prices), special
   instructions, quantity and a live total.
 - **Cart**: quantity steppers, dine in / pickup / delivery, table number,

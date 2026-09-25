@@ -369,6 +369,7 @@
       (isDefault
         ? '<span class="pbar__label">' + icon("sparkle") + "Chef’s pick</span>"
         : '<button class="iconbtn" type="button" data-action="back" aria-label="Back">' + icon("back") + "</button>") +
+      '<span class="pbar__dock" aria-hidden="true"></span>' +
       '<div class="more"><button class="iconbtn" type="button" data-action="toggle-more" aria-haspopup="true" aria-expanded="false" aria-label="More options">' + icon("more") + "</button>" +
       '<div class="popover" hidden>' +
       '<button type="button" data-action="copy-link" data-id="' + d.id + '">' + icon("link") + "Copy link to this dish</button>" +

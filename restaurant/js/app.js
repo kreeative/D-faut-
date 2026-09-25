@@ -326,7 +326,39 @@
     if (!t.classList || !t.classList.contains("pview__scroll")) return;
     const bar = $(".pbar", t);
     if (bar) bar.classList.toggle("is-scrolled", t.scrollTop > 24);
+    foldHero(t);
   }, { passive: true, capture: true });
+
+  /* As a dish's details scroll, its photo folds into the header instead of
+     being cut: it spins, shrinks and docks in the middle of the bar. The
+     plate's bottom edge moves with the title, so the two never overlap, and
+     scrolling back up returns it to its place. CSS turns --p into motion. */
+  function foldHero(scroller) {
+    const hero = $(".dish-hero", scroller);
+    const img = hero && $(".dish-hero__img", hero);
+    const dock = $(".pbar__dock", scroller);
+    if (!img || !dock) return;
+    if (!hero.fold) {
+      const h = hero.getBoundingClientRect();
+      const d = dock.getBoundingClientRect();
+      const w = img.offsetWidth;
+      if (!w || !h.width) return;
+      const cx = img.offsetLeft + w / 2;
+      const cy = img.offsetTop + w / 2;
+      hero.style.setProperty("--dx", (d.left + d.width / 2 - h.left - cx).toFixed(1) + "px");
+      hero.style.setProperty("--dy", (d.top + d.height / 2 - h.top - cy).toFixed(1) + "px");
+      hero.style.setProperty("--k", (d.width / w).toFixed(4));
+      hero.fold = { dist: Math.max(1, img.offsetTop + w - (d.bottom - h.top)) };
+    }
+    const p = Math.min(1, Math.max(0, scroller.scrollTop / hero.fold.dist));
+    hero.style.setProperty("--p", p.toFixed(4));
+  }
+  window.addEventListener("resize", () => {
+    const hero = $(".dish-hero", el.sideInner);
+    if (!hero) return;
+    hero.fold = null;
+    foldHero(hero.parentElement);
+  }, { passive: true });
 
   /* ----------------------------------------------------------
      Dish form
