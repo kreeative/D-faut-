@@ -127,6 +127,7 @@
       ui.scrollByTab[prev.tab] = mainScrollTop();
       ui.confirmReset = false;
       renderMain();
+      enterView();
       setMainScroll(ui.scrollByTab[ui.tab] || 0);
       if (!ui.panel) focusMain();
     }
@@ -153,6 +154,18 @@
       V.menuView(ui);
     el.view.setAttribute("data-tab", t);
   }
+
+  /* Fade the new tab's content in. Only on a tab change: the same view also
+     re-renders in place when its data changes, and that must not replay it. */
+  function enterView() {
+    if (reduceMotion.matches) return;
+    el.view.classList.remove("is-entering");
+    void el.view.offsetWidth; // restart the animation if it is still running
+    el.view.classList.add("is-entering");
+  }
+  el.view.addEventListener("animationend", (e) => {
+    if (e.target === el.view) el.view.classList.remove("is-entering");
+  });
 
   function renderMenuList() {
     const list = $("#menuList");
@@ -185,15 +198,17 @@
     el.app.classList.toggle("is-solo", wide.matches && !panel);
     document.documentElement.classList.toggle("sheet-open", open && !wide.matches);
     setInert(el.main, open && !wide.matches);
-    setInert(el.side, !open && !wide.matches);
+    setInert(el.side, sideInert());
 
     if (!panel) {
-      // closing on a phone: keep the old content while it slides away
-      if (wide.matches) el.sideInner.innerHTML = "";
+      // closing: keep the old content while it slides away (a sheet on phones,
+      // the side panel gliding off to the right on the desktop)
+      if (wide.matches) clearSideAfterExit();
       if (lastTrigger && document.contains(lastTrigger)) lastTrigger.focus({ preventScroll: true });
       lastTrigger = null;
       return;
     }
+    clearTimeout(sideClear);
 
     let html = "";
     if (panel.type === "dish") {
@@ -220,6 +235,22 @@
       if (line) line.scrollIntoView({ block: "nearest", behavior: reduceMotion.matches ? "auto" : "smooth" });
       ui.newLine = null;
     }
+  }
+
+  /* The side panel is out of reach when nothing is shown in it: on a phone
+     while the sheet is closed, on the desktop while Orders or Profile have the
+     whole width (it is sliding away, then hidden). */
+  const sideInert = () => (wide.matches ? !resolvePanel().panel : !ui.panel);
+
+  /* Empty the desktop panel once it has glided out of sight, not before, so it
+     leaves with what it was showing. Matches --glide in the stylesheet. */
+  const GLIDE_MS = 650;
+  let sideClear = 0;
+  function clearSideAfterExit() {
+    clearTimeout(sideClear);
+    sideClear = setTimeout(() => {
+      if (wide.matches && !resolvePanel().panel) el.sideInner.innerHTML = "";
+    }, reduceMotion.matches ? 0 : GLIDE_MS);
   }
 
   /* Re-render the side panel without losing scroll position or focus */
@@ -287,7 +318,7 @@
       if (reduceMotion.matches) done();
       else setTimeout(done, 450);
       setInert(el.main, !!ui.panel && !wide.matches);
-      setInert(el.side, !ui.panel && !wide.matches);
+      setInert(el.side, sideInert());
       if (lastDrawerTrigger && document.contains(lastDrawerTrigger)) lastDrawerTrigger.focus({ preventScroll: true });
       lastDrawerTrigger = null;
     }
@@ -1047,6 +1078,9 @@
     renderChrome();
     onScroll();
     document.documentElement.classList.add("is-ready");
+    // Layout transitions start after the first frame, so the page arrives in
+    // its layout instead of animating into it.
+    requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add("is-settled")));
     setInterval(tick, 1000);
   }
 
