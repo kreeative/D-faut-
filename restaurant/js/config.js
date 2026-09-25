@@ -1,5 +1,5 @@
 /* ============================================================
-   Basil & Bloom — restaurant settings and menu
+   Tabouret — restaurant settings and menu
    Everything a restaurant owner would change lives in this file:
    name, contact details, opening hours, fees and the menu itself.
    ============================================================ */
@@ -32,7 +32,7 @@
   };
 
   window.RESTAURANT = {
-    name: "Basil & Bloom",
+    name: "Tabouret",
     headline: "Delicious Food",
     tagline: "We make fresh and healthy food",
     about:
@@ -44,7 +44,7 @@
       mapsUrl: "https://www.google.com/maps/search/?api=1&query=48+Orchard+Street+Springfield",
     },
     phone: "+1 (555) 014-2710",
-    email: "hello@basilandbloom.example",
+    email: "hello@tabouret.example",
 
     /* Times are interpreted in the restaurant's own time zone */
     timeZone: "America/New_York",
@@ -73,7 +73,7 @@
     slotMinutes: 15,
     taxRate: 0.08,
     promoCodes: {
-      BLOOM10: { type: "percent", value: 10, label: "10% off your order" },
+      TABOURET10: { type: "percent", value: 10, label: "10% off your order" },
       FREEDELIVERY: { type: "delivery", label: "Free delivery" },
     },
 

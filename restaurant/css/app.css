@@ -1,5 +1,5 @@
 /* ============================================================
-   Basil & Bloom — frosted-glass ordering app
+   Tabouret — frosted-glass ordering app
    Modern CSS · vanilla · light + dark
    ============================================================ */
 
@@ -1197,7 +1197,7 @@ html.sheet-open .toast.is-on { transform: translate(-50%, 0); }
   .grid { grid-template-columns: repeat(auto-fill, minmax(188px, 1fr)); column-gap: 20px; }
   .card { --plate: 146px; }
   .feature { padding: 24px 0 24px 28px; }
-  .feature__media { width: 196px; height: 196px; margin: -36px -40px -36px 0; }
+  .feature__media { width: 196px; height: 196px; margin: -36px -8px -36px 0; }
   .feature__title { font-size: 22px; }
 
   .side {
@@ -1229,14 +1229,61 @@ html.sheet-open .toast.is-on { transform: translate(-50%, 0); }
   .pview--dish .pfoot { padding-right: 0; }
   .pview--dish .cta { margin-right: -34px; }
   .dish-hero { margin-inline: -30px; padding-top: 62px; }
-  .dish-hero__img { width: 94%; margin-left: 11%; }
+  .dish-hero__img { width: 77%; margin-left: 17%; }
+
+  /* The plate hangs over the panel's right edge instead of being cut by it.
+     The dish view's scroll box reaches past the glass by --hang, and only
+     the plate uses that room. */
+  .pview--dish { --hang: 72px; }
+  .pview--dish .pview__scroll {
+    margin-right: calc(var(--hang) * -1);
+    padding-right: calc(30px + var(--hang));
+    scrollbar-width: none;
+    /* Past the glass, the plate fades out before it reaches the header */
+    -webkit-mask-image: linear-gradient(#000, #000), linear-gradient(transparent 80px, #000 160px);
+    mask-image: linear-gradient(#000, #000), linear-gradient(transparent 80px, #000 160px);
+    -webkit-mask-size: calc(100% - var(--hang)) 100%, var(--hang) 100%;
+    mask-size: calc(100% - var(--hang)) 100%, var(--hang) 100%;
+    -webkit-mask-position: left top, right top;
+    mask-position: left top, right top;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    /* Scrolled content keeps the glass's rounded top-right corner (the arc
+       is drawn with four straight segments) */
+    --arc-x: calc(100% - var(--hang));
+    clip-path: polygon(0 0,
+      calc(var(--arc-x) - var(--r-panel)) 0,
+      calc(var(--arc-x) - var(--r-panel) * 0.617) calc(var(--r-panel) * 0.076),
+      calc(var(--arc-x) - var(--r-panel) * 0.293) calc(var(--r-panel) * 0.293),
+      calc(var(--arc-x) - var(--r-panel) * 0.076) calc(var(--r-panel) * 0.617),
+      var(--arc-x) var(--r-panel),
+      100% var(--r-panel), 100% 100%, 0 100%);
+  }
+  .pview--dish .pview__scroll::-webkit-scrollbar { display: none; }
+  .pview--dish .dish-hero { margin-inline: -30px calc(-30px - var(--hang)); }
+
+  /* Orders and profile take the whole width while nothing is open beside them */
+  .app.is-solo { grid-template-columns: minmax(0, 1fr); max-width: 1080px; }
+  .app.is-solo .side { display: none; }
+  .is-solo .view[data-tab="orders"] .stack { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .is-solo .view[data-tab="profile"] {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "head head" "details diet" "details mode" "reset links";
+    column-gap: 20px; align-items: start;
+  }
+  .is-solo .pf-head { grid-area: head; }
+  .is-solo .pf-details { grid-area: details; }
+  .is-solo .pf-diet { grid-area: diet; }
+  .is-solo .pf-mode { grid-area: mode; }
+  .is-solo .pf-links { grid-area: links; }
+  .is-solo .pf-reset { grid-area: reset; }
 
   .toast { bottom: 12px; }
 }
 
 @media (min-width: 1024px) and (max-height: 760px) {
   .app { padding-block: 22px; }
-  .dish-hero__img { width: 80%; margin-left: 18%; }
+  .dish-hero__img { width: 66%; margin-left: 25%; }
 }
 
 /* Phones: the Add to Cart pill bleeds off the edge, as in the reference */

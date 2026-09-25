@@ -19,6 +19,7 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   const el = {
+    app: $(".app"),
     main: $("#main"),
     scroll: $("#mainScroll"),
     topbar: $("#topbar"),
@@ -102,7 +103,7 @@
   function route(path) {
     const parts = path.split("/").filter(Boolean);
     const [a, b] = parts;
-    const prev = { tab: ui.tab, panel: panelKey(ui.panel), drawer: ui.drawer };
+    const prev = { tab: ui.tab, panel: panelKey(ui.panel), side: sideKey(), drawer: ui.drawer };
 
     if (a === "info") {
       ui.drawer = true;
@@ -129,7 +130,7 @@
       setMainScroll(ui.scrollByTab[ui.tab] || 0);
       if (!ui.panel) focusMain();
     }
-    if (prev.panel !== panelKey(ui.panel)) {
+    if (prev.panel !== panelKey(ui.panel) || prev.side !== sideKey()) {
       if (!ui.panel || ui.panel.type !== "cart") ui.confirmClear = false;
       renderPanel({ focus: !!ui.panel });
     }
@@ -138,6 +139,7 @@
   }
 
   const panelKey = (p) => (p ? p.type + ":" + (p.id || "") : "");
+  const sideKey = () => panelKey(resolvePanel().panel);
 
   /* ----------------------------------------------------------
      Rendering
@@ -163,11 +165,13 @@
     });
   }
 
-  /* Which view the side panel shows. On wide screens it is never empty:
-     it falls back to the cart, or to the chef's pick while the cart is empty. */
+  /* Which view the side panel shows. On wide screens the menu and favorites
+     keep it filled: the cart, or the chef's pick while the cart is empty.
+     Orders and profile get the whole width until something is opened. */
+  const SIDE_TABS = ["menu", "favorites"];
   function resolvePanel() {
     if (ui.panel) return { panel: ui.panel, isDefault: false };
-    if (!wide.matches) return { panel: null, isDefault: true };
+    if (!wide.matches || !SIDE_TABS.includes(ui.tab)) return { panel: null, isDefault: true };
     if (S.state.cart.length) return { panel: { type: "cart" }, isDefault: true };
     return { panel: { type: "dish", id: R.featured }, isDefault: true };
   }
@@ -178,12 +182,14 @@
     const open = !!ui.panel;
     el.side.classList.toggle("is-open", open);
     el.side.classList.toggle("is-default", isDefault);
+    el.app.classList.toggle("is-solo", wide.matches && !panel);
     document.documentElement.classList.toggle("sheet-open", open && !wide.matches);
     setInert(el.main, open && !wide.matches);
     setInert(el.side, !open && !wide.matches);
 
     if (!panel) {
       // closing on a phone: keep the old content while it slides away
+      if (wide.matches) el.sideInner.innerHTML = "";
       if (lastTrigger && document.contains(lastTrigger)) lastTrigger.focus({ preventScroll: true });
       lastTrigger = null;
       return;

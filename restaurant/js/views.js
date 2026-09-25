@@ -13,6 +13,8 @@
   const plural = (n, one, many) => n + " " + (n === 1 ? one : many || one + "s");
   const MODE_ICON = { dineIn: "dineIn", pickup: "bag", delivery: "delivery" };
   const modes = () => Object.keys(R.orderTypes).filter((m) => R.orderTypes[m].enabled);
+  /* The cart suggests the first percentage code to new guests */
+  const welcomeCode = Object.keys(R.promoCodes || {}).find((c) => R.promoCodes[c].type === "percent");
 
   /* ----------------------------------------------------------
      Small parts
@@ -281,17 +283,17 @@
     const first = String(p.name || "").trim().split(/\s+/)[0];
     const diets = ["v", "vg", "gf", "df"];
     return (
-      '<header class="page-head page-head--profile"><span class="avatar" aria-hidden="true">' + (initials(p.name) || icon("user")) + "</span>" +
+      '<header class="page-head page-head--profile pf-head"><span class="avatar" aria-hidden="true">' + (initials(p.name) || icon("user")) + "</span>" +
       '<div><h1 class="page-title">' + (first ? "Hi, " + esc(first) : "Your profile") + "</h1>" +
       '<p class="page-sub">Saved on this device to make checkout quicker.</p></div></header>' +
-      '<form class="panel-block" id="profileForm" autocomplete="on">' +
+      '<form class="panel-block pf-details" id="profileForm" autocomplete="on">' +
       '<h2 class="block__title">Your details</h2>' +
       field("pfName", "name", "Name", p.name, { autocomplete: "name", placeholder: "Your name" }) +
       field("pfPhone", "phone", "Phone", p.phone, { type: "tel", autocomplete: "tel", placeholder: "For order updates" }) +
       field("pfAddress", "address", "Delivery address", p.address, { autocomplete: "street-address", placeholder: "Street, number, apartment" }) +
       '<p class="hint" data-saved hidden>' + icon("check") + "Saved</p>" +
       "</form>" +
-      '<section class="panel-block"><h2 class="block__title">Dietary preferences</h2>' +
+      '<section class="panel-block pf-diet"><h2 class="block__title">Dietary preferences</h2>' +
       '<p class="block__text">The menu will only show dishes that match.</p><div class="chips">' +
       diets.map((t) => {
         const on = p.diet.includes(t);
@@ -299,12 +301,12 @@
           (on ? icon("check") : "") + esc(R.tags[t].label) + "</button>";
       }).join("") +
       "</div></section>" +
-      '<section class="panel-block"><h2 class="block__title">Usual way to order</h2>' + modeSeg(S.state.checkout.mode, "set-mode") + "</section>" +
-      '<section class="panel-block links">' +
+      '<section class="panel-block pf-mode"><h2 class="block__title">Usual way to order</h2>' + modeSeg(S.state.checkout.mode, "set-mode") + "</section>" +
+      '<section class="panel-block links pf-links">' +
       '<a class="linkrow" href="#/info">' + icon("info") + "<span>Hours, address &amp; contact</span>" + icon("arrow", "linkrow__go") + "</a>" +
       '<a class="linkrow" href="#/orders">' + icon("receipt") + "<span>Order history</span>" + icon("arrow", "linkrow__go") + "</a>" +
       "</section>" +
-      '<section class="panel-block">' +
+      '<section class="panel-block pf-reset">' +
       (ui.confirmReset
         ? '<p class="block__text"><strong>Clear everything saved on this device?</strong> This removes your cart, favorites, order history and details.</p>' +
           '<div class="row"><button class="btn btn--danger" type="button" data-action="reset-confirm">Clear my data</button>' +
@@ -482,7 +484,7 @@
           '<input id="promoInput" name="code" placeholder="Enter a code" autocomplete="off" autocapitalize="characters" spellcheck="false">' +
           '<button class="btn btn--sm" type="submit">Apply</button></form>' +
           '<p class="field__error" id="promoInput-err" hidden></p>' +
-          '<p class="hint">First order? Try <button class="textbtn textbtn--inline" type="button" data-action="use-promo" data-code="BLOOM10">BLOOM10</button></p>') +
+          (welcomeCode ? '<p class="hint">First order? Try <button class="textbtn textbtn--inline" type="button" data-action="use-promo" data-code="' + esc(welcomeCode) + '">' + esc(welcomeCode) + "</button></p>" : "")) +
       "</section>" +
       '<section class="panel-block summary">' + summaryRows(t, ck.mode) + "</section>" +
       "</div>" +
@@ -699,9 +701,11 @@
     );
   }
 
+  /* A tabouret (stool): seat, two splayed legs and a footrest */
   function logo() {
     return '<svg viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="currentColor"/>' +
-      '<path d="M12 27c0-9 6-15 16-16 0 10-6 16-16 16z" fill="var(--on-accent)"/><path d="M12.5 26.5c3-4 6.4-7.4 10-9.6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>';
+      '<path d="M14.6 15.6 12.7 29.2M25.4 15.6l1.9 13.6M13.5 23.6h13" fill="none" stroke="var(--on-accent)" stroke-width="2.1" stroke-linecap="round"/>' +
+      '<rect x="10.8" y="10.6" width="18.4" height="5.2" rx="2.6" fill="var(--on-accent)"/></svg>';
   }
 
   window.Views = {

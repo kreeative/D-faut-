@@ -16,7 +16,7 @@ frameworks, no build step.
 - **Fully responsive** — mobile slide-in menu, fluid `clamp()` type, and a
   `prefers-reduced-motion` path that disables animation.
 
-## Also in this repo: Basil & Bloom ordering app
+## Also in this repo: Tabouret ordering app
 
 [`restaurant/`](restaurant/) holds a separate project: a frosted-glass web app for
 ordering food from a single restaurant, covering the menu, dish options, cart,

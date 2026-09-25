@@ -6,7 +6,7 @@
   "use strict";
 
   const R = window.RESTAURANT;
-  const STORAGE_KEY = "basil-bloom:v1";
+  const STORAGE_KEY = "tabouret:v1";
   const DAY = 1440;
 
   /* ----------------------------------------------------------

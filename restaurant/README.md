@@ -1,4 +1,4 @@
-# Basil & Bloom — restaurant ordering web app
+# Tabouret — restaurant ordering web app
 
 A single-restaurant ordering app built from the frosted-glass food app concept:
 soft pastel light, glass cards, plates that float out of their cards and black
@@ -36,7 +36,9 @@ Opening `index.html` straight from disk works too.
   one-tap reorder. You also get a notification when an order changes stage.
 - **Layout**: on phones it's one column with full-screen sheets. On desktop
   (from 1024px) it shows two glass panels side by side, as in the reference
-  shot, with the order panel always visible.
+  shot. The menu and favorites keep the dish or your order beside them, with
+  the plate hanging over the panel's edge. Orders and profile use the full
+  width until you open a dish, the cart or an order.
 - Light and dark themes, keyboard and screen-reader support, and reduced-motion
   support. Browser back and forward work through hash routes such as
   `#/dish/flat-white`, `#/cart` and `#/orders`.
@@ -52,7 +54,7 @@ Everything a restaurant changes lives in **`js/config.js`**:
 | `timeZone`, `locale`, `currency` | Opening status, time slots and price formatting |
 | `hours` | Opening hours per weekday (`0` = Sunday). Several ranges per day are allowed |
 | `orderTypes` | Enable dine in, pickup and delivery. Prep times, delivery fee, free-delivery threshold, minimum order, number of tables |
-| `taxRate`, `promoCodes` | Tax line and discount codes (`percent` or free `delivery`) |
+| `taxRate`, `promoCodes` | Tax line and discount codes (`percent` or free `delivery`). The cart suggests the first `percent` code to new guests |
 | `categories`, `dishes` | The menu. Each dish has a price, description, prep minutes, kcal, tags, allergens and option groups |
 
 Each dish's photo is read from `assets/dishes/<dish-id>.webp`. A 400px copy in
