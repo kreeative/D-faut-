@@ -164,6 +164,13 @@ new colourway, e.g. a navy Bordeaux or a blush Olive, and sell it as a variant.
 - Deliver: a preview link to approve, the final link, and the `guest-links.html` tool.
 - Screen-record the opening animation on a phone for Etsy, Instagram or TikTok listings.
 
+## Canva versions
+
+`canva/bordeaux.html` and `canva/olive.html` are static, page-by-page versions
+of both designs (1366×768 website pages). Canva imports them as editable
+website designs. Use them to sell Canva templates, or to let a client edit the
+text themselves.
+
 ## About the demo photos
 
 The demo photos are free stock photos from [Pexels](https://www.pexels.com),
