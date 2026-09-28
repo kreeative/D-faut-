@@ -130,19 +130,19 @@ def crop_box(W, H, c):
     """The largest box of the pick's aspect, scaled by zoom, centred on (cx, cy) and kept inside."""
     aw, ah = c.get("aspect", [1, 1])
     zoom = c.get("zoom", 1.0)
-    w = min(W, H * aw / ah) / zoom
-    h = w * ah / aw
-    x0 = min(max(c.get("cx", 0.5) * W - w / 2, 0), W - w)
-    y0 = min(max(c.get("cy", 0.5) * H - h / 2, 0), H - h)
-    return int(round(x0)), int(round(y0)), int(round(x0 + w)), int(round(y0 + h))
+    w = int(min(W, H * aw / ah) / zoom)
+    h = min(H, int(round(w * ah / aw)))
+    x0 = int(round(min(max(c.get("cx", 0.5) * W - w / 2, 0), W - w)))
+    y0 = int(round(min(max(c.get("cy", 0.5) * H - h / 2, 0), H - h)))
+    return x0, y0, x0 + w, y0 + h
 
 
 def circle(im):
     """Mask a square image to a circle, anti-aliased by drawing the mask at 4x."""
-    s = im.width
-    big = Image.new("L", (s * 4, s * 4), 0)
-    ImageDraw.Draw(big).ellipse((0, 0, s * 4 - 1, s * 4 - 1), fill=255)
-    mask = big.resize((s, s), Image.LANCZOS)
+    w, h = im.size
+    big = Image.new("L", (w * 4, h * 4), 0)
+    ImageDraw.Draw(big).ellipse((0, 0, w * 4 - 1, h * 4 - 1), fill=255)
+    mask = big.resize((w, h), Image.LANCZOS)
     out = im.convert("RGBA")
     out.putalpha(mask)
     return out
@@ -166,13 +166,12 @@ def run_download():
             if w > crop.width * 1.02 and w != c.get("widths", [800])[0]:
                 log("skip", key, w, "(source crop is only %d wide)" % crop.width)
                 continue
-            h = round(w * crop.height / crop.width)
+            h = w if cut else round(w * crop.height / crop.width)
             out = crop.resize((w, h), Image.LANCZOS) if w < crop.width else crop.copy()
             if cut:
                 circle(out).save(os.path.join(PHOTOS, "%s-%d.webp" % (key, w)), quality=86, method=6)
             else:
                 out.save(os.path.join(PHOTOS, "%s-%d.webp" % (key, w)), quality=82, method=6)
-                out.save(os.path.join(PHOTOS, "%s-%d.jpg" % (key, w)), quality=84, optimize=True, progressive=True)
         credits[key] = {"id": c["id"], "page": "https://www.pexels.com/photo/%s-%d/" % (c.get("slug", "photo"), c["id"]),
                         "license": "Pexels License", "source_size": [W, H], "box": list(box)}
         log("ok  ", key, c["id"], "source %dx%d" % (W, H), "box", box)
