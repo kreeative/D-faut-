@@ -1,0 +1,302 @@
+{
+ "hero-1": {
+  "id": 28059309,
+  "page": "https://www.pexels.com/photo/a-dining-table-with-candles-lit-and-a-chandelier-28059309/",
+  "license": "Pexels License",
+  "source_size": [
+   2600,
+   1734
+  ],
+  "box": [
+   0,
+   223,
+   2600,
+   1685
+  ]
+ },
+ "hero-2": {
+  "id": 941861,
+  "page": "https://www.pexels.com/photo/wine-glasses-on-table-tops-941861/",
+  "license": "Pexels License",
+  "source_size": [
+   2600,
+   1462
+  ],
+  "box": [
+   0,
+   0,
+   2599,
+   1462
+  ]
+ },
+ "hero-3": {
+  "id": 776538,
+  "page": "https://www.pexels.com/photo/restaurant-interior-776538/",
+  "license": "Pexels License",
+  "source_size": [
+   2600,
+   1733
+  ],
+  "box": [
+   0,
+   136,
+   2600,
+   1598
+  ]
+ },
+ "hero-4": {
+  "id": 5863513,
+  "page": "https://www.pexels.com/photo/interior-design-of-a-bar-and-restaurant-5863513/",
+  "license": "Pexels License",
+  "source_size": [
+   2600,
+   1646
+  ],
+  "box": [
+   0,
+   92,
+   2600,
+   1554
+  ]
+ },
+ "plate-a": {
+  "id": 32863869,
+  "page": "https://www.pexels.com/photo/gourmet-scallop-dish-in-shell-plating-32863869/",
+  "license": "Pexels License",
+  "source_size": [
+   1800,
+   2400
+  ],
+  "box": [
+   70,
+   143,
+   1800,
+   1873
+  ]
+ },
+ "plate-b": {
+  "id": 23627779,
+  "page": "https://www.pexels.com/photo/risotto-with-seafood-on-plate-23627779/",
+  "license": "Pexels License",
+  "source_size": [
+   1800,
+   1758
+  ],
+  "box": [
+   21,
+   0,
+   1779,
+   1758
+  ]
+ },
+ "plate-c": {
+  "id": 15814322,
+  "page": "https://www.pexels.com/photo/delicious-food-in-plate-on-board-15814322/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   1920
+  ],
+  "box": [
+   478,
+   238,
+   1921,
+   1681
+  ]
+ },
+ "craft-dish": {
+  "id": 12814607,
+  "page": "https://www.pexels.com/photo/close-up-of-a-dish-12814607/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   3200
+  ],
+  "box": [
+   0,
+   100,
+   2400,
+   3100
+  ]
+ },
+ "craft-chef": {
+  "id": 19664661,
+  "page": "https://www.pexels.com/photo/chef-in-a-kitchen-in-black-and-white-19664661/",
+  "license": "Pexels License",
+  "source_size": [
+   1920,
+   2880
+  ],
+  "box": [
+   0,
+   512,
+   1920,
+   1908
+  ]
+ },
+ "craft-chef-b": {
+  "id": 6309829,
+  "page": "https://www.pexels.com/photo/serious-man-cooking-food-at-table-in-restaurant-kitchen-6309829/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   3593
+  ],
+  "box": [
+   0,
+   493,
+   2400,
+   2238
+  ]
+ },
+ "craft-plating": {
+  "id": 2403392,
+  "page": "https://www.pexels.com/photo/person-holding-bowl-2403392/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   1600
+  ],
+  "box": [
+   100,
+   0,
+   2300,
+   1600
+  ]
+ },
+ "sea-1": {
+  "id": 4871121,
+  "page": "https://www.pexels.com/photo/seafood-dish-with-bivalves-4871121/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   1600
+  ],
+  "box": [
+   600,
+   0,
+   1800,
+   1600
+  ]
+ },
+ "sea-2": {
+  "id": 8112907,
+  "page": "https://www.pexels.com/photo/close-up-of-a-gourmet-dish-with-meat-8112907/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   3600
+  ],
+  "box": [
+   0,
+   380,
+   2400,
+   3580
+  ]
+ },
+ "sea-3": {
+  "id": 24246107,
+  "page": "https://www.pexels.com/photo/hands-holding-a-plate-with-lobster-and-vegetables-24246107/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   1475
+  ],
+  "box": [
+   767,
+   0,
+   1873,
+   1475
+  ]
+ },
+ "sea-4": {
+  "id": 16064369,
+  "page": "https://www.pexels.com/photo/photo-of-foie-gras-16064369/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   3600
+  ],
+  "box": [
+   0,
+   200,
+   2400,
+   3400
+  ]
+ },
+ "sea-5": {
+  "id": 6839650,
+  "page": "https://www.pexels.com/photo/a-close-up-shot-of-a-fish-dish-6839650/",
+  "license": "Pexels License",
+  "source_size": [
+   2333,
+   3500
+  ],
+  "box": [
+   0,
+   194,
+   2333,
+   3305
+  ]
+ },
+ "sweet-1": {
+  "id": 28561583,
+  "page": "https://www.pexels.com/photo/gourmet-dessert-plate-with-rich-chocolate-sauce-28561583/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   1350
+  ],
+  "box": [
+   272,
+   0,
+   2128,
+   1350
+  ]
+ },
+ "sweet-2": {
+  "id": 29707925,
+  "page": "https://www.pexels.com/photo/elegant-old-fashioned-cocktail-on-bar-counter-29707925/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   3600
+  ],
+  "box": [
+   0,
+   928,
+   2400,
+   2673
+  ]
+ },
+ "sweet-3": {
+  "id": 4667152,
+  "page": "https://www.pexels.com/photo/person-pouring-brown-liquid-on-clear-drinking-glass-4667152/",
+  "license": "Pexels License",
+  "source_size": [
+   2333,
+   3500
+  ],
+  "box": [
+   0,
+   726,
+   2333,
+   2423
+  ]
+ },
+ "tide": {
+  "id": 28059316,
+  "page": "https://www.pexels.com/photo/a-table-setting-with-candles-and-place-settings-28059316/",
+  "license": "Pexels License",
+  "source_size": [
+   2400,
+   3598
+  ],
+  "box": [
+   0,
+   199,
+   2400,
+   3399
+  ]
+ }
+}
