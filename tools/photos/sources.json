@@ -1,0 +1,96 @@
+{
+  "hero": [
+    {"id": 9132316, "slug": "white-lingerie-on-a-clothes-hanger"},
+    {"id": 26968036, "slug": "blacky-lacy-lingerie-on-bed"},
+    {"id": 4992848, "slug": "sketch-and-black-underwear-on-table"},
+    {"id": 5405644, "slug": "flat-lay-of-a-woman-s-clothes-and-accessories"}
+  ],
+  "rosalie-bra": [
+    {"id": 2702692, "slug": "women-s-black-brassiere"},
+    {"id": 26968036, "slug": "blacky-lacy-lingerie-on-bed"},
+    {"id": 5219028, "slug": "women-sitting-on-the-sofa-wearing-black-lace-lingerie"},
+    {"id": 3682265, "slug": "red-lace-brassiere-on-white-bed"}
+  ],
+  "margaux-body": [
+    {"id": 19034167, "slug": "model-in-a-black-lace-bodysuit-with-long-sleeves"},
+    {"id": 20269532, "slug": "model-in-a-black-lace-bodysuit-and-golden-high-heels"},
+    {"id": 2526826, "slug": "photo-of-a-woman-in-white-lace-one-piece-bodysuit"},
+    {"id": 5044005, "slug": "voluptuous-woman-in-bodysuit-raising-arms-gracefully"}
+  ],
+  "camille-slip": [
+    {"id": 20364793, "slug": "a-woman-in-a-purple-satin-slip-dress"},
+    {"id": 20332983, "slug": "young-woman-posing-in-a-silk-slip-dress"},
+    {"id": 18269866, "slug": "black-and-white-photo-of-a-woman-in-satin-split-thigh-dress"},
+    {"id": 2575680, "slug": "photo-of-woman-wearing-white-lingerie"}
+  ],
+  "colette-bralette": [
+    {"id": 10782049, "slug": "close-up-photo-of-woman-wearing-brassiere"},
+    {"id": 12972414, "slug": "a-sexy-woman-in-white-lace-brassiere"},
+    {"id": 3828242, "slug": "woman-in-white-lace-brassiere-and-panty"},
+    {"id": 5496529, "slug": "back-view-of-woman-wearing-white-bra"}
+  ],
+  "ines-brief": [
+    {"id": 8690081, "slug": "woman-in-white-lace-panty"},
+    {"id": 12487860, "slug": "close-up-photo-of-woman-wearing-white-underwear"},
+    {"id": 11103018, "slug": "woman-in-brassiere-and-panty"},
+    {"id": 9881048, "slug": "a-woman-in-white-bra-and-panty"}
+  ],
+  "lea-pyjamas": [
+    {"id": 6625422, "slug": "photo-of-a-woman-in-pajamas-posing"},
+    {"id": 20205294, "slug": "woman-sitting-and-posing-in-pajama"},
+    {"id": 3765109, "slug": "close-up-photo-of-woman-in-white-silk-robe-sleeping-on-a-bed"},
+    {"id": 7946623, "slug": "close-up-shot-of-a-satin-fabric"}
+  ],
+  "mila-thong": [
+    {"id": 8731335, "slug": "person-holding-a-lace-underwear"},
+    {"id": 1597650, "slug": "photo-of-underwear-hanging-on-clothes-line"},
+    {"id": 4992848, "slug": "sketch-and-black-underwear-on-table"},
+    {"id": 8732111, "slug": "woman-in-bra-and-panty"}
+  ],
+  "juliette-bikini": [
+    {"id": 3998649, "slug": "flat-lay-of-swimwear"},
+    {"id": 323244, "slug": "back-view-beach-bikini-blonde-hair"},
+    {"id": 2364306, "slug": "woman-wearing-white-2-piece-bikini-at-the-beach"},
+    {"id": 11668237, "slug": "woman-in-white-bikini-holding-a-lace-fabric"}
+  ],
+  "aurore-robe": [
+    {"id": 3764576, "slug": "photo-of-woman-in-silk-robe-sitting-on-white-couch"},
+    {"id": 8717917, "slug": "woman-wearing-blue-silk-robe-standing-on-tall-grass"},
+    {"id": 30593681, "slug": "sunset-beach-model-in-white-bikini-and-robe"},
+    {"id": 7958034, "slug": "woman-in-green-kimono"}
+  ],
+  "cat-bras": [
+    {"id": 9132316, "slug": "white-lingerie-on-a-clothes-hanger"},
+    {"id": 2702692, "slug": "women-s-black-brassiere"},
+    {"id": 3682265, "slug": "red-lace-brassiere-on-white-bed"},
+    {"id": 10457197, "slug": "a-red-brassiere"}
+  ],
+  "cat-bodys": [
+    {"id": 19034167, "slug": "model-in-a-black-lace-bodysuit-with-long-sleeves"},
+    {"id": 2526826, "slug": "photo-of-a-woman-in-white-lace-one-piece-bodysuit"},
+    {"id": 1984445, "slug": "woman-in-black-bodysuit"}
+  ],
+  "cat-briefs": [
+    {"id": 8731335, "slug": "person-holding-a-lace-underwear"},
+    {"id": 8690081, "slug": "woman-in-white-lace-panty"},
+    {"id": 1597650, "slug": "photo-of-underwear-hanging-on-clothes-line"}
+  ],
+  "cat-lounge": [
+    {"id": 4169370, "slug": "clothes-hanging-on-clothes-rack"},
+    {"id": 3764576, "slug": "photo-of-woman-in-silk-robe-sitting-on-white-couch"},
+    {"id": 6625422, "slug": "photo-of-a-woman-in-pajamas-posing"},
+    {"id": 7946623, "slug": "close-up-shot-of-a-satin-fabric"}
+  ],
+  "cat-swim": [
+    {"id": 3998649, "slug": "flat-lay-of-swimwear"},
+    {"id": 323244, "slug": "back-view-beach-bikini-blonde-hair"},
+    {"id": 2364306, "slug": "woman-wearing-white-2-piece-bikini-at-the-beach"},
+    {"id": 9269443, "slug": "woman-wearing-bikini-on-white-sand-beach"}
+  ],
+  "detail": [
+    {"id": 6634454, "slug": "close-up-of-handmade-fabric-texture"},
+    {"id": 6046220, "slug": "black-trousers-and-transparent-dress-on-hanger-placed-on-chandelier"},
+    {"id": 17663072, "slug": "clothes-on-hanger"},
+    {"id": 7963960, "slug": "alluring-woman-in-white-lace-lingerie"}
+  ]
+}

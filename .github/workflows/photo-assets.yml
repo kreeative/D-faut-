@@ -1,0 +1,43 @@
+# Downloads and crops the Pexels photos listed in tools/photos/ and commits the results back.
+# Temporary: removed once the photos are in the site.
+name: Photo assets
+
+on:
+  push:
+    branches: [claude/wearables-concept-setup-5yjo5g]
+    paths:
+      - 'tools/photos/sources.json'
+      - 'tools/photos/picks.json'
+      - 'tools/photos/fetch.py'
+      - '.github/workflows/photo-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: photo-assets
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow
+      - run: python tools/photos/fetch.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/photos
+          if git diff --cached --quiet; then
+            echo "No new photo files"
+            exit 0
+          fi
+          git commit -m "Add fetched photo files [skip ci]"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
