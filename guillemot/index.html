@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Guillemot · Maison de Mer</title>
+  <meta name="description" content="Guillemot is a coastal fine-dining restaurant: a seven-course Tide Menu built on the morning's catch, served by candlelight to thirty-two guests a night.">
+  <meta name="theme-color" content="#15120f">
+  <meta property="og:title" content="Guillemot · Maison de Mer">
+  <meta property="og:description" content="Where the tide meets the table: coastal cuisine, served in quiet luxury.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://guillemot.vercel.app/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/photos/hero-1-1600.webp" imagesrcset="assets/photos/hero-1-960.webp 960w, assets/photos/hero-1-1600.webp 1600w, assets/photos/hero-1-2400.webp 2400w" imagesizes="(min-width: 1360px) 1320px, 100vw">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- A slim bar that appears once the hero has scrolled away -->
+  <div class="topbar" id="topbar" aria-hidden="true">
+    <a class="topbar__mark" href="#top" tabindex="-1">Guillemot</a>
+    <a class="btn btn--sm" href="#reserve" tabindex="-1">Reservations</a>
+  </div>
+
+  <div class="frame">
+    <header class="hero" id="top">
+      <div class="hero__media" aria-hidden="true">
+        <figure class="hero__slide is-on" data-name="the candlelit dining room">
+          <img src="assets/photos/hero-1-1600.webp"
+               srcset="assets/photos/hero-1-960.webp 960w, assets/photos/hero-1-1600.webp 1600w, assets/photos/hero-1-2400.webp 2400w"
+               sizes="(min-width: 1360px) 1320px, 100vw" width="2400" height="1350" alt="" fetchpriority="high">
+        </figure>
+        <figure class="hero__slide" data-name="the salon at nightfall">
+          <img data-src="assets/photos/hero-2-1600.webp"
+               data-srcset="assets/photos/hero-2-960.webp 960w, assets/photos/hero-2-1600.webp 1600w, assets/photos/hero-2-2400.webp 2400w"
+               sizes="(min-width: 1360px) 1320px, 100vw" width="2400" height="1350" alt="">
+        </figure>
+        <figure class="hero__slide" data-name="the lantern room">
+          <img data-src="assets/photos/hero-3-1600.webp"
+               data-srcset="assets/photos/hero-3-960.webp 960w, assets/photos/hero-3-1600.webp 1600w, assets/photos/hero-3-2400.webp 2400w"
+               sizes="(min-width: 1360px) 1320px, 100vw" width="2400" height="1350" alt="">
+        </figure>
+        <figure class="hero__slide" data-name="the cellar lounge">
+          <img data-src="assets/photos/hero-4-1600.webp"
+               data-srcset="assets/photos/hero-4-960.webp 960w, assets/photos/hero-4-1600.webp 1600w, assets/photos/hero-4-2400.webp 2400w"
+               sizes="(min-width: 1360px) 1320px, 100vw" width="2400" height="1350" alt="">
+        </figure>
+        <div class="hero__shade"></div>
+      </div>
+
+      <nav class="nav" aria-label="Main">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+          <span class="nav__bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#visit">Contact</a></li>
+        </ul>
+        <a class="wordmark" href="#top" aria-label="Guillemot, Maison de Mer, home">
+          <span class="wordmark__name">Guillemot</span>
+          <span class="wordmark__sub">Maison de Mer</span>
+        </a>
+        <a class="btn btn--sm nav__cta" href="#reserve"><span class="nav__long">Reservations</span><span class="nav__short">Book</span></a>
+      </nav>
+
+      <div class="hero__copy">
+        <h1 class="hero__title">Where the Tide<br>Meets the Table</h1>
+        <p class="hero__sub">Coastal cuisine, served in quiet luxury</p>
+        <a class="btn" href="#reserve">Reservations</a>
+      </div>
+
+      <div class="hero__dots" role="group" aria-label="Rooms">
+        <button type="button" class="dot is-on" aria-current="true" aria-label="Show the candlelit dining room"><i></i></button>
+        <button type="button" class="dot" aria-label="Show the salon at nightfall"><i></i></button>
+        <button type="button" class="dot" aria-label="Show the lantern room"><i></i></button>
+        <button type="button" class="dot" aria-label="Show the cellar lounge"><i></i></button>
+      </div>
+
+      <div class="plate" aria-hidden="true">
+        <img src="assets/photos/plate-960.webp" srcset="assets/photos/plate-480.webp 480w, assets/photos/plate-960.webp 960w"
+             sizes="(min-width: 1024px) 460px, 74vw" width="960" height="960" alt="">
+      </div>
+    </header>
+
+    <main class="lower" id="main">
+      <section class="craft panel panel--cream" id="about" aria-labelledby="craftTitle">
+        <h2 class="title reveal" id="craftTitle">Where the Coast Meets<br>Quiet Luxury</h2>
+        <p class="lede reveal">Chef Ronan Maréchal cooks only what the morning boats bring in, and serves it by candlelight to thirty-two guests a night.</p>
+        <div class="mosaic reveal">
+          <figure class="mosaic__a">
+            <img src="assets/photos/craft-dish-1200.webp" srcset="assets/photos/craft-dish-640.webp 640w, assets/photos/craft-dish-1200.webp 1200w"
+                 sizes="(min-width: 1024px) 300px, 55vw" width="1200" height="1500" loading="lazy" alt="Line-caught bass on a creamy spelt risotto, served in a dark stoneware bowl">
+          </figure>
+          <figure class="mosaic__b">
+            <img src="assets/photos/craft-chef-1200.webp" srcset="assets/photos/craft-chef-640.webp 640w, assets/photos/craft-chef-1200.webp 1200w"
+                 sizes="(min-width: 1024px) 260px, 45vw" width="1200" height="873" loading="lazy" alt="A chef in whites and a toque working through the steam of the pass">
+          </figure>
+          <figure class="mosaic__c">
+            <img src="assets/photos/craft-plating-1200.webp" srcset="assets/photos/craft-plating-640.webp 640w, assets/photos/craft-plating-1200.webp 1200w"
+                 sizes="(min-width: 1024px) 260px, 45vw" width="1200" height="873" loading="lazy" alt="A cook spooning sauce over plates under a warm lamp">
+          </figure>
+        </div>
+      </section>
+
+      <section class="cuisine" id="menu" aria-labelledby="cuisineTitle">
+        <div class="cuisine__card">
+          <h2 class="title title--center reveal" id="cuisineTitle">The morning’s catch,<br>crafted with intention.</h2>
+          <hr class="rule">
+          <h3 class="label reveal">From the Sea</h3>
+          <ul class="shots shots--3 reveal">
+            <li>
+              <figure>
+                <img src="assets/photos/sea-1-960.webp" srcset="assets/photos/sea-1-480.webp 480w, assets/photos/sea-1-960.webp 960w"
+                     sizes="(min-width: 1024px) 180px, 30vw" width="960" height="1280" loading="lazy" alt="Scallops in their shells with caviar and sea herbs">
+                <figcaption><span>Hand-dived scallop</span> Oscietra caviar, sea herbs</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="assets/photos/sea-2-960.webp" srcset="assets/photos/sea-2-480.webp 480w, assets/photos/sea-2-960.webp 960w"
+                     sizes="(min-width: 1024px) 180px, 30vw" width="960" height="1280" loading="lazy" alt="Turbot with a crisp browned skin and chives, in a buttery sauce with turnip">
+                <figcaption><span>Crisp-skin turbot</span> Beurre blanc, turnip</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="assets/photos/sea-3-960.webp" srcset="assets/photos/sea-3-480.webp 480w, assets/photos/sea-3-960.webp 960w"
+                     sizes="(min-width: 1024px) 180px, 30vw" width="960" height="1280" loading="lazy" alt="Lobster served on a white plate with greens">
+                <figcaption><span>Blue lobster</span> Butter-poached, garden greens</figcaption>
+              </figure>
+            </li>
+          </ul>
+          <h3 class="label reveal">Sweet Endings</h3>
+          <ul class="shots shots--2 reveal">
+            <li>
+              <figure>
+                <img src="assets/photos/sweet-1-960.webp" srcset="assets/photos/sweet-1-480.webp 480w, assets/photos/sweet-1-960.webp 960w"
+                     sizes="(min-width: 1024px) 280px, 46vw" width="960" height="698" loading="lazy" alt="A caramel custard in a white bowl on a dark wooden table">
+                <figcaption><span>Burnt-honey custard</span> Salted caramel</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img src="assets/photos/sweet-2-960.webp" srcset="assets/photos/sweet-2-480.webp 480w, assets/photos/sweet-2-960.webp 960w"
+                     sizes="(min-width: 1024px) 280px, 46vw" width="960" height="698" loading="lazy" alt="An Old Fashioned with an orange twist on a dark bar counter">
+                <figcaption><span>Smoked Old Fashioned</span> Orange, sea salt</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="tide panel panel--night" id="experience" aria-labelledby="tideTitle">
+        <figure class="tide__photo reveal">
+          <img src="assets/photos/tide-1200.webp" srcset="assets/photos/tide-640.webp 640w, assets/photos/tide-1200.webp 1200w"
+               sizes="(min-width: 1024px) 280px, 100vw" width="1200" height="1600" loading="lazy" alt="A candlelit table laid with monogrammed plates and crystal glasses">
+        </figure>
+        <div class="tide__copy reveal">
+          <h2 class="title title--light" id="tideTitle">Discover<br>the Tide Menu</h2>
+          <p>Seven courses that follow the morning’s catch, paired from a cellar of four hundred wines. Served Wednesday to Saturday from six, and at Sunday lunch.</p>
+          <p class="tide__price">$185 per guest <span aria-hidden="true">·</span> wine pairing $120</p>
+          <details class="courses">
+            <summary>See the seven courses</summary>
+            <ol>
+              <li><span>Oyster</span> Sea buckthorn, cucumber, dill oil</li>
+              <li><span>Hand-dived scallop</span> Oscietra caviar, sea herbs</li>
+              <li><span>Crisp-skin turbot</span> Beurre blanc, turnip</li>
+              <li><span>Line-caught bass</span> Spelt risotto, sea beet</li>
+              <li><span>Blue lobster</span> Butter-poached, garden greens</li>
+              <li><span>Buttermilk</span> Fennel pollen, green apple</li>
+              <li><span>Burnt-honey custard</span> Salted caramel, rye</li>
+            </ol>
+          </details>
+          <a class="btn btn--sm" href="#reserve">Reserve Now</a>
+        </div>
+      </section>
+
+      <section class="reserve panel panel--cream" id="reserve" aria-labelledby="reserveTitle">
+        <h2 class="title title--center reveal" id="reserveTitle">Reserve Your Table</h2>
+        <p class="lede lede--center reveal">Tables open thirty days ahead. For parties above eight, or the private salon, write to us and we will find the evening.</p>
+
+        <form class="form reveal" id="reserveForm" novalidate>
+          <div class="form__row">
+            <div class="field">
+              <label for="fDate">Date</label>
+              <input id="fDate" name="date" type="date" required aria-describedby="eDate">
+              <p class="field__error" id="eDate"></p>
+            </div>
+            <div class="field">
+              <label for="fTime">Time</label>
+              <select id="fTime" name="time" required aria-describedby="eTime">
+                <option value="">Choose a time</option>
+              </select>
+              <p class="field__error" id="eTime"></p>
+            </div>
+            <div class="field">
+              <label for="fGuests">Guests</label>
+              <select id="fGuests" name="guests" required>
+                <option value="1">1 guest</option>
+                <option value="2" selected>2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+                <option value="5">5 guests</option>
+                <option value="6">6 guests</option>
+                <option value="7">7 guests</option>
+                <option value="8">8 guests</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__row form__row--2">
+            <div class="field">
+              <label for="fName">Name</label>
+              <input id="fName" name="name" type="text" autocomplete="name" required aria-describedby="eName">
+              <p class="field__error" id="eName"></p>
+            </div>
+            <div class="field">
+              <label for="fEmail">Email</label>
+              <input id="fEmail" name="email" type="email" autocomplete="email" required aria-describedby="eEmail">
+              <p class="field__error" id="eEmail"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="fNotes">Occasion or requests <span class="field__opt">(optional)</span></label>
+            <textarea id="fNotes" name="notes" rows="3" placeholder="An anniversary, an allergy, a window table…"></textarea>
+          </div>
+          <div class="form__foot">
+            <button class="btn" type="submit">Request a Table</button>
+            <p class="form__note">Guillemot is a design concept, so no request is sent.</p>
+          </div>
+        </form>
+
+        <div class="done" id="reserveDone" hidden tabindex="-1">
+          <p class="done__kicker">Request noted</p>
+          <p class="done__title" id="doneTitle"></p>
+          <p class="done__text" id="doneText"></p>
+          <button class="btn btn--ghost" type="button" id="reserveAgain">Make another request</button>
+        </div>
+      </section>
+
+      <section class="visit panel panel--night" id="visit" aria-labelledby="visitTitle">
+        <div class="visit__head reveal">
+          <h2 class="title title--light" id="visitTitle">Visit</h2>
+          <svg class="seal" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <defs><path id="sealRing" d="M60 60m-43 0a43 43 0 1 1 86 0a43 43 0 1 1-86 0"/></defs>
+            <circle cx="60" cy="60" r="57.5" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="60" cy="60" r="29" fill="none" stroke="currentColor" stroke-width="0.8"/>
+            <text class="seal__ring"><textPath href="#sealRing" textLength="268" lengthAdjust="spacing">GUILLEMOT · MAISON DE MER ·</textPath></text>
+            <text class="seal__g" x="60" y="71.5" text-anchor="middle">G</text>
+          </svg>
+        </div>
+        <dl class="visit__list reveal">
+          <div>
+            <dt>Find us</dt>
+            <dd>17 Harbour Walk<br>Saltcliff Bay</dd>
+          </div>
+          <div>
+            <dt>Dinner</dt>
+            <dd>Wednesday to Saturday, 6 – 11 PM<br>Sunday lunch, 12 – 4 PM</dd>
+          </div>
+          <div>
+            <dt>Reservations</dt>
+            <dd><a href="tel:+15550173380">+1 (555) 017-3380</a><br><a href="mailto:tables@guillemot.example">tables@guillemot.example</a></dd>
+          </div>
+          <div>
+            <dt>Dress</dt>
+            <dd>Smart. Jackets welcome, never required.</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <a class="wordmark wordmark--small" href="#top" aria-label="Guillemot, back to top">
+        <span class="wordmark__name">Guillemot</span>
+        <span class="wordmark__sub">Maison de Mer</span>
+      </a>
+      <p class="foot__small">© <span id="year">2026</span> Guillemot. A design concept by <a href="https://kreeative.xyz" rel="noopener">Kreeative</a>. Photography from <a href="https://www.pexels.com" rel="noopener">Pexels</a>.</p>
+    </footer>
+  </div>
+
+  <script src="js/site.js" defer></script>
+</body>
+</html>
