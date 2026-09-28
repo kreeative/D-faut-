@@ -1,0 +1,336 @@
+{
+ "hero-1": {
+  "src": "pexels",
+  "id": 28059309,
+  "slug": "a-dining-table-with-candles-lit-and-a-chandelier",
+  "aspect": [
+   16,
+   9
+  ],
+  "cx": 0.5,
+  "cy": 0.55,
+  "zoom": 1.0,
+  "widths": [
+   960,
+   1600,
+   2400
+  ],
+  "fetch": 2600
+ },
+ "hero-2": {
+  "src": "pexels",
+  "id": 941861,
+  "slug": "wine-glasses-on-table-tops",
+  "aspect": [
+   16,
+   9
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   960,
+   1600,
+   2400
+  ],
+  "fetch": 2600
+ },
+ "hero-3": {
+  "src": "pexels",
+  "id": 776538,
+  "slug": "restaurant-interior",
+  "aspect": [
+   16,
+   9
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   960,
+   1600,
+   2400
+  ],
+  "fetch": 2600
+ },
+ "hero-4": {
+  "src": "pexels",
+  "id": 5863513,
+  "slug": "interior-design-of-a-bar-and-restaurant",
+  "aspect": [
+   16,
+   9
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   960,
+   1600,
+   2400
+  ],
+  "fetch": 2600
+ },
+ "plate-a": {
+  "src": "pexels",
+  "id": 32863869,
+  "slug": "gourmet-scallop-dish-in-shell-plating",
+  "aspect": [
+   1,
+   1
+  ],
+  "cx": 0.52,
+  "cy": 0.42,
+  "zoom": 1.04,
+  "widths": [
+   480,
+   960
+  ],
+  "cut": "circle",
+  "fetch": 1800
+ },
+ "plate-b": {
+  "src": "pexels",
+  "id": 23627779,
+  "slug": "risotto-with-seafood-on-plate",
+  "aspect": [
+   1,
+   1
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   480,
+   960
+  ],
+  "cut": "circle",
+  "fetch": 1800
+ },
+ "plate-c": {
+  "src": "pexels",
+  "id": 15814322,
+  "slug": "delicious-food-in-plate-on-board",
+  "aspect": [
+   1,
+   1
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.33,
+  "widths": [
+   480,
+   960
+  ],
+  "cut": "circle",
+  "fetch": 2400
+ },
+ "craft-dish": {
+  "src": "pexels",
+  "id": 12814607,
+  "slug": "close-up-of-a-dish",
+  "aspect": [
+   4,
+   5
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   640,
+   1200
+  ]
+ },
+ "craft-chef": {
+  "src": "pexels",
+  "id": 19664661,
+  "slug": "chef-in-a-kitchen-in-black-and-white",
+  "aspect": [
+   11,
+   8
+  ],
+  "cx": 0.6,
+  "cy": 0.42,
+  "zoom": 1.0,
+  "widths": [
+   640,
+   1200
+  ]
+ },
+ "craft-chef-b": {
+  "src": "pexels",
+  "id": 6309829,
+  "slug": "serious-man-cooking-food-at-table-in-restaurant-kitchen",
+  "aspect": [
+   11,
+   8
+  ],
+  "cx": 0.45,
+  "cy": 0.38,
+  "zoom": 1.0,
+  "widths": [
+   640,
+   1200
+  ]
+ },
+ "craft-plating": {
+  "src": "pexels",
+  "id": 2403392,
+  "slug": "person-holding-bowl",
+  "aspect": [
+   11,
+   8
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   640,
+   1200
+  ]
+ },
+ "sea-1": {
+  "src": "pexels",
+  "id": 4871121,
+  "slug": "seafood-dish-with-bivalves",
+  "aspect": [
+   3,
+   4
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   480,
+   960
+  ]
+ },
+ "sea-2": {
+  "src": "pexels",
+  "id": 8112907,
+  "slug": "close-up-of-a-gourmet-dish-with-meat",
+  "aspect": [
+   3,
+   4
+  ],
+  "cx": 0.5,
+  "cy": 0.55,
+  "zoom": 1.0,
+  "widths": [
+   480,
+   960
+  ]
+ },
+ "sea-3": {
+  "src": "pexels",
+  "id": 24246107,
+  "slug": "hands-holding-a-plate-with-lobster-and-vegetables",
+  "aspect": [
+   3,
+   4
+  ],
+  "cx": 0.55,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   480,
+   960
+  ]
+ },
+ "sea-4": {
+  "src": "pexels",
+  "id": 16064369,
+  "slug": "photo-of-foie-gras",
+  "aspect": [
+   3,
+   4
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   480,
+   960
+  ]
+ },
+ "sea-5": {
+  "src": "pexels",
+  "id": 6839650,
+  "slug": "a-close-up-shot-of-a-fish-dish",
+  "aspect": [
+   3,
+   4
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   480,
+   960
+  ]
+ },
+ "sweet-1": {
+  "src": "pexels",
+  "id": 28561583,
+  "slug": "gourmet-dessert-plate-with-rich-chocolate-sauce",
+  "aspect": [
+   11,
+   8
+  ],
+  "cx": 0.5,
+  "cy": 0.55,
+  "zoom": 1.0,
+  "widths": [
+   480,
+   960
+  ]
+ },
+ "sweet-2": {
+  "src": "pexels",
+  "id": 29707925,
+  "slug": "elegant-old-fashioned-cocktail-on-bar-counter",
+  "aspect": [
+   11,
+   8
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   480,
+   960
+  ]
+ },
+ "sweet-3": {
+  "src": "pexels",
+  "id": 4667152,
+  "slug": "person-pouring-brown-liquid-on-clear-drinking-glass",
+  "aspect": [
+   11,
+   8
+  ],
+  "cx": 0.55,
+  "cy": 0.45,
+  "zoom": 1.0,
+  "widths": [
+   480,
+   960
+  ]
+ },
+ "tide": {
+  "src": "pexels",
+  "id": 28059316,
+  "slug": "a-table-setting-with-candles-and-place-settings",
+  "aspect": [
+   3,
+   4
+  ],
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.0,
+  "widths": [
+   640,
+   1200
+  ]
+ }
+}
