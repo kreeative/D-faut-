@@ -8,12 +8,14 @@
   <!-- Maquette non officielle : l'indexation par les moteurs de recherche est volontairement
        désactivée pour éviter toute confusion avec le site officiel. À retirer si vous souhaitez la référencer. -->
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0b3b2c">
+  <meta name="theme-color" content="#0a3323">
   <meta property="og:title" content="Concept de refonte du portail gouv.ci (non officiel)">
   <meta property="og:description" content="Et si le portail du Gouvernement ivoirien était pensé d'abord pour les démarches des citoyens ? Un concept personnel par Kreeative.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="docs/screenshots/accueil-desktop-fold.png">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -21,7 +23,7 @@
 
 <!-- Bibliothèque d'icônes (SVG inline, sans requête externe) -->
 <svg hidden aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
   <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
@@ -49,8 +51,6 @@
   <symbol id="i-thumb-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 13V4h3v9h-3zM17 13l-4 7c-1.5 0-2.5-1-2.5-2.5V14h-5a2 2 0 0 1-2-2l1.5-6a2 2 0 0 1 2-2H17"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></symbol>
-  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
-  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
 </svg>
 
 <!-- Bandeau permanent : ce site est un concept, pas le portail officiel -->
@@ -61,21 +61,11 @@
   </div>
 </div>
 
-<div class="topbar on-dark">
-  <div class="container topbar__inner">
-    <p class="topbar__republic" style="margin:0"><span class="flag" aria-hidden="true"><span></span><span></span><span></span></span> République de Côte d'Ivoire <span class="topbar__motto">· Union – Discipline – Travail</span></p>
-    <ul class="topbar__links">
-      <li><a href="a-propos.html#accessibilite">Accessibilité</a></li>
-      <li><a href="https://www.gouv.ci">Site officiel <svg class="icon" style="width:14px;height:14px" aria-hidden="true" focusable="false"><use href="#i-external"/></svg></a></li>
-    </ul>
-  </div>
-</div>
-
-<header class="header">
+<header class="header header--overlay on-dark">
   <div class="container header__inner">
     <a class="brand" href="index.html">
-      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" rx="10" fill="#0b3b2c"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#ffffff"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
-      <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept de refonte · non officiel</span></span>
+      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" fill="#f6f1e7"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#0a3323"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
+      <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept non officiel</span></span>
     </a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navigation">
       <svg class="icon icon-menu" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
@@ -84,11 +74,12 @@
     </button>
     <nav class="nav" id="navigation" aria-label="Navigation principale">
       <ul class="nav__list">
-        <li><a href="#services">Démarches et services <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="#gouvernement">Le Gouvernement <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#services">Démarches <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#carte">Ma localité <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
         <li><a href="#actualites">Actualités <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="https://www.gouv.ci/publications/documents">Publications <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="#votre-avis">Écrire au Gouvernement <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#gouvernement">Gouvernement <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#votre-avis">Nous écrire <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="a-propos.html">À propos du concept <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
       </ul>
     </nav>
   </div>
@@ -96,20 +87,25 @@
 
 <main id="contenu" tabindex="-1">
 
-  <!-- Hero : une question, une recherche, une localité -->
-  <section class="hero" aria-labelledby="hero-title">
+  <!-- Hero cinématique : une photo, une phrase, une recherche -->
+  <section class="hero on-dark" aria-labelledby="hero-title">
+    <div class="hero__media" aria-hidden="true">
+      <img src="assets/img/hero-plateau-1920.jpg" srcset="assets/img/hero-plateau-960.jpg 960w, assets/img/hero-plateau-1920.jpg 1920w" sizes="100vw" alt="" fetchpriority="high" decoding="async">
+    </div>
     <div class="container hero__inner">
       <div>
-        <h1 id="hero-title">Vos démarches, simplement.</h1>
-        <p class="hero__lead">Trouvez un service public, une démarche ou une information officielle en quelques secondes, depuis votre téléphone.</p>
+        <p class="hero__republic"><span class="flag" aria-hidden="true"><span></span><span></span><span></span></span> République de Côte d'Ivoire<span class="hero__motto"> · Union – Discipline – Travail</span></p>
+        <h1 id="hero-title">Vos démarches, <em>simplement.</em></h1>
+        <p class="hero__lead">Un seul endroit pour trouver un service public, faire une démarche et suivre l'action du Gouvernement, depuis votre téléphone.</p>
 
         <form class="search" id="recherche" role="search" action="#resultats" method="get">
           <label class="search__label" for="q">Que souhaitez-vous faire&nbsp;?</label>
           <div class="search__row">
-            <input class="search__input" id="q" name="q" type="search" placeholder="Ex. : passeport, impôts, acte de naissance…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-suggestions" aria-autocomplete="list" aria-describedby="search-help">
+            <svg aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
+            <input class="search__input" id="q" name="q" type="search" placeholder="Passeport, impôts, acte de naissance…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-suggestions" aria-autocomplete="list" aria-describedby="search-help">
             <button class="btn btn--accent search__btn" type="submit" aria-label="Rechercher">
-              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
               <span aria-hidden="true">Rechercher</span>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
             </button>
           </div>
           <ul class="search__list" id="search-suggestions" role="listbox" aria-label="Suggestions de démarches" hidden></ul>
@@ -118,12 +114,12 @@
         </form>
 
         <div class="chips">
-          <span class="chips__label">Recherches fréquentes&nbsp;:</span>
+          <span class="chips__label">Fréquent&nbsp;:</span>
           <a class="chip" href="#resultats" data-query="carte nationale d'identité">Carte d'identité</a>
           <a class="chip" href="#resultats" data-query="passeport">Passeport</a>
           <a class="chip" href="#resultats" data-query="impôts">Impôts</a>
           <a class="chip" href="#resultats" data-query="acte de naissance">Acte de naissance</a>
-          <a class="chip" href="#resultats" data-query="permis">Permis de conduire</a>
+          <a class="chip chip--locality" href="#carte"><svg aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span><span data-district-city>Abidjan</span> · changer</span></a>
         </div>
 
         <section class="results" id="resultats" hidden aria-labelledby="results-title">
@@ -132,12 +128,113 @@
         </section>
       </div>
 
-      <aside class="locality" aria-labelledby="locality-title">
-        <div class="locality__head">
-          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg>
-          <h2 id="locality-title">Ma localité</h2>
+      <aside class="hero__aside" aria-label="Repères">
+        <div class="hero__stat"><strong>14</strong><span>districts<span class="hero__stat-more"> et 31 régions, avec des services adaptés à votre localité</span></span></div>
+        <div class="hero__stat"><strong>15+</strong><span>services en ligne<span class="hero__stat-more"> officiels réunis en une seule porte d'entrée</span></span></div>
+        <div class="hero__stat"><strong>24/7</strong><span>sur tous les écrans<span class="hero__stat-more">, à toute heure, sans application à installer</span></span></div>
+      </aside>
+    </div>
+    <p class="hero__credit">Photo&nbsp;: Le Plateau, Abidjan — <a href="https://commons.wikimedia.org/wiki/File:Abidjan_Plateau.png">Wikimedia Commons</a>, CC0</p>
+  </section>
+
+  <!-- Flash infos : bande orange, format concis conservé du portail actuel -->
+  <section class="flash" aria-labelledby="flash-title">
+    <div class="container flash__inner">
+      <h2 class="flash__title" id="flash-title"><svg aria-hidden="true" focusable="false"><use href="#i-megaphone"/></svg> Flash infos</h2>
+      <ul class="flash__list">
+        <li><a href="https://www.gouv.ci/flashs/3982">Engins à deux roues&nbsp;: enrôlement des motos non encore immatriculées sur tout le territoire à partir du 1<sup>er</sup> octobre 2026.</a></li>
+        <li><a href="https://www.gouv.ci/flashs/3967">Rentrée 2026-2027&nbsp;: 5&nbsp;081&nbsp;262 kits scolaires distribués dans les écoles primaires publiques.</a></li>
+        <li><a href="https://www.gouv.ci/flashs/3960">Campagne 2026-2027&nbsp;: prix bord champ du cacao fixé à 1&nbsp;200 FCFA/kg, café à 1&nbsp;300 FCFA/kg.</a></li>
+      </ul>
+      <a class="flash__more" href="https://www.gouv.ci/flashs">Tous les flashs</a>
+    </div>
+  </section>
+
+  <!-- Démarches les plus demandées : grille bento -->
+  <section class="section section--pattern" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <div>
+          <p class="eyebrow">Démarches</p>
+          <h2 id="services-title">Les démarches <em>les plus demandées.</em></h2>
+          <p>Ce que les citoyens cherchent le plus, dès le premier écran, relié aux services en ligne officiels.</p>
         </div>
-        <p>Choisissez votre district pour voir les services et les informations près de chez vous.</p>
+        <a class="section__link" href="https://servicepublic.gouv.ci/">Toutes les démarches <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+      </div>
+      <ul class="bento list-reset">
+        <li class="bento__item bento__item--xl on-dark reveal" style="--i:0">
+          <div class="bento__top"><span class="bento__num">01</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-id"/></svg></span></div>
+          <div>
+            <span class="tag">Guide pas à pas</span>
+            <h3><a href="demarche.html">Carte nationale d'identité</a></h3>
+            <p>Première demande, renouvellement, pièces à fournir et suivi du dossier, expliqués simplement.</p>
+            <div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div>
+          </div>
+          <svg class="bento__deco" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-id"/></svg>
+        </li>
+        <li class="bento__item reveal" style="--i:1">
+          <div class="bento__top"><span class="bento__num">02</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-passport"/></svg></span></div>
+          <div><h3><a href="https://servicepublic.gouv.ci/">Passeport</a></h3><p>Rendez-vous, pièces, retrait.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+        </li>
+        <li class="bento__item reveal" style="--i:2">
+          <div class="bento__top"><span class="bento__num">03</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-file"/></svg></span></div>
+          <div><h3><a href="https://servicepublic.gouv.ci/">Acte de naissance</a></h3><p>Extrait en ligne ou en mairie.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+        </li>
+        <li class="bento__item bento__item--wide reveal" style="--i:3">
+          <div class="bento__top"><span class="bento__num">04</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-coins"/></svg></span></div>
+          <div><h3><a href="https://e-impots.gouv.ci/">Impôts et déclarations</a></h3><p>Déclarer, payer et obtenir vos attestations sur e-impôts, sans vous déplacer.</p><div class="bento__meta"><span class="tag">Service en ligne</span><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+        </li>
+        <li class="bento__item reveal" style="--i:4">
+          <div class="bento__top"><span class="bento__num">05</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-health"/></svg></span></div>
+          <div><h3><a href="https://ipscnam.ci/enrolement-cmu/">Couverture maladie</a></h3><p>S'enrôler à la CMU, obtenir sa carte.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+        </li>
+        <li class="bento__item reveal" style="--i:5">
+          <div class="bento__top"><span class="bento__num">06</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg></span></div>
+          <div><h3><a href="https://www.cepici.gouv.ci/">Créer une entreprise</a></h3><p>Le guichet unique du CEPICI.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+        </li>
+        <li class="bento__item reveal" style="--i:6">
+          <div class="bento__top"><span class="bento__num">07</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-scale"/></svg></span></div>
+          <div><h3><a href="https://e-justice.ci/">Casier judiciaire</a></h3><p>Extrait via e-Justice.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+        </li>
+        <li class="bento__item bento__item--cta reveal" style="--i:7">
+          <div class="bento__top"><span class="bento__num">+</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span></div>
+          <div><h3><a href="https://servicepublic.gouv.ci/">Toutes les démarches</a></h3><p>Le portail officiel des démarches administratives.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Navigation par thème -->
+  <section class="section section--tight section--paper" aria-labelledby="themes-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <div>
+          <p class="eyebrow">Par thème</p>
+          <h2 id="themes-title">Organisé par besoin, <em>pas par organigramme.</em></h2>
+        </div>
+      </div>
+      <ul class="themes reveal" style="--i:1">
+        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-id"/></svg> Papiers et citoyenneté</a></li>
+        <li><a href="https://ipscnam.ci/enrolement-cmu/"><svg aria-hidden="true" focusable="false"><use href="#i-health"/></svg> Santé et protection sociale</a></li>
+        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-grad"/></svg> Éducation et formation</a></li>
+        <li><a href="https://www.cepici.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg> Emploi et entreprise</a></li>
+        <li><a href="https://e-impots.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-coins"/></svg> Impôts et finances</a></li>
+        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-car"/></svg> Transports et permis</a></li>
+        <li><a href="https://sigfu.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-home"/></svg> Logement et foncier</a></li>
+        <li><a href="https://e-justice.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-shield"/></svg> Sécurité et justice</a></li>
+        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-leaf"/></svg> Agriculture et environnement</a></li>
+        <li><a href="https://data.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg> Numérique et données</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Près de chez vous : carte interactive des districts -->
+  <section class="map-section section on-dark" id="carte" aria-labelledby="local-title">
+    <div class="container map-section__inner">
+      <div class="reveal">
+        <p class="eyebrow">Ma localité</p>
+        <h2 id="local-title">Près de <em>chez vous.</em></h2>
+        <p class="lead">Touchez votre district sur la carte, ou choisissez-le dans la liste&nbsp;: services, contacts et actualités s'adaptent à votre localité.</p>
         <div class="field">
           <label for="district">District</label>
           <span class="select">
@@ -164,241 +261,131 @@
           </span>
         </div>
         <p class="visually-hidden" id="district-status" aria-live="polite"></p>
-        <ul class="locality__links">
-          <li><a href="#pres-de-chez-vous"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-building"/></svg><span>Services publics à <span data-district-city>Abidjan</span></span></a></li>
-          <li><a href="https://www.gouv.ci/actualites"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-megaphone"/></svg><span>Actualités — <span data-district-name>District autonome d'Abidjan</span></span></a></li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <!-- Flash infos : format concis conservé du portail actuel -->
-  <section class="flash on-dark" aria-labelledby="flash-title">
-    <div class="container flash__inner">
-      <h2 class="flash__title" id="flash-title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-megaphone"/></svg> Flash infos</h2>
-      <ul class="flash__list">
-        <li><a href="https://www.gouv.ci/flashs/3982">Engins à deux roues&nbsp;: enrôlement des motos non encore immatriculées sur tout le territoire à partir du 1<sup>er</sup> octobre 2026.</a></li>
-        <li><a href="https://www.gouv.ci/flashs/3967">Rentrée 2026-2027&nbsp;: 5&nbsp;081&nbsp;262 kits scolaires distribués dans les écoles primaires publiques.</a></li>
-        <li><a href="https://www.gouv.ci/flashs/3960">Campagne 2026-2027&nbsp;: prix bord champ du cacao fixé à 1&nbsp;200 FCFA/kg, café à 1&nbsp;300 FCFA/kg.</a></li>
-      </ul>
-      <a class="flash__more" href="https://www.gouv.ci/flashs">Tous les flashs</a>
-    </div>
-  </section>
-
-  <!-- Démarches les plus demandées -->
-  <section class="section" id="services" aria-labelledby="services-title">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <h2 id="services-title">Démarches les plus demandées</h2>
-          <p>Les services que les citoyens recherchent le plus, accessibles dès la page d'accueil.</p>
-        </div>
-        <a class="section__link" href="https://servicepublic.gouv.ci/">Toutes les démarches <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
-      </div>
-      <ul class="grid grid--4 list-reset">
-        <li class="card">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-id"/></svg></span>
-          <h3><a href="demarche.html">Carte nationale d'identité</a></h3>
-          <p>Première demande, renouvellement et suivi de votre dossier.</p>
-          <div class="card__meta"><span class="tag">Guide pas à pas</span><svg class="card__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></div>
-        </li>
-        <li class="card">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-passport"/></svg></span>
-          <h3><a href="https://servicepublic.gouv.ci/">Passeport</a></h3>
-          <p>Rendez-vous, pièces à fournir, retrait et renouvellement.</p>
-          <div class="card__meta"><span class="tag tag--neutral">Démarche</span><svg class="card__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></div>
-        </li>
-        <li class="card">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-file"/></svg></span>
-          <h3><a href="https://servicepublic.gouv.ci/">Extrait d'acte de naissance</a></h3>
-          <p>Demande en ligne ou auprès de votre mairie de naissance.</p>
-          <div class="card__meta"><span class="tag tag--neutral">Démarche</span><svg class="card__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></div>
-        </li>
-        <li class="card">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-scale"/></svg></span>
-          <h3><a href="https://e-justice.ci/">Casier judiciaire</a></h3>
-          <p>Obtenir un extrait de casier judiciaire via e-Justice.</p>
-          <div class="card__meta"><span class="tag">Service en ligne</span><svg class="card__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></div>
-        </li>
-        <li class="card">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-coins"/></svg></span>
-          <h3><a href="https://e-impots.gouv.ci/">Impôts et déclarations</a></h3>
-          <p>Déclarer, payer et obtenir vos attestations sur e-impôts.</p>
-          <div class="card__meta"><span class="tag">Service en ligne</span><svg class="card__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></div>
-        </li>
-        <li class="card">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg></span>
-          <h3><a href="https://www.cepici.gouv.ci/">Créer une entreprise</a></h3>
-          <p>Le guichet unique du CEPICI pour immatriculer votre société.</p>
-          <div class="card__meta"><span class="tag">Service en ligne</span><svg class="card__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></div>
-        </li>
-        <li class="card">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-health"/></svg></span>
-          <h3><a href="https://ipscnam.ci/enrolement-cmu/">Couverture maladie universelle</a></h3>
-          <p>S'enrôler à la CMU et obtenir sa carte d'assuré.</p>
-          <div class="card__meta"><span class="tag">Service en ligne</span><svg class="card__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></div>
-        </li>
-        <li class="card">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-car"/></svg></span>
-          <h3><a href="https://servicepublic.gouv.ci/">Permis et immatriculation</a></h3>
-          <p>Permis de conduire, carte grise, immatriculation des motos.</p>
-          <div class="card__meta"><span class="tag tag--neutral">Démarche</span><svg class="card__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Navigation par thème : organisée par besoin, pas par organigramme -->
-  <section class="section section--soft" aria-labelledby="themes-title">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <h2 id="themes-title">Parcourir par thème</h2>
-          <p>Une organisation par besoin du citoyen, plutôt que par organigramme de l'administration.</p>
+        <div class="map-panel" id="pres-de-chez-vous">
+          <p class="map-panel__name" data-district-name>District autonome d'Abidjan</p>
+          <p class="map-panel__city">Chef-lieu&nbsp;: <strong data-district-city>Abidjan</strong></p>
+          <ul class="map-panel__links">
+            <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-building"/></svg><span>Mairie et état civil</span><small>Actes, légalisations</small></a></li>
+            <li><a href="demarche.html"><svg aria-hidden="true" focusable="false"><use href="#i-id"/></svg><span>Centre d'identification (CNI)</span><small>Enrôlement, retrait</small></a></li>
+            <li><a href="https://e-impots.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-coins"/></svg><span>Centre des impôts</span><small>Déclarations, attestations</small></a></li>
+            <li><a href="https://ipscnam.ci/enrolement-cmu/"><svg aria-hidden="true" focusable="false"><use href="#i-health"/></svg><span>Santé et CMU</span><small>Hôpitaux, vaccination</small></a></li>
+          </ul>
+          <p class="map-panel__note">Démonstration&nbsp;: une version réelle afficherait ici les adresses, horaires et contacts vérifiés, tenus à jour par chaque administration.</p>
         </div>
       </div>
-      <ul class="tiles list-reset">
-        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-id"/></svg> Papiers et citoyenneté</a></li>
-        <li><a href="https://ipscnam.ci/enrolement-cmu/"><svg aria-hidden="true" focusable="false"><use href="#i-health"/></svg> Santé et protection sociale</a></li>
-        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-grad"/></svg> Éducation et formation</a></li>
-        <li><a href="https://www.cepici.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg> Emploi et entreprise</a></li>
-        <li><a href="https://e-impots.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-coins"/></svg> Impôts et finances</a></li>
-        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-car"/></svg> Transports et permis</a></li>
-        <li><a href="https://sigfu.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-home"/></svg> Logement et foncier</a></li>
-        <li><a href="https://e-justice.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-shield"/></svg> Sécurité et justice</a></li>
-        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-leaf"/></svg> Agriculture et environnement</a></li>
-        <li><a href="https://data.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg> Numérique et données</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Près de chez vous : personnalisation géographique -->
-  <section class="section" id="pres-de-chez-vous" aria-labelledby="local-title">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <h2 id="local-title">Près de chez vous</h2>
-          <p>Les services publics du <strong data-district-name>District autonome d'Abidjan</strong>, selon votre choix dans «&nbsp;Ma localité&nbsp;».</p>
-        </div>
-      </div>
-      <div class="local">
-        <div class="local__panel">
-          <h3><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg> <span data-district-name>District autonome d'Abidjan</span></h3>
-          <p>Chef-lieu&nbsp;: <strong data-district-city>Abidjan</strong>. Retrouvez ici les services de proximité, leurs horaires, leurs contacts et les actualités de votre district.</p>
-          <p class="local__note">Démonstration&nbsp;: dans une version réelle, ce bloc afficherait les adresses, horaires et contacts vérifiés de chaque district, tenus à jour par les administrations concernées.</p>
-          <p class="mt-1"><a class="btn btn--ghost btn--sm" href="#district">Changer de district</a></p>
-        </div>
-        <div class="local__grid">
-          <a class="local__item" href="https://servicepublic.gouv.ci/">
-            <svg aria-hidden="true" focusable="false"><use href="#i-building"/></svg>
-            <span class="local__text"><strong>Mairie et état civil — <span data-district-city>Abidjan</span></strong><span class="local__desc">Actes de naissance, de mariage et de décès, légalisations</span></span>
-          </a>
-          <a class="local__item" href="demarche.html">
-            <svg aria-hidden="true" focusable="false"><use href="#i-id"/></svg>
-            <span class="local__text"><strong>Centre d'identification (CNI)</strong><span class="local__desc">Enrôlement et retrait de la carte nationale d'identité</span></span>
-          </a>
-          <a class="local__item" href="https://e-impots.gouv.ci/">
-            <svg aria-hidden="true" focusable="false"><use href="#i-coins"/></svg>
-            <span class="local__text"><strong>Centre des impôts</strong><span class="local__desc">Déclarations, paiements, attestations de régularité</span></span>
-          </a>
-          <a class="local__item" href="https://ipscnam.ci/enrolement-cmu/">
-            <svg aria-hidden="true" focusable="false"><use href="#i-health"/></svg>
-            <span class="local__text"><strong>Hôpital et centres de santé</strong><span class="local__desc">Urgences, consultations, vaccination, CMU</span></span>
-          </a>
-        </div>
+      <div class="map-wrap reveal" style="--i:2">
+        <svg class="map" viewBox="0 0 1000 1058" role="group" aria-label="Carte des 14 districts de Côte d'Ivoire : choisissez votre district" xmlns="http://www.w3.org/2000/svg">
+          <g class="map__shapes">
+            <path class="map__district" data-district-path="savanes" d="M299.3,269.9 309.1,272.7 308.6,279.0 323.4,279.4 329.9,277.1 331.8,271.8 328.9,267.8 332.8,262.9 341.7,265.3 345.1,279.1 350.6,278.3 367.6,254.6 381.0,256.2 387.3,264.5 379.6,279.0 383.4,290.2 401.5,299.0 427.1,346.4 439.3,347.8 471.6,365.8 482.6,364.8 481.1,357.7 484.1,356.6 478.7,352.6 475.5,355.7 471.5,351.5 470.8,346.5 474.0,346.2 476.1,338.2 471.5,335.0 478.0,333.6 472.9,331.2 474.9,328.4 468.4,327.3 472.2,315.4 481.4,317.8 489.2,315.6 492.3,311.0 509.8,313.1 513.9,310.7 506.9,303.9 512.0,306.2 512.9,302.5 509.2,300.6 510.2,294.1 513.5,296.3 514.9,293.5 512.2,290.9 519.6,290.5 505.2,278.3 506.9,274.4 513.6,273.0 512.5,268.9 518.3,258.1 515.2,256.6 521.8,254.5 526.4,242.5 524.1,239.1 530.1,236.7 533.7,228.5 532.2,224.6 553.3,221.3 554.4,218.4 564.8,233.8 584.8,238.6 586.4,252.4 591.7,257.1 590.5,261.7 597.4,268.0 606.7,270.9 601.9,295.6 594.7,301.1 668.1,303.2 672.9,308.6 669.0,317.3 680.9,332.2 692.3,329.9 696.0,334.9 708.1,331.1 717.8,345.7 721.4,341.7 725.9,346.5 727.5,344.4 733.8,347.6 740.2,346.8 740.1,344.3 757.2,350.4 761.6,348.7 763.8,341.7 774.8,340.1 774.8,334.1 783.4,325.3 784.2,318.3 768.0,297.4 775.0,297.1 786.0,289.6 768.4,279.8 772.2,272.9 778.1,275.0 777.2,269.3 768.3,270.9 767.4,265.6 771.4,260.7 763.3,261.1 759.3,255.2 747.9,254.3 740.4,246.8 731.9,245.8 724.8,251.4 720.4,247.6 724.4,241.6 718.0,231.9 723.2,223.1 720.0,220.5 720.8,214.6 712.6,207.2 712.8,200.4 696.4,186.1 688.5,191.0 682.3,179.9 669.1,182.2 668.5,165.4 662.2,166.0 663.3,171.0 660.3,175.0 652.1,169.7 639.6,177.3 631.8,165.4 627.7,164.1 625.4,167.2 619.2,160.7 624.1,160.2 624.0,152.0 617.0,145.8 603.3,141.7 599.9,145.5 595.7,142.5 594.9,132.9 598.6,131.9 591.3,125.8 592.5,122.3 595.3,123.9 593.1,117.0 585.4,112.3 587.1,106.3 578.7,110.0 581.4,106.3 575.7,105.5 581.5,103.0 576.4,100.8 577.4,94.2 570.9,94.8 574.3,92.6 574.2,87.1 567.8,89.8 570.3,84.8 567.7,82.0 571.8,79.1 568.2,77.3 569.5,73.1 560.7,76.8 555.6,70.8 552.5,73.1 540.3,71.0 539.5,74.0 530.2,74.0 527.6,77.1 512.0,66.8 507.7,57.1 496.1,47.3 479.4,46.6 470.4,52.4 459.4,51.6 452.1,59.3 446.2,60.7 444.8,70.9 441.4,74.1 442.3,79.9 430.9,78.9 431.5,82.5 424.8,91.4 411.8,87.7 401.2,88.7 392.3,84.5 384.2,72.7 388.1,70.3 391.3,72.1 390.5,66.3 394.9,61.7 391.6,58.8 392.2,54.8 396.1,52.6 391.4,45.0 395.0,40.6 381.9,35.9 388.5,26.4 385.4,20.7 391.6,17.4 383.9,13.1 387.5,2.8 380.5,0.0 370.2,9.3 355.3,6.1 356.2,23.7 351.3,28.5 333.9,24.9 316.9,11.3 317.5,17.5 312.4,22.8 314.7,34.0 311.9,35.1 311.7,40.8 313.1,46.2 320.2,51.3 314.4,64.0 320.0,73.3 319.0,81.5 326.2,85.3 327.3,96.2 307.1,106.9 299.2,107.0 290.4,101.0 279.3,103.6 265.0,127.1 270.3,130.4 293.3,131.0 301.8,147.7 295.7,161.4 301.8,164.8 298.5,171.6 301.4,173.1 298.0,175.7 292.2,194.5 301.5,202.0 300.9,206.9 292.3,217.2 297.6,219.3 292.2,223.9 295.5,231.4 293.7,241.4 302.6,244.8 298.8,261.9 302.0,265.3 299.3,269.9Z" role="button" tabindex="0" aria-label="District des Savanes" aria-pressed="false"><title>District des Savanes</title></path>
+            <path class="map__district" data-district-path="denguele" d="M314.4,64.0 307.1,66.0 291.1,58.7 281.2,66.4 269.5,64.1 256.5,80.1 262.2,88.2 260.4,94.7 250.9,99.2 245.4,96.3 246.3,89.0 236.0,82.6 214.4,80.1 204.4,84.5 197.2,82.6 195.8,80.7 200.4,79.0 200.6,69.3 197.0,65.8 189.1,68.0 184.6,49.9 175.3,47.9 168.8,55.0 156.6,47.4 139.8,60.7 142.3,66.4 136.5,67.2 137.1,70.4 133.5,72.6 136.7,74.0 117.4,95.2 106.4,99.1 98.6,96.2 93.2,101.9 93.4,108.7 77.3,114.6 71.4,127.4 76.4,127.7 76.9,130.7 69.2,132.9 70.4,138.9 75.4,140.4 72.5,145.8 80.0,147.3 80.0,155.6 77.4,155.8 75.7,163.6 76.2,181.4 72.0,185.5 71.5,191.8 73.0,201.6 81.0,216.1 91.7,224.8 119.8,220.1 116.0,240.5 109.4,253.2 110.4,258.1 116.3,263.1 121.9,258.5 125.9,261.4 131.7,271.9 145.0,279.9 148.4,294.8 153.8,294.6 165.6,301.2 170.2,313.9 194.0,329.9 199.3,341.8 215.1,345.5 221.2,353.3 222.3,363.1 226.7,369.7 229.8,370.2 229.7,365.1 223.3,351.8 227.7,332.6 226.1,328.3 228.9,325.8 224.8,318.4 227.2,315.1 222.6,309.7 224.6,302.8 222.4,297.0 230.2,296.9 231.4,290.5 241.4,281.7 256.3,294.6 268.6,293.6 275.4,299.5 277.5,278.3 286.6,277.6 297.4,271.6 302.0,265.3 298.8,261.9 302.6,244.8 293.7,241.4 295.5,231.4 292.2,226.9 293.2,221.9 297.6,219.3 292.3,217.2 301.4,204.1 292.2,194.5 298.0,175.7 301.4,173.1 298.5,171.6 301.8,164.8 295.7,161.4 301.8,147.7 293.3,131.0 264.6,128.9 271.2,119.6 270.9,113.7 279.3,103.6 290.4,101.0 299.2,107.0 307.1,106.9 326.9,97.1 326.2,85.3 319.0,81.5 320.0,73.3 314.4,64.0Z" role="button" tabindex="0" aria-label="District du Denguélé" aria-pressed="false"><title>District du Denguélé</title></path>
+            <path class="map__district" data-district-path="woroba" d="M141.2,277.7 124.3,280.0 121.9,277.8 118.4,284.3 113.5,284.5 106.0,292.7 108.7,300.2 105.3,304.8 109.6,307.8 105.5,314.8 102.6,314.5 102.6,319.1 108.5,327.6 116.7,324.7 124.7,330.2 132.9,327.9 131.1,333.9 138.6,334.8 138.4,341.6 150.9,353.1 145.9,363.6 152.2,373.3 149.7,384.7 156.1,393.4 138.7,393.0 132.0,377.8 125.5,374.1 123.5,384.8 117.3,385.9 109.9,381.0 111.8,377.8 107.3,371.8 99.7,374.8 86.1,371.5 78.4,376.0 65.9,372.2 60.5,378.4 56.5,378.8 56.0,385.8 60.4,397.1 59.8,408.8 55.6,416.9 66.8,424.6 75.8,424.3 87.0,429.6 92.1,422.2 94.8,425.5 98.7,422.9 95.1,439.5 100.2,441.5 107.1,453.0 118.6,452.0 120.4,462.4 127.8,464.8 127.7,469.1 132.7,473.3 142.9,473.7 147.3,480.3 155.5,481.4 162.5,475.5 165.2,478.5 172.3,476.8 172.9,469.3 176.0,467.7 173.2,465.4 175.7,450.4 173.5,443.2 181.4,431.1 187.6,429.4 189.1,434.0 210.6,444.7 218.4,458.8 248.0,457.0 247.4,467.3 239.7,476.8 246.6,479.9 246.1,488.9 322.1,488.2 347.7,498.9 363.2,493.0 383.7,491.5 388.7,500.0 388.6,507.4 405.6,515.3 412.6,510.2 417.9,496.6 426.8,495.8 431.5,499.9 455.4,496.2 459.3,510.1 456.8,515.9 466.3,523.9 468.7,530.7 473.5,530.0 474.9,525.8 469.2,518.6 474.8,516.1 475.0,504.4 461.3,487.5 461.5,472.2 466.9,451.7 494.4,451.1 503.1,441.4 503.4,434.3 504.6,436.7 508.6,434.8 510.4,437.3 522.3,438.0 521.4,427.1 530.2,425.5 531.0,418.5 526.3,412.5 532.5,413.2 504.8,391.7 497.5,391.7 484.3,382.5 488.2,378.6 498.0,381.3 502.4,377.9 490.2,372.0 488.8,365.6 471.6,365.8 439.3,347.8 427.1,346.4 401.5,299.0 383.4,290.2 379.6,279.0 387.3,264.5 381.0,256.2 367.6,254.6 350.6,278.3 345.1,279.1 341.7,265.3 332.8,262.9 329.8,264.9 328.7,269.5 331.8,272.2 327.8,278.5 308.6,279.0 309.1,272.7 302.4,269.6 286.6,277.6 280.5,276.6 276.2,280.3 275.4,299.5 268.6,293.6 256.3,294.6 247.6,284.4 240.9,281.8 231.4,290.5 230.2,296.9 221.9,298.7 224.6,302.8 222.6,309.7 227.2,315.1 224.8,318.0 228.0,321.5 226.1,324.1 228.9,325.8 226.1,328.3 227.7,332.6 223.3,351.8 225.5,351.8 226.2,356.1 223.9,356.5 227.0,357.2 225.4,360.0 229.8,370.2 224.9,367.9 221.2,353.3 215.1,345.5 199.3,341.8 194.0,329.9 170.2,313.9 165.6,301.2 153.8,294.6 148.4,294.8 146.6,282.5 141.2,277.7Z" role="button" tabindex="0" aria-label="District du Woroba" aria-pressed="false"><title>District du Woroba</title></path>
+            <path class="map__district" data-district-path="zanzan" d="M831.9,562.2 841.8,562.6 854.3,579.4 867.6,573.5 865.0,566.5 874.7,566.8 879.9,590.3 890.8,596.4 903.4,611.4 910.8,608.0 912.4,597.4 923.8,582.0 920.1,576.6 920.5,565.3 927.5,537.3 928.6,518.8 943.8,485.1 950.8,477.4 952.3,463.0 958.5,468.3 968.5,452.5 982.1,449.9 978.8,433.1 981.7,429.4 991.0,429.6 1000.0,420.2 985.1,325.2 977.6,323.9 982.9,318.6 978.8,310.5 979.4,303.1 973.9,299.0 971.9,287.1 956.8,284.4 952.5,280.3 955.6,274.6 953.6,265.9 960.3,263.2 963.4,255.5 972.6,247.6 963.4,241.0 961.9,236.3 970.0,226.5 968.6,208.4 956.3,221.7 945.0,214.4 927.2,193.2 916.5,166.8 907.3,169.1 902.0,161.5 901.5,154.6 892.7,148.4 886.7,150.9 885.7,133.9 872.4,149.0 865.4,145.1 865.7,138.6 819.1,133.9 813.5,130.5 806.6,135.5 789.8,135.8 785.5,140.8 770.0,139.2 767.5,143.0 758.2,145.0 757.3,151.1 748.8,150.7 744.8,155.4 730.9,149.2 720.9,161.1 708.8,164.1 705.9,183.6 701.8,190.7 712.8,200.4 714.2,210.1 720.8,214.6 720.0,220.5 723.1,224.3 718.0,231.9 724.4,241.6 720.4,247.6 724.8,251.4 731.9,245.8 740.4,246.8 747.9,254.3 759.3,255.2 763.3,261.1 771.4,260.7 767.4,265.6 768.3,270.9 777.2,269.3 778.1,275.0 772.2,272.9 768.4,279.8 785.9,289.2 775.0,297.1 768.0,297.4 784.2,318.3 783.4,325.3 774.8,334.1 774.8,340.1 761.9,343.8 761.3,350.8 768.7,359.5 754.8,368.0 764.4,374.1 762.3,380.9 751.3,384.2 753.2,388.8 759.2,389.9 753.4,394.2 758.9,397.8 757.4,404.5 744.8,404.1 742.0,406.8 750.7,416.7 747.0,425.3 754.9,427.6 763.4,435.5 762.4,437.9 751.2,439.1 749.3,447.1 756.6,451.5 748.7,458.8 750.7,463.5 764.0,459.2 760.8,467.6 752.5,471.6 771.2,475.4 774.5,481.0 772.1,485.7 775.5,488.6 772.4,493.1 780.2,493.9 780.4,498.3 794.9,498.1 795.9,510.4 804.0,514.6 808.7,524.7 816.2,522.4 820.6,524.2 822.1,529.1 817.7,534.7 828.7,540.4 834.9,549.6 831.9,562.2Z" role="button" tabindex="0" aria-label="District du Zanzan" aria-pressed="false"><title>District du Zanzan</title></path>
+            <path class="map__district" data-district-path="vallee-du-bandama" d="M749.3,447.1 752.3,437.8 763.3,437.3 754.9,427.6 747.0,425.3 750.7,416.7 742.0,406.8 744.8,404.1 757.4,404.5 758.9,397.8 753.4,394.2 759.2,389.9 753.2,388.8 751.3,384.2 762.3,380.9 764.4,374.1 754.8,368.0 768.7,359.5 761.6,348.7 756.6,350.3 740.1,344.3 740.2,346.8 733.8,347.6 727.5,344.4 725.9,346.5 721.4,341.7 717.8,345.7 708.1,331.1 696.0,334.9 692.3,329.9 680.9,332.2 669.0,317.3 672.9,308.6 668.1,303.2 594.7,301.1 601.9,295.6 606.7,270.9 597.4,268.0 590.5,261.7 591.7,257.1 586.4,252.4 584.8,238.6 564.8,233.8 555.0,218.5 553.3,221.3 532.4,224.3 530.1,236.7 524.1,239.1 526.4,242.5 521.8,254.5 515.2,256.6 518.3,258.1 512.5,268.9 513.6,273.0 506.9,274.4 505.2,278.3 519.6,290.5 512.2,290.9 514.9,293.5 513.5,296.3 510.2,294.1 509.2,300.6 512.9,302.5 512.0,306.2 506.9,303.9 513.9,310.7 509.8,313.1 492.3,311.0 489.2,315.6 481.4,317.8 473.2,314.9 468.5,326.1 474.9,328.4 472.9,331.2 478.0,333.6 471.5,335.0 476.1,338.2 474.0,346.2 470.8,346.5 471.5,351.5 475.5,355.7 478.7,352.6 483.2,354.0 481.4,364.0 488.8,365.6 490.2,372.0 502.4,377.9 498.0,381.3 488.2,378.6 484.3,382.5 497.5,391.7 504.8,391.7 532.5,413.2 526.3,412.5 531.0,418.5 530.2,425.5 521.4,427.1 522.3,438.0 510.4,437.3 508.6,434.8 504.6,436.7 503.4,434.3 503.1,441.4 496.8,449.7 467.8,450.6 464.3,459.8 461.3,487.5 475.0,504.4 474.8,516.1 469.2,518.6 474.9,525.8 473.5,530.0 468.7,530.7 471.4,533.5 467.2,538.2 470.3,545.5 467.3,553.5 469.2,559.5 474.6,562.1 469.3,566.8 480.3,574.6 481.0,579.4 483.5,576.5 516.1,570.1 523.3,580.7 539.9,582.9 547.4,573.0 550.8,574.2 556.7,565.7 568.3,559.7 569.1,554.4 577.4,553.6 583.8,545.2 593.4,539.3 600.2,540.6 599.5,534.1 606.5,525.4 607.0,519.7 615.9,527.0 624.7,524.6 631.5,533.3 641.0,534.6 658.5,518.0 667.3,521.1 670.8,519.3 663.7,490.5 665.3,483.4 669.5,485.4 695.4,480.7 708.6,467.6 720.6,474.0 737.5,468.7 741.7,460.1 736.2,454.8 749.3,447.1Z" role="button" tabindex="0" aria-label="District de la Vallée du Bandama" aria-pressed="false"><title>District de la Vallée du Bandama</title></path>
+            <path class="map__district" data-district-path="montagnes" d="M259.3,694.3 255.8,689.0 261.5,683.3 260.8,673.9 263.7,668.6 260.9,666.5 258.4,648.8 249.4,646.2 252.9,635.8 248.9,629.0 252.3,605.5 249.6,602.7 250.5,595.7 245.2,590.1 249.3,587.3 249.7,565.4 245.9,558.4 258.9,546.7 252.5,531.8 261.9,527.6 256.6,519.0 252.5,519.8 248.3,514.4 246.9,480.6 240.1,478.9 240.0,475.1 247.4,467.3 248.0,457.0 218.4,458.8 210.6,444.7 184.2,429.6 173.5,443.2 175.7,450.4 173.2,465.4 176.0,467.7 172.9,469.3 173.5,475.2 165.2,478.5 159.6,476.3 158.3,480.0 152.2,481.5 143.8,477.5 142.9,473.7 132.7,473.3 127.9,469.3 127.8,464.8 120.4,462.4 118.6,452.0 105.0,453.5 99.5,452.7 97.4,448.3 87.7,448.9 81.3,455.4 73.6,474.9 74.6,483.1 77.5,482.8 79.5,489.1 71.7,511.2 64.9,520.4 65.4,528.4 59.9,532.8 44.9,523.6 44.2,520.5 32.3,524.0 30.1,516.9 17.8,529.9 20.7,534.1 24.8,533.5 29.9,567.0 36.5,576.5 35.1,581.6 48.5,591.5 44.6,606.3 49.6,620.4 41.7,627.0 44.5,636.3 40.3,641.3 44.1,646.3 38.1,655.6 38.7,661.0 35.8,660.6 32.4,667.6 28.4,668.9 28.1,673.7 13.3,683.8 12.2,687.6 7.4,685.7 7.6,692.9 3.0,692.4 0.0,703.9 8.2,706.0 16.4,714.7 20.8,708.7 19.8,703.3 22.6,704.5 29.8,712.9 27.4,715.8 31.9,722.9 27.0,725.3 29.7,728.3 39.0,724.1 50.6,730.6 48.5,733.5 62.6,736.0 66.8,741.1 94.6,733.4 96.3,737.7 108.1,738.2 109.1,741.3 110.7,739.1 124.2,753.8 120.2,754.8 118.7,770.3 119.7,773.9 122.9,770.3 128.6,772.4 127.5,776.9 132.8,780.6 129.4,782.5 128.7,789.4 133.7,790.9 133.4,794.1 146.3,803.9 149.9,795.0 150.0,801.1 160.0,805.7 163.6,804.4 169.2,814.8 173.4,810.7 173.2,813.8 180.8,818.1 182.8,809.8 186.1,811.0 188.3,823.9 185.8,828.1 193.3,848.6 206.7,849.8 214.4,849.5 217.4,845.3 244.9,841.8 245.5,777.0 241.6,761.2 224.9,751.6 231.4,742.6 229.2,733.7 231.3,724.5 238.6,719.3 233.6,714.9 234.5,710.1 238.0,710.6 259.3,694.3Z" role="button" tabindex="0" aria-label="District des Montagnes" aria-pressed="false"><title>District des Montagnes</title></path>
+            <path class="map__district" data-district-path="sassandra-marahoue" d="M357.2,737.3 368.7,734.9 372.6,729.4 388.4,730.8 417.4,699.0 464.6,703.5 471.4,693.9 477.6,699.4 483.3,698.4 493.4,693.7 492.6,689.1 503.2,686.1 505.4,688.5 508.0,683.3 520.8,678.9 521.3,669.8 515.0,657.5 507.6,652.2 507.2,644.9 500.6,636.8 504.8,632.5 508.6,615.9 513.7,614.2 507.6,611.6 508.9,597.8 501.9,594.6 491.5,597.5 487.3,594.3 488.8,589.9 477.0,584.1 480.6,581.4 480.8,575.4 470.1,568.1 474.6,562.1 469.2,559.5 467.3,553.5 470.3,545.5 467.2,538.2 471.4,533.1 466.3,523.9 456.8,515.9 459.3,510.1 455.7,496.4 431.5,499.9 426.8,495.8 417.9,496.6 412.6,510.2 405.6,515.3 388.6,507.4 388.7,500.0 383.7,491.5 363.2,493.0 347.7,498.9 322.1,488.2 246.1,488.9 248.3,514.4 252.5,519.8 256.6,519.0 261.9,527.6 252.5,531.8 258.9,546.7 245.9,558.4 249.7,565.4 249.3,587.3 245.2,590.1 250.5,595.7 249.6,602.7 252.3,605.5 248.9,629.0 252.9,635.8 249.4,646.2 258.4,648.8 260.9,666.5 263.7,668.6 260.8,673.9 261.5,683.3 255.9,690.6 262.6,695.1 267.2,706.0 258.5,711.6 281.6,740.5 322.7,736.9 326.7,733.5 340.3,743.2 357.2,737.3Z" role="button" tabindex="0" aria-label="District du Sassandra-Marahoué" aria-pressed="false"><title>District du Sassandra-Marahoué</title></path>
+            <path class="map__district" data-district-path="lacs" d="M538.0,695.1 533.8,699.6 538.9,703.6 535.3,710.3 537.8,726.3 558.2,725.5 573.0,739.3 583.8,738.6 580.8,742.7 581.9,747.4 599.2,743.3 623.7,746.8 632.4,745.0 636.6,740.1 670.2,746.4 675.3,742.1 677.1,744.8 702.5,742.0 708.2,743.7 713.4,755.6 733.3,743.2 725.6,730.9 729.5,708.3 737.2,704.8 739.2,706.7 756.2,694.2 759.3,697.0 768.4,694.8 777.1,698.1 789.6,685.2 784.8,674.7 790.2,670.3 784.9,660.6 791.5,657.9 793.4,651.2 788.1,644.6 795.6,633.8 793.6,627.9 788.5,632.5 787.6,625.7 791.8,620.6 798.5,620.3 798.7,617.0 805.0,612.5 811.7,612.9 813.4,605.7 820.8,610.1 822.7,603.5 810.4,599.4 809.5,588.6 818.7,589.8 821.4,582.9 818.6,575.0 829.2,572.6 824.0,568.7 831.9,562.2 834.9,549.6 828.7,540.4 817.7,534.7 822.1,529.1 820.6,524.2 816.2,522.4 809.9,525.6 804.0,514.6 795.9,510.4 794.9,498.1 780.4,498.3 780.2,493.9 772.4,493.1 775.5,488.6 772.1,485.7 774.5,481.0 771.2,475.4 752.5,471.6 760.8,467.6 764.6,461.9 763.0,459.0 750.0,463.2 749.5,457.0 756.6,451.5 749.3,447.1 736.2,454.8 741.7,460.1 737.5,468.7 720.6,474.0 708.6,467.6 695.4,480.7 669.5,485.4 665.3,483.4 663.7,490.5 670.8,519.3 667.3,521.1 658.5,518.0 639.6,535.0 631.5,533.3 624.7,524.6 615.9,527.0 607.0,519.7 606.5,525.4 599.5,534.1 600.2,540.6 593.4,539.3 583.8,545.2 577.4,553.6 569.1,554.4 568.3,559.7 556.7,565.7 550.8,574.2 547.4,573.0 539.6,583.0 523.3,580.7 516.1,570.1 509.2,569.9 483.2,576.6 479.8,582.1 477.1,581.8 480.8,587.6 488.8,589.9 487.3,594.3 491.5,597.5 501.9,594.6 508.9,597.8 506.5,602.6 508.3,612.5 515.1,615.0 536.3,607.6 553.2,614.7 567.5,616.0 568.5,621.1 578.6,624.6 583.2,636.3 589.4,639.0 592.2,650.1 595.4,650.5 592.7,661.7 583.3,660.0 580.2,656.3 569.8,659.8 551.2,677.7 543.2,680.8 541.6,691.4 538.0,695.1Z" role="button" tabindex="0" aria-label="District des Lacs" aria-pressed="false"><title>District des Lacs</title></path>
+            <path class="map__district" data-district-path="yamoussoukro" d="M538.0,695.1 541.6,691.4 543.2,680.8 551.2,677.7 565.9,662.6 580.2,656.3 583.3,660.0 592.4,661.9 595.4,650.5 592.2,650.1 589.4,639.0 583.2,636.3 580.0,626.2 568.5,621.1 567.5,616.0 553.2,614.7 536.3,607.6 508.6,615.9 504.8,632.5 500.6,636.8 507.2,644.9 507.6,652.2 515.0,657.5 521.3,669.8 519.8,685.0 537.1,688.7 538.0,695.1Z" role="button" tabindex="0" aria-label="District autonome de Yamoussoukro" aria-pressed="false"><title>District autonome de Yamoussoukro</title></path>
+            <path class="map__district" data-district-path="goh-djiboua" d="M516.9,908.1 522.5,909.6 521.3,915.5 527.2,916.2 537.4,925.8 549.7,922.7 556.3,917.8 557.0,913.6 567.1,912.9 565.7,920.2 570.3,923.5 576.8,920.3 576.8,913.4 583.1,907.3 577.4,900.7 577.7,892.2 586.5,869.4 582.2,856.5 597.9,839.5 592.0,825.9 598.5,810.6 589.1,805.0 588.2,786.3 581.8,780.5 589.4,771.8 584.9,764.8 564.5,760.8 548.4,746.4 554.5,725.0 537.8,726.3 535.3,710.3 538.9,703.6 533.8,699.6 538.0,695.7 537.7,689.1 521.1,686.7 520.2,679.0 516.8,678.7 508.0,683.3 505.4,688.5 503.2,686.1 492.6,689.1 493.4,693.7 483.3,698.4 477.6,699.4 471.4,693.9 464.6,703.5 417.4,699.0 388.4,730.8 372.6,729.4 368.7,734.9 357.2,737.3 355.9,759.3 376.0,797.1 378.1,808.7 382.6,812.2 387.5,827.1 386.4,836.9 392.6,824.6 406.6,825.1 412.5,830.2 411.0,837.1 412.9,834.8 420.9,846.2 417.9,852.1 425.1,865.5 437.9,862.4 457.8,863.3 465.9,849.0 483.6,862.2 493.8,856.8 495.8,866.9 507.3,870.8 510.3,880.8 515.8,879.5 520.5,885.8 527.5,886.9 518.1,893.5 513.1,902.7 516.9,908.1Z" role="button" tabindex="0" aria-label="District du Gôh-Djiboua" aria-pressed="false"><title>District du Gôh-Djiboua</title></path>
+            <path class="map__district" data-district-path="comoe" d="M776.7,915.5 897.9,938.1 898.4,933.1 912.7,933.7 924.9,939.8 928.9,935.0 934.0,938.5 935.2,935.1 931.9,934.2 936.0,932.2 956.3,936.7 961.8,930.6 955.4,918.5 956.5,911.5 950.4,905.4 954.8,903.5 955.3,894.5 961.5,896.7 961.4,888.1 955.6,878.4 955.2,853.6 938.0,843.0 932.0,848.8 924.1,850.8 921.4,847.8 923.9,834.6 910.6,833.9 912.8,811.7 903.0,786.7 898.3,760.6 890.8,746.1 887.6,745.6 888.1,737.8 876.8,696.8 877.4,687.5 873.7,685.1 882.3,665.8 878.2,658.7 878.0,650.5 903.4,611.4 890.8,596.4 879.9,590.3 873.8,566.4 865.0,566.5 867.6,573.5 854.3,579.4 841.8,562.6 828.3,563.4 824.0,568.7 828.7,573.3 818.6,575.0 821.4,582.9 818.7,589.8 809.5,588.6 810.4,599.4 822.7,603.5 820.8,610.1 813.4,605.7 811.7,612.9 805.0,612.5 798.7,617.0 798.5,620.3 791.8,620.6 787.6,625.7 788.5,632.5 793.6,627.9 795.6,633.8 788.1,644.6 793.4,651.2 791.2,658.3 785.1,660.2 790.2,670.3 784.8,674.7 789.7,684.4 803.7,680.3 802.6,689.4 807.3,692.1 811.0,706.1 809.6,712.8 815.3,712.8 819.4,722.4 821.5,720.3 826.3,723.8 828.2,720.3 832.5,723.7 832.9,732.2 842.8,746.3 837.6,746.0 836.5,750.3 840.8,757.7 845.6,753.7 850.5,762.3 848.0,765.4 850.8,770.6 845.7,774.9 848.8,775.8 847.3,778.3 851.4,784.3 849.1,790.3 843.8,792.3 841.7,801.5 851.7,804.6 863.8,802.3 859.5,808.3 853.3,808.0 850.5,820.3 845.7,819.0 844.6,826.2 867.4,832.1 862.0,846.7 854.5,844.4 848.2,847.8 846.8,852.7 835.7,855.1 837.0,857.6 830.5,861.9 822.5,862.6 819.8,895.4 813.9,902.9 813.3,910.2 807.4,909.0 804.2,913.8 799.0,914.0 797.0,910.0 798.9,902.9 787.6,907.2 784.3,904.9 782.7,910.7 778.6,910.2 776.7,915.5Z" role="button" tabindex="0" aria-label="District de la Comoé" aria-pressed="false"><title>District de la Comoé</title></path>
+            <path class="map__district" data-district-path="bas-sassandra" d="M357.2,737.3 340.3,743.2 326.7,733.5 322.7,736.9 281.6,740.5 258.5,711.6 267.2,706.0 260.6,694.0 238.0,710.6 234.5,710.1 233.6,714.9 238.6,719.3 231.3,724.5 229.2,733.7 231.4,742.6 224.9,751.6 241.6,761.2 245.5,777.0 244.9,841.8 217.4,845.3 214.4,849.5 196.6,849.3 197.4,855.7 193.6,855.9 192.9,861.1 195.6,865.6 192.2,865.3 194.2,868.0 188.8,873.7 189.4,881.1 186.3,878.2 184.5,880.9 192.8,892.5 196.3,888.7 195.3,895.0 198.4,897.1 189.6,909.1 191.1,902.2 180.6,905.7 182.2,912.5 179.0,914.9 181.2,922.8 178.7,930.8 174.6,935.8 173.0,932.9 165.8,938.2 169.4,952.0 166.4,956.6 171.8,965.6 166.0,965.1 159.6,970.5 162.3,975.7 161.0,986.0 166.3,989.2 166.9,1002.4 163.7,1009.8 168.3,1017.0 163.9,1021.7 167.5,1033.1 165.2,1042.2 169.6,1045.6 164.4,1051.5 167.9,1056.7 179.1,1058.2 190.9,1054.9 208.2,1043.4 217.1,1041.2 227.9,1031.9 253.5,1027.8 258.7,1020.6 272.3,1011.6 273.1,1008.0 306.5,1002.9 327.8,991.2 348.7,987.2 384.1,974.4 411.9,959.1 439.0,949.2 508.1,937.3 504.4,932.5 506.1,923.6 512.1,919.6 512.3,909.1 516.9,908.1 513.1,902.7 518.1,893.5 527.5,886.9 520.5,885.8 515.8,879.5 510.3,880.8 507.3,870.8 495.8,866.9 493.8,856.8 483.6,862.2 465.9,849.0 457.8,863.3 437.9,862.4 425.1,865.5 417.9,852.1 420.9,846.2 412.9,834.8 411.0,837.1 412.5,830.2 404.5,824.3 392.6,824.6 386.4,836.9 387.5,827.1 382.6,812.2 378.1,808.7 376.0,797.1 355.9,759.3 357.2,737.3Z" role="button" tabindex="0" aria-label="District du Bas-Sassandra" aria-pressed="false"><title>District du Bas-Sassandra</title></path>
+            <path class="map__district" data-district-path="lagunes" d="M508.1,937.3 626.8,927.4 717.1,916.0 715.1,905.9 707.3,906.6 703.6,901.1 700.0,885.6 705.1,880.3 702.7,872.0 688.9,865.0 676.5,863.8 687.7,852.5 692.8,856.0 722.8,851.9 736.0,856.8 762.1,854.6 772.8,869.2 776.4,867.9 779.1,871.8 779.4,879.5 782.6,881.9 780.3,890.4 790.9,891.2 790.3,896.1 798.7,902.4 799.0,914.0 804.2,913.8 807.4,909.0 813.3,910.2 813.9,902.9 819.8,895.4 822.5,862.6 830.5,861.9 837.0,857.6 835.7,855.1 846.8,852.7 848.2,847.8 854.5,844.4 862.0,846.7 867.4,832.1 844.6,826.2 845.7,819.0 850.5,820.3 853.3,808.0 859.5,808.3 863.8,802.3 851.7,804.6 841.7,801.5 843.8,792.3 849.1,790.3 851.4,784.3 847.3,778.3 848.8,775.8 845.7,774.9 850.8,770.6 848.0,765.4 850.5,762.3 845.6,753.7 840.8,757.7 836.5,750.3 837.6,746.0 842.8,746.3 832.9,732.2 832.5,723.7 828.2,720.3 826.3,723.8 821.5,720.3 819.4,722.4 815.3,712.8 809.6,712.8 811.0,706.1 807.3,692.1 802.6,689.4 803.7,680.3 791.4,682.3 777.1,698.1 768.4,694.8 759.3,697.0 756.2,694.2 739.2,706.7 737.2,704.8 729.5,708.3 725.6,730.9 733.3,743.2 713.4,755.6 708.2,743.7 702.5,742.0 677.1,744.8 675.3,742.1 670.2,746.4 636.6,740.1 632.4,745.0 623.7,746.8 599.2,743.3 582.3,747.5 580.8,742.7 583.8,738.6 573.0,739.3 554.6,724.7 548.4,746.4 564.5,760.8 584.9,764.8 589.4,771.8 581.8,780.5 588.2,786.3 589.1,805.0 598.5,810.6 592.0,825.9 597.9,839.5 582.2,856.5 586.5,869.4 576.7,898.5 583.1,907.3 576.8,913.4 576.8,920.3 570.3,923.5 565.7,920.2 567.1,912.9 557.0,913.6 556.3,917.8 549.7,922.7 537.4,925.8 527.2,916.2 521.3,915.5 521.5,908.8 512.6,908.9 512.1,919.6 506.7,922.3 504.6,930.9 508.1,937.3Z" role="button" tabindex="0" aria-label="District des Lagunes" aria-pressed="false"><title>District des Lagunes</title></path>
+            <path class="map__district" data-district-path="abidjan" d="M798.9,902.9 790.3,896.1 790.9,891.2 780.3,890.4 782.6,881.9 779.4,879.5 779.1,871.8 776.4,867.9 772.8,869.2 762.1,854.6 736.0,856.8 722.8,851.9 692.8,856.0 687.7,852.5 676.5,863.8 688.9,865.0 702.7,872.0 705.1,880.3 700.0,885.6 703.6,901.1 707.3,906.6 715.1,905.9 717.1,916.0 751.7,910.8 776.7,915.5 778.6,910.2 782.7,910.7 784.3,904.9 787.6,907.2 798.9,902.9Z" role="button" tabindex="0" aria-label="District autonome d'Abidjan" aria-pressed="false"><title>District autonome d'Abidjan</title></path>
+          </g>
+          <g class="map__labels" aria-hidden="true">
+            <text class="map__label" x="496.7" y="195.2" text-anchor="middle">Savanes</text>
+            <text class="map__label" x="196.1" y="183.4" text-anchor="middle">Denguélé</text>
+            <text class="map__label" x="300.9" y="392.5" text-anchor="middle">Woroba</text>
+            <text class="map__label" x="859.4" y="343.6" text-anchor="middle">Zanzan</text>
+            <text class="map__label" x="594.8" y="411.7" text-anchor="middle">Vallée du Bandama</text>
+            <text class="map__label" x="152.2" y="629.4" text-anchor="middle">Montagnes</text>
+            <text class="map__label" x="367.3" y="612.0" text-anchor="middle">Sassandra-Marahoué</text>
+            <text class="map__label" x="679.3" y="612.9" text-anchor="middle">Lacs</text>
+            <text class="map__label map__label--small" x="544.0" y="622.8" text-anchor="middle">Yamoussoukro</text>
+            <text class="map__label" x="487.6" y="793.4" text-anchor="middle">Gôh-Djiboua</text>
+            <text class="map__label" x="867.2" y="771.2" text-anchor="middle">Comoé</text>
+            <text class="map__label" x="312.1" y="892.8" text-anchor="middle">Bas-Sassandra</text>
+            <text class="map__label" x="687.6" y="804.5" text-anchor="middle">Lagunes</text>
+            <text class="map__label map__label--small" x="739.9" y="909.7" text-anchor="middle">Abidjan</text>
+          </g>
+        </svg>
+        <p class="map-wrap__hint">Limites des districts&nbsp;: <a href="https://www.geoboundaries.org/">geoBoundaries</a> (CC BY 4.0), simplifiées.</p>
       </div>
     </div>
   </section>
 
-  <!-- Actualités : après les services, en casse normale, avec la source -->
-  <section class="section section--soft" id="actualites" aria-labelledby="news-title">
+  <!-- Actualités : mise en page magazine -->
+  <section class="section" id="actualites" aria-labelledby="news-title">
     <div class="container">
-      <div class="section__head">
+      <div class="section__head reveal">
         <div>
-          <h2 id="news-title">Actualités et communiqués</h2>
+          <p class="eyebrow">Actualités</p>
+          <h2 id="news-title">L'action du Gouvernement, <em>au jour le jour.</em></h2>
           <p>Titres repris du portail officiel gouv.ci le 29 septembre 2026, à titre d'illustration.</p>
         </div>
-        <a class="section__link" href="https://www.gouv.ci/actualites">Toutes les actualités <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+        <a class="section__link" href="https://www.gouv.ci/actualites">Toutes les actualités <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
       </div>
-      <ul class="news list-reset">
-        <li class="news__item news__item--featured">
-          <div class="news__meta"><span class="tag">À la une · Société</span></div>
+      <div class="news">
+        <article class="news__feature on-dark reveal">
+          <img src="assets/img/abidjan-nuit-1280.jpg" alt="" loading="lazy" decoding="async">
+          <span class="tag">À la une · Société</span>
           <h3><a href="https://www.gouv.ci/actualite/eau-potable-a-zandanakaha-leau-a-portee-de-main-3645">Eau potable&nbsp;: à Zandanakaha, l'eau à portée de main</a></h3>
           <time datetime="2026-09-28">Lundi 28 septembre 2026</time>
-        </li>
-        <li class="news__item">
-          <div class="news__meta"><span class="tag tag--neutral">Éducation</span></div>
+        </article>
+        <article class="news__item reveal" style="--i:1">
+          <div class="news__meta"><span class="tag">Éducation</span><time datetime="2026-09-28">28 septembre 2026</time></div>
           <h3><a href="https://www.gouv.ci/actualite/enseignement-superieur-un-plan-initie-pour-doubler-les-capacites-de-luniversite-polytechnique-de-man-1393">Enseignement supérieur&nbsp;: un plan pour doubler les capacités de l'Université polytechnique de Man</a></h3>
-          <time datetime="2026-09-28">Lundi 28 septembre 2026</time>
-        </li>
-        <li class="news__item">
-          <div class="news__meta"><span class="tag tag--neutral">Économie</span></div>
-          <h3><a href="https://www.gouv.ci/actualite/cooperation-cote-divoire-banque-mondiale-le-portefeuille-actif-estime-a-63-milliards-de-dollars-us-couvrant-25-projets-strategiques-2829">Coopération Côte d'Ivoire – Banque mondiale&nbsp;: un portefeuille actif de 6,3 milliards de dollars pour 25 projets stratégiques</a></h3>
-          <time datetime="2026-09-22">Mardi 22 septembre 2026</time>
-        </li>
-        <li class="news__item">
-          <div class="news__meta"><span class="tag tag--neutral">Santé</span></div>
+        </article>
+        <article class="news__item reveal" style="--i:2">
+          <div class="news__meta"><span class="tag">Économie</span><time datetime="2026-09-22">22 septembre 2026</time></div>
+          <h3><a href="https://www.gouv.ci/actualite/cooperation-cote-divoire-banque-mondiale-le-portefeuille-actif-estime-a-63-milliards-de-dollars-us-couvrant-25-projets-strategiques-2829">Coopération Côte d'Ivoire – Banque mondiale&nbsp;: 6,3 milliards de dollars pour 25 projets stratégiques</a></h3>
+        </article>
+        <article class="news__item reveal" style="--i:3">
+          <div class="news__meta"><span class="tag">Santé</span><time datetime="2026-08-24">24 août 2026</time></div>
           <h3><a href="https://www.gouv.ci/actualite/hopital-general-de-ferkessedougou-un-pavillon-pediatrique-pour-rapprocher-les-soins-des-enfants-3741">Hôpital général de Ferkessédougou&nbsp;: un pavillon pédiatrique pour rapprocher les soins des enfants</a></h3>
-          <time datetime="2026-08-24">Lundi 24 août 2026</time>
-        </li>
-      </ul>
-      <div class="council">
+        </article>
+      </div>
+      <div class="council reveal">
         <span class="council__icon"><svg aria-hidden="true" focusable="false"><use href="#i-file"/></svg></span>
         <div class="council__text">
-          <strong>Conseil des ministres du mercredi 23 septembre 2026</strong>
-          <span>Communiqué officiel du Conseil des ministres, au format PDF.</span>
+          <strong>Conseil des ministres du 23 septembre 2026</strong>
+          <span>Communiqué officiel, au format PDF.</span>
         </div>
-        <a class="btn btn--primary btn--sm" href="https://www.gouv.ci/uploads/publications/179019067632.pdf">Lire le communiqué (PDF)</a>
-        <a class="btn btn--ghost btn--sm" href="https://www.gouv.ci/publications/documents/Conseils%20des%20Ministres">Tous les conseils des ministres</a>
+        <a class="btn btn--primary btn--sm" href="https://www.gouv.ci/uploads/publications/179019067632.pdf">Lire le communiqué <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost btn--sm" href="https://www.gouv.ci/publications/documents/Conseils%20des%20Ministres">Tous les conseils</a>
       </div>
+      <p class="muted" style="font-size:.78rem;margin-top:.9rem">Photo&nbsp;: Le Plateau depuis le pont ADO, Edison McCullen — <a href="https://commons.wikimedia.org/wiki/File:Le_Plateau_depuis_le_Pont_ADO_%E2%80%93_Abidjan.jpg">Wikimedia Commons</a>, CC BY 4.0.</p>
     </div>
   </section>
 
   <!-- Le Gouvernement et les institutions -->
-  <section class="section" id="gouvernement" aria-labelledby="gov-title">
+  <section class="section section--alt" id="gouvernement" aria-labelledby="gov-title">
     <div class="container">
-      <div class="section__head">
+      <div class="section__head reveal">
         <div>
-          <h2 id="gov-title">Le Gouvernement et les institutions</h2>
+          <p class="eyebrow">Institutions</p>
+          <h2 id="gov-title">Le Gouvernement <em>et les institutions.</em></h2>
           <p>Qui fait quoi, et où trouver les textes officiels.</p>
         </div>
       </div>
       <ul class="gov list-reset">
-        <li class="gov__item">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-building"/></svg></span>
-          <h3><a href="https://www.gouv.ci/primature/premier-ministre">Primature</a></h3>
-          <p>Le Premier Ministre, ses discours et ses interventions.</p>
-        </li>
-        <li class="gov__item">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-users"/></svg></span>
-          <h3><a href="https://www.gouv.ci/gouvernement">Composition du Gouvernement</a></h3>
-          <p>Les ministres, leurs ministères et leurs missions.</p>
-        </li>
-        <li class="gov__item">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-scale"/></svg></span>
-          <h3><a href="https://www.gouv.ci/institutions">Institutions de la République</a></h3>
-          <p>Assemblée nationale, Sénat, Conseil constitutionnel et autres institutions.</p>
-        </li>
-        <li class="gov__item">
-          <span class="card__icon"><svg aria-hidden="true" focusable="false"><use href="#i-file"/></svg></span>
-          <h3><a href="https://www.gouv.ci/publications/documents">Textes et publications</a></h3>
-          <p>Communiqués, textes officiels, rapports annuels, codes.</p>
-        </li>
+        <li class="gov__item reveal" style="--i:0"><span class="gov__num">01</span><h3><a href="https://www.gouv.ci/primature/premier-ministre">Primature</a></h3><p>Le Premier Ministre, ses discours et ses interventions.</p><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></li>
+        <li class="gov__item reveal" style="--i:1"><span class="gov__num">02</span><h3><a href="https://www.gouv.ci/gouvernement">Composition du Gouvernement</a></h3><p>Les ministres, leurs ministères et leurs missions.</p><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></li>
+        <li class="gov__item reveal" style="--i:2"><span class="gov__num">03</span><h3><a href="https://www.gouv.ci/institutions">Institutions de la République</a></h3><p>Assemblée nationale, Sénat, Conseil constitutionnel et autres institutions.</p><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></li>
+        <li class="gov__item reveal" style="--i:3"><span class="gov__num">04</span><h3><a href="https://www.gouv.ci/publications/documents">Textes et publications</a></h3><p>Communiqués, textes officiels, rapports annuels, codes.</p><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></li>
       </ul>
     </div>
   </section>
 
   <!-- Communication à double sens -->
-  <section class="section section--tint" id="votre-avis" aria-labelledby="feedback-title">
-    <div class="container">
-      <div class="section__head">
-        <div>
-          <h2 id="feedback-title">Votre avis compte</h2>
-          <p>Un service public s'améliore avec celles et ceux qui l'utilisent. Dites-nous ce qui fonctionne, et ce qui manque.</p>
-        </div>
+  <section class="section" id="votre-avis" aria-labelledby="feedback-title">
+    <div class="container feedback">
+      <div class="feedback__intro reveal">
+        <p class="eyebrow">Dialogue</p>
+        <h2 id="feedback-title">Votre avis <em>compte.</em></h2>
+        <p>Un service public s'améliore avec celles et ceux qui l'utilisent. Dites-nous ce qui fonctionne, et ce qui manque.</p>
       </div>
-      <div class="feedback">
-        <div class="feedback__panel" data-feedback>
+      <div class="feedback__list">
+        <div class="feedback__panel reveal" data-feedback>
           <h3>Cette page vous a-t-elle été utile&nbsp;?</h3>
           <p>Une réponse en un clic, anonyme.</p>
           <div class="feedback__actions">
@@ -407,12 +394,12 @@
           </div>
           <p class="feedback__thanks" role="status" hidden></p>
         </div>
-        <div class="feedback__panel">
+        <div class="feedback__panel reveal" style="--i:1">
           <h3>Écrire au Gouvernement</h3>
           <p>Une question, une réclamation ou une suggestion&nbsp;: le formulaire officiel vous met en relation avec le service concerné.</p>
           <div class="feedback__actions"><a class="btn btn--primary btn--sm" href="https://www.gouv.ci/ecrire-au-gouvernement"><svg aria-hidden="true" focusable="false"><use href="#i-mail"/></svg> Accéder au formulaire</a></div>
         </div>
-        <div class="feedback__panel">
+        <div class="feedback__panel reveal" style="--i:2">
           <h3>Signaler un problème</h3>
           <p>Une démarche bloquée, une information erronée, un lien cassé&nbsp;? Signalez-le pour qu'il soit corrigé rapidement.</p>
           <div class="feedback__actions"><a class="btn btn--ghost btn--sm" href="https://www.gouv.ci/ecrire-au-gouvernement"><svg aria-hidden="true" focusable="false"><use href="#i-alert"/></svg> Signaler</a></div>
@@ -424,14 +411,17 @@
 </main>
 
 <footer class="footer on-dark">
-  <div class="footer__stripe" aria-hidden="true"></div>
+  <div class="container">
+    <p class="footer__wordmark">Côte <em>d'Ivoire</em></p>
+    <p class="footer__tagline">Portail du Gouvernement — concept de refonte non officiel, réalisé à titre personnel par Kreeative. Le site officiel est <a href="https://www.gouv.ci">www.gouv.ci</a>.</p>
+  </div>
   <div class="container footer__inner">
     <div class="footer__brand">
       <a class="brand" href="index.html">
-        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" rx="10" fill="#ffffff"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#0b3b2c"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
-        <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept de refonte · non officiel</span></span>
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" fill="#f6f1e7"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#0a3323"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
+        <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept non officiel</span></span>
       </a>
-      <p>Un point d'entrée unique vers les services publics, les informations officielles et les institutions de la République de Côte d'Ivoire. Concept de refonte réalisé à titre personnel.</p>
+      <p>Un point d'entrée unique vers les services publics, les informations officielles et les institutions de la République de Côte d'Ivoire.</p>
     </div>
     <nav aria-labelledby="f-services">
       <h2 id="f-services">Services</h2>
@@ -469,10 +459,12 @@
     <ul class="footer__legal">
       <li><a href="https://www.gouv.ci/mentions-legales">Mentions légales du portail officiel</a></li>
       <li><a href="a-propos.html#accessibilite">Démarche d'accessibilité</a></li>
+      <li><a href="a-propos.html#mentions">Crédits photos et données</a></li>
       <li><a href="#contenu">Haut de page</a></li>
     </ul>
     <p class="footer__disclaimer">Concept non officiel réalisé par Anne-Kelly Kouyaté (Kreeative, Toronto) — © <span data-year>2026</span>. Aucune affiliation avec l'État de Côte d'Ivoire. Les titres d'actualité cités appartiennent à leurs auteurs (gouv.ci).</p>
   </div>
+  <div class="footer__stripe" aria-hidden="true"></div>
 </footer>
 
 <script src="assets/js/main.js" defer></script>

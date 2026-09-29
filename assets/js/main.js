@@ -8,7 +8,8 @@
    2. Recherche de services (combobox + résultats inline)
    3. Personnalisation géographique (« Ma localité »)
    4. Retour citoyen (« Votre avis compte »)
-   5. Divers (année, liens externes)
+   5. Apparition au défilement
+   6. Divers (année, liens externes)
    ========================================================================== */
 (function () {
   "use strict";
@@ -22,9 +23,11 @@
   var nav = document.getElementById("navigation");
 
   if (menuBtn && nav) {
+    var header = menuBtn.closest(".header");
     var setMenu = function (open) {
       menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
       nav.setAttribute("data-open", open ? "true" : "false");
+      if (header) header.classList.toggle("is-open", !!open);
     };
     setMenu(false);
 
@@ -292,21 +295,41 @@
     if (!d) return;
     document.querySelectorAll("[data-district-name]").forEach(function (el) { el.textContent = d.name; });
     document.querySelectorAll("[data-district-city]").forEach(function (el) { el.textContent = d.city; });
+    document.querySelectorAll("[data-district-path]").forEach(function (el) {
+      el.setAttribute("aria-pressed", el.getAttribute("data-district-path") === key ? "true" : "false");
+    });
     var live = document.getElementById("district-status");
     if (live) live.textContent = "Contenus locaux mis à jour pour : " + d.name + ".";
+  };
+
+  var saveDistrict = function (key) {
+    try { window.localStorage.setItem(STORAGE_KEY, key); } catch (err) { /* stockage indisponible */ }
+  };
+
+  var chooseDistrict = function (key) {
+    if (!DISTRICTS[key]) return;
+    if (select) select.value = key;
+    applyDistrict(key);
+    saveDistrict(key);
   };
 
   if (select) {
     if (savedDistrict && DISTRICTS[savedDistrict]) select.value = savedDistrict;
     applyDistrict(select.value);
 
-    select.addEventListener("change", function () {
-      applyDistrict(select.value);
-      try { window.localStorage.setItem(STORAGE_KEY, select.value); } catch (err) { /* stockage indisponible */ }
-    });
+    select.addEventListener("change", function () { chooseDistrict(select.value); });
   } else if (savedDistrict && DISTRICTS[savedDistrict]) {
     applyDistrict(savedDistrict);
   }
+
+  // Carte interactive : chaque district est un bouton (souris, tactile, clavier)
+  document.querySelectorAll("[data-district-path]").forEach(function (path) {
+    var key = path.getAttribute("data-district-path");
+    path.addEventListener("click", function () { chooseDistrict(key); });
+    path.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); chooseDistrict(key); }
+    });
+  });
 
   /* --------------------------------------------------------------------------
      4. Retour citoyen (démonstration : rien n'est envoyé)
@@ -330,7 +353,23 @@
   });
 
   /* --------------------------------------------------------------------------
-     5. Divers
+     5. Apparition au défilement (désactivée si « réduire les animations »)
+     -------------------------------------------------------------------------- */
+  var reveals = document.querySelectorAll(".reveal");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reveals.length || reduceMotion || !("IntersectionObserver" in window)) {
+    reveals.forEach(function (el) { el.classList.add("is-visible"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add("is-visible"); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+
+  /* --------------------------------------------------------------------------
+     6. Divers
      -------------------------------------------------------------------------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());

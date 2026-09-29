@@ -6,15 +6,23 @@
 
 ## Aperçu
 
-![Haut de la page d'accueil du concept, sur ordinateur](docs/screenshots/accueil-desktop-fold.png)
+![Haut de la page d'accueil du concept, sur ordinateur](docs/screenshots/accueil-desktop-fold.jpg)
 
 | Accueil (ordinateur, page entière) | Accueil (mobile, page entière) |
 | --- | --- |
-| ![Page d'accueil du concept sur ordinateur](docs/screenshots/accueil-desktop.png) | ![Page d'accueil du concept sur mobile](docs/screenshots/accueil-mobile.png) |
+| ![Page d'accueil du concept sur ordinateur](docs/screenshots/accueil-desktop.jpg) | ![Page d'accueil du concept sur mobile](docs/screenshots/accueil-mobile.jpg) |
 
 | Page de démarche (mobile) | À propos du concept (ordinateur) |
 | --- | --- |
-| ![Exemple de page de démarche sur mobile](docs/screenshots/demarche-mobile.png) | ![Page À propos sur ordinateur](docs/screenshots/a-propos-desktop.png) |
+| ![Exemple de page de démarche sur mobile](docs/screenshots/demarche-mobile.jpg) | ![Page À propos sur ordinateur](docs/screenshots/a-propos-desktop.jpg) |
+
+## Direction artistique
+
+- **Papier, forêt, orange** : un fond crème (`#F6F1E7`) qui évoque le papier et la lumière, un vert forêt profond (`#0A3323`) pour les grandes sections institutionnelles, l'orange du drapeau (`#F77F00`) en accent (recherche, repères, district sélectionné).
+- **Typographie éditoriale** : Instrument Serif pour les grands titres, Instrument Sans (variable) pour l'interface. Deux polices libres, auto-hébergées.
+- **Hero cinématique** : vue aérienne du Plateau (Abidjan) en plein écran, lent zoom, recherche en pilule posée sur la photo.
+- **Grille « bento »** pour les démarches, **carte interactive** des 14 districts (tracés réels simplifiés), **actualités façon magazine**, **signature typographique** en pied de page.
+- **Mouvement mesuré** : apparitions au défilement et micro-interactions, toutes désactivées si l'utilisateur préfère réduire les animations.
 
 ## Ce que c'est
 
@@ -34,7 +42,7 @@ Trois pages :
 | Mobile d'abord, réactif | Une colonne sur téléphone, grilles progressives, marges de 16 px, aucun défilement horizontal |
 | Navigation simple et recherche | Cinq entrées de menu, recherche avec suggestions (combobox) et recherches fréquentes |
 | Démarches les plus demandées en évidence | Huit cartes de démarche sous le hero, liées aux e-services officiels |
-| Personnalisation géographique | Sélecteur « Ma localité » (14 districts) qui met à jour « Près de chez vous » |
+| Personnalisation géographique | Carte interactive et sélecteur « Ma localité » (14 districts), qui mettent à jour « Près de chez vous » |
 | Orienté tâches | Page type de démarche : qui, quoi, où, combien, combien de temps |
 | Libre-service | e-Impôts, e-Justice, e-CNPS, CEPICI, CMU, SIGFU… reliés entre eux |
 | Communication à double sens | « Votre avis compte », « Écrire au Gouvernement », signalement de problème |
@@ -65,8 +73,8 @@ demarche.html           # exemple de page de démarche
 a-propos.html           # étude de cas
 assets/css/styles.css   # jetons de design, composants, mises en page
 assets/js/main.js       # menu, recherche, localité, retour citoyen
-assets/fonts/           # Public Sans (variable, auto-hébergée, licence OFL)
-assets/img/favicon.svg
+assets/fonts/           # Instrument Serif + Instrument Sans (auto-hébergées, licence OFL)
+assets/img/             # photos (Wikimedia Commons, CC0 / CC BY) et favicon
 docs/screenshots/       # captures utilisées dans ce README
 ```
 
@@ -74,12 +82,15 @@ docs/screenshots/       # captures utilisées dans ce README
 
 - **Couleurs et typographie** : variables CSS en tête de `assets/css/styles.css` (`:root`).
 - **Démarches et services** : cartes dans `index.html` (section `#services`) et index de recherche `SERVICES` dans `assets/js/main.js`.
-- **Districts** : objet `DISTRICTS` dans `assets/js/main.js` et `<select id="district">` dans `index.html`.
+- **Districts** : objet `DISTRICTS` dans `assets/js/main.js`, `<select id="district">` et tracés `<path data-district-path>` de la carte dans `index.html`.
+- **Photos** : remplacez les fichiers de `assets/img/` (hero en 1920 px et 960 px) et les crédits dans `a-propos.html`.
 - **Actualités** : section `#actualites` dans `index.html` (titres repris du portail officiel le 29 septembre 2026, à titre d'illustration).
 
 ## Crédits et licences
 
 - Concept, design et code : Anne-Kelly Kouyaté, [Kreeative](https://kreeative.xyz) (Toronto), septembre 2026.
-- Police Public Sans : © The Public Sans Project Authors, [SIL Open Font License 1.1](assets/fonts/LICENSE-public-sans.txt).
+- Polices Instrument Serif et Instrument Sans : [SIL Open Font License 1.1](assets/fonts/LICENSE-instrument-serif.txt).
+- Photo du hero (vue aérienne du Plateau, Abidjan) : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Abidjan_Plateau.png), CC0. Photo des actualités (Le Plateau depuis le pont ADO) : Edison McCullen, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Le_Plateau_depuis_le_Pont_ADO_%E2%80%93_Abidjan.jpg), CC BY 4.0.
+- Limites des districts : [geoBoundaries](https://www.geoboundaries.org/) (ADM1, Côte d'Ivoire), CC BY 4.0, simplifiées.
 - Les titres d'actualité, les noms de services et les liens cités appartiennent à leurs propriétaires respectifs (gouv.ci et administrations concernées).
 - Icônes : SVG originaux inclus dans les pages.

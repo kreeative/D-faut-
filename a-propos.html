@@ -6,9 +6,10 @@
   <title>À propos de ce concept — Refonte non officielle du portail gouv.ci</title>
   <meta name="description" content="Pourquoi et comment ce concept de refonte du portail gouv.ci a été conçu : observations, principes, accessibilité, choix de conception et prochaines étapes. Projet personnel de Kreeative.">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0b3b2c">
+  <meta name="theme-color" content="#0a3323">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -32,21 +33,11 @@
   </div>
 </div>
 
-<div class="topbar on-dark">
-  <div class="container topbar__inner">
-    <p class="topbar__republic" style="margin:0"><span class="flag" aria-hidden="true"><span></span><span></span><span></span></span> République de Côte d'Ivoire <span class="topbar__motto">· Union – Discipline – Travail</span></p>
-    <ul class="topbar__links">
-      <li><a href="#accessibilite">Accessibilité</a></li>
-      <li><a href="https://www.gouv.ci">Site officiel <svg class="icon" style="width:14px;height:14px" aria-hidden="true" focusable="false"><use href="#i-external"/></svg></a></li>
-    </ul>
-  </div>
-</div>
-
-<header class="header">
+<header class="header header--solid on-dark">
   <div class="container header__inner">
     <a class="brand" href="index.html">
-      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" rx="10" fill="#0b3b2c"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#ffffff"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
-      <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept de refonte · non officiel</span></span>
+      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" fill="#f6f1e7"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#0a3323"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
+      <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept non officiel</span></span>
     </a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navigation">
       <svg class="icon icon-menu" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
@@ -55,11 +46,12 @@
     </button>
     <nav class="nav" id="navigation" aria-label="Navigation principale">
       <ul class="nav__list">
-        <li><a href="index.html#services">Démarches et services <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="index.html#gouvernement">Le Gouvernement <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="index.html#services">Démarches <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="index.html#carte">Ma localité <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
         <li><a href="index.html#actualites">Actualités <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="https://www.gouv.ci/publications/documents">Publications <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
-        <li><a href="index.html#votre-avis">Écrire au Gouvernement <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="index.html#gouvernement">Gouvernement <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="index.html#votre-avis">Nous écrire <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="a-propos.html">À propos du concept <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
       </ul>
     </nav>
   </div>
@@ -74,6 +66,7 @@
           <li><a href="a-propos.html" aria-current="page">À propos du concept</a></li>
         </ol>
       </nav>
+      <div class="page-head__rule" aria-hidden="true"></div>
       <h1>À propos de ce concept de refonte</h1>
       <p class="lead">Une proposition personnelle pour un portail gouv.ci pensé d'abord pour les citoyens&nbsp;: mobile, accessible et orienté vers les démarches du quotidien.</p>
     </div>
@@ -182,13 +175,13 @@
 
         <h2 id="conception">Choix de conception</h2>
         <h3>Couleurs</h3>
-        <p>La palette part du drapeau&nbsp;: orange (<code>#F77F00</code>) et vert (<code>#009E60</code>), avec un vert profond (<code>#0B3B2C</code>) comme couleur institutionnelle pour l'en-tête, le pied de page et les boutons. L'orange sert d'accent (bouton de recherche, repères) toujours associé à un texte sombre pour rester lisible.</p>
+        <p>La palette part du drapeau&nbsp;: orange (<code>#F77F00</code>) et vert (<code>#009E60</code>), posés sur un fond crème (<code>#F6F1E7</code>) qui évoque le papier et la lumière, avec un vert forêt profond (<code>#0A3323</code>) comme couleur institutionnelle pour les grandes sections, les boutons et le pied de page. L'orange sert d'accent (recherche, repères, district sélectionné), toujours associé à un texte sombre pour rester lisible. Un motif géométrique discret, inspiré des tissages, texture certains fonds.</p>
         <h3>Typographie</h3>
-        <p>Public Sans, une police libre (licence SIL Open Font) conçue pour le système de design du gouvernement américain, hébergée avec le site pour éviter toute requête vers un tiers. Une seule famille, des graisses variables et une échelle fluide adaptée à l'écran.</p>
+        <p>Deux familles libres (licence SIL Open Font), hébergées avec le site pour éviter toute requête vers un tiers&nbsp;: <strong>Instrument Serif</strong> pour les grands titres, qui donne au portail une voix éditoriale et chaleureuse, et <strong>Instrument Sans</strong>, une grotesque variable, pour l'interface et le texte courant. Une échelle fluide adapte les tailles à l'écran.</p>
         <h3>Composants</h3>
-        <p>Bandeau d'avertissement, barre institutionnelle, en-tête avec menu, recherche avec suggestions, cartes de démarche, tuiles de thème, bloc «&nbsp;Près de chez vous&nbsp;», actualités, bloc Conseil des ministres, retour citoyen, pied de page. Tous sont décrits dans une feuille de style unique, sans framework.</p>
+        <p>Hero photographique plein écran avec recherche en pilule, bande «&nbsp;Flash infos&nbsp;», grille «&nbsp;bento&nbsp;» des démarches, pilules de thèmes, carte interactive des 14 districts (tracés réels simplifiés), actualités en mise en page magazine, bloc Conseil des ministres, retour citoyen, pied de page à grande signature typographique. Tous sont décrits dans une feuille de style unique, sans framework, avec des apparitions au défilement désactivées pour les personnes qui préfèrent moins d'animations.</p>
         <h3>Performance et sobriété</h3>
-        <p>HTML, CSS et JavaScript écrits à la main, sans dépendance&nbsp;: la page d'accueil pèse environ 130&nbsp;Ko, polices comprises (contre 752&nbsp;Ko pour le seul HTML de la page actuelle), et n'appelle aucun service externe. Le site reste lisible et navigable sans JavaScript.</p>
+        <p>HTML, CSS et JavaScript écrits à la main, sans dépendance&nbsp;: hors photographies, la page d'accueil pèse moins de 200&nbsp;Ko, polices et carte comprises (contre 752&nbsp;Ko pour le seul HTML de la page actuelle), et n'appelle aucun service externe. Les photos sont servies en plusieurs tailles selon l'écran. Le site reste lisible et navigable sans JavaScript.</p>
 
         <h2 id="suite">Et ensuite&nbsp;?</h2>
         <ol>
@@ -202,6 +195,13 @@
 
         <h2 id="mentions">Mentions</h2>
         <p>Ce concept est un projet personnel d'Anne-Kelly Kouyaté, designer web ivoirienne et fondatrice de <a href="https://kreeative.xyz">Kreeative</a>, studio de design web et de branding basé à Toronto. Il n'est ni commandé, ni approuvé, ni hébergé par le Gouvernement de Côte d'Ivoire. Les noms, emblèmes et contenus cités appartiennent à leurs propriétaires respectifs&nbsp;; les titres d'actualité sont repris du portail officiel gouv.ci à titre d'illustration.</p>
+        <h3>Crédits photos et données</h3>
+        <ul>
+          <li>Vue aérienne du Plateau, Abidjan (hero)&nbsp;: <a href="https://commons.wikimedia.org/wiki/File:Abidjan_Plateau.png">Wikimedia Commons</a>, CC0.</li>
+          <li>Le Plateau depuis le pont ADO, de nuit (actualités)&nbsp;: Edison McCullen, <a href="https://commons.wikimedia.org/wiki/File:Le_Plateau_depuis_le_Pont_ADO_%E2%80%93_Abidjan.jpg">Wikimedia Commons</a>, CC BY 4.0.</li>
+          <li>Limites des districts&nbsp;: <a href="https://www.geoboundaries.org/">geoBoundaries</a> (ADM1, Côte d'Ivoire), CC BY 4.0, simplifiées pour l'affichage.</li>
+          <li>Polices Instrument Serif et Instrument Sans&nbsp;: SIL Open Font License 1.1.</li>
+        </ul>
         <p>Pour échanger sur ce concept&nbsp;: <a href="https://kreeative.xyz">kreeative.xyz</a>.</p>
       </article>
 
@@ -227,14 +227,17 @@
 </main>
 
 <footer class="footer on-dark">
-  <div class="footer__stripe" aria-hidden="true"></div>
+  <div class="container">
+    <p class="footer__wordmark">Côte <em>d'Ivoire</em></p>
+    <p class="footer__tagline">Portail du Gouvernement — concept de refonte non officiel, réalisé à titre personnel par Kreeative. Le site officiel est <a href="https://www.gouv.ci">www.gouv.ci</a>.</p>
+  </div>
   <div class="container footer__inner">
     <div class="footer__brand">
       <a class="brand" href="index.html">
-        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" rx="10" fill="#ffffff"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#0b3b2c"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
-        <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept de refonte · non officiel</span></span>
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" fill="#f6f1e7"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#0a3323"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
+        <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept non officiel</span></span>
       </a>
-      <p>Un point d'entrée unique vers les services publics, les informations officielles et les institutions de la République de Côte d'Ivoire. Concept de refonte réalisé à titre personnel.</p>
+      <p>Un point d'entrée unique vers les services publics, les informations officielles et les institutions de la République de Côte d'Ivoire.</p>
     </div>
     <nav aria-labelledby="f-services">
       <h2 id="f-services">Services</h2>
@@ -272,10 +275,12 @@
     <ul class="footer__legal">
       <li><a href="https://www.gouv.ci/mentions-legales">Mentions légales du portail officiel</a></li>
       <li><a href="a-propos.html#accessibilite">Démarche d'accessibilité</a></li>
+      <li><a href="a-propos.html#mentions">Crédits photos et données</a></li>
       <li><a href="#contenu">Haut de page</a></li>
     </ul>
     <p class="footer__disclaimer">Concept non officiel réalisé par Anne-Kelly Kouyaté (Kreeative, Toronto) — © <span data-year>2026</span>. Aucune affiliation avec l'État de Côte d'Ivoire. Les titres d'actualité cités appartiennent à leurs auteurs (gouv.ci).</p>
   </div>
+  <div class="footer__stripe" aria-hidden="true"></div>
 </footer>
 
 <script src="assets/js/main.js" defer></script>
