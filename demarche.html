@@ -30,12 +30,28 @@
   <symbol id="i-thumb-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 13V4h3v9h-3zM17 13l-4 7c-1.5 0-2.5-1-2.5-2.5V14h-5a2 2 0 0 1-2-2l1.5-6a2 2 0 0 1 2-2H17"/></symbol>
   <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-5h6v5M9 11h.5M14.5 11h.5"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12.5h5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+  <symbol id="i-access" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.5"/><path d="M4 9h16M12 9v5l-3.5 6M12 14l3.5 6"/></symbol>
 </svg>
 
 <div class="notice" role="region" aria-label="Avertissement : concept non officiel">
   <div class="container notice__inner">
     <svg class="icon notice__icon" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg>
     <p><strong>Concept non officiel — projet personnel.</strong> Maquette réalisée par <a href="https://kreeative.xyz">Kreeative</a> à titre d'étude, sans lien avec le Gouvernement de Côte d'Ivoire. Site officiel&nbsp;: <a href="https://www.gouv.ci">www.gouv.ci</a> · <a href="a-propos.html">En savoir plus</a>.</p>
+  </div>
+</div>
+
+<div class="utility utility--solid on-dark">
+  <div class="container utility__inner">
+    <ul class="utility__list">
+      <li><a href="a-propos.html#accessibilite"><svg aria-hidden="true" focusable="false"><use href="#i-access"/></svg> Accessibilité</a></li>
+      <li><a href="a-propos.html#suite" title="Version anglaise : proposée dans le concept"><svg aria-hidden="true" focusable="false"><use href="#i-globe"/></svg> Français</a></li>
+    </ul>
+    <ul class="utility__list">
+      <li><a href="a-propos.html#espace-citoyen"><svg aria-hidden="true" focusable="false"><use href="#i-user"/></svg><span>Mon espace<span class="utility__more"> citoyen</span></span></a></li>
+    </ul>
   </div>
 </div>
 
@@ -231,6 +247,32 @@
   </div>
   <div class="footer__stripe" aria-hidden="true"></div>
 </footer>
+
+<!-- Assistant conversationnel de démonstration -->
+<div class="assist" id="assist">
+  <button class="assist__toggle btn btn--primary" type="button" aria-expanded="false" aria-controls="assist-panel">
+    <span class="assist__avatar" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></span>
+    <span>Besoin d'aide&nbsp;?</span>
+  </button>
+  <section class="assist__panel" id="assist-panel" role="dialog" aria-labelledby="assist-title" aria-describedby="assist-desc" hidden>
+    <div class="assist__head on-dark">
+      <span class="assist__avatar assist__avatar--lg" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></span>
+      <div>
+        <h2 class="assist__title" id="assist-title">Akwaba</h2>
+        <p class="assist__sub" id="assist-desc">Assistant du portail · démonstration</p>
+      </div>
+      <button class="assist__close" type="button" aria-label="Fermer l'assistant"><svg aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="assist__log" id="assist-log" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div class="assist__quick" id="assist-quick" aria-label="Suggestions"></div>
+    <form class="assist__form" id="assist-form">
+      <label class="visually-hidden" for="assist-input">Votre message</label>
+      <input class="assist__input" id="assist-input" type="text" autocomplete="off" placeholder="Écrivez votre question…">
+      <button class="assist__send" type="submit" aria-label="Envoyer"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button>
+    </form>
+    <p class="assist__note">Démonstration&nbsp;: réponses issues d'un index local de services, aucune donnée transmise.</p>
+  </section>
+</div>
 
 <script src="assets/js/main.js" defer></script>
 </body>

@@ -8,6 +8,7 @@
    2. Recherche de services (combobox + résultats inline)
    3. Personnalisation géographique (« Ma localité »)
    4. Retour citoyen (« Votre avis compte »)
+   4b. Assistant conversationnel « Akwaba » (démonstration)
    5. Apparition au défilement
    6. Divers (année, liens externes)
    ========================================================================== */
@@ -351,6 +352,102 @@
       });
     });
   });
+
+  /* --------------------------------------------------------------------------
+     4b. Assistant conversationnel « Akwaba » (démonstration locale)
+     Répond à partir du même index que la recherche ; aucune donnée transmise.
+     -------------------------------------------------------------------------- */
+  var assist = document.getElementById("assist");
+  if (assist) {
+    var toggle = assist.querySelector(".assist__toggle");
+    var panel = document.getElementById("assist-panel");
+    var closeBtn = assist.querySelector(".assist__close");
+    var log = document.getElementById("assist-log");
+    var quick = document.getElementById("assist-quick");
+    var aform = document.getElementById("assist-form");
+    var ainput = document.getElementById("assist-input");
+    var started = false;
+
+    var GREETING = "<p><strong>Akwaba&nbsp;!</strong> Je suis l'assistant du portail. Dites-moi ce que vous cherchez&nbsp;: une démarche, un service, un contact.</p>";
+    var QUICK = [
+      { label: "Carte d'identité", query: "carte nationale d'identité" },
+      { label: "Passeport", query: "passeport" },
+      { label: "Impôts", query: "impôts" },
+      { label: "Acte de naissance", query: "acte de naissance" },
+      { label: "Écrire au Gouvernement", query: "écrire au gouvernement" },
+      { label: "Ma localité", query: "ma localité" }
+    ];
+
+    var addMsg = function (html, who) {
+      var div = document.createElement("div");
+      div.className = "assist__msg assist__msg--" + who;
+      div.innerHTML = html;
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+    };
+    var setQuick = function (items) {
+      quick.innerHTML = items.map(function (it) {
+        return it.href
+          ? '<a class="assist__chip" href="' + escapeHTML(it.href) + '">' + escapeHTML(it.label) + '</a>'
+          : '<button class="assist__chip" type="button" data-say="' + escapeHTML(it.query || it.label) + '">' + escapeHTML(it.label) + '</button>';
+      }).join("");
+    };
+    var reply = function (text) {
+      var q = normalize(text);
+      var html;
+      var next = QUICK;
+      if (/^(bonjour|bonsoir|salut|hello|akwaba|coucou)/.test(q)) {
+        html = GREETING;
+      } else if (/merci/.test(q)) {
+        html = "<p>Avec plaisir. Bonne continuation dans vos démarches&nbsp;!</p>";
+      } else if (/localite|district|pres de chez|region|ville|commune/.test(q)) {
+        html = "<p>Choisissez votre district sur la carte&nbsp;: les services, contacts et actualités s'adaptent à votre localité.</p>";
+        next = [{ label: "Voir la carte des districts", href: "index.html#carte" }].concat(QUICK.slice(0, 3));
+      } else {
+        var matches = searchServices(text, 3);
+        if (matches.length) {
+          html = "<p>Voici ce que j'ai trouvé&nbsp;:</p><ul class=\"assist__links\">" + matches.map(function (m) {
+            return '<li><a href="' + escapeHTML(m.u) + '" rel="noopener">' + escapeHTML(m.t) + '</a><small>' + escapeHTML(m.d) + '</small></li>';
+          }).join("") + "</ul><p>Ce n'est pas ce que vous cherchiez&nbsp;? Reformulez, ou écrivez au Gouvernement.</p>";
+        } else {
+          html = "<p>Je n'ai rien trouvé pour «&nbsp;" + escapeHTML(text) + "&nbsp;». Essayez un autre mot (par exemple «&nbsp;passeport&nbsp;»), ou écrivez directement au Gouvernement&nbsp;: une personne vous répondra.</p>";
+          next = [{ label: "Écrire au Gouvernement", href: "https://www.gouv.ci/ecrire-au-gouvernement" }].concat(QUICK.slice(0, 3));
+        }
+      }
+      window.setTimeout(function () { addMsg(html, "bot"); setQuick(next); }, 350);
+    };
+    var say = function (text) {
+      if (!text || !text.trim()) return;
+      addMsg("<p>" + escapeHTML(text.trim()) + "</p>", "user");
+      reply(text.trim());
+    };
+    var openPanel = function () {
+      panel.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      assist.classList.add("is-open");
+      if (!started) { started = true; addMsg(GREETING, "bot"); setQuick(QUICK); }
+      ainput.focus();
+    };
+    var closePanel = function () {
+      panel.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      assist.classList.remove("is-open");
+      toggle.focus();
+    };
+    toggle.addEventListener("click", function () { if (panel.hidden) openPanel(); else closePanel(); });
+    closeBtn.addEventListener("click", closePanel);
+    panel.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); closePanel(); } });
+    quick.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-say]");
+      if (b) { say(b.getAttribute("data-say")); ainput.focus(); }
+    });
+    aform.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var t = ainput.value;
+      ainput.value = "";
+      say(t);
+    });
+  }
 
   /* --------------------------------------------------------------------------
      5. Apparition au défilement (désactivée si « réduire les animations »)

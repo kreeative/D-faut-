@@ -24,12 +24,27 @@
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
   <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12.5h5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-access" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.5"/><path d="M4 9h16M12 9v5l-3.5 6M12 14l3.5 6"/></symbol>
 </svg>
 
 <div class="notice" role="region" aria-label="Avertissement : concept non officiel">
   <div class="container notice__inner">
     <svg class="icon notice__icon" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg>
     <p><strong>Concept non officiel — projet personnel.</strong> Maquette réalisée par <a href="https://kreeative.xyz">Kreeative</a> à titre d'étude, sans lien avec le Gouvernement de Côte d'Ivoire. Site officiel&nbsp;: <a href="https://www.gouv.ci">www.gouv.ci</a>.</p>
+  </div>
+</div>
+
+<div class="utility utility--solid on-dark">
+  <div class="container utility__inner">
+    <ul class="utility__list">
+      <li><a href="a-propos.html#accessibilite"><svg aria-hidden="true" focusable="false"><use href="#i-access"/></svg> Accessibilité</a></li>
+      <li><a href="a-propos.html#suite" title="Version anglaise : proposée dans le concept"><svg aria-hidden="true" focusable="false"><use href="#i-globe"/></svg> Français</a></li>
+    </ul>
+    <ul class="utility__list">
+      <li><a href="a-propos.html#espace-citoyen"><svg aria-hidden="true" focusable="false"><use href="#i-user"/></svg><span>Mon espace<span class="utility__more"> citoyen</span></span></a></li>
+    </ul>
   </div>
 </div>
 
@@ -85,6 +100,7 @@
             <li><a href="#accessibilite">Accessibilité</a></li>
             <li><a href="#conception">Choix de conception</a></li>
             <li><a href="#suite">Et ensuite&nbsp;?</a></li>
+            <li><a href="#espace-citoyen">Espace citoyen et assistant</a></li>
             <li><a href="#mentions">Mentions</a></li>
           </ol>
         </nav>
@@ -121,8 +137,8 @@
           <li><h3>Les démarches les plus demandées en évidence</h3><p>Carte d'identité, passeport, acte de naissance, impôts, CMU, création d'entreprise&nbsp;: huit cartes dès le premier écran, liées aux services en ligne officiels.</p></li>
           <li><h3>Personnalisation géographique</h3><p>Un sélecteur «&nbsp;Ma localité&nbsp;» (14 districts) adapte la section «&nbsp;Près de chez vous&nbsp;». Le choix reste sur l'appareil&nbsp;: aucune donnée transmise.</p></li>
           <li><h3>Orienté tâches et parcours</h3><p>Une page type de démarche (<a href="demarche.html">exemple&nbsp;: la carte nationale d'identité</a>) répond dans l'ordre aux questions qui, quoi, où, combien, combien de temps.</p></li>
-          <li><h3>Autonomie et libre-service</h3><p>Les services en ligne existants (e-impôts, e-justice, e-CNPS, CEPICI, CMU…) sont mis en avant et reliés entre eux plutôt que dispersés.</p></li>
-          <li><h3>Communication à double sens</h3><p>Un retour en un clic sur chaque page, l'accès direct à «&nbsp;Écrire au Gouvernement&nbsp;» et un signalement de problème, pour piloter le portail avec les données d'usage.</p></li>
+          <li><h3>Autonomie et libre-service</h3><p>Les services en ligne existants (e-impôts, e-justice, e-CNPS, CEPICI, CMU…) sont mis en avant et reliés entre eux, et un <a href="#espace-citoyen">espace citoyen unique</a> est proposé pour suivre ses démarches.</p></li>
+          <li><h3>Communication à double sens</h3><p>Un retour en un clic sur chaque page, l'accès direct à «&nbsp;Écrire au Gouvernement&nbsp;», un signalement de problème et un <a href="#espace-citoyen">assistant conversationnel</a>, pour piloter le portail avec les données d'usage.</p></li>
         </ol>
 
         <h2 id="avant-apres">Avant / après</h2>
@@ -191,7 +207,23 @@
           <li><strong>Recherche unifiée</strong> couvrant démarches, ministères, actualités et documents.</li>
           <li><strong>Système de design</strong> partagé entre le portail, les ministères et les mairies, pour une expérience cohérente.</li>
           <li><strong>Mesure</strong>&nbsp;: taux de réussite des démarches, temps pour trouver un service, satisfaction en un clic.</li>
+          <li><strong>Version anglaise</strong> pour la diaspora, les investisseurs et les visiteurs, avec un sélecteur de langue dans la barre utilitaire.</li>
         </ol>
+
+        <h2 id="espace-citoyen">Espace citoyen et assistant (propositions)</h2>
+        <p>Deux éléments s'inspirent des portails d'États américains (par exemple ms.gov)&nbsp;: un compte citoyen mis en avant dès la page d'accueil, et un assistant conversationnel accessible partout. Dans ce concept, ils sont présentés comme des propositions&nbsp;: rien n'est réellement créé ni transmis.</p>
+        <h3>Mon espace citoyen</h3>
+        <ul>
+          <li>Une seule identité numérique pour toutes les démarches, qui pourrait s'appuyer sur l'identification nationale existante.</li>
+          <li>Un tableau de bord pour suivre l'avancement de chaque dossier (CNI, passeport, impôts…) et retrouver ses justificatifs.</li>
+          <li>Des notifications par SMS ou WhatsApp, canaux déjà très utilisés en Côte d'Ivoire, plutôt que par courriel seul.</li>
+        </ul>
+        <h3>Akwaba, l'assistant</h3>
+        <ul>
+          <li>Dans ce concept, l'assistant répond à partir de l'index local des services (le même que la recherche) et propose des raccourcis. Aucune donnée ne quitte l'appareil.</li>
+          <li>Une version réelle s'appuierait sur la base des démarches, offrirait un canal WhatsApp et passerait la main à une personne via «&nbsp;Écrire au Gouvernement&nbsp;» dès qu'une situation sort du cadre.</li>
+          <li>Règles d'usage&nbsp;: toujours se présenter comme un assistant automatique, ne jamais bloquer l'accès aux pages, rester accessible au clavier et aux lecteurs d'écran (fenêtre de dialogue, journal annoncé, fermeture par Échap).</li>
+        </ul>
 
         <h2 id="mentions">Mentions</h2>
         <p>Ce concept est un projet personnel d'Anne-Kelly Kouyaté, designer web ivoirienne et fondatrice de <a href="https://kreeative.xyz">Kreeative</a>, studio de design web et de branding basé à Toronto. Il n'est ni commandé, ni approuvé, ni hébergé par le Gouvernement de Côte d'Ivoire. Les noms, emblèmes et contenus cités appartiennent à leurs propriétaires respectifs&nbsp;; les titres d'actualité sont repris du portail officiel gouv.ci à titre d'illustration.</p>
@@ -282,6 +314,32 @@
   </div>
   <div class="footer__stripe" aria-hidden="true"></div>
 </footer>
+
+<!-- Assistant conversationnel de démonstration -->
+<div class="assist" id="assist">
+  <button class="assist__toggle btn btn--primary" type="button" aria-expanded="false" aria-controls="assist-panel">
+    <span class="assist__avatar" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></span>
+    <span>Besoin d'aide&nbsp;?</span>
+  </button>
+  <section class="assist__panel" id="assist-panel" role="dialog" aria-labelledby="assist-title" aria-describedby="assist-desc" hidden>
+    <div class="assist__head on-dark">
+      <span class="assist__avatar assist__avatar--lg" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></span>
+      <div>
+        <h2 class="assist__title" id="assist-title">Akwaba</h2>
+        <p class="assist__sub" id="assist-desc">Assistant du portail · démonstration</p>
+      </div>
+      <button class="assist__close" type="button" aria-label="Fermer l'assistant"><svg aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="assist__log" id="assist-log" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div class="assist__quick" id="assist-quick" aria-label="Suggestions"></div>
+    <form class="assist__form" id="assist-form">
+      <label class="visually-hidden" for="assist-input">Votre message</label>
+      <input class="assist__input" id="assist-input" type="text" autocomplete="off" placeholder="Écrivez votre question…">
+      <button class="assist__send" type="submit" aria-label="Envoyer"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button>
+    </form>
+    <p class="assist__note">Démonstration&nbsp;: réponses issues d'un index local de services, aucune donnée transmise.</p>
+  </section>
+</div>
 
 <script src="assets/js/main.js" defer></script>
 </body>
