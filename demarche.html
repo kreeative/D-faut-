@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carte nationale d'identité (exemple de démarche) — Concept non officiel gouv.ci</title>
+  <meta name="description" content="Exemple de page de démarche du concept de refonte du portail gouv.ci : obtenir ou renouveler sa carte nationale d'identité, expliqué pas à pas. Contenu de démonstration.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b3b2c">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+<svg hidden aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17.5v.5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.5-1.5 1.7-2.5 3-2.5s2.5 1 3 2.5M14 10h4M14 13h4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-thumb-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11v9H4v-9h3zM7 11l4-7c1.5 0 2.5 1 2.5 2.5V10h5a2 2 0 0 1 2 2l-1.5 6a2 2 0 0 1-2 2H7"/></symbol>
+  <symbol id="i-thumb-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 13V4h3v9h-3zM17 13l-4 7c-1.5 0-2.5-1-2.5-2.5V14h-5a2 2 0 0 1-2-2l1.5-6a2 2 0 0 1 2-2H17"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-5h6v5M9 11h.5M14.5 11h.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<div class="notice" role="region" aria-label="Avertissement : concept non officiel">
+  <div class="container notice__inner">
+    <svg class="icon notice__icon" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg>
+    <p><strong>Concept non officiel — projet personnel.</strong> Maquette réalisée par <a href="https://kreeative.xyz">Kreeative</a> à titre d'étude, sans lien avec le Gouvernement de Côte d'Ivoire. Site officiel&nbsp;: <a href="https://www.gouv.ci">www.gouv.ci</a> · <a href="a-propos.html">En savoir plus</a>.</p>
+  </div>
+</div>
+
+<div class="topbar on-dark">
+  <div class="container topbar__inner">
+    <p class="topbar__republic" style="margin:0"><span class="flag" aria-hidden="true"><span></span><span></span><span></span></span> République de Côte d'Ivoire <span class="topbar__motto">· Union – Discipline – Travail</span></p>
+    <ul class="topbar__links">
+      <li><a href="a-propos.html#accessibilite">Accessibilité</a></li>
+      <li><a href="https://www.gouv.ci">Site officiel <svg class="icon" style="width:14px;height:14px" aria-hidden="true" focusable="false"><use href="#i-external"/></svg></a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" rx="10" fill="#0b3b2c"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#ffffff"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
+      <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept de refonte · non officiel</span></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navigation">
+      <svg class="icon icon-menu" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+      <svg class="icon icon-close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+      Menu
+    </button>
+    <nav class="nav" id="navigation" aria-label="Navigation principale">
+      <ul class="nav__list">
+        <li><a href="index.html#services">Démarches et services <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="index.html#gouvernement">Le Gouvernement <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="index.html#actualites">Actualités <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="https://www.gouv.ci/publications/documents">Publications <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="index.html#votre-avis">Écrire au Gouvernement <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" tabindex="-1">
+  <div class="page-head">
+    <div class="container page-head__inner">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#services">Démarches et services</a></li>
+          <li><a href="index.html#services">Papiers et citoyenneté</a></li>
+          <li><a href="demarche.html" aria-current="page">Carte nationale d'identité</a></li>
+        </ol>
+      </nav>
+      <h1>Obtenir ou renouveler sa carte nationale d'identité</h1>
+      <p class="lead">Tout ce qu'il faut savoir sur une seule page&nbsp;: qui peut la demander, quoi préparer, où aller, combien ça coûte et combien de temps ça prend.</p>
+    </div>
+  </div>
+
+  <div class="container section">
+    <div class="layout">
+      <article class="prose">
+        <div class="demo-note" role="note">
+          <svg aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
+          <p><strong>Contenu de démonstration.</strong> Cette page illustre la structure proposée pour toutes les démarches du portail. Les informations (pièces, coûts, délais) sont indicatives et devraient être validées et tenues à jour par l'administration compétente. Pour la démarche réelle, consultez le <a href="https://servicepublic.gouv.ci/">portail officiel des démarches administratives</a>.</p>
+        </div>
+
+        <h2 id="en-bref">En bref</h2>
+        <dl class="summary">
+          <div><dt>Qui</dt><dd>Toute personne de nationalité ivoirienne</dd></div>
+          <div><dt>Où</dt><dd>Centre d'enrôlement de votre localité</dd></div>
+          <div><dt>Coût</dt><dd>Selon le tarif officiel en vigueur</dd></div>
+          <div><dt>Délai</dt><dd>Variable selon le centre&nbsp;; suivi en ligne</dd></div>
+        </dl>
+
+        <h2 id="etapes">La démarche en quatre étapes</h2>
+        <ol class="steps">
+          <li>
+            <h3>Préparez vos pièces</h3>
+            <p>Rassemblez les justificatifs d'identité et de nationalité demandés (voir la liste ci-dessous). Une pièce manquante est la première cause de rendez-vous inutile.</p>
+          </li>
+          <li>
+            <h3>Pré-enrôlez-vous en ligne ou prenez rendez-vous</h3>
+            <p>Renseignez vos informations à l'avance pour réduire le temps passé au centre. Vous recevez un récapitulatif et un créneau.</p>
+          </li>
+          <li>
+            <h3>Rendez-vous au centre d'enrôlement</h3>
+            <p>Vos empreintes et votre photo sont prises sur place. Comptez une seule visite si votre dossier est complet.</p>
+          </li>
+          <li>
+            <h3>Suivez votre dossier et retirez votre carte</h3>
+            <p>Vous êtes averti·e lorsque la carte est disponible. Le retrait se fait en personne, avec votre récépissé.</p>
+          </li>
+        </ol>
+
+        <h2 id="pieces">Pièces à fournir</h2>
+        <p>Liste indicative, à confirmer auprès de l'administration compétente.</p>
+        <ul class="checklist">
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Un justificatif de nationalité ivoirienne (par exemple un certificat de nationalité ou un extrait d'acte de naissance selon votre situation).</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Votre ancienne carte nationale d'identité, en cas de renouvellement.</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Le récépissé de pré-enrôlement ou de rendez-vous, si vous l'avez fait en ligne.</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Le justificatif de paiement des frais, selon le mode de paiement retenu.</span></li>
+        </ul>
+
+        <h2 id="ou">Où faire la démarche</h2>
+        <div class="local__panel">
+          <h3><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Centres d'enrôlement à <span data-district-city>Abidjan</span></span></h3>
+          <p>Vous consultez les informations du <strong data-district-name>District autonome d'Abidjan</strong>. Dans une version réelle, la liste des centres, leurs horaires et leur affluence s'afficheraient ici.</p>
+          <p class="mt-1"><a class="btn btn--ghost btn--sm" href="index.html#district">Changer de district</a></p>
+        </div>
+
+        <h2 id="questions" class="mt-2">Questions fréquentes</h2>
+        <div class="faq">
+          <details>
+            <summary>Combien de temps la carte est-elle valable&nbsp;?</summary>
+            <div><p>La durée de validité est fixée par la réglementation en vigueur. Elle est indiquée sur la carte elle-même. (Démonstration.)</p></div>
+          </details>
+          <details>
+            <summary>J'ai perdu ma carte, que faire&nbsp;?</summary>
+            <div><p>Faites d'abord une déclaration de perte auprès des autorités compétentes, puis engagez une demande de renouvellement avec ce document. (Démonstration.)</p></div>
+          </details>
+          <details>
+            <summary>Puis-je faire la démarche depuis l'étranger&nbsp;?</summary>
+            <div><p>Les modalités pour la diaspora sont précisées par les représentations diplomatiques et consulaires de Côte d'Ivoire. (Démonstration.)</p></div>
+          </details>
+        </div>
+
+        <p class="muted" style="font-size:.9rem">Dernière mise à jour de cette page&nbsp;: septembre 2026 (contenu de démonstration).</p>
+      </article>
+
+      <aside class="sidebar" aria-label="Actions et aide">
+        <div class="card">
+          <h3 style="margin-top:0">Faire la démarche</h3>
+          <p>Accédez au portail officiel des démarches pour commencer.</p>
+          <p style="margin-top:.75rem"><a class="btn btn--primary" href="https://servicepublic.gouv.ci/">Commencer en ligne <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+          <hr style="border:0;border-top:1px solid var(--line);margin:1.25rem 0">
+          <h3>Besoin d'aide&nbsp;?</h3>
+          <p>Une question sur votre situation&nbsp;? Écrivez au Gouvernement, le service compétent vous répondra.</p>
+          <p style="margin-top:.75rem"><a class="btn btn--ghost btn--sm" href="https://www.gouv.ci/ecrire-au-gouvernement"><svg aria-hidden="true" focusable="false"><use href="#i-mail"/></svg> Écrire au Gouvernement</a></p>
+          <hr style="border:0;border-top:1px solid var(--line);margin:1.25rem 0">
+          <div data-feedback>
+            <h3>Cette page vous a-t-elle été utile&nbsp;?</h3>
+            <div class="feedback__actions" style="margin-top:.5rem">
+              <button class="btn btn--ghost btn--sm" type="button" data-vote="oui" aria-pressed="false"><svg aria-hidden="true" focusable="false"><use href="#i-thumb-up"/></svg> Oui</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-vote="non" aria-pressed="false"><svg aria-hidden="true" focusable="false"><use href="#i-thumb-down"/></svg> Non</button>
+            </div>
+            <p class="feedback__thanks" role="status" hidden style="margin-top:.75rem"></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer on-dark">
+  <div class="footer__stripe" aria-hidden="true"></div>
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" rx="10" fill="#ffffff"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#0b3b2c"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
+        <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept de refonte · non officiel</span></span>
+      </a>
+      <p>Un point d'entrée unique vers les services publics, les informations officielles et les institutions de la République de Côte d'Ivoire. Concept de refonte réalisé à titre personnel.</p>
+    </div>
+    <nav aria-labelledby="f-services">
+      <h2 id="f-services">Services</h2>
+      <ul>
+        <li><a href="https://servicepublic.gouv.ci/">Toutes les démarches</a></li>
+        <li><a href="https://e-impots.gouv.ci/">e-Impôts</a></li>
+        <li><a href="https://e-justice.ci/">e-Justice</a></li>
+        <li><a href="https://e.cnps.ci/">e-CNPS</a></li>
+        <li><a href="https://www.cepici.gouv.ci/">CEPICI</a></li>
+        <li><a href="https://data.gouv.ci/">Données ouvertes</a></li>
+      </ul>
+    </nav>
+    <nav aria-labelledby="f-gov">
+      <h2 id="f-gov">Gouvernement</h2>
+      <ul>
+        <li><a href="https://www.gouv.ci/primature/premier-ministre">Primature</a></li>
+        <li><a href="https://www.gouv.ci/gouvernement">Composition du Gouvernement</a></li>
+        <li><a href="https://www.gouv.ci/institutions">Institutions</a></li>
+        <li><a href="https://www.gouv.ci/publications/documents/Conseils%20des%20Ministres">Conseils des ministres</a></li>
+        <li><a href="https://www.gouv.ci/ecrire-au-gouvernement">Écrire au Gouvernement</a></li>
+      </ul>
+    </nav>
+    <nav aria-labelledby="f-about">
+      <h2 id="f-about">Ce concept</h2>
+      <ul>
+        <li><a href="a-propos.html">À propos du concept</a></li>
+        <li><a href="a-propos.html#accessibilite">Accessibilité</a></li>
+        <li><a href="demarche.html">Exemple de page de démarche</a></li>
+        <li><a href="https://kreeative.xyz">Kreeative — studio de design</a></li>
+        <li><a href="https://github.com/kreeative/gouv-ci-redesign-concept">Code source</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container footer__bottom">
+    <ul class="footer__legal">
+      <li><a href="https://www.gouv.ci/mentions-legales">Mentions légales du portail officiel</a></li>
+      <li><a href="a-propos.html#accessibilite">Démarche d'accessibilité</a></li>
+      <li><a href="#contenu">Haut de page</a></li>
+    </ul>
+    <p class="footer__disclaimer">Concept non officiel réalisé par Anne-Kelly Kouyaté (Kreeative, Toronto) — © <span data-year>2026</span>. Aucune affiliation avec l'État de Côte d'Ivoire.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À propos de ce concept — Refonte non officielle du portail gouv.ci</title>
+  <meta name="description" content="Pourquoi et comment ce concept de refonte du portail gouv.ci a été conçu : observations, principes, accessibilité, choix de conception et prochaines étapes. Projet personnel de Kreeative.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b3b2c">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+<svg hidden aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17.5v.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+</svg>
+
+<div class="notice" role="region" aria-label="Avertissement : concept non officiel">
+  <div class="container notice__inner">
+    <svg class="icon notice__icon" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg>
+    <p><strong>Concept non officiel — projet personnel.</strong> Maquette réalisée par <a href="https://kreeative.xyz">Kreeative</a> à titre d'étude, sans lien avec le Gouvernement de Côte d'Ivoire. Site officiel&nbsp;: <a href="https://www.gouv.ci">www.gouv.ci</a>.</p>
+  </div>
+</div>
+
+<div class="topbar on-dark">
+  <div class="container topbar__inner">
+    <p class="topbar__republic" style="margin:0"><span class="flag" aria-hidden="true"><span></span><span></span><span></span></span> République de Côte d'Ivoire <span class="topbar__motto">· Union – Discipline – Travail</span></p>
+    <ul class="topbar__links">
+      <li><a href="#accessibilite">Accessibilité</a></li>
+      <li><a href="https://www.gouv.ci">Site officiel <svg class="icon" style="width:14px;height:14px" aria-hidden="true" focusable="false"><use href="#i-external"/></svg></a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" rx="10" fill="#0b3b2c"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#ffffff"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
+      <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept de refonte · non officiel</span></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navigation">
+      <svg class="icon icon-menu" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+      <svg class="icon icon-close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+      Menu
+    </button>
+    <nav class="nav" id="navigation" aria-label="Navigation principale">
+      <ul class="nav__list">
+        <li><a href="index.html#services">Démarches et services <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="index.html#gouvernement">Le Gouvernement <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="index.html#actualites">Actualités <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="https://www.gouv.ci/publications/documents">Publications <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="index.html#votre-avis">Écrire au Gouvernement <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" tabindex="-1">
+  <div class="page-head">
+    <div class="container page-head__inner">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html" aria-current="page">À propos du concept</a></li>
+        </ol>
+      </nav>
+      <h1>À propos de ce concept de refonte</h1>
+      <p class="lead">Une proposition personnelle pour un portail gouv.ci pensé d'abord pour les citoyens&nbsp;: mobile, accessible et orienté vers les démarches du quotidien.</p>
+    </div>
+  </div>
+
+  <div class="container section">
+    <div class="layout">
+      <article class="prose">
+        <nav class="toc" aria-labelledby="toc-title">
+          <h2 id="toc-title">Sommaire</h2>
+          <ol>
+            <li><a href="#pourquoi">Pourquoi ce projet</a></li>
+            <li><a href="#observations">Ce que j'ai observé sur la page d'accueil actuelle</a></li>
+            <li><a href="#principes">Les huit principes appliqués</a></li>
+            <li><a href="#avant-apres">Avant / après</a></li>
+            <li><a href="#accessibilite">Accessibilité</a></li>
+            <li><a href="#conception">Choix de conception</a></li>
+            <li><a href="#suite">Et ensuite&nbsp;?</a></li>
+            <li><a href="#mentions">Mentions</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="pourquoi">Pourquoi ce projet</h2>
+        <p>Le portail <a href="https://www.gouv.ci">gouv.ci</a> est la porte d'entrée numérique de l'État de Côte d'Ivoire. C'est là qu'un citoyen, un parent, un entrepreneur ou un membre de la diaspora cherche une démarche, un communiqué ou un contact officiel, de plus en plus souvent depuis un téléphone.</p>
+        <p>Très attachée au rayonnement numérique de la Côte d'Ivoire, j'ai voulu montrer concrètement, plutôt que décrire, ce que pourrait être un portail gouvernemental centré sur les tâches des citoyens. Ce concept est une <strong>étude de design réalisée à titre personnel</strong>. Il ne remplace ni ne critique le travail des équipes en charge du portail (le Centre d'Information et de Communication Gouvernementale, CICG)&nbsp;; il propose une direction, ouverte à la discussion.</p>
+        <blockquote><p>Un site de gouvernement n'est pas un journal en ligne&nbsp;: c'est un guichet. La question de départ n'est pas «&nbsp;que voulons-nous annoncer&nbsp;?&nbsp;» mais «&nbsp;que vient faire le citoyen&nbsp;?&nbsp;».</p></blockquote>
+
+        <h2 id="observations">Ce que j'ai observé sur la page d'accueil actuelle</h2>
+        <p>Les observations ci-dessous proviennent d'une lecture du code source de la page d'accueil de gouv.ci le 29 septembre 2026. Elles ne constituent pas un audit complet, mais elles ont guidé les priorités du concept.</p>
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">Observations chiffrées sur la page d'accueil de gouv.ci au 29 septembre 2026</caption>
+            <thead><tr><th scope="col">Observation</th><th scope="col">Constat</th><th scope="col">Pourquoi c'est important</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Hiérarchie de la page</th><td>Actualités, flashs et galeries en tête&nbsp;; les e-services arrivent en bas de page.</td><td>Les démarches, premier motif de visite, devraient être visibles sans défiler.</td></tr>
+              <tr><th scope="row">Recherche</th><td>Aucun champ de recherche détecté dans le code de la page d'accueil.</td><td>La recherche est le premier réflexe sur mobile.</td></tr>
+              <tr><th scope="row">Fenêtres surgissantes</th><td>Deux pop-ups au chargement.</td><td>Elles retardent l'accès au contenu et gênent les lecteurs d'écran.</td></tr>
+              <tr><th scope="row">Poids de la page</th><td>752 Ko de HTML, 775 liens, 97 images, 44 scripts.</td><td>Sur une connexion mobile modeste, chaque kilo-octet compte.</td></tr>
+              <tr><th scope="row">Typographie</th><td>Titres d'actualité entièrement en capitales.</td><td>Les capitales ralentissent la lecture, surtout sur petit écran.</td></tr>
+              <tr><th scope="row">Accessibilité</th><td>Pas de lien d'évitement, aucun attribut ARIA, quatre balises <code>h1</code>.</td><td>Les personnes utilisant un clavier ou un lecteur d'écran s'y perdent.</td></tr>
+              <tr><th scope="row">Points forts à conserver</th><td>Flash infos concis, liste des e-services officiels, «&nbsp;Écrire au Gouvernement&nbsp;», comptes rendus du Conseil des ministres, langue et fenêtre d'affichage déclarées.</td><td>Le concept les garde et les remonte dans la page.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="principes">Les huit principes appliqués</h2>
+        <p>Le concept s'appuie sur les bonnes pratiques des portails gouvernementaux (GOV.UK, service-public.fr, Canada.ca, USWDS) adaptées au contexte ivoirien.</p>
+        <ol class="principles">
+          <li><h3>Accessibilité d'abord</h3><p>HTML sémantique, contrastes élevés, navigation au clavier, focus visible, textes redimensionnables et cibles tactiles confortables. Détails dans la section <a href="#accessibilite">Accessibilité</a>.</p></li>
+          <li><h3>Mobile d'abord, puis réactif</h3><p>Conçu à partir de l'écran de téléphone, sans défilement horizontal, avec des marges de 16&nbsp;px et une colonne unique qui s'élargit progressivement.</p></li>
+          <li><h3>Navigation simple et recherche visible</h3><p>Cinq entrées de menu, une recherche en tête de page avec suggestions pendant la saisie, et des recherches fréquentes en un clic.</p></li>
+          <li><h3>Les démarches les plus demandées en évidence</h3><p>Carte d'identité, passeport, acte de naissance, impôts, CMU, création d'entreprise&nbsp;: huit cartes dès le premier écran, liées aux services en ligne officiels.</p></li>
+          <li><h3>Personnalisation géographique</h3><p>Un sélecteur «&nbsp;Ma localité&nbsp;» (14 districts) adapte la section «&nbsp;Près de chez vous&nbsp;». Le choix reste sur l'appareil&nbsp;: aucune donnée transmise.</p></li>
+          <li><h3>Orienté tâches et parcours</h3><p>Une page type de démarche (<a href="demarche.html">exemple&nbsp;: la carte nationale d'identité</a>) répond dans l'ordre aux questions qui, quoi, où, combien, combien de temps.</p></li>
+          <li><h3>Autonomie et libre-service</h3><p>Les services en ligne existants (e-impôts, e-justice, e-CNPS, CEPICI, CMU…) sont mis en avant et reliés entre eux plutôt que dispersés.</p></li>
+          <li><h3>Communication à double sens</h3><p>Un retour en un clic sur chaque page, l'accès direct à «&nbsp;Écrire au Gouvernement&nbsp;» et un signalement de problème, pour piloter le portail avec les données d'usage.</p></li>
+        </ol>
+
+        <h2 id="avant-apres">Avant / après</h2>
+        <div class="compare">
+          <div class="compare__col compare__col--before">
+            <h3>Page d'accueil actuelle</h3>
+            <ul>
+              <li>Organisée autour de l'actualité gouvernementale.</li>
+              <li>Services en ligne en bas de page.</li>
+              <li>Pas de recherche en page d'accueil.</li>
+              <li>Pop-ups à l'arrivée.</li>
+              <li>Titres en capitales.</li>
+              <li>Pas de lien d'évitement ni d'ARIA.</li>
+            </ul>
+          </div>
+          <div class="compare__col compare__col--after">
+            <h3>Concept proposé</h3>
+            <ul>
+              <li>Organisée autour des démarches du citoyen.</li>
+              <li>Huit démarches et dix thèmes dès le premier écran.</li>
+              <li>Recherche avec suggestions en tête de page.</li>
+              <li>Aucune fenêtre surgissante&nbsp;: un bandeau discret suffit.</li>
+              <li>Casse normale, hiérarchie typographique claire.</li>
+              <li>Lien d'évitement, repères ARIA, un seul <code>h1</code>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="accessibilite">Accessibilité</h2>
+        <p>Objectif&nbsp;: le niveau AA des <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2. Ce concept n'a pas encore fait l'objet d'un audit indépendant&nbsp;; voici ce qui est mis en œuvre et ce qui reste à faire.</p>
+        <h3>Mis en œuvre</h3>
+        <ul class="checklist">
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Structure sémantique&nbsp;: régions <code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>, un seul <code>h1</code> par page, listes et tableaux balisés.</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Lien d'évitement «&nbsp;Aller au contenu principal&nbsp;» visible au clavier.</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Contrastes de texte d'au moins 4,5:1 (texte principal sur blanc&nbsp;: environ 17:1&nbsp;; liens verts sur blanc&nbsp;: environ 6:1&nbsp;; blanc sur vert profond&nbsp;: environ 12:1&nbsp;; texte sombre sur orange&nbsp;: environ 6,5:1).</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Indicateur de focus visible et contrasté sur tous les éléments interactifs, y compris sur fond sombre.</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Navigation au clavier complète&nbsp;: menu mobile (Échap pour fermer), recherche de type <em>combobox</em> avec flèches et Entrée, accordéons natifs.</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Cibles tactiles d'au moins 44&nbsp;×&nbsp;44&nbsp;px pour les liens et boutons principaux.</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Textes en unités relatives, lisibles à 200&nbsp;% de zoom sans défilement horizontal.</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Aucune animation automatique&nbsp;; les transitions respectent la préférence «&nbsp;réduire les animations&nbsp;».</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Champs étiquetés, messages d'état annoncés (<code>aria-live</code>), liens externes signalés aux lecteurs d'écran.</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Langue déclarée (<code>lang="fr"</code>), icônes décoratives masquées aux technologies d'assistance.</span></li>
+        </ul>
+        <h3>Reste à faire</h3>
+        <ul>
+          <li>Audit complet par un spécialiste indépendant et publication d'une déclaration d'accessibilité.</li>
+          <li>Tests avec des personnes en situation de handicap, à Abidjan et en région, sur des téléphones d'entrée de gamme.</li>
+          <li>Version «&nbsp;facile à lire et à comprendre&nbsp;» des démarches les plus demandées, et pistes audio pour les personnes peu à l'aise avec l'écrit.</li>
+        </ul>
+
+        <h2 id="conception">Choix de conception</h2>
+        <h3>Couleurs</h3>
+        <p>La palette part du drapeau&nbsp;: orange (<code>#F77F00</code>) et vert (<code>#009E60</code>), avec un vert profond (<code>#0B3B2C</code>) comme couleur institutionnelle pour l'en-tête, le pied de page et les boutons. L'orange sert d'accent (bouton de recherche, repères) toujours associé à un texte sombre pour rester lisible.</p>
+        <h3>Typographie</h3>
+        <p>Public Sans, une police libre (licence SIL Open Font) conçue pour le système de design du gouvernement américain, hébergée avec le site pour éviter toute requête vers un tiers. Une seule famille, des graisses variables et une échelle fluide adaptée à l'écran.</p>
+        <h3>Composants</h3>
+        <p>Bandeau d'avertissement, barre institutionnelle, en-tête avec menu, recherche avec suggestions, cartes de démarche, tuiles de thème, bloc «&nbsp;Près de chez vous&nbsp;», actualités, bloc Conseil des ministres, retour citoyen, pied de page. Tous sont décrits dans une feuille de style unique, sans framework.</p>
+        <h3>Performance et sobriété</h3>
+        <p>HTML, CSS et JavaScript écrits à la main, sans dépendance&nbsp;: la page d'accueil pèse environ 130&nbsp;Ko, polices comprises (contre 752&nbsp;Ko pour le seul HTML de la page actuelle), et n'appelle aucun service externe. Le site reste lisible et navigable sans JavaScript.</p>
+
+        <h2 id="suite">Et ensuite&nbsp;?</h2>
+        <ol>
+          <li><strong>Tests utilisateurs</strong> avec des citoyens à Abidjan, en région et dans la diaspora, sur les cinq démarches les plus demandées.</li>
+          <li><strong>Atelier avec le CICG</strong> et les administrations concernées pour valider les contenus, les parcours et la gouvernance éditoriale.</li>
+          <li><strong>Annuaire des services par district</strong> (adresses, horaires, contacts) pour alimenter réellement la section «&nbsp;Près de chez vous&nbsp;».</li>
+          <li><strong>Recherche unifiée</strong> couvrant démarches, ministères, actualités et documents.</li>
+          <li><strong>Système de design</strong> partagé entre le portail, les ministères et les mairies, pour une expérience cohérente.</li>
+          <li><strong>Mesure</strong>&nbsp;: taux de réussite des démarches, temps pour trouver un service, satisfaction en un clic.</li>
+        </ol>
+
+        <h2 id="mentions">Mentions</h2>
+        <p>Ce concept est un projet personnel d'Anne-Kelly Kouyaté, designer web ivoirienne et fondatrice de <a href="https://kreeative.xyz">Kreeative</a>, studio de design web et de branding basé à Toronto. Il n'est ni commandé, ni approuvé, ni hébergé par le Gouvernement de Côte d'Ivoire. Les noms, emblèmes et contenus cités appartiennent à leurs propriétaires respectifs&nbsp;; les titres d'actualité sont repris du portail officiel gouv.ci à titre d'illustration.</p>
+        <p>Pour échanger sur ce concept&nbsp;: <a href="https://kreeative.xyz">kreeative.xyz</a>.</p>
+      </article>
+
+      <aside class="sidebar" aria-label="Informations sur le projet">
+        <div class="card">
+          <h3 style="margin-top:0">Fiche du projet</h3>
+          <dl style="margin:0">
+            <dt class="muted" style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Autrice</dt>
+            <dd style="margin:0 0 .75rem">Anne-Kelly Kouyaté, Kreeative (Toronto)</dd>
+            <dt class="muted" style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Statut</dt>
+            <dd style="margin:0 0 .75rem">Concept non officiel, projet personnel</dd>
+            <dt class="muted" style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Date</dt>
+            <dd style="margin:0 0 .75rem">Septembre 2026</dd>
+            <dt class="muted" style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Périmètre</dt>
+            <dd style="margin:0 0 1rem">Page d'accueil, page type de démarche, principes d'accessibilité</dd>
+          </dl>
+          <p><a class="btn btn--primary" href="index.html">Voir la maquette</a></p>
+          <p style="margin-top:.5rem"><a class="btn btn--ghost" href="https://kreeative.xyz"><svg aria-hidden="true" focusable="false"><use href="#i-globe"/></svg> kreeative.xyz</a></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer on-dark">
+  <div class="footer__stripe" aria-hidden="true"></div>
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 44 44" focusable="false"><rect width="44" height="44" rx="10" fill="#ffffff"/><rect x="9" y="11" width="8" height="22" rx="2" fill="#f77f00"/><rect x="18" y="11" width="8" height="22" rx="2" fill="#0b3b2c"/><rect x="27" y="11" width="8" height="22" rx="2" fill="#009e60"/></svg></span>
+        <span class="brand__text"><span class="brand__title">Portail du Gouvernement</span><span class="brand__sub">Concept de refonte · non officiel</span></span>
+      </a>
+      <p>Un point d'entrée unique vers les services publics, les informations officielles et les institutions de la République de Côte d'Ivoire. Concept de refonte réalisé à titre personnel.</p>
+    </div>
+    <nav aria-labelledby="f-services">
+      <h2 id="f-services">Services</h2>
+      <ul>
+        <li><a href="https://servicepublic.gouv.ci/">Toutes les démarches</a></li>
+        <li><a href="https://e-impots.gouv.ci/">e-Impôts</a></li>
+        <li><a href="https://e-justice.ci/">e-Justice</a></li>
+        <li><a href="https://e.cnps.ci/">e-CNPS</a></li>
+        <li><a href="https://www.cepici.gouv.ci/">CEPICI</a></li>
+        <li><a href="https://data.gouv.ci/">Données ouvertes</a></li>
+      </ul>
+    </nav>
+    <nav aria-labelledby="f-gov">
+      <h2 id="f-gov">Gouvernement</h2>
+      <ul>
+        <li><a href="https://www.gouv.ci/primature/premier-ministre">Primature</a></li>
+        <li><a href="https://www.gouv.ci/gouvernement">Composition du Gouvernement</a></li>
+        <li><a href="https://www.gouv.ci/institutions">Institutions</a></li>
+        <li><a href="https://www.gouv.ci/publications/documents/Conseils%20des%20Ministres">Conseils des ministres</a></li>
+        <li><a href="https://www.gouv.ci/ecrire-au-gouvernement">Écrire au Gouvernement</a></li>
+      </ul>
+    </nav>
+    <nav aria-labelledby="f-about">
+      <h2 id="f-about">Ce concept</h2>
+      <ul>
+        <li><a href="a-propos.html">À propos du concept</a></li>
+        <li><a href="a-propos.html#accessibilite">Accessibilité</a></li>
+        <li><a href="demarche.html">Exemple de page de démarche</a></li>
+        <li><a href="https://kreeative.xyz">Kreeative — studio de design</a></li>
+        <li><a href="https://github.com/kreeative/gouv-ci-redesign-concept">Code source</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container footer__bottom">
+    <ul class="footer__legal">
+      <li><a href="https://www.gouv.ci/mentions-legales">Mentions légales du portail officiel</a></li>
+      <li><a href="a-propos.html#accessibilite">Démarche d'accessibilité</a></li>
+      <li><a href="#contenu">Haut de page</a></li>
+    </ul>
+    <p class="footer__disclaimer">Concept non officiel réalisé par Anne-Kelly Kouyaté (Kreeative, Toronto) — © <span data-year>2026</span>. Aucune affiliation avec l'État de Côte d'Ivoire. Les titres d'actualité cités appartiennent à leurs auteurs (gouv.ci).</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
