@@ -42,7 +42,7 @@ Trois pages :
 | Mobile d'abord, réactif | Une colonne sur téléphone, grilles progressives, marges de 16 px, aucun défilement horizontal |
 | Navigation simple et recherche | Cinq entrées de menu, recherche avec suggestions (combobox) et recherches fréquentes |
 | Démarches les plus demandées en évidence | Huit cartes de démarche sous le hero, liées aux e-services officiels |
-| Personnalisation géographique | Carte interactive et sélecteur « Ma localité » (14 districts), qui mettent à jour « Près de chez vous » |
+| Personnalisation géographique | Carte interactive et sélecteur « Ma localité » (14 districts), qui mettent à jour « Près de chez vous », photo du district comprise |
 | Orienté tâches | Page type de démarche : qui, quoi, où, combien, combien de temps |
 | Libre-service | e-Impôts, e-Justice, e-CNPS, CEPICI, CMU, SIGFU… reliés entre eux |
 | Communication à double sens | « Votre avis compte », « Écrire au Gouvernement », signalement de problème |
@@ -90,7 +90,7 @@ docs/screenshots/       # captures utilisées dans ce README
 
 - Concept, design et code : Anne-Kelly Kouyaté, [Kreeative](https://kreeative.xyz) (Toronto), septembre 2026.
 - Polices Instrument Serif et Instrument Sans : [SIL Open Font License 1.1](assets/fonts/LICENSE-instrument-serif.txt).
-- Photos du hero (drapeau en bord de mer) et de la bande photographique (lagune) : autrice du concept, tous droits réservés. Photo des actualités (vue aérienne du Plateau, Abidjan) : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Abidjan_Plateau.png), CC0.
+- Photographies (hero, bande lagune, actualités, page À propos, photos des districts) : fournies par l'autrice du concept, tous droits réservés.
 - Limites des districts : [geoBoundaries](https://www.geoboundaries.org/) (ADM1, Côte d'Ivoire), CC BY 4.0, simplifiées.
 - Les titres d'actualité, les noms de services et les liens cités appartiennent à leurs propriétaires respectifs (gouv.ci et administrations concernées).
 - Icônes : SVG originaux inclus dans les pages.

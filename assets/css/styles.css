@@ -513,6 +513,10 @@ main:focus { outline: none; }
 .map-section h2 em { color: var(--gold); }
 .map-section .lead { color: var(--muted-on-dark); font-size: var(--t-md); max-width: 44ch; }
 .map-panel { margin-top: 1.5rem; padding: 1.5rem; border-radius: var(--r-lg); background: rgba(246, 241, 231, 0.06); border: 1px solid rgba(246, 241, 231, 0.16); backdrop-filter: blur(6px); }
+.map-panel__photo { margin: 0 0 1rem; border-radius: var(--r-md); overflow: hidden; aspect-ratio: 16 / 9; background: rgba(246, 241, 231, 0.08); position: relative; }
+.map-panel__photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.45s ease; }
+.map-panel__photo img.is-loading { opacity: 0; }
+.map-panel__photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.5rem 0.8rem; font-size: 0.75rem; color: var(--cream); background: linear-gradient(180deg, rgba(10, 51, 35, 0), rgba(10, 51, 35, 0.85)); }
 .map-panel__name { font-family: var(--f-display); font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.6rem); line-height: 1; letter-spacing: -0.02em; margin: 0 0 0.35rem; }
 .map-panel__city { color: var(--muted-on-dark); margin: 0 0 1rem; }
 .map-panel__city strong { color: var(--cream); font-weight: 600; }
@@ -600,6 +604,17 @@ main:focus { outline: none; }
 
 /* 7. Pages secondaires ------------------------------------------------------ */
 .page-head { background: var(--cream); border-bottom: 1px solid var(--line); background-image: var(--pattern); background-size: 56px 56px; }
+.page-head--photo { position: relative; isolation: isolate; color: var(--cream); background: var(--forest); border-bottom: 0; }
+.page-head--photo .page-head__media { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.page-head--photo .page-head__media picture { display: block; position: absolute; inset: 0; }
+.page-head--photo .page-head__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.page-head--photo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10, 51, 35, 0.88) 0%, rgba(10, 51, 35, 0.55) 55%, rgba(10, 51, 35, 0.25) 100%), linear-gradient(180deg, rgba(10, 51, 35, 0.35), rgba(10, 51, 35, 0.6)); }
+.page-head--photo h1 { color: var(--cream); text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3); }
+.page-head--photo .lead { color: var(--muted-on-dark); }
+.page-head--photo .breadcrumb a { color: var(--muted-on-dark); }
+.page-head--photo .breadcrumb li + li::before { color: var(--muted-on-dark); }
+.page-head--photo .page-head__inner { padding-block: clamp(3.5rem, 8vw, 6.5rem) clamp(2.5rem, 6vw, 5rem); }
+.page-head__credit { position: absolute; right: var(--gutter); bottom: 0.8rem; font-size: 0.7rem; color: rgba(246, 241, 231, 0.65); margin: 0; }
 .page-head__inner { padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem); }
 .page-head h1 { max-width: 16ch; font-size: clamp(2.5rem, 1.8rem + 3.6vw, 5rem); margin-bottom: 1.25rem; color: var(--forest); }
 .page-head .lead { font-size: var(--t-md); color: var(--ink-2); max-width: 58ch; margin: 0; }

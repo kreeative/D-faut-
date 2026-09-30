@@ -287,6 +287,13 @@
     zanzan: { name: "District du Zanzan", city: "Bondoukou" }
   };
   var STORAGE_KEY = "ci-concept-district";
+  // Photos par district (démonstration : quelques districts illustrés, repli national pour les autres)
+  var DISTRICT_PHOTOS = {
+    abidjan: { src: "assets/img/district-abidjan-800.jpg", caption: "Échangeur, Abidjan" },
+    savanes: { src: "assets/img/district-savanes-800.jpg", caption: "Grande mosquée de Kong, district des Savanes" },
+    montagnes: { src: "assets/img/district-montagnes-800.jpg", caption: "Cascades de Man, district des Montagnes" },
+    _default: { src: "assets/img/district-default-800.jpg", caption: "Côte d'Ivoire" }
+  };
 
   var select = document.getElementById("district");
   var savedDistrict = null;
@@ -299,6 +306,17 @@
     document.querySelectorAll("[data-district-path]").forEach(function (el) {
       el.setAttribute("aria-pressed", el.getAttribute("data-district-path") === key ? "true" : "false");
     });
+    var photo = document.querySelector("[data-district-photo]");
+    if (photo) {
+      var ph = DISTRICT_PHOTOS[key] || DISTRICT_PHOTOS._default;
+      var cap = document.querySelector("[data-district-caption]");
+      if (photo.getAttribute("src") !== ph.src) {
+        photo.classList.add("is-loading");
+        photo.onload = function () { photo.classList.remove("is-loading"); };
+        photo.setAttribute("src", ph.src);
+      }
+      if (cap) cap.textContent = ph.caption;
+    }
     var live = document.getElementById("district-status");
     if (live) live.textContent = "Contenus locaux mis à jour pour : " + d.name + ".";
   };
