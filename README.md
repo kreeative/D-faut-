@@ -20,7 +20,7 @@
 
 - **Papier, forêt, orange** : un fond crème (`#F6F1E7`) qui évoque le papier et la lumière, un vert forêt profond (`#0A3323`) pour les grandes sections institutionnelles, l'orange du drapeau (`#F77F00`) en accent (recherche, repères, district sélectionné).
 - **Typographie éditoriale** : Instrument Serif pour les grands titres, Instrument Sans (variable) pour l'interface. Deux polices libres, auto-hébergées.
-- **Hero cinématique** : vue aérienne du Plateau (Abidjan) en plein écran, lent zoom, recherche en pilule posée sur la photo.
+- **Hero cinématique** : drapeau ivoirien en bord de mer en plein écran (recadrage paysage sur ordinateur, portrait sur mobile), lent zoom, recherche en pilule posée sur la photo. Une bande photographique plein écran (lagune) rythme la page avant la carte.
 - **Grille « bento »** pour les démarches, **carte interactive** des 14 districts (tracés réels simplifiés), **actualités façon magazine**, **signature typographique** en pied de page.
 - **Mouvement mesuré** : apparitions au défilement et micro-interactions, toutes désactivées si l'utilisateur préfère réduire les animations.
 
@@ -83,14 +83,14 @@ docs/screenshots/       # captures utilisées dans ce README
 - **Couleurs et typographie** : variables CSS en tête de `assets/css/styles.css` (`:root`).
 - **Démarches et services** : cartes dans `index.html` (section `#services`) et index de recherche `SERVICES` dans `assets/js/main.js`.
 - **Districts** : objet `DISTRICTS` dans `assets/js/main.js`, `<select id="district">` et tracés `<path data-district-path>` de la carte dans `index.html`.
-- **Photos** : remplacez les fichiers de `assets/img/` (hero en 1920 px et 960 px) et les crédits dans `a-propos.html`.
+- **Photos** : remplacez les fichiers de `assets/img/` (hero en 1600 × 900 et 960 × 1280, bande en 1600 × 800 et 960 × 1000) et les crédits dans `a-propos.html`.
 - **Actualités** : section `#actualites` dans `index.html` (titres repris du portail officiel le 29 septembre 2026, à titre d'illustration).
 
 ## Crédits et licences
 
 - Concept, design et code : Anne-Kelly Kouyaté, [Kreeative](https://kreeative.xyz) (Toronto), septembre 2026.
 - Polices Instrument Serif et Instrument Sans : [SIL Open Font License 1.1](assets/fonts/LICENSE-instrument-serif.txt).
-- Photo du hero (vue aérienne du Plateau, Abidjan) : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Abidjan_Plateau.png), CC0. Photo des actualités (Le Plateau depuis le pont ADO) : Edison McCullen, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Le_Plateau_depuis_le_Pont_ADO_%E2%80%93_Abidjan.jpg), CC BY 4.0.
+- Photos du hero (drapeau en bord de mer) et de la bande photographique (lagune) : autrice du concept, tous droits réservés. Photo des actualités (vue aérienne du Plateau, Abidjan) : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Abidjan_Plateau.png), CC0.
 - Limites des districts : [geoBoundaries](https://www.geoboundaries.org/) (ADM1, Côte d'Ivoire), CC BY 4.0, simplifiées.
 - Les titres d'actualité, les noms de services et les liens cités appartiennent à leurs propriétaires respectifs (gouv.ci et administrations concernées).
 - Icônes : SVG originaux inclus dans les pages.

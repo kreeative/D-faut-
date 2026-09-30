@@ -106,7 +106,10 @@
   <!-- Hero cinématique : une photo, une phrase, une recherche -->
   <section class="hero on-dark" aria-labelledby="hero-title">
     <div class="hero__media" aria-hidden="true">
-      <img src="assets/img/hero-plateau-1920.jpg" srcset="assets/img/hero-plateau-960.jpg 960w, assets/img/hero-plateau-1920.jpg 1920w" sizes="100vw" alt="" fetchpriority="high" decoding="async">
+      <picture>
+        <source media="(max-width: 47.99em)" srcset="assets/img/hero-drapeau-960.jpg">
+        <img src="assets/img/hero-drapeau-1600.jpg" alt="" fetchpriority="high" decoding="async">
+      </picture>
     </div>
     <div class="container hero__inner">
       <div>
@@ -158,7 +161,7 @@
         <div class="hero__stat"><strong>24/7</strong><span>sur tous les écrans<span class="hero__stat-more">, à toute heure, sans application à installer</span></span></div>
       </aside>
     </div>
-    <p class="hero__credit">Photo&nbsp;: Le Plateau, Abidjan — <a href="https://commons.wikimedia.org/wiki/File:Abidjan_Plateau.png">Wikimedia Commons</a>, CC0</p>
+    <p class="hero__credit">Photo&nbsp;: drapeau ivoirien, bord de mer — © l'autrice du concept</p>
   </section>
 
   <!-- Flash infos : bande orange, format concis conservé du portail actuel -->
@@ -250,6 +253,20 @@
         <li><a href="https://data.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg> Numérique et données</a></li>
       </ul>
     </div>
+  </section>
+
+  <!-- Bande photographique : un pays, un portail -->
+  <section class="interlude on-dark reveal" aria-label="Des lagunes aux savanes, un même service public">
+    <picture>
+      <source media="(max-width: 47.99em)" srcset="assets/img/interlude-lagune-960.jpg">
+      <img src="assets/img/interlude-lagune-1600.jpg" alt="" loading="lazy" decoding="async">
+    </picture>
+    <div class="container interlude__inner">
+      <p class="eyebrow">Un pays, un portail</p>
+      <p class="interlude__text">Des lagunes aux savanes, <em>un même service public.</em></p>
+      <p class="interlude__sub">Le même niveau de service pour chaque citoyen, où qu'il vive, sur téléphone comme au guichet.</p>
+    </div>
+    <p class="interlude__credit">Photo&nbsp;: lagune, Côte d'Ivoire — © l'autrice du concept</p>
   </section>
 
   <!-- Près de chez vous : carte interactive des districts -->
@@ -350,7 +367,7 @@
       </div>
       <div class="news">
         <article class="news__feature on-dark reveal">
-          <img src="assets/img/abidjan-nuit-1280.jpg" alt="" loading="lazy" decoding="async">
+          <img src="assets/img/hero-plateau-960.jpg" alt="" loading="lazy" decoding="async">
           <span class="tag">À la une · Société</span>
           <h3><a href="https://www.gouv.ci/actualite/eau-potable-a-zandanakaha-leau-a-portee-de-main-3645">Eau potable&nbsp;: à Zandanakaha, l'eau à portée de main</a></h3>
           <time datetime="2026-09-28">Lundi 28 septembre 2026</time>
@@ -377,7 +394,7 @@
         <a class="btn btn--primary btn--sm" href="https://www.gouv.ci/uploads/publications/179019067632.pdf">Lire le communiqué <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
         <a class="btn btn--ghost btn--sm" href="https://www.gouv.ci/publications/documents/Conseils%20des%20Ministres">Tous les conseils</a>
       </div>
-      <p class="muted" style="font-size:.78rem;margin-top:.9rem">Photo&nbsp;: Le Plateau depuis le pont ADO, Edison McCullen — <a href="https://commons.wikimedia.org/wiki/File:Le_Plateau_depuis_le_Pont_ADO_%E2%80%93_Abidjan.jpg">Wikimedia Commons</a>, CC BY 4.0.</p>
+      <p class="muted" style="font-size:.78rem;margin-top:.9rem">Photo&nbsp;: Le Plateau, Abidjan — <a href="https://commons.wikimedia.org/wiki/File:Abidjan_Plateau.png">Wikimedia Commons</a>, CC0.</p>
     </div>
   </section>
 
