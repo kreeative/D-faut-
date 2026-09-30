@@ -19,7 +19,7 @@
 ## Direction artistique
 
 - **Papier, forêt, orange** : un fond crème (`#F6F1E7`) qui évoque le papier et la lumière, un vert forêt profond (`#0A3323`) pour les grandes sections institutionnelles, l'orange du drapeau (`#F77F00`) en accent (recherche, repères, district sélectionné).
-- **Typographie éditoriale** : Instrument Serif pour les grands titres, Instrument Sans (variable) pour l'interface. Deux polices libres, auto-hébergées.
+- **Typographie éditoriale** : Fraunces (serif variable à tailles optiques) pour les titres, Instrument Sans (variable) pour l'interface. Deux polices libres, auto-hébergées.
 - **Hero cinématique** : drapeau ivoirien en bord de mer en plein écran (recadrage paysage sur ordinateur, portrait sur mobile), lent zoom, recherche en pilule posée sur la photo. Une bande photographique plein écran (lagune) rythme la page avant la carte.
 - **Grille « bento »** pour les démarches, **carte interactive** des 14 districts (tracés réels simplifiés), **actualités façon magazine**, **galerie en mosaïque**, **signature typographique** en pied de page.
 - **Mouvement mesuré** : apparitions au défilement et micro-interactions, toutes désactivées si l'utilisateur préfère réduire les animations.
@@ -73,7 +73,7 @@ demarche.html           # exemple de page de démarche
 a-propos.html           # étude de cas
 assets/css/styles.css   # jetons de design, composants, mises en page
 assets/js/main.js       # menu, recherche, localité, retour citoyen
-assets/fonts/           # Instrument Serif + Instrument Sans (auto-hébergées, licence OFL)
+assets/fonts/           # Fraunces + Instrument Sans (auto-hébergées, licence OFL)
 assets/img/             # photos (Wikimedia Commons, CC0 / CC BY) et favicon
 docs/screenshots/       # captures utilisées dans ce README
 ```
@@ -89,7 +89,7 @@ docs/screenshots/       # captures utilisées dans ce README
 ## Crédits et licences
 
 - Concept, design et code : Anne-Kelly Kouyaté, [Kreeative](https://kreeative.xyz) (Toronto), septembre 2026.
-- Polices Instrument Serif et Instrument Sans : [SIL Open Font License 1.1](assets/fonts/LICENSE-instrument-serif.txt).
+- Polices Fraunces et Instrument Sans : [SIL Open Font License 1.1](assets/fonts/LICENSE-fraunces.txt).
 - Photographies fournies par l'autrice du concept (hero, bande lagune, La Pyramide, Abidjan au crépuscule, cascades de Man) : tous droits réservés. Basilique de Yamoussoukro, masque Zaouli, mosquée de Kong, échangeur d'Abidjan : crédits des photographes à confirmer avant publication.
 - Limites des districts : [geoBoundaries](https://www.geoboundaries.org/) (ADM1, Côte d'Ivoire), CC BY 4.0, simplifiées.
 - Les titres d'actualité, les noms de services et les liens cités appartiennent à leurs propriétaires respectifs (gouv.ci et administrations concernées).
