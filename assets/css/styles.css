@@ -609,8 +609,8 @@ main:focus { outline: none; }
 .page-head--photo .page-head__media picture { display: block; position: absolute; inset: 0; }
 .page-head--photo .page-head__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .page-head--photo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10, 51, 35, 0.88) 0%, rgba(10, 51, 35, 0.55) 55%, rgba(10, 51, 35, 0.25) 100%), linear-gradient(180deg, rgba(10, 51, 35, 0.35), rgba(10, 51, 35, 0.6)); }
-.page-head--photo h1 { color: var(--cream); text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3); }
-.page-head--photo .lead { color: var(--muted-on-dark); }
+.page-head.page-head--photo h1 { color: var(--cream); text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3); }
+.page-head.page-head--photo .lead { color: var(--cream); opacity: 0.92; }
 .page-head--photo .breadcrumb a { color: var(--muted-on-dark); }
 .page-head--photo .breadcrumb li + li::before { color: var(--muted-on-dark); }
 .page-head--photo .page-head__inner { padding-block: clamp(3.5rem, 8vw, 6.5rem) clamp(2.5rem, 6vw, 5rem); }
