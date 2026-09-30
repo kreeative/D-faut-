@@ -407,7 +407,8 @@ main:focus { outline: none; }
   background: rgba(246, 241, 231, 0.1); border: 1px solid rgba(246, 241, 231, 0.28); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
 .hero__account p { margin: 0; font-size: var(--t-sm); color: var(--muted-on-dark); }
-.hero__account .hero__account-title { margin: 0; font-family: var(--f-display); font-size: 1.6rem; line-height: 1; letter-spacing: -0.01em; color: var(--cream); display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.hero__account .tag { justify-self: start; }
+.hero__account .hero__account-title { margin: 0; font-family: var(--f-display); font-size: 1.7rem; line-height: 1; letter-spacing: -0.015em; color: var(--cream); font-weight: 500; }
 .hero__account-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; margin-top: 0.25rem; }
 .hero__account-login { color: var(--cream); font-size: var(--t-sm); }
 .hero__stat {
