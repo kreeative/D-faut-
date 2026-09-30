@@ -292,6 +292,8 @@
     abidjan: { src: "assets/img/district-abidjan-800.jpg", caption: "Échangeur, Abidjan" },
     savanes: { src: "assets/img/district-savanes-800.jpg", caption: "Grande mosquée de Kong, district des Savanes" },
     montagnes: { src: "assets/img/district-montagnes-800.jpg", caption: "Cascades de Man, district des Montagnes" },
+    yamoussoukro: { src: "assets/img/district-yamoussoukro-800.jpg", caption: "Basilique Notre-Dame de la Paix, Yamoussoukro" },
+    "sassandra-marahoue": { src: "assets/img/district-sassandra-marahoue-800.jpg", caption: "Danse Zaouli du pays gouro, district du Sassandra-Marahoué" },
     _default: { src: "assets/img/district-default-800.jpg", caption: "Côte d'Ivoire" }
   };
 

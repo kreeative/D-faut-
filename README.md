@@ -21,7 +21,7 @@
 - **Papier, forêt, orange** : un fond crème (`#F6F1E7`) qui évoque le papier et la lumière, un vert forêt profond (`#0A3323`) pour les grandes sections institutionnelles, l'orange du drapeau (`#F77F00`) en accent (recherche, repères, district sélectionné).
 - **Typographie éditoriale** : Instrument Serif pour les grands titres, Instrument Sans (variable) pour l'interface. Deux polices libres, auto-hébergées.
 - **Hero cinématique** : drapeau ivoirien en bord de mer en plein écran (recadrage paysage sur ordinateur, portrait sur mobile), lent zoom, recherche en pilule posée sur la photo. Une bande photographique plein écran (lagune) rythme la page avant la carte.
-- **Grille « bento »** pour les démarches, **carte interactive** des 14 districts (tracés réels simplifiés), **actualités façon magazine**, **signature typographique** en pied de page.
+- **Grille « bento »** pour les démarches, **carte interactive** des 14 districts (tracés réels simplifiés), **actualités façon magazine**, **galerie en mosaïque**, **signature typographique** en pied de page.
 - **Mouvement mesuré** : apparitions au défilement et micro-interactions, toutes désactivées si l'utilisateur préfère réduire les animations.
 
 ## Ce que c'est
@@ -90,7 +90,7 @@ docs/screenshots/       # captures utilisées dans ce README
 
 - Concept, design et code : Anne-Kelly Kouyaté, [Kreeative](https://kreeative.xyz) (Toronto), septembre 2026.
 - Polices Instrument Serif et Instrument Sans : [SIL Open Font License 1.1](assets/fonts/LICENSE-instrument-serif.txt).
-- Photographies (hero, bande lagune, actualités, page À propos, photos des districts) : fournies par l'autrice du concept, tous droits réservés.
+- Photographies fournies par l'autrice du concept (hero, bande lagune, La Pyramide, Abidjan au crépuscule, cascades de Man) : tous droits réservés. Basilique de Yamoussoukro, masque Zaouli, mosquée de Kong, échangeur d'Abidjan : crédits des photographes à confirmer avant publication.
 - Limites des districts : [geoBoundaries](https://www.geoboundaries.org/) (ADM1, Côte d'Ivoire), CC BY 4.0, simplifiées.
 - Les titres d'actualité, les noms de services et les liens cités appartiennent à leurs propriétaires respectifs (gouv.ci et administrations concernées).
 - Icônes : SVG originaux inclus dans les pages.
