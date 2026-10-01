@@ -65,6 +65,20 @@ Ouvrir directement `index.html` fonctionne aussi.
 
 Les pages portent une balise `noindex` pour éviter toute confusion avec le site officiel dans les moteurs de recherche. Retirez-la si vous souhaitez référencer le concept.
 
+## Vidéo TikTok / Reels
+
+Une vidéo verticale (1080 × 1920, 42 s, sans son) présentant le concept est fournie dans `docs/video/concept-gouv-ci-tiktok.mp4`. Elle est générée automatiquement : une scène HTML (`docs/video/stage.html`) affiche le site dans un cadre de téléphone avec des sous-titres, et un script Playwright (`docs/video/record.js`) déroule le parcours (recherche, démarches, carte, assistant) en enregistrant l'écran.
+
+Pour la régénérer après une modification du site :
+
+```bash
+python3 -m http.server 8123 &
+NODE_PATH=$(npm root -g) node docs/video/record.js
+ffmpeg -ss 0.6 -i docs/video/out/tiktok-raw.webm -c:v libx264 -preset slow -crf 21 -pix_fmt yuv420p -r 30 -movflags +faststart -an docs/video/concept-gouv-ci-tiktok.mp4
+```
+
+Les textes des sous-titres et la carte de fin se modifient dans `record.js` et `stage.html`.
+
 ## Structure
 
 ```
@@ -76,6 +90,8 @@ assets/js/main.js       # menu, recherche, localité, retour citoyen
 assets/fonts/           # Fraunces + Instrument Sans (auto-hébergées, licence OFL)
 assets/img/             # photos (Wikimedia Commons, CC0 / CC BY) et favicon
 docs/screenshots/       # captures utilisées dans ce README
+docs/video/             # vidéo TikTok (mp4), scène et script d'enregistrement
+docs/email-cicg.md      # email de proposition au CICG
 ```
 
 ## Personnaliser
