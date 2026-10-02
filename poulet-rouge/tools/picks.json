@@ -1,0 +1,448 @@
+{
+ "rice": {
+  "pick": "ov:e333f3bd-35f8-4f04-86ec-84ed5675f43f",
+  "cx": 0.48,
+  "cy": 0.47,
+  "zoom": 2.0,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320,
+   640
+  ],
+  "dir": "textures"
+ },
+ "bulgur": {
+  "pick": "ov:abd487c1-a706-45b6-9ea1-7d6412b6f134",
+  "cx": 0.47,
+  "cy": 0.42,
+  "zoom": 2.0,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320,
+   640
+  ],
+  "dir": "textures"
+ },
+ "quinoa": {
+  "pick": "ov:2e00b342-3f7b-4f25-992c-81628f4b9645",
+  "cx": 0.65,
+  "cy": 0.58,
+  "zoom": 2.4,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320,
+   640
+  ],
+  "dir": "textures"
+ },
+ "romaine": {
+  "pick": "pexels:102123",
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.8,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320,
+   640
+  ],
+  "dir": "textures",
+  "fetch": 2400
+ },
+ "poutine": {
+  "pick": "ov:5eace071-7cdf-499b-aa7f-1a7f256b041a",
+  "cx": 0.45,
+  "cy": 0.45,
+  "zoom": 1.5,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320,
+   640
+  ],
+  "dir": "textures"
+ },
+ "chicken": {
+  "pick": "ov:b55b4b11-3987-4282-85d8-214523b6ed19",
+  "cx": 0.53,
+  "cy": 0.6,
+  "zoom": 3.6,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "plant": {
+  "pick": "ov:9b1a63ce-8a45-4c75-b132-5605c335910f",
+  "cx": 0.27,
+  "cy": 0.5,
+  "zoom": 2.0,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "tomato": {
+  "pick": "ov:43bd079f-a043-4212-a5ad-c42e0d362636",
+  "cx": 0.76,
+  "cy": 0.42,
+  "zoom": 1.67,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "cucumber": {
+  "pick": "pexels:10432461",
+  "cx": 0.55,
+  "cy": 0.32,
+  "zoom": 1.8,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "red-onion": {
+  "pick": "pexels:8859780",
+  "cx": 0.55,
+  "cy": 0.76,
+  "zoom": 3.3,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures",
+  "fetch": 2400
+ },
+ "pepper": {
+  "pick": "ov:9cc0a9b2-38c3-492e-8fcf-c9c8325d4630",
+  "cx": 0.5,
+  "cy": 0.43,
+  "zoom": 1.82,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "corn": {
+  "pick": "pexels:1359315",
+  "cx": 0.4,
+  "cy": 0.33,
+  "zoom": 2.4,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "jack": {
+  "pick": "pexels:6223125",
+  "cx": 0.72,
+  "cy": 0.45,
+  "zoom": 2.4,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "feta": {
+  "pick": "ov:358ff32f-ab90-428f-952f-ea4ee7cebd74",
+  "cx": 0.5,
+  "cy": 0.58,
+  "zoom": 2.2,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "jalapeno": {
+  "pick": "ov:ba4ba3c4-b6c1-4c2c-a1d3-114a97f98c0f",
+  "cx": 0.48,
+  "cy": 0.34,
+  "zoom": 2.9,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "black-beans": {
+  "pick": "pexels:7772002",
+  "cx": 0.55,
+  "cy": 0.5,
+  "zoom": 1.5,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "olives": {
+  "pick": "pexels:4109908",
+  "cx": 0.58,
+  "cy": 0.76,
+  "zoom": 1.5,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "cranberries": {
+  "pick": "ov:6db05a36-b779-44c5-8680-3fc0435e76d8",
+  "cx": 0.5,
+  "cy": 0.5,
+  "zoom": 1.3,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "avocado": {
+  "pick": "ov:c261dc92-2c4d-4cfb-85ad-2d99f5250780",
+  "cx": 0.5,
+  "cy": 0.52,
+  "zoom": 1.25,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "spinach": {
+  "pick": "pexels:2325843",
+  "cx": 0.55,
+  "cy": 0.65,
+  "zoom": 1.8,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "beets": {
+  "pick": "ov:ecb83f00-3f2c-4cbc-a5f8-e26a9a02f0bc",
+  "cx": 0.45,
+  "cy": 0.45,
+  "zoom": 1.4,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures"
+ },
+ "guacamole": {
+  "pick": "pexels:7227467",
+  "cx": 0.18,
+  "cy": 0.28,
+  "zoom": 4.6,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   320
+  ],
+  "dir": "textures",
+  "fetch": 3200
+ },
+ "frites": {
+  "pick": "ov:358e3538-7c32-43c0-8398-2963e11e1d5c",
+  "cx": 0.447,
+  "cy": 0.523,
+  "zoom": 1.38,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   800
+  ],
+  "dir": "dishes",
+  "cut": "circle"
+ },
+ "poutine-side": {
+  "pick": "ov:5eace071-7cdf-499b-aa7f-1a7f256b041a",
+  "cx": 0.45,
+  "cy": 0.45,
+  "zoom": 1.25,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   800
+  ],
+  "dir": "dishes",
+  "cut": "circle",
+  "name": "poutine"
+ },
+ "choco-mousse": {
+  "pick": "ov:d03d3124-cbd6-4078-8de0-ef6fc4b23c87",
+  "cx": 0.49,
+  "cy": 0.535,
+  "zoom": 1.15,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   800
+  ],
+  "dir": "dishes",
+  "cut": "circle"
+ },
+ "delice-framboise": {
+  "pick": "pexels:3850977",
+  "cx": 0.565,
+  "cy": 0.47,
+  "zoom": 2.0,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   800
+  ],
+  "dir": "dishes",
+  "cut": "circle"
+ },
+ "tiramisu": {
+  "pick": "pexels:14766327",
+  "cx": 0.47,
+  "cy": 0.53,
+  "zoom": 1.18,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   800
+  ],
+  "dir": "dishes",
+  "cut": "circle"
+ },
+ "boisson-gazeuse": {
+  "pick": "pexels:11477545",
+  "cx": 0.53,
+  "cy": 0.465,
+  "zoom": 1.15,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   800
+  ],
+  "dir": "dishes",
+  "cut": "circle"
+ },
+ "the-glace": {
+  "pick": "pexels:1194030",
+  "cx": 0.57,
+  "cy": 0.68,
+  "zoom": 2.0,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   800
+  ],
+  "dir": "dishes",
+  "cut": "circle"
+ },
+ "eau-petillante": {
+  "pick": "pexels:12987480",
+  "cx": 0.42,
+  "cy": 0.5,
+  "zoom": 1.1,
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   800
+  ],
+  "dir": "dishes",
+  "cut": "circle",
+  "slug": "a-close-up-shot-of-a-glass-of-water-with-ice"
+ }
+}
