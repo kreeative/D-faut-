@@ -1,0 +1,632 @@
+{
+ "rice": {
+  "src": "ov",
+  "id": "e333f3bd-35f8-4f04-86ec-84ed5675f43f",
+  "page": "https://www.rawpixel.com/image/8731984/photo-image-white-background-public-domain-food",
+  "title": "Cooked brown rice white background",
+  "creator": "U.S. Department of Agriculture",
+  "creator_url": "",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "provider": "rawpixel",
+  "source_size": [
+   1024,
+   917
+  ],
+  "box": [
+   263,
+   202,
+   721,
+   660
+  ]
+ },
+ "bulgur": {
+  "src": "ov",
+  "id": "abd487c1-a706-45b6-9ea1-7d6412b6f134",
+  "page": "https://www.flickr.com/photos/41284017@N08/51667255692",
+  "title": "20211103-FNS-UNC-6079",
+  "creator": "USDAgov",
+  "creator_url": "https://www.flickr.com/photos/41284017@N08",
+  "license": "PDM 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   683
+  ],
+  "box": [
+   311,
+   116,
+   652,
+   457
+  ]
+ },
+ "quinoa": {
+  "src": "ov",
+  "id": "2e00b342-3f7b-4f25-992c-81628f4b9645",
+  "page": "https://www.flickr.com/photos/41284017@N08/51392569306",
+  "title": "20210820-FNS-UNC-0055",
+  "creator": "USDAgov",
+  "creator_url": "https://www.flickr.com/photos/41284017@N08",
+  "license": "PDM 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   683
+  ],
+  "box": [
+   524,
+   254,
+   808,
+   538
+  ]
+ },
+ "romaine": {
+  "src": "pexels",
+  "id": 102123,
+  "page": "https://www.pexels.com/photo/green-and-white-lettuce-102123/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2400,
+   1600
+  ],
+  "box": [
+   756,
+   356,
+   1644,
+   1244
+  ]
+ },
+ "poutine": {
+  "src": "ov",
+  "id": "5eace071-7cdf-499b-aa7f-1a7f256b041a",
+  "page": "https://www.flickr.com/photos/91873384@N04/51891062673",
+  "title": "homemade poutine",
+  "creator": "dalecruse",
+  "creator_url": "https://www.flickr.com/photos/91873384@N04",
+  "license": "BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   768
+  ],
+  "box": [
+   205,
+   90,
+   717,
+   602
+  ]
+ },
+ "chicken": {
+  "src": "ov",
+  "id": "b55b4b11-3987-4282-85d8-214523b6ed19",
+  "page": "https://www.flickr.com/photos/41284017@N08/54093219273",
+  "title": "20241025-USDA-FNS-UNK-0017",
+  "creator": "USDAgov",
+  "creator_url": "https://www.flickr.com/photos/41284017@N08",
+  "license": "PDM 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   768
+  ],
+  "box": [
+   436,
+   354,
+   649,
+   567
+  ]
+ },
+ "plant": {
+  "src": "ov",
+  "id": "9b1a63ce-8a45-4c75-b132-5605c335910f",
+  "page": "https://www.flickr.com/photos/149704944@N08/52209914102",
+  "title": "Fried Tofu Cubes",
+  "creator": "loumchen",
+  "creator_url": "https://www.flickr.com/photos/149704944@N08",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   1024
+  ],
+  "box": [
+   20,
+   256,
+   532,
+   768
+  ]
+ },
+ "tomato": {
+  "src": "ov",
+  "id": "43bd079f-a043-4212-a5ad-c42e0d362636",
+  "page": "https://stocksnap.io/photo/chopped-tomatoes-03JNS3TYGF",
+  "title": "Chopped Tomatoes",
+  "creator": "Tim Sullivan",
+  "creator_url": "https://www.secretagencygroup.com",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "provider": "stocksnap",
+  "source_size": [
+   960,
+   641
+  ],
+  "box": [
+   538,
+   78,
+   921,
+   461
+  ]
+ },
+ "cucumber": {
+  "src": "pexels",
+  "id": 10432461,
+  "page": "https://www.pexels.com/photo/slices-of-cucumber-10432461/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   3000
+  ],
+  "box": [
+   544,
+   404,
+   1655,
+   1515
+  ]
+ },
+ "red-onion": {
+  "src": "pexels",
+  "id": 8859780,
+  "page": "https://www.pexels.com/photo/a-person-cutting-an-onion-8859780/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2400,
+   3600
+  ],
+  "box": [
+   956,
+   2372,
+   1683,
+   3099
+  ]
+ },
+ "pepper": {
+  "src": "ov",
+  "id": "9cc0a9b2-38c3-492e-8fcf-c9c8325d4630",
+  "page": "https://www.flickr.com/photos/41284017@N08/51431444954",
+  "title": "20210902-FNS-UNC-0029",
+  "creator": "USDAgov",
+  "creator_url": "https://www.flickr.com/photos/41284017@N08",
+  "license": "PDM 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   839
+  ],
+  "box": [
+   282,
+   131,
+   742,
+   591
+  ]
+ },
+ "corn": {
+  "src": "pexels",
+  "id": 1359315,
+  "page": "https://www.pexels.com/photo/corn-kernels-on-strainer-1359315/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   1383
+  ],
+  "box": [
+   512,
+   168,
+   1088,
+   744
+  ]
+ },
+ "jack": {
+  "src": "pexels",
+  "id": 6223125,
+  "page": "https://www.pexels.com/photo/close-up-shot-of-a-person-holding-grated-cheese-6223125/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   1333
+  ],
+  "box": [
+   1162,
+   322,
+   1717,
+   877
+  ]
+ },
+ "feta": {
+  "src": "ov",
+  "id": "358ff32f-ab90-428f-952f-ea4ee7cebd74",
+  "page": "https://www.flickr.com/photos/125008237@N07/52469736500",
+  "title": "Tasty Mediterranean Salad",
+  "creator": "Musicaloris",
+  "creator_url": "https://www.flickr.com/photos/125008237@N07",
+  "license": "BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   683
+  ],
+  "box": [
+   357,
+   241,
+   667,
+   551
+  ]
+ },
+ "jalapeno": {
+  "src": "ov",
+  "id": "ba4ba3c4-b6c1-4c2c-a1d3-114a97f98c0f",
+  "page": "https://www.flickr.com/photos/95142644@N00/51656700012",
+  "title": "Making chilli and apple jelly",
+  "creator": "Ruth and Dave",
+  "creator_url": "https://www.flickr.com/photos/95142644@N00",
+  "license": "BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   768
+  ],
+  "box": [
+   360,
+   129,
+   624,
+   393
+  ]
+ },
+ "black-beans": {
+  "src": "pexels",
+  "id": 7772002,
+  "page": "https://www.pexels.com/photo/close-up-shot-of-black-beans-7772002/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   1333
+  ],
+  "box": [
+   656,
+   222,
+   1544,
+   1110
+  ]
+ },
+ "olives": {
+  "src": "pexels",
+  "id": 4109908,
+  "page": "https://www.pexels.com/photo/a-close-up-shot-of-fresh-olives-4109908/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   3000
+  ],
+  "box": [
+   494,
+   1614,
+   1827,
+   2947
+  ]
+ },
+ "cranberries": {
+  "src": "ov",
+  "id": "6db05a36-b779-44c5-8680-3fc0435e76d8",
+  "page": "https://www.flickr.com/photos/198613871@N06/53469575613",
+  "title": "Dried cranberries",
+  "creator": "2508256625",
+  "creator_url": "https://www.flickr.com/photos/198613871@N06",
+  "license": "BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   1024
+  ],
+  "box": [
+   118,
+   118,
+   905,
+   905
+  ]
+ },
+ "avocado": {
+  "src": "ov",
+  "id": "c261dc92-2c4d-4cfb-85ad-2d99f5250780",
+  "page": "https://www.rawpixel.com/image/6074447/avocado-slices",
+  "title": "Avocado Slices",
+  "creator": "",
+  "creator_url": "",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "provider": "rawpixel",
+  "source_size": [
+   1024,
+   680
+  ],
+  "box": [
+   240,
+   82,
+   784,
+   626
+  ]
+ },
+ "spinach": {
+  "src": "pexels",
+  "id": 2325843,
+  "page": "https://www.pexels.com/photo/bowl-of-spinach-2325843/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   1333
+  ],
+  "box": [
+   730,
+   496,
+   1470,
+   1236
+  ]
+ },
+ "beets": {
+  "src": "ov",
+  "id": "ecb83f00-3f2c-4cbc-a5f8-e26a9a02f0bc",
+  "page": "https://www.flickr.com/photos/16176711@N02/53958875751",
+  "title": "roast beetroot cylindra",
+  "creator": "conall..",
+  "creator_url": "https://www.flickr.com/photos/16176711@N02",
+  "license": "BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "provider": "flickr",
+  "source_size": [
+   768,
+   1024
+  ],
+  "box": [
+   72,
+   187,
+   620,
+   735
+  ]
+ },
+ "guacamole": {
+  "src": "pexels",
+  "id": 7227467,
+  "page": "https://www.pexels.com/photo/a-flatlay-of-chips-beside-a-bowl-of-guacamole-7227467/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   3200,
+   1992
+  ],
+  "box": [
+   360,
+   341,
+   793,
+   774
+  ]
+ },
+ "frites": {
+  "src": "ov",
+  "id": "358e3538-7c32-43c0-8398-2963e11e1d5c",
+  "page": "https://www.flickr.com/photos/7633518@N08/52327287679",
+  "title": "French fries and rosé",
+  "creator": "sarahstierch",
+  "creator_url": "https://www.flickr.com/photos/7633518@N08",
+  "license": "BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   768
+  ],
+  "box": [
+   180,
+   124,
+   736,
+   680
+  ]
+ },
+ "poutine-side": {
+  "src": "ov",
+  "id": "5eace071-7cdf-499b-aa7f-1a7f256b041a",
+  "page": "https://www.flickr.com/photos/91873384@N04/51891062673",
+  "title": "homemade poutine",
+  "creator": "dalecruse",
+  "creator_url": "https://www.flickr.com/photos/91873384@N04",
+  "license": "BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   768
+  ],
+  "box": [
+   154,
+   39,
+   768,
+   653
+  ]
+ },
+ "choco-mousse": {
+  "src": "ov",
+  "id": "d03d3124-cbd6-4078-8de0-ef6fc4b23c87",
+  "page": "https://www.flickr.com/photos/10953991@N00/493677329",
+  "title": "ridiculously simple mousse",
+  "creator": "Crystl",
+  "creator_url": "https://www.flickr.com/photos/10953991@N00",
+  "license": "BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   683
+  ],
+  "box": [
+   205,
+   69,
+   798,
+   662
+  ]
+ },
+ "delice-framboise": {
+  "src": "pexels",
+  "id": 3850977,
+  "page": "https://www.pexels.com/photo/raspberries-on-top-of-a-cake-3850977/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   1333
+  ],
+  "box": [
+   797,
+   294,
+   1463,
+   960
+  ]
+ },
+ "tiramisu": {
+  "src": "pexels",
+  "id": 14766327,
+  "page": "https://www.pexels.com/photo/close-up-shot-of-tiramisu-cake-14766327/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   3000
+  ],
+  "box": [
+   93,
+   743,
+   1787,
+   2437
+  ]
+ },
+ "boisson-gazeuse": {
+  "src": "pexels",
+  "id": 11477545,
+  "page": "https://www.pexels.com/photo/a-glass-of-fizzy-drink-11477545/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   1334
+  ],
+  "box": [
+   480,
+   40,
+   1640,
+   1200
+  ]
+ },
+ "the-glace": {
+  "src": "pexels",
+  "id": 1194030,
+  "page": "https://www.pexels.com/photo/macro-photography-of-clear-drinking-glass-with-lemon-fruit-and-black-straw-1194030/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   3000
+  ],
+  "box": [
+   640,
+   1540,
+   1640,
+   2540
+  ]
+ },
+ "eau-petillante": {
+  "src": "pexels",
+  "id": 12987480,
+  "page": "https://www.pexels.com/photo/a-close-up-shot-of-a-glass-of-water-with-ice-12987480/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   1335
+  ],
+  "box": [
+   234,
+   61,
+   1447,
+   1274
+  ]
+ }
+}
