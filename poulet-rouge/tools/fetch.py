@@ -168,7 +168,8 @@ def run_sheets():
     sources = json.load(open(os.path.join(HERE, "sources.json")))
     os.makedirs(os.path.join(STAGING, "sheets"), exist_ok=True)
     tile, cols = 300, 4
-    allc = {}
+    cpath = os.path.join(STAGING, "candidates.json")
+    allc = json.load(open(cpath)) if os.path.exists(cpath) else {}
     for key, entry in sources.items():
         cands = candidates_for(key, entry)
         rows = max(1, (len(cands) + cols - 1) // cols)
@@ -193,6 +194,36 @@ def run_sheets():
         sheet.save(os.path.join(STAGING, "sheets", key + ".jpg"), quality=80, optimize=True)
         allc[key] = cands
         json.dump(allc, open(os.path.join(STAGING, "candidates.json"), "w"), indent=1, ensure_ascii=False)
+
+
+def run_previews():
+    """Chosen candidates at a larger size with a 10% grid, to place crops by eye."""
+    path = os.path.join(HERE, "previews.json")
+    if not os.path.exists(path):
+        return
+    cands = json.load(open(os.path.join(STAGING, "candidates.json")))
+    out = os.path.join(STAGING, "previews")
+    os.makedirs(out, exist_ok=True)
+    f = font(22)
+    for label, ref in json.load(open(path)).items():
+        try:
+            c = resolve({"pick": ref}, cands)
+            im = fetch_candidate(c, 1600)
+        except Exception as e:  # noqa: BLE001
+            log("FAIL preview", label, e)
+            continue
+        im.thumbnail((1000, 1000))
+        d = ImageDraw.Draw(im)
+        W, H = im.size
+        for k in range(1, 10):
+            x, y = round(W * k / 10), round(H * k / 10)
+            d.line([(x, 0), (x, H)], fill=(255, 255, 255), width=1)
+            d.line([(0, y), (W, y)], fill=(255, 255, 255), width=1)
+            d.text((x + 3, 3), "%d" % k, fill=(255, 40, 40), font=f)
+            d.text((3, y + 3), "%d" % k, fill=(255, 40, 40), font=f)
+        d.text((8, H - 30), "%s  %dx%d" % (label, c.get("fetched", [0, 0])[0], c.get("fetched", [0, 0])[1]), fill=(255, 255, 0), font=f)
+        im.save(os.path.join(out, label.replace("#", "-") + ".jpg"), quality=82)
+        log("preview", label, W, H)
 
 
 def crop_box(W, H, c):
@@ -278,4 +309,5 @@ if __name__ == "__main__":
         run_download()
     else:
         run_sheets()
+        run_previews()
     sys.exit(0)
