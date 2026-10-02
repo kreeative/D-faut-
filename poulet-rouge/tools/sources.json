@@ -1,185 +1,52 @@
 {
- "bulgur2": {
+ "iced-tea3": {
+  "pexels": [
+   {
+    "id": 316891,
+    "slug": "drink-glass-glassware-lemon"
+   },
+   {
+    "id": 298720,
+    "slug": "lemon-juice-in-cup"
+   }
+  ],
+  "openverse": [
+   "iced tea overhead",
+   "glass of iced tea from above",
+   "tea ice cubes glass"
+  ]
+ },
+ "sparkling3": {
+  "pexels": [
+   {
+    "id": 12987480,
+    "slug": "a-close-up-shot-of-a-glass-of-water-with-ice"
+   },
+   {
+    "id": 6794879,
+    "slug": "lime-lemonade-in-crystal-glass"
+   },
+   {
+    "id": 4153998,
+    "slug": "clear-drinking-glass-with-lemon"
+   },
+   {
+    "id": 6653641,
+    "slug": "sliced-lemon-beside-a-drinking-glass"
+   }
+  ],
+  "openverse": [
+   "glass of water from above",
+   "sparkling water lemon"
+  ]
+ },
+ "jalapeno3": {
   "pexels": [],
   "openverse": [
-   "tabbouleh",
-   "bulgur salad",
-   "cracked wheat",
-   "burghul"
-  ]
- },
- "romaine2": {
-  "pexels": [
-   {
-    "id": 102123,
-    "slug": "green-and-white-lettuce"
-   },
-   {
-    "id": 257816,
-    "slug": "close-up-of-salad-in-plate"
-   },
-   {
-    "id": 4198024,
-    "slug": "salad-with-lettuce-and-spinach"
-   },
-   {
-    "id": 6428245,
-    "slug": "top-view-on-green-salad"
-   },
-   {
-    "id": 406152,
-    "slug": "appetizer-close-up-cucumber-cuisine"
-   }
-  ],
-  "openverse": [
-   "romaine lettuce chopped",
-   "lettuce salad bowl"
-  ]
- },
- "pepper2": {
-  "pexels": [],
-  "openverse": [
-   "diced red pepper",
-   "chopped bell peppers",
-   "red pepper strips",
-   "bell pepper slices"
-  ]
- },
- "corn2": {
-  "pexels": [
-   {
-    "id": 1359315,
-    "slug": "corn-kernels-on-strainer"
-   }
-  ],
-  "openverse": [
-   "canned corn",
-   "corn salad",
-   "sweet corn bowl",
-   "corn niblets"
-  ]
- },
- "feta2": {
-  "pexels": [
-   {
-    "id": 1059905,
-    "slug": "vegetable-salad-on-plate"
-   },
-   {
-    "id": 4109938,
-    "slug": "close-up-photo-of-assorted-cheese"
-   },
-   {
-    "id": 1279330,
-    "slug": "selective-focus-photography-of-pasta-with-tomato-and-basil"
-   },
-   {
-    "id": 14587654,
-    "slug": "close-up-shot-of-a-person-holding-a-breakfast-bowl"
-   }
-  ],
-  "openverse": [
-   "feta crumbles",
-   "feta salad",
-   "greek salad feta"
-  ]
- },
- "raspberry2": {
-  "pexels": [
-   {
-    "id": 3850977,
-    "slug": "raspberries-on-top-of-a-cake"
-   },
-   {
-    "id": 3026801,
-    "slug": "dessert-jars"
-   },
-   {
-    "id": 5946069,
-    "slug": "delicious-dessert-with-berries-on-coaster"
-   },
-   {
-    "id": 18955561,
-    "slug": "choice-of-desserts"
-   }
-  ],
-  "openverse": [
-   "raspberry cheesecake",
-   "raspberry trifle",
-   "raspberry pudding",
-   "raspberry yogurt parfait"
-  ]
- },
- "soda2": {
-  "pexels": [
-   {
-    "id": 11477545,
-    "slug": "a-glass-of-fizzy-drink"
-   },
-   {
-    "id": 8879617,
-    "slug": "a-glass-of-iced-cola"
-   },
-   {
-    "id": 8879621,
-    "slug": "close-up-shot-of-a-soft-drink-with-ice-cubes"
-   },
-   {
-    "id": 4113656,
-    "slug": "coca-cola-with-ice-poured-into-a-glass"
-   },
-   {
-    "id": 15205136,
-    "slug": "close-up-photo-of-coca-cola-drink"
-   }
-  ],
-  "openverse": [
-   "glass of coke top view",
-   "soft drink glass ice"
-  ]
- },
- "iced-tea2": {
-  "pexels": [
-   {
-    "id": 1194030,
-    "slug": "macro-photography-of-clear-drinking-glass-with-lemon-fruit-and-black-straw"
-   },
-   {
-    "id": 4021872,
-    "slug": "glass-of-fresh-cocktail-and-pieces-of-lemon"
-   }
-  ],
-  "openverse": [
-   "iced tea top view",
-   "lemon iced tea glass"
-  ]
- },
- "sparkling2": {
-  "pexels": [
-   {
-    "id": 12987267,
-    "slug": "a-glass-filled-with-ice-cubes"
-   },
-   {
-    "id": 7664100,
-    "slug": "close-up-photo-of-a-water-poured-in-a-glass"
-   },
-   {
-    "id": 2234858,
-    "slug": "water-bubbles"
-   }
-  ],
-  "openverse": [
-   "glass of water ice top view",
-   "soda water lemon glass"
-  ]
- },
- "tiramisu2": {
-  "pexels": [],
-  "openverse": [
-   "tiramisu glass",
-   "tiramisu top view",
-   "tiramisu dessert cup"
+   "jalapeno rings",
+   "pickled jalapenos",
+   "sliced green chilies",
+   "green chili slices"
   ]
  }
 }
