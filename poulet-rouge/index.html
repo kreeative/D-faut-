@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Poulet Rouge — concept non officiel</title>
+  <meta name="description" content="Un concept non officiel de Kreeative : commander chez Poulet Rouge en composant son bol, qui se remplit sous vos yeux. Sans lien avec Poulet Rouge ; aucune commande n’est envoyée." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#f7ebe5" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#160908" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Poulet Rouge — concept by Kreeative" />
+  <meta property="og:description" content="An unofficial ordering concept: build your Poulet Rouge bowl and watch it fill up. Not affiliated with Poulet Rouge." />
+  <meta property="og:image" content="https://poulet-rouge-concept.vercel.app/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="A red Poulet Rouge bowl filled with grilled chicken, corn, avocado, black beans, tomatoes, feta, red onion and cucumber, beside the line “Votre bol, à votre façon.” Labelled as an unofficial concept." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="assets/fonts/figtree-500.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-800.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <a class="skip" href="#view" data-i18n="skip">Aller au contenu</a>
+
+  <!-- Warm red light behind the glass -->
+  <div class="backdrop" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <div class="app">
+    <div class="main" id="main">
+      <div class="main__scroll" id="mainScroll">
+        <header class="topbar" id="topbar">
+          <button class="iconbtn" type="button" data-action="open-info" data-i18n-label="aria.info" aria-label="Infos et heures du restaurant"><span data-icon="menu"></span></button>
+          <a class="brand" href="#/menu"><span class="logo logo-slot"></span><span class="brand__name">Poulet <b>Rouge</b></span></a>
+          <button class="langbtn" type="button" data-action="toggle-lang" data-i18n-label="aria.lang" aria-label="English version"><span data-lang-label lang="en-CA">EN</span></button>
+          <button class="iconbtn" type="button" data-action="toggle-search" data-i18n-label="aria.search" aria-label="Chercher dans le menu" aria-expanded="false"><span data-icon="search"></span></button>
+          <span class="topbar__cart-space" aria-hidden="true"></span>
+        </header>
+        <main class="view" id="view" tabindex="-1"></main>
+      </div>
+
+      <a class="cartbtn" id="cartBtn" href="#/cart" aria-label="Panier vide"><span data-icon="bag"></span><span class="cartbtn__badge" data-cart-count hidden>0</span></a>
+
+      <nav class="tabbar" id="tabbar" data-i18n-label="aria.mainNav" aria-label="Navigation principale">
+        <a class="tab" href="#/menu" data-tab="menu"><span data-icon="home"></span><span class="tab__label" data-i18n="tab.menu">Menu</span></a>
+        <a class="tab" href="#/favorites" data-tab="favorites"><span data-icon="heart"></span><span class="tab__label" data-i18n="tab.favorites">Favoris</span></a>
+        <a class="tab" href="#/orders" data-tab="orders"><span data-icon="receipt"></span><span class="tab__label" data-i18n="tab.orders">Commandes</span><span class="tab__dot" hidden></span></a>
+        <a class="tab" href="#/profile" data-tab="profile"><span data-icon="user"></span><span class="tab__label" data-i18n="tab.profile">Profil</span></a>
+      </nav>
+    </div>
+
+    <aside class="side" id="side" data-i18n-label="aria.yourOrder" aria-label="Votre commande">
+      <div class="side__inner" id="sideInner"></div>
+    </aside>
+  </div>
+
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer__scrim" data-action="close-info"></div>
+    <div class="drawer__panel" id="drawerPanel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle"></div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <p class="noscript">La commande en ligne demande JavaScript. / Online ordering needs JavaScript.</p>
+  </noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/strings.js"></script>
+  <script src="js/credits.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/bowl.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

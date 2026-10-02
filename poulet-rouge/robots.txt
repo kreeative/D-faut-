@@ -1,0 +1,5 @@
+# An unofficial design concept. Every page says "noindex", so it stays out
+# of search results; crawlers may read the pages to see that (and so link
+# previews can load the share image).
+User-agent: *
+Allow: /
