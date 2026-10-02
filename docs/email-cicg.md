@@ -2,7 +2,7 @@
 
 Destinataires trouvés sur le site officiel du CICG (cicg.gouv.ci) : `communication@cicg.gouv.ci` (À), `info@cicg.gouv.ci` (Cc). Téléphone du CICG pour une relance : +225 27 22 22 03 90.
 
-Avant l'envoi : publier le concept (GitHub Pages ou Vercel), remplacer `[LIEN DU CONCEPT]`, compléter le téléphone dans la signature, joindre les deux aperçus (`docs/screenshots/accueil-desktop-fold.jpg` et une capture mobile).
+Le concept est en ligne : https://concept-portail-citoyen-ci.vercel.app. Avant l'envoi : compléter le téléphone dans la signature et joindre un aperçu (`docs/screenshots/accueil-desktop-fold.jpg`).
 
 ---
 
@@ -14,7 +14,7 @@ Je suis Anne-Kelly Kouyaté, designer web ivoirienne et fondatrice de Kreeative,
 
 Très attachée au rayonnement numérique de la Côte d'Ivoire, j'ai réalisé à titre personnel un concept de modernisation de la page d'accueil du portail gouv.ci. Il s'agit d'une étude de design, non officielle, qui propose une direction : un portail pensé d'abord pour les démarches des citoyens, sur téléphone comme sur ordinateur.
 
-Vous pouvez le consulter ici : [LIEN DU CONCEPT]
+Vous pouvez le consulter ici : https://concept-portail-citoyen-ci.vercel.app
 
 En quelques points :
 

@@ -58,7 +58,11 @@ python3 -m http.server 8000
 
 Ouvrir directement `index.html` fonctionne aussi.
 
-## Publier
+## En ligne
+
+Le concept est publié sur Vercel : **https://concept-portail-citoyen-ci.vercel.app** (déploiement automatique depuis la branche `gouv-ci-concept` ; adresse volontairement sans « gouv » pour éviter toute confusion avec le site officiel).
+
+## Publier ailleurs
 
 - **GitHub Pages** : Settings → Pages → « Deploy from a branch » → branche `main`, dossier `/ (root)`. Le dépôt doit être public (ou sur un forfait GitHub payant).
 - **Vercel / Netlify** : importer le dépôt, aucun réglage de build nécessaire (site statique).
