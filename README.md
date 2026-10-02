@@ -58,9 +58,13 @@ python3 -m http.server 8000
 
 Ouvrir directement `index.html` fonctionne aussi.
 
+## Modifier le site soi-même
+
+Le guide pas à pas (modifier un texte, une couleur, une photo, travailler avec Figma, publier automatiquement) est dans [`docs/GUIDE.md`](docs/GUIDE.md).
+
 ## En ligne
 
-Le concept est publié sur Vercel : **https://concept-portail-citoyen-ci.vercel.app** (déploiement automatique depuis la branche `gouv-ci-concept` ; adresse volontairement sans « gouv » pour éviter toute confusion avec le site officiel).
+Le concept est publié sur Vercel : **https://concept-portail-citoyen-ci.vercel.app** (adresse volontairement sans « gouv » pour éviter toute confusion avec le site officiel). Pour que chaque commit sur la branche `gouv-ci-concept` soit publié automatiquement, le projet Vercel doit être relié au dépôt GitHub : voir la section 2 du [guide](docs/GUIDE.md).
 
 ## Publier ailleurs
 
@@ -95,6 +99,8 @@ assets/fonts/           # Fraunces + Instrument Sans (auto-hébergées, licence 
 assets/img/             # photos (Wikimedia Commons, CC0 / CC BY) et favicon
 docs/screenshots/       # captures utilisées dans ce README
 docs/video/             # vidéo TikTok (mp4), scène et script d'enregistrement
+docs/figma/             # script d'export du site vers Figma (deux planches 1440 et 390)
+docs/GUIDE.md           # guide : modifier, publier, travailler avec Figma
 docs/email-cicg.md      # email de proposition au CICG
 ```
 

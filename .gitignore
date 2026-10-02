@@ -3,3 +3,4 @@ Thumbs.db
 node_modules/
 *.log
 docs/video/out/
+docs/figma/out/
