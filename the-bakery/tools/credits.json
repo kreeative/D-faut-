@@ -292,5 +292,47 @@
    729,
    747
   ]
+ },
+ "macarons": {
+  "src": "ov",
+  "id": "19243850-90f4-4f62-8ed9-9cb3fcd46daf",
+  "page": "https://stocksnap.io/photo/cookies-dessert-SOYZBHL7J3",
+  "title": "Cookies Dessert",
+  "creator": "Foodie Girl",
+  "creator_url": "https://stocksnap.io/author/121423",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "provider": "stocksnap",
+  "source_size": [
+   960,
+   640
+  ],
+  "box": [
+   0,
+   0,
+   960,
+   640
+  ]
+ },
+ "hot-chocolate": {
+  "src": "ov",
+  "id": "97b930f6-17f5-4f1f-aecb-1bd1de8420c9",
+  "page": "https://stocksnap.io/photo/holiday-hot-EBHBEJ2ZHM",
+  "title": "Holiday Hot",
+  "creator": "Travel Photographer",
+  "creator_url": "https://stocksnap.io",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "provider": "stocksnap",
+  "source_size": [
+   960,
+   1440
+  ],
+  "box": [
+   0,
+   58,
+   960,
+   1210
+  ]
  }
 }
