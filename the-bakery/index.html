@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>The Bakery · Might be delicious!</title>
+  <meta name="description" content="A neighbourhood bakery with a baguette for a B and a cupcake for an e. Croissants, cookies, pretzels and loaves, baked before sunrise. A brand concept by Kreeative." />
+  <meta name="theme-color" content="#ee7aaf" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Bakery · Might be delicious!" />
+  <meta property="og:description" content="Croissants, cookies, pretzels and loaves, baked before sunrise. A brand concept by Kreeative." />
+  <meta property="og:image" content="https://the-bakery-concept.vercel.app/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The Bakery wordmark and “Might be scrumptious!” lettering in cream on pink, with a croissant in its paper sleeve" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="assets/fonts/big-shoulders-display-900.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/outfit-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top"><span class="wordmark" role="img" aria-label="The Bakery"></span></a>
+    <nav class="nav__links" aria-label="On this page">
+      <a href="#bakes">Today’s bakes</a>
+      <a href="#story">Our name</a>
+      <a href="#bags">The bags</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn--pink nav__cta" href="order/">Order now</a>
+  </header>
+
+  <main id="main">
+    <!-- Hero: the poster from the identity -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="eyebrow">Neighbourhood bakery · Kensington Market</p>
+        <h1 class="hero__title" id="hero-title"><span class="sr-only">Might be scrumptious!</span><span class="lettering" aria-hidden="true"></span></h1>
+        <p class="hero__lede">Croissants, cookies, pretzels and loaves, baked by hand before sunrise. Order ahead, skip the line and take it home in the pink bag.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--ink" href="order/">Order for pickup</a>
+          <a class="btn btn--line" href="#bakes">See today’s bakes</a>
+        </div>
+        <p class="hero__status" data-status></p>
+      </div>
+      <div class="hero__art">
+        <img class="hero__sleeve" src="assets/brand/sleeve-cut-1000.webp" srcset="assets/brand/sleeve-cut-560.webp 560w, assets/brand/sleeve-cut-1000.webp 605w" sizes="(min-width: 960px) 240px, 180px" width="605" height="1465"
+          alt="A butter croissant in The Bakery’s cream paper sleeve, printed with “Might be scrumptious!” and the mascot" fetchpriority="high" />
+        <img class="float float--cookie" src="assets/menu/chunk-cookie-400.webp" width="400" height="400" alt="" />
+        <img class="float float--cupcake" src="assets/menu/pink-cupcake-400.webp" width="400" height="400" alt="" />
+        <img class="float float--pretzel" src="assets/menu/butter-pretzel-400.webp" width="400" height="400" alt="" />
+        <span class="mascot hero__mascot" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <!-- Ticker -->
+    <div class="ticker-wrap" aria-hidden="true"><div class="ticker">
+      <div class="ticker__track">
+        <span>Croissants</span><i></i><span>Cookies</span><i></i><span>Pretzels</span><i></i><span>Loaves</span><i></i><span>Might be delicious!</span><i></i>
+        <span>Croissants</span><i></i><span>Cookies</span><i></i><span>Pretzels</span><i></i><span>Loaves</span><i></i><span>Might be delicious!</span><i></i>
+      </div>
+    </div></div>
+
+    <!-- Today's bakes, from the ordering app's menu -->
+    <section class="section bakes" id="bakes" aria-labelledby="bakes-title">
+      <div class="section__head">
+        <h2 class="section__title" id="bakes-title">Fresh out of the oven</h2>
+        <p class="section__sub">Order any of these ahead for pickup or delivery. When it’s gone, it’s gone.</p>
+      </div>
+      <ul class="bakes__grid" data-bakes></ul>
+      <noscript><p class="section__sub">The menu needs JavaScript to show. <a href="order/">Open the full menu</a>.</p></noscript>
+      <p class="bakes__more"><a class="btn btn--ink" href="order/">See the whole menu</a></p>
+    </section>
+
+    <!-- The identity, explained -->
+    <section class="section story" id="story" aria-labelledby="story-title">
+      <div class="section__head">
+        <p class="eyebrow eyebrow--rose">Our name</p>
+        <h2 class="section__title" id="story-title">Spelled in bread and buttercream</h2>
+      </div>
+      <div class="story__wordmark" role="img" aria-label="The Bakery wordmark, with the B drawn as a baguette and the e as a cupcake">
+        <i class="wm wm--letters"></i><i class="wm wm--accents"></i>
+      </div>
+      <div class="story__cards">
+        <article class="story__card">
+          <span class="tile"><i class="mark mark--b"></i></span>
+          <h3>The B is a baguette</h3>
+          <p>Six scores down its length, like the ones we cut into every loaf before it goes in the oven.</p>
+        </article>
+        <article class="story__card">
+          <span class="tile"><i class="mark mark--e"></i></span>
+          <h3>The e is a cupcake</h3>
+          <p>A swirl of buttercream on a pleated paper case. Look again: it’s also our mascot’s head.</p>
+        </article>
+        <article class="story__card">
+          <span class="tile"><i class="mark mark--wheat"></i></span>
+          <h3>The rest is drawn by hand</h3>
+          <p>Ears of wheat, pretzels, croissants and slices of toast, drawn with one pen and printed on every bag.</p>
+        </article>
+      </div>
+      <div class="meet">
+        <span class="mascot meet__mascot" aria-hidden="true"></span>
+        <div>
+          <h3 class="meet__title">Meet the baker</h3>
+          <p>Our mascot has a cupcake for a head and is always out of breath from running bags to the counter. You’ll find them waving from every sleeve.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packaging -->
+    <section class="section bags" id="bags" aria-labelledby="bags-title">
+      <figure class="bags__photo">
+        <img src="assets/brand/bags-1400.webp" srcset="assets/brand/bags-800.webp 800w, assets/brand/bags-1400.webp 1246w" sizes="(min-width: 1240px) 1160px, calc(100vw - 40px)" width="1246" height="594" loading="lazy"
+          alt="A row of pink kraft bags printed “Might be delicious!” and “Might be scrumptious!”, with photos of cookies and croissants and the B on a round sticker" />
+      </figure>
+      <div class="bags__row">
+        <div class="bags__copy">
+          <p class="eyebrow eyebrow--rose">The bags</p>
+          <h2 class="section__title" id="bags-title">A modest promise, printed big</h2>
+          <p>Cookies go home in a bag that says “Might be delicious!”. Croissants get “Might be scrumptious!”. We keep the promise modest and let the bake do the talking.</p>
+          <a class="btn btn--pink" href="order/#/dish/chunk-cookie">Fill a bag with cookies</a>
+        </div>
+        <figure class="bags__cookies">
+          <img src="assets/brand/cookies-1000.webp" srcset="assets/brand/cookies-600.webp 600w, assets/brand/cookies-1000.webp 1000w" sizes="(min-width: 960px) 460px, calc(100vw - 40px)" width="1000" height="1000" loading="lazy"
+            alt="The Bakery wordmark over a pile of chocolate chunk cookies, with the B and the e in pink" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Visit -->
+    <section class="section visit" id="visit" aria-labelledby="visit-title">
+      <div class="visit__card">
+        <p class="eyebrow">Visit</p>
+        <h2 class="section__title" id="visit-title">Come say hi</h2>
+        <p class="visit__addr" data-address></p>
+        <p class="visit__status" data-status></p>
+        <table class="hours" data-hours><caption class="sr-only">Opening hours</caption><tbody></tbody></table>
+        <div class="visit__ctas">
+          <a class="btn btn--ink" href="order/">Order ahead</a>
+          <a class="btn btn--line" data-maps href="#" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+      <div class="visit__art" aria-hidden="true">
+        <p class="bubble">See you before sunrise!</p>
+        <span class="mascot visit__mascot"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__inner">
+      <span class="foot__mark" aria-hidden="true"><i class="mark mark--b"></i></span>
+      <div class="foot__text">
+        <p><strong>The Bakery is a brand concept.</strong> There is no shop yet, and orders on this site are a demo: nothing is baked, sent or charged.</p>
+        <p>Brand identity and website by <a href="https://kreeative.xyz" target="_blank" rel="noopener">Kreeative</a>.</p>
+      </div>
+      <details class="credits" id="credits">
+        <summary>Photo credits</summary>
+        <p>Product photos are cut out of their backgrounds. Packaging and lettering are The Bakery’s own artwork.</p>
+        <ul data-credits></ul>
+      </details>
+    </div>
+  </footer>
+
+  <script src="order/js/config.js"></script>
+  <script src="assets/credits.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
