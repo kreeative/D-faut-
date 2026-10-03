@@ -1,0 +1,18 @@
+{
+ "croissant": { "pexels": [{ "id": 41298, "slug": "food-morning-breakfast-white" }], "openverse": ["croissant isolated", "croissant"] },
+ "pain-au-chocolat": { "openverse": ["pain au chocolat", "chocolate croissant"] },
+ "almond-croissant": { "openverse": ["almond croissant", "croissant almonds"] },
+ "cookie": { "pexels": [{ "id": 8081574, "slug": "chocolate-chip-cookies-on-a-plate" }, { "id": 301972, "slug": "cookies-crumbs-dessert-food" }], "openverse": ["chocolate chip cookie isolated", "chocolate chip cookie"] },
+ "cookie-stack": { "pexels": [{ "id": 4110541, "slug": "photo-of-stacked-cookies" }, { "id": 3252139, "slug": "stack-of-cookies" }], "openverse": ["stack of cookies", "cookies stacked"] },
+ "cookie-double": { "openverse": ["double chocolate cookie", "chocolate cookies"] },
+ "sourdough": { "pexels": [{ "id": 7541727, "slug": "loaf-of-bread" }, { "id": 15301249, "slug": "close-up-of-a-loaf-of-bread" }], "openverse": ["sourdough bread loaf", "sourdough boule"] },
+ "baguette": { "pexels": [{ "id": 1756064, "slug": "baguette-on-white-surface" }, { "id": 5588987, "slug": "tasty-baguette-on-white-marble-surface" }], "openverse": ["baguette bread", "baguette"] },
+ "milk-bread": { "openverse": ["sliced white bread loaf", "pain de mie", "bread loaf sliced"] },
+ "pretzel": { "pexels": [{ "id": 18529797, "slug": "close-up-of-a-pretzel" }], "openverse": ["soft pretzel", "pretzel salt"] },
+ "cinnamon-roll": { "pexels": [{ "id": 9443534, "slug": "close-up-photo-of-cinnamon-roll" }, { "id": 4610166, "slug": "cinnamon-rolls-on-white-plate" }], "openverse": ["cinnamon roll", "cinnamon bun"] },
+ "cupcake-pink": { "pexels": [{ "id": 853005, "slug": "cupcake-with-pink-icing" }, { "id": 853006, "slug": "brown-cupcake-with-pink-icing-macro-photographyu" }, { "id": 1395049, "slug": "flat-lay-photography-of-cupcake-on-plate" }], "openverse": ["pink cupcake", "strawberry cupcake"] },
+ "cupcake-choc": { "openverse": ["chocolate cupcake", "chocolate cupcake frosting"] },
+ "latte": { "pexels": [{ "id": 8605859, "slug": "a-glass-of-iced-coffee" }, { "id": 10738363, "slug": "a-glass-of-coffee-with-milk" }, { "id": 5305639, "slug": "a-glass-of-iced-caramel-macchiato" }], "openverse": ["latte glass", "cappuccino cup"] },
+ "hot-chocolate": { "openverse": ["hot chocolate mug", "hot cocoa whipped cream"] },
+ "strawberry-milk": { "pexels": [{ "id": 2424832, "slug": "strawberry-smoothie-on-a-clear-glass" }, { "id": 845552, "slug": "clear-drinking-glass-with-strawberry" }], "openverse": ["strawberry milk", "strawberry milkshake"] }
+}

@@ -1,0 +1,8 @@
+{
+ "wordmark": { "src": "brand/logo-black.webp", "key": "dark", "crop": [226, 728, 1722, 1216], "blur": 0.7 },
+ "monogram": { "src": "brand/b-pink-on-cream.webp", "key": "pink", "crop": [747, 332, 1233, 1718], "blur": 0.7 },
+ "wheat": { "src": "brand/wheat.webp", "key": "pink", "crop": [768, 273, 1309, 1454], "blur": 0.7 },
+ "mascot": { "src": "brand/sleeve.webp", "key": "pink", "crop": [588, 1218, 832, 1622], "scale": 4, "blur": 0.8, "turd": 40 },
+ "scrumptious": { "src": "brand/sleeve.webp", "key": "pink", "crop": [610, 918, 1151, 1229], "scale": 3, "blur": 0.8, "turd": 30 },
+ "pattern": { "src": "brand/pattern.webp", "key": "pink", "blur": 0.7, "turd": 6 }
+}
