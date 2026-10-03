@@ -229,5 +229,110 @@
    1750,
    2000
   ]
+ },
+ "double-cookie": {
+  "src": "ov",
+  "id": "896fdf87-82aa-4894-b0ef-6605ae12cbf7",
+  "page": "https://www.rawpixel.com/image/6066369/free-public-domain-cc0-photo",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "provider": "rawpixel",
+  "source_size": [
+   1024,
+   680
+  ],
+  "box": [
+   0,
+   0,
+   1024,
+   680
+  ]
+ },
+ "baguette": {
+  "src": "pexels",
+  "id": 5588987,
+  "page": "https://www.pexels.com/photo/tasty-baguette-on-white-marble-surface-5588987/",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "Pexels License",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   2000,
+   2962
+  ],
+  "box": [
+   0,
+   0,
+   2000,
+   2962
+  ]
+ },
+ "wholemeal-loaf": {
+  "src": "ov",
+  "id": "50415f33-6674-47be-9a99-00c18b8a2f7c",
+  "page": "https://www.rawpixel.com/image/5902268/photo-image-public-domain-food-free",
+  "title": "Free close single toasted bun",
+  "creator": "",
+  "creator_url": "",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "provider": "rawpixel",
+  "source_size": [
+   1024,
+   768
+  ],
+  "box": [
+   0,
+   0,
+   1024,
+   768
+  ]
+ },
+ "butter-pretzel": {
+  "src": "ov",
+  "id": "f779e699-a7d6-4a0e-84f0-abb018edc5ab",
+  "page": "https://www.flickr.com/photos/7633518@N08/54332281263",
+  "title": "Auntie Anne's baked frozen pretzel",
+  "creator": "sarahstierch",
+  "creator_url": "https://www.flickr.com/photos/7633518@N08",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "provider": "flickr",
+  "source_size": [
+   768,
+   1024
+  ],
+  "box": [
+   115,
+   133,
+   729,
+   747
+  ]
+ },
+ "choc-cupcake": {
+  "src": "ov",
+  "id": "75078018-323f-4c44-b453-58a3ad28c89c",
+  "page": "https://www.flickr.com/photos/95142644@N00/48685498182",
+  "title": "All the best bosses bring homemade cupcakes to team meetings",
+  "creator": "Ruth and Dave",
+  "creator_url": "https://www.flickr.com/photos/95142644@N00",
+  "license": "BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "provider": "flickr",
+  "source_size": [
+   1024,
+   768
+  ],
+  "box": [
+   128,
+   128,
+   896,
+   768
+  ]
  }
 }
