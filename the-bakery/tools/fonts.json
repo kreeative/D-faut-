@@ -19,5 +19,11 @@
  "staging/fonts/outfit-400.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-400-normal.woff2",
  "staging/fonts/outfit-500.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-500-normal.woff2",
  "staging/fonts/outfit-600.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-600-normal.woff2",
- "staging/fonts/outfit-700.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-700-normal.woff2"
+ "staging/fonts/outfit-700.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-700-normal.woff2",
+ "big-shoulders-display-800.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/big-shoulders-display@latest/latin-800-normal.woff2",
+ "big-shoulders-display-900.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/big-shoulders-display@latest/latin-900-normal.woff2",
+ "outfit-400.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-400-normal.woff2",
+ "outfit-500.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-500-normal.woff2",
+ "outfit-600.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-600-normal.woff2",
+ "outfit-700.woff2": "https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-700-normal.woff2"
 }

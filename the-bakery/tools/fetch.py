@@ -7,11 +7,12 @@ fonts          fonts.json -> files (a key with a "/" is relative to this folder,
                otherwise it goes to ../assets/fonts/); skipped when present.
 marks          marks.json: the brand's own artwork in brand/ keyed to one colour
                and traced with potrace into SVG, in staging/marks/.
-sheets mode    (no picks.json): every candidate in sources.json -- Pexels photos
-               by id, plus Openverse search results limited to CC0, public
-               domain and CC BY -- as labelled contact sheets in staging/sheets/,
-               with their details in staging/candidates.json.
-download mode  (picks.json present): each pick cropped around a focal point,
+sheets         every candidate in sources.json -- Pexels photos by id, plus
+               Openverse search results limited to CC0, public domain and
+               CC BY -- as labelled contact sheets in staging/sheets/, with
+               their details in staging/candidates.json; keys that already
+               have a sheet are skipped.
+download       (picks.json present): each pick cropped around a focal point,
                or cut out of its background ("cut": "remove-bg", with rembg),
                saved as WebP at the listed widths in ../assets/<dir>/, with
                credits in credits.json. "pick": "local:brand/x.webp" uses one
@@ -238,6 +239,8 @@ def run_sheets():
     cpath = os.path.join(STAGING, "candidates.json")
     allc = json.load(open(cpath)) if os.path.exists(cpath) else {}
     for key, entry in sources.items():
+        if os.path.exists(os.path.join(STAGING, "sheets", key + ".jpg")) and key in allc:
+            continue
         cands = candidates_for(key, entry)
         rows = max(1, (len(cands) + cols - 1) // cols)
         sheet = Image.new("RGB", (cols * tile, rows * (tile + 24)), (232, 230, 226))
@@ -375,8 +378,7 @@ if __name__ == "__main__":
     os.makedirs(STAGING, exist_ok=True)
     run_fonts()
     run_marks()
+    run_sheets()
     if os.path.exists(os.path.join(HERE, "picks.json")):
         run_download()
-    else:
-        run_sheets()
     sys.exit(0)
