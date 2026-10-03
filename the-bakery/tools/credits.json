@@ -167,27 +167,6 @@
    665
   ]
  },
- "hot-chocolate": {
-  "src": "ov",
-  "id": "97b930f6-17f5-4f1f-aecb-1bd1de8420c9",
-  "page": "https://stocksnap.io/photo/holiday-hot-EBHBEJ2ZHM",
-  "title": "Holiday Hot",
-  "creator": "Travel Photographer",
-  "creator_url": "https://stocksnap.io",
-  "license": "CC0 1.0",
-  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "provider": "stocksnap",
-  "source_size": [
-   960,
-   1440
-  ],
-  "box": [
-   0,
-   72,
-   960,
-   1224
-  ]
- },
  "strawberry-milk": {
   "src": "ov",
   "id": "5d619f5a-0f78-4ada-995e-63f5cd7ceff3",
@@ -312,27 +291,6 @@
    133,
    729,
    747
-  ]
- },
- "choc-cupcake": {
-  "src": "ov",
-  "id": "75078018-323f-4c44-b453-58a3ad28c89c",
-  "page": "https://www.flickr.com/photos/95142644@N00/48685498182",
-  "title": "All the best bosses bring homemade cupcakes to team meetings",
-  "creator": "Ruth and Dave",
-  "creator_url": "https://www.flickr.com/photos/95142644@N00",
-  "license": "BY 2.0",
-  "license_url": "https://creativecommons.org/licenses/by/2.0/",
-  "provider": "flickr",
-  "source_size": [
-   1024,
-   768
-  ],
-  "box": [
-   128,
-   128,
-   896,
-   768
   ]
  }
 }

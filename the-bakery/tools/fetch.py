@@ -294,6 +294,10 @@ def cut_out(im, p):
     out = remove(im.convert("RGB"), session=_SESSION)
     if p.get("rotate"):  # degrees, counter-clockwise; the trim below re-fits the box
         out = out.rotate(p["rotate"], expand=True, resample=Image.BICUBIC)
+    if p.get("alpha_floor"):  # drop faint haze the model half-keeps (white on white)
+        r, g, b, alpha = out.split()
+        alpha = alpha.point(lambda v, f=p["alpha_floor"]: 0 if v < f else v)
+        out = Image.merge("RGBA", (r, g, b, alpha))
     a = np.asarray(out.split()[3])
     keep = a > 40
     if p.get("largest", True):

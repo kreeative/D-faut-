@@ -9,10 +9,10 @@
  "wholemeal-loaf": {"pick": "ov:50415f33-6674-47be-9a99-00c18b8a2f7c", "from": "loaf-iso", "dir": "menu", "widths": [800, 400], "cut": "remove-bg"},
  "butter-pretzel": {"pick": "ov:f779e699-a7d6-4a0e-84f0-abb018edc5ab", "from": "pretzel-iso", "aspect": [1, 1], "cx": 0.55, "cy": 0.43, "zoom": 1.25, "dir": "menu", "widths": [800, 400], "cut": "remove-bg"},
  "pink-cupcake": {"pick": "pexels:853005", "from": "cupcake-pink", "dir": "menu", "widths": [800, 400], "cut": "remove-bg"},
- "choc-cupcake": {"pick": "ov:75078018-323f-4c44-b453-58a3ad28c89c", "from": "cupcake-choc-iso", "aspect": [6, 5], "cx": 0.5, "cy": 0.62, "zoom": 1.2, "dir": "menu", "widths": [800, 400], "cut": "remove-bg"},
+ "macarons": {"pick": "ov:19243850-90f4-4f62-8ed9-9cb3fcd46daf", "from": "cookie-stack", "dir": "menu", "widths": [800, 400], "cut": "remove-bg"},
  "cinnamon-roll": {"pick": "pexels:9443534", "from": "cinnamon-roll", "aspect": [1, 1], "cx": 0.5, "cy": 0.73, "zoom": 1.05, "dir": "menu", "widths": [800, 400], "cut": "remove-bg"},
  "iced-latte": {"pick": "ov:1e7e1802-2463-4d6c-b12e-120a8fbee181", "from": "latte", "aspect": [1, 2], "cx": 0.36, "cy": 0.6, "zoom": 1.34, "dir": "menu", "widths": [800, 400], "cut": "remove-bg"},
- "hot-chocolate": {"pick": "ov:97b930f6-17f5-4f1f-aecb-1bd1de8420c9", "from": "hot-chocolate", "aspect": [5, 6], "cx": 0.5, "cy": 0.45, "dir": "menu", "widths": [800, 400], "cut": "remove-bg"},
+ "hot-chocolate": {"pick": "ov:97b930f6-17f5-4f1f-aecb-1bd1de8420c9", "from": "hot-chocolate", "aspect": [5, 6], "cx": 0.5, "cy": 0.44, "largest": false, "alpha_floor": 70, "dir": "menu", "widths": [800, 400], "cut": "remove-bg"},
  "strawberry-milk": {"pick": "ov:5d619f5a-0f78-4ada-995e-63f5cd7ceff3", "from": "strawberry-milk", "dir": "menu", "widths": [800, 400], "cut": "remove-bg"},
  "sleeve": {"pick": "local:brand/sleeve.webp", "cut": "remove-bg", "dir": "brand", "name": "sleeve-cut", "widths": [1000, 560], "pad": 0.03, "square": false}
 }
