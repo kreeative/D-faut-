@@ -14,6 +14,7 @@ sheets         every candidate in sources.json -- Pexels photos by id, plus
                have a sheet are skipped.
 download       (picks.json present): each pick cropped around a focal point,
                or cut out of its background ("cut": "remove-bg", with rembg),
+               optionally turned ("rotate", degrees counter-clockwise),
                saved as WebP at the listed widths in ../assets/<dir>/, with
                credits in credits.json. "pick": "local:brand/x.webp" uses one
                of the brand's own images instead of a photo library.
@@ -291,6 +292,8 @@ def cut_out(im, p):
     if _SESSION is None:
         _SESSION = new_session(os.environ.get("REMBG_MODEL", "isnet-general-use"))
     out = remove(im.convert("RGB"), session=_SESSION)
+    if p.get("rotate"):  # degrees, counter-clockwise; the trim below re-fits the box
+        out = out.rotate(p["rotate"], expand=True, resample=Image.BICUBIC)
     a = np.asarray(out.split()[3])
     keep = a > 40
     if p.get("largest", True):
