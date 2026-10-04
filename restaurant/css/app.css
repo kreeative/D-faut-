@@ -354,7 +354,10 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .hero__sub { margin-top: 8px; font-size: 14.5px; color: var(--ink-3); }
 
 /* ---------- Search ---------- */
-.search { display: flex; align-items: center; gap: 6px; margin: -4px 0 18px; }
+/* The bar opens between the hero and the sections with 20px clear above
+   and below it, so its 4px focus ring never meets either */
+.search { display: flex; align-items: center; gap: 10px; }
+.search:not([hidden]) + .cats { margin-top: 18px; }
 .search__field {
   flex: 1; min-width: 0;
   display: flex; align-items: center; gap: 10px;
@@ -371,6 +374,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 }
 .search__field input::placeholder { color: var(--ink-3); }
 .search__field input::-webkit-search-cancel-button { display: none; }
+.search .textbtn { flex: none; min-height: 44px; padding: 0 12px; margin-right: -12px; }
 
 /* ---------- Categories ---------- */
 .cats {
