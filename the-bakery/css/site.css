@@ -226,8 +226,6 @@ h1, h2, h3, p, figure { margin: 0; }
 .float--cookie { width: 150px; left: calc(50% - 205px); top: 70px; animation-delay: -2s; }
 .float--cupcake { width: 128px; left: calc(50% + 70px); top: 14px; z-index: 3; animation-delay: -4s; }
 .float--pretzel { width: 128px; left: calc(50% + 86px); top: 210px; z-index: 3; }
-/* a sticker seals the sleeve, like the ones on the bags */
-.hero__seal { position: absolute; z-index: 3; left: calc(50% + 32px); top: 166px; width: 62px; rotate: -12deg; }
 .hero__mascot {
   position: absolute; left: 0; bottom: -44px; z-index: 1;
   width: 96px; background: var(--cream);
@@ -414,7 +412,6 @@ h1, h2, h3, p, figure { margin: 0; }
   .float--cupcake { width: 160px; left: calc(50% + 80px); top: 20px; }
   .float--pretzel { width: 160px; left: calc(50% + 100px); top: 270px; }
   .hero__mascot { width: 130px; left: 6px; bottom: -98px; }
-  .hero__seal { left: calc(50% + 55px); top: 198px; width: 84px; }
   .bags__seal { top: -34px; right: 56px; width: 108px; }
   .bags__seal--wheat { top: auto; right: auto; bottom: -26px; left: -26px; width: 96px; }
   .bakes__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
