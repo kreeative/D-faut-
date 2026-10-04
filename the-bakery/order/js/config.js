@@ -109,14 +109,15 @@
     },
     diets: ["v", "vg", "nf"],
 
+    /* `doodle` names a hand-drawn sticker in ../assets/doodles/ (see css .doodle) */
     categories: [
-      { id: "all", name: "Everything", icon: "bag" },
-      { id: "croissants", name: "Croissants", icon: "catCroissant" },
-      { id: "cookies", name: "Cookies", icon: "catCookie" },
-      { id: "breads", name: "Breads", icon: "catBread" },
-      { id: "pretzels", name: "Pretzels", icon: "catPretzel" },
-      { id: "sweets", name: "Sweets", icon: "catCupcake" },
-      { id: "drinks", name: "Drinks", icon: "catDrink" },
+      { id: "all", name: "Everything", doodle: "b" },
+      { id: "croissants", name: "Croissants", doodle: "croissant" },
+      { id: "cookies", name: "Cookies", doodle: "cookies" },
+      { id: "breads", name: "Breads", doodle: "toast" },
+      { id: "pretzels", name: "Pretzels", doodle: "pretzel" },
+      { id: "sweets", name: "Sweets", doodle: "cupcake" },
+      { id: "drinks", name: "Drinks", doodle: "cream-cup" },
     ],
 
     /* Each item's cut-out photo is read from ../assets/menu/<id>-800.webp, with a

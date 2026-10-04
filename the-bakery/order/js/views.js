@@ -190,7 +190,7 @@
         .map((c) => {
           const on = c.id === ui.category && !ui.query.trim();
           return '<button class="cat' + (on ? " is-on" : "") + '" type="button" data-action="set-cat" data-cat="' + c.id + '" aria-pressed="' + on + '">' +
-            '<span class="cat__icon">' + icon(c.icon) + '</span><span class="cat__label">' + esc(c.name) + "</span></button>";
+            sticker(c.doodle, "cat__sticker") + '<span class="cat__label">' + esc(c.name) + "</span></button>";
         })
         .join("") +
       "</div>" +
@@ -217,6 +217,11 @@
     return '<span class="mascot' + (cls ? " " + cls : "") + '" aria-hidden="true"></span>';
   }
 
+  /* A round sticker with one of the brand's doodles, like the ones that close the bags */
+  function sticker(doodle, cls) {
+    return '<span class="sticker' + (cls ? " " + cls : "") + '" aria-hidden="true"><i class="doodle doodle--' + esc(doodle) + '"></i></span>';
+  }
+
   /* ----------------------------------------------------------
      Favorites / Orders / Profile tabs
      ---------------------------------------------------------- */
@@ -224,8 +229,9 @@
     return '<header class="page-head"><h1 class="page-title">' + esc(title) + "</h1>" + (sub ? '<p class="page-sub">' + esc(sub) + "</p>" : "") + "</header>";
   }
 
-  function empty(iconName, title, text, cta) {
-    return '<div class="empty">' + (iconName === "mascot" ? mascot() : '<span class="empty__icon">' + icon(iconName) + "</span>") +
+  /* `art` is "mascot" or a doodle name for a sticker */
+  function empty(art, title, text, cta) {
+    return '<div class="empty">' + (art === "mascot" ? mascot() : sticker(art, "sticker--navy empty__sticker")) +
       '<p class="empty__title">' + esc(title) + "</p>" +
       '<p class="empty__text">' + esc(text) + "</p>" + (cta || "") + "</div>";
   }
@@ -236,7 +242,7 @@
       pageHead("Favorites", list.length ? "The bakes you keep coming back for." : "") +
       (list.length
         ? '<div class="grid grid--solo">' + list.map(card).join("") + "</div>"
-        : empty("heart", "No favorites yet", "Tap the heart on anything you love to keep it here for next time.",
+        : empty("cream-cup", "No favorites yet", "Tap the heart on anything you love to keep it here for next time.",
           '<a class="btn" href="#/menu">Browse the menu</a>'))
     );
   }
@@ -622,7 +628,7 @@
     if (!o) {
       return '<div class="pview" data-view="order"><div class="pview__scroll"><header class="pbar"><button class="iconbtn" type="button" data-action="back" aria-label="Back">' +
         icon("back") + '</button><h2 class="pbar__title" id="panelTitle" tabindex="-1">Order</h2><span class="pbar__spacer"></span></header>' +
-        empty("receipt", "We can’t find that order", "It may have been cleared from this device.", '<a class="btn" href="#/orders">See your orders</a>') + "</div></div>";
+        empty("coffee", "We can’t find that order", "It may have been cleared from this device.", '<a class="btn" href="#/orders">See your orders</a>') + "</div></div>";
     }
     const pr = S.orderProgress(o);
     const txt = trackText(o, pr);

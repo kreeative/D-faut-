@@ -39,6 +39,14 @@
   --shadow: 0 24px 40px -30px rgba(120, 30, 70, 0.55);
   --cut-shadow: drop-shadow(10px 18px 14px rgba(110, 40, 60, 0.28));
 
+  /* The round stickers that close the kraft bags: pink doodles on navy or cream */
+  --seal-navy: #262338;
+  --seal-cream: #f3f0dd;
+  --seal-pink: #ee7aaf;
+  --seal-pink-deep: #d9579a; /* the same pink a shade deeper, to read on the cream sticker */
+  --seal-edge: transparent;  /* a die-cut cream rim, shown on the dark theme */
+  --seal-shadow: 0 1px 1.5px rgba(58, 20, 36, 0.2), 0 10px 18px -10px rgba(58, 20, 36, 0.55);
+
   --gutter: 20px;
   --wrap: 1200px;
   --radius: 36px;
@@ -58,6 +66,8 @@
     --pattern-alpha: 0.07;
     --shadow: 0 24px 40px -26px rgba(0, 0, 0, 0.8);
     --cut-shadow: drop-shadow(10px 18px 14px rgba(0, 0, 0, 0.5));
+    --seal-edge: #f3f0dd;
+    --seal-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.5), 0 10px 18px -9px rgba(0, 0, 0, 0.8);
   }
 }
 :root[data-theme="dark"] {
@@ -72,6 +82,8 @@
   --pattern-alpha: 0.07;
   --shadow: 0 24px 40px -26px rgba(0, 0, 0, 0.8);
   --cut-shadow: drop-shadow(10px 18px 14px rgba(0, 0, 0, 0.5));
+  --seal-edge: #f3f0dd;
+  --seal-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.5), 0 10px 18px -9px rgba(0, 0, 0, 0.8);
 }
 
 /* ---------- Base ---------- */
@@ -109,7 +121,7 @@ h1, h2, h3, p, figure { margin: 0; }
 .skip:focus { transform: none; }
 
 /* ---------- Brand marks (recoloured with masks) ---------- */
-.wordmark, .lettering, .mascot, .mark, .wm, .ticker i {
+.wordmark, .lettering, .mascot, .mark, .wm, .doodle {
   display: block;
   -webkit-mask: var(--m) center / contain no-repeat;
   mask: var(--m) center / contain no-repeat;
@@ -120,6 +132,27 @@ h1, h2, h3, p, figure { margin: 0; }
 .mark--b { --m: url(../assets/marks/monogram.svg); aspect-ratio: 474 / 1373; }
 .mark--e { --m: url(../assets/marks/cupcake-e.svg); aspect-ratio: 182 / 455; }
 .mark--wheat { --m: url(../assets/marks/wheat.svg); aspect-ratio: 524 / 1165; }
+
+/* The brand's hand-drawn doodles, cut from its pattern */
+.doodle { width: 64%; height: 64%; background: currentColor; rotate: var(--tilt, 0deg); }
+.doodle--croissant { --m: url(../assets/doodles/croissant.svg); --tilt: -8deg; }
+.doodle--cookies { --m: url(../assets/doodles/cookies.svg); --tilt: 4deg; }
+.doodle--pretzel { --m: url(../assets/doodles/pretzel.svg); }
+.doodle--toast { --m: url(../assets/doodles/toast.svg); --tilt: -6deg; }
+.doodle--wheat { --m: url(../assets/doodles/wheat.svg); --tilt: 12deg; }
+
+/* The stickers that close the kraft bags: one doodle or mark in pink on a
+   cream or a navy disc */
+.sticker {
+  --seal: var(--seal-cream);
+  --seal-ink: var(--seal-pink-deep);
+  display: grid; place-items: center;
+  width: 76px; aspect-ratio: 1; border-radius: 50%;
+  background: var(--seal); color: var(--seal-ink);
+  box-shadow: 0 0 0 2px var(--seal-edge), var(--seal-shadow);
+}
+.sticker--navy { --seal: var(--seal-navy); --seal-ink: var(--seal-pink); }
+.sticker .mark { height: 66%; background: currentColor; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -193,6 +226,8 @@ h1, h2, h3, p, figure { margin: 0; }
 .float--cookie { width: 150px; left: calc(50% - 205px); top: 70px; animation-delay: -2s; }
 .float--cupcake { width: 128px; left: calc(50% + 70px); top: 14px; z-index: 3; animation-delay: -4s; }
 .float--pretzel { width: 128px; left: calc(50% + 86px); top: 210px; z-index: 3; }
+/* a sticker seals the sleeve, like the ones on the bags */
+.hero__seal { position: absolute; z-index: 3; left: calc(50% + 32px); top: 166px; width: 62px; rotate: -12deg; }
 .hero__mascot {
   position: absolute; left: 0; bottom: -44px; z-index: 1;
   width: 96px; background: var(--cream);
@@ -213,7 +248,9 @@ h1, h2, h3, p, figure { margin: 0; }
   font-family: var(--display); font-size: 34px; font-weight: 900; line-height: 1; white-space: nowrap;
   animation: ticker 32s linear infinite;
 }
-.ticker i { --m: url(../assets/marks/monogram.svg); height: 30px; aspect-ratio: 474 / 1373; background: var(--pink); }
+.ticker i { flex: none; color: var(--pink); }
+.ticker .doodle { width: 46px; height: 40px; }
+.ticker .mark--b { height: 32px; background: var(--pink); }
 
 /* ---------- Sections ---------- */
 .section { max-width: var(--wrap); margin: 0 auto; padding: 72px var(--gutter) 0; }
@@ -251,19 +288,13 @@ h1, h2, h3, p, figure { margin: 0; }
 .wm--accents { --m: url(../assets/marks/wordmark-accents.svg); background: var(--pink); }
 .story__cards { display: grid; gap: 14px; }
 .story__card {
-  display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 18px; align-items: start;
+  display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 18px; align-items: start; align-content: start;
   padding: 18px; border-radius: 26px;
   background: var(--paper); box-shadow: inset 0 0 0 1.5px var(--line);
 }
-.story__card .tile { grid-row: span 2; }
+.story__card .sticker { grid-row: span 2; }
 .story__card h3 { font-family: var(--display); font-size: 30px; font-weight: 900; line-height: 1; letter-spacing: 0.005em; }
 .story__card p { margin-top: 6px; color: var(--ink-2); }
-.tile {
-  display: grid; place-items: center;
-  width: 76px; aspect-ratio: 1; border-radius: 20px;
-  background: var(--pink);
-}
-.tile .mark { height: 70%; background: var(--cream); }
 .meet {
   display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 20px; align-items: center;
   margin-top: 26px; padding: 22px; border-radius: 26px;
@@ -274,12 +305,16 @@ h1, h2, h3, p, figure { margin: 0; }
 .meet p { margin-top: 6px; color: var(--ink-2); }
 
 /* The bags */
-.bags__photo { overflow: hidden; border-radius: var(--radius); background: #f1dce8; box-shadow: var(--shadow); }
-.bags__photo img { width: 100%; }
+.bags__photo { position: relative; border-radius: var(--radius); background: #f1dce8; box-shadow: var(--shadow); }
+.bags__photo img { width: 100%; border-radius: inherit; }
+/* stickers slapped on the photos */
+.bags__seal { position: absolute; z-index: 1; top: -24px; right: 26px; width: 80px; rotate: 9deg; }
+.bags__seal--wheat { top: auto; right: auto; bottom: -20px; left: -8px; rotate: -10deg; }
 .bags__row { display: grid; gap: 26px; margin-top: 30px; align-items: center; }
 .bags__copy { display: grid; gap: 14px; justify-items: start; }
 .bags__copy p:not(.eyebrow) { max-width: 46ch; font-size: 17px; color: var(--ink-2); }
-.bags__cookies { overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); }
+.bags__cookies { position: relative; border-radius: var(--radius); box-shadow: var(--shadow); }
+.bags__cookies img { border-radius: inherit; }
 
 /* Visit */
 .visit { display: grid; gap: 18px; padding-bottom: 80px; }
@@ -360,7 +395,7 @@ h1, h2, h3, p, figure { margin: 0; }
   .bakes__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .story__cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .story__card { grid-template-columns: 1fr; row-gap: 14px; }
-  .story__card .tile { grid-row: auto; }
+  .story__card .sticker { grid-row: auto; }
 }
 
 @media (min-width: 960px) {
@@ -379,6 +414,9 @@ h1, h2, h3, p, figure { margin: 0; }
   .float--cupcake { width: 160px; left: calc(50% + 80px); top: 20px; }
   .float--pretzel { width: 160px; left: calc(50% + 100px); top: 270px; }
   .hero__mascot { width: 130px; left: 6px; bottom: -98px; }
+  .hero__seal { left: calc(50% + 55px); top: 198px; width: 84px; }
+  .bags__seal { top: -34px; right: 56px; width: 108px; }
+  .bags__seal--wheat { top: auto; right: auto; bottom: -26px; left: -26px; width: 96px; }
   .bakes__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
   .bags__row { grid-template-columns: minmax(0, 1fr) minmax(0, 460px); gap: 48px; }
   .visit { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: end; }

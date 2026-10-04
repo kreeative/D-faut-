@@ -34,6 +34,14 @@
   --blush: #fbdde9;         /* item tiles */
   --pattern-alpha: 0.12;
 
+  /* The round stickers that close the kraft bags: pink doodles on navy or cream */
+  --seal-navy: #262338;
+  --seal-cream: #f3f0dd;
+  --seal-pink: #ee7aaf;
+  --seal-pink-deep: #d9579a; /* the same pink a shade deeper, to read on the cream sticker */
+  --seal-edge: transparent;  /* a die-cut cream rim, shown on the dark theme */
+  --seal-shadow: 0 1px 1.5px rgba(58, 20, 36, 0.2), 0 8px 14px -9px rgba(58, 20, 36, 0.5);
+
   /* ink */
   --ink: #3a1424;
   --ink-2: #6b3a50;
@@ -97,6 +105,8 @@
     --paper: #2c1421;
     --blush: #3d1b2c;
     --pattern-alpha: 0.07;
+    --seal-edge: #f3f0dd;
+    --seal-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.5), 0 8px 14px -8px rgba(0, 0, 0, 0.8);
     --ink: #fefadc;
     --ink-2: #ecd3dd;
     --ink-3: #c9a3b5;
@@ -139,6 +149,8 @@
   --paper: #2c1421;
   --blush: #3d1b2c;
   --pattern-alpha: 0.07;
+  --seal-edge: #f3f0dd;
+  --seal-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.5), 0 8px 14px -8px rgba(0, 0, 0, 0.8);
   --ink: #fefadc;
   --ink-2: #ecd3dd;
   --ink-3: #c9a3b5;
@@ -422,19 +434,11 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 }
 .cats::-webkit-scrollbar { display: none; }
 .cat { flex: none; display: grid; justify-items: center; gap: 7px; scroll-snap-align: start; border-radius: 18px; }
-.cat__icon {
-  display: grid; place-items: center;
-  width: 58px; height: 58px; border-radius: 20px;
-  border: 1.5px solid var(--glass-line);
-  background: var(--paper);
-  transition: background-color 0.25s, color 0.25s, transform 0.35s var(--spring), box-shadow 0.25s;
-}
-.cat__icon .icon { width: 28px; height: 28px; stroke-width: 1.45; }
-.cat:hover .cat__icon { background: var(--chip-hover); transform: translateY(-2px); }
-.cat.is-on .cat__icon {
-  background: var(--accent); color: var(--on-accent);
-  border-color: transparent; box-shadow: var(--shadow-pill);
-}
+/* Each section is a sticker; the chosen one turns into the navy sticker and
+   is slapped back on */
+.cat__sticker { width: 58px; transition: background-color 0.25s, color 0.25s, transform 0.35s var(--spring); }
+.cat:hover .cat__sticker { transform: translateY(-2px); }
+.cat.is-on .cat__sticker { --seal: var(--seal-navy); --seal-ink: var(--seal-pink); animation: slap 0.5s var(--spring); }
 .cat__label { font-size: 12.5px; font-weight: 600; color: var(--ink-3); transition: color 0.2s; }
 .cat.is-on .cat__label { color: var(--ink); }
 .cat:focus-visible { outline-offset: 4px; }
@@ -1040,13 +1044,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 /* ---------- Empty states ---------- */
 .empty { display: grid; justify-items: center; gap: 8px; padding: 56px 12px; text-align: center; }
 .empty--inline { padding: 36px 12px; }
-.empty__icon {
-  display: grid; place-items: center;
-  width: 78px; height: 78px; margin-bottom: 10px;
-  border-radius: 26px 26px 26px 40px;
-  border: 1px solid var(--glass-line); background: var(--chip);
-}
-.empty__icon .icon { width: 34px; height: 34px; stroke-width: 1.4; }
+.empty__sticker { width: 96px; margin-bottom: 10px; animation: wiggle 3.6s ease-in-out infinite; }
 .empty__title { font-family: var(--display); font-size: 30px; font-weight: 900; line-height: 1; letter-spacing: 0.005em; }
 .empty__text { max-width: 34ch; font-size: 14px; color: var(--ink-2); }
 .empty .btn { margin-top: 14px; }
@@ -1157,6 +1155,10 @@ html.sheet-open .toast.is-on { transform: translate(-50%, 0); }
   60% { transform: scale(0.94) rotate(3deg); }
 }
 @keyframes pop { 40% { transform: scale(1.28); } }
+@keyframes slap {
+  from { transform: scale(1.22) rotate(-14deg); }
+  60% { transform: scale(0.95) rotate(3deg); }
+}
 @keyframes breathe { 50% { opacity: 0.35; transform: scale(0.8); } }
 @keyframes flash {
   0%, 30% { box-shadow: 0 0 0 2px var(--good), 0 0 0 7px var(--good-bg); }
@@ -1391,3 +1393,32 @@ html.sheet-open .toast.is-on { transform: translate(-50%, 0); }
 @media (min-width: 1024px) {
   .wordmark { height: 34px; }
 }
+
+/* The stickers that close the kraft bags: one doodle in pink on a cream or
+   a navy disc. The doodles are the brand's pattern, plus a cupcake and two
+   cups from a licensed Adobe Stock doodle set in the same hand. */
+.sticker {
+  --seal: var(--seal-cream);
+  --seal-ink: var(--seal-pink-deep);
+  display: grid; place-items: center;
+  width: 58px; aspect-ratio: 1; border-radius: 50%;
+  background: var(--seal); color: var(--seal-ink);
+  box-shadow: 0 0 0 2px var(--seal-edge), var(--seal-shadow);
+}
+.sticker--navy { --seal: var(--seal-navy); --seal-ink: var(--seal-pink); }
+.doodle {
+  display: block; width: 64%; height: 64%;
+  background: currentColor;
+  -webkit-mask: var(--doodle) center / contain no-repeat;
+  mask: var(--doodle) center / contain no-repeat;
+  rotate: var(--tilt, 0deg);
+}
+.doodle--b { --doodle: url(../../assets/doodles/b.svg); --tilt: 10deg; }
+.doodle--croissant { --doodle: url(../../assets/doodles/croissant.svg); --tilt: -8deg; }
+.doodle--cookies { --doodle: url(../../assets/doodles/cookies.svg); --tilt: 4deg; }
+.doodle--toast { --doodle: url(../../assets/doodles/toast.svg); --tilt: -6deg; }
+.doodle--pretzel { --doodle: url(../../assets/doodles/pretzel.svg); width: 70%; height: 70%; }
+.doodle--wheat { --doodle: url(../../assets/doodles/wheat.svg); --tilt: 12deg; }
+.doodle--cupcake { --doodle: url(../../assets/doodles/cupcake.svg); --tilt: -4deg; }
+.doodle--cream-cup { --doodle: url(../../assets/doodles/cream-cup.svg); --tilt: 6deg; }
+.doodle--coffee { --doodle: url(../../assets/doodles/coffee.svg); --tilt: -5deg; }

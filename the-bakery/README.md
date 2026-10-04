@@ -54,15 +54,25 @@ python3 -m http.server 8000
   | `pattern.svg` | A seamless tile of six doodles from the pattern (B, cookies, toast, wheat, croissant, pretzel) on a half-drop grid |
 
   They were traced from the identity images with potrace.
+- **Doodles and stickers**: `assets/doodles/` holds single doodles, recoloured
+  the same way. They appear as the round stickers that close the kraft bags
+  (pink on a cream or a navy disc), in the ordering app's menu sections and
+  empty screens, and on the brand page's ticker, story cards and photos.
+  `b`, `cookies`, `croissant`, `pretzel`, `toast` and `wheat` are cut from the
+  brand's own pattern. The pattern has no cupcake or cup, so `cupcake`,
+  `cream-cup` and `coffee` come from a hand-drawn "Coffee doodle set" on
+  Adobe Stock (asset 1371021388, licensed), traced the same way. A menu
+  section picks its sticker with `doodle` in `config.js`.
 
 ## Type
 
-The lettering on the packaging is custom, so the logo and the "Might be
-scrumptious!" line are the traced artwork itself. Headings use
-**Big Shoulders Display** (800 and 900), the closest open typeface in
-proportion, and text uses **Outfit**. Both are under the SIL Open Font License
-and self-hosted in `assets/fonts/`. If The Bakery's lettering comes from a
-typeface, swap it in with the `--display` token.
+The logo and the "Might be scrumptious!" line are the traced artwork itself.
+The brand's typeface is **Agharti**, a commercial font that isn't in this repo
+yet. Until it is, headings use **Big Shoulders Display** (800 and 900) and text
+uses **Outfit**, both under the SIL Open Font License and self-hosted in
+`assets/fonts/`. To switch, add the licensed Agharti file to `assets/fonts/`
+with an `@font-face` rule at the top of `css/site.css` and
+`order/css/app.css`, and put `"Agharti"` first in the `--display` token.
 
 ## Files
 
@@ -73,10 +83,12 @@ typeface, swap it in with the `--display` token.
 | `order/js/store.js` | State saved in the browser: bag, favorites, orders, profile, opening hours and totals |
 | `order/js/views.js` | Every screen of the ordering app, as HTML strings |
 | `order/js/app.js` | Routing, events, the side panel and sheets, toasts and the tracker clock |
-| `order/js/icons.js` | Line icons, including the croissant, cookie, loaf, pretzel and cupcake categories |
+| `order/js/icons.js` | Line icons for the interface: search, bag, heart, steps and so on |
 | `order/css/app.css` | The ordering app's styles |
 | `assets/menu/` | Cut-out photos of the 15 items |
 | `assets/brand/` | The croissant sleeve (cut out), the bag row and the cookie photo from the identity |
+| `assets/doodles/` | Single doodles for the stickers |
+| `assets/favicon.svg`, `assets/apple-touch-icon.png` | The B icon, for browser tabs and phone home screens |
 | `assets/credits.js` | Photo credits shown in the brand page footer |
 | `assets/og.jpg` | The link preview image |
 
