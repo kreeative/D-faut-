@@ -40,5 +40,26 @@
    2000,
    2680
   ]
+ },
+ "chunk-cookie": {
+  "src": "local",
+  "id": "brand/poster-delicious.webp",
+  "page": "",
+  "title": "",
+  "creator": "",
+  "creator_url": "",
+  "license": "The Bakery brand artwork",
+  "license_url": "",
+  "provider": "",
+  "source_size": [
+   1456,
+   2000
+  ],
+  "box": [
+   0,
+   544,
+   1456,
+   2000
+  ]
  }
 }
