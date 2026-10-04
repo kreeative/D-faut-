@@ -1,0 +1,4 @@
+{
+ "cookies-poster": {"pick": "local:brand/poster-delicious.webp", "aspect": [1, 1], "cx": 0.651, "cy": 0.675, "dir": "../tools/staging/cut", "name": "cookies-poster", "widths": [800], "cut": "remove-bg", "quality": 90},
+ "cookies-pexels": {"pick": "pexels:5436475", "from": "cookie-hero", "fetch": 2000, "aspect": [1, 1], "cx": 0.62, "cy": 0.56, "dir": "../tools/staging/cut", "name": "cookies-pexels", "widths": [800], "cut": "remove-bg", "quality": 90}
+}
