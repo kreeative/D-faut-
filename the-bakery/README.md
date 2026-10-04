@@ -122,4 +122,7 @@ are The Bakery's own artwork.
 The photos, fonts and traced marks were prepared by a GitHub Actions workflow,
 because the development sandbox could not reach those hosts. The workflow and
 its source files were removed once the assets were in place; they are in the
-git history ("Prepare The Bakery fonts, marks and photos").
+git history ("Prepare The Bakery fonts, marks and photos"). The 25-second film
+on the Kreeative case study was recorded the same way, from the live site, by
+`tools/video/record.cjs` and `encode.cjs` (in the history at "Film The Bakery
+for its Kreeative case study").
