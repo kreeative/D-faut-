@@ -35,10 +35,10 @@ window.PHOTO_CREDITS = [
   "title": "",
   "creator": "",
   "creator_url": "",
-  "page": "https://www.pexels.com/photo/301972/",
-  "source": "Pexels",
-  "license": "Pexels License",
-  "license_url": "https://www.pexels.com/license/"
+  "page": "",
+  "source": "",
+  "license": "The Bakery’s own artwork, cut from its “Might be delicious!” poster",
+  "license_url": ""
  },
  {
   "item": "sourdough",

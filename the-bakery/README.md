@@ -94,18 +94,19 @@ with an `@font-face` rule at the top of `css/site.css` and
 
 ## Photos
 
-Every menu photo is a real photo with a free licence, cut out of its background
-(with rembg) and cropped. The baguette is turned on the diagonal. The hot
-chocolate's white handle did not survive the cut-out, so the right side of the
-mug is its left side mirrored. Packaging and lettering are The Bakery's own
-artwork.
+Every menu photo is a real photo, cut out of its background (with rembg) and
+cropped. The chocolate chunk cookies come from The Bakery's own "Might be
+delicious!" poster; the rest have a free licence. The baguette is turned on
+the diagonal. The hot chocolate's white handle did not survive the cut-out, so
+the right side of the mug is its left side mirrored. Packaging and lettering
+are The Bakery's own artwork.
 
 | Item | Photo | Licence |
 | --- | --- | --- |
 | Butter Croissant | [Croissant Isolated On White Background](https://www.flickr.com/photos/198895458@N04/53097224506) by [personalgraphic.official](https://www.flickr.com/photos/198895458@N04), on Flickr | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | Almond Croissant | [Almond Croissant](https://www.flickr.com/photos/25802865@N08/53378640779) by [chooyutshing](https://www.flickr.com/photos/25802865@N08), on Flickr | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
 | Pain au Chocolat | [Pain au chocolat](https://www.flickr.com/photos/7831824@N04/53967027820) by [Bex.Walton](https://www.flickr.com/photos/7831824@N04), on Flickr | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
-| Chocolate Chunk Cookie | [Photo 301972 on Pexels](https://www.pexels.com/photo/301972/) | [Pexels License](https://www.pexels.com/license/) |
+| Chocolate Chunk Cookie | The cookie pile from The Bakery’s “Might be delicious!” poster | The Bakery’s own artwork |
 | Country Sourdough | [Photo 7541727 on Pexels](https://www.pexels.com/photo/7541727/) | [Pexels License](https://www.pexels.com/license/) |
 | Cinnamon Morning Bun | [Photo 9443534 on Pexels](https://www.pexels.com/photo/9443534/) | [Pexels License](https://www.pexels.com/license/) |
 | Pink Vanilla Cupcake | [Photo 853005 on Pexels](https://www.pexels.com/photo/853005/) | [Pexels License](https://www.pexels.com/license/) |

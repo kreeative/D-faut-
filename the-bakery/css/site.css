@@ -410,7 +410,7 @@ h1, h2, h3, p, figure { margin: 0; }
   .hero__lede { font-size: 19px; }
   .hero__art { height: 520px; margin: 0; }
   .hero__sleeve { width: 240px; bottom: -80px; }
-  .float--cookie { width: 190px; left: calc(50% - 250px); top: 90px; }
+  .float--cookie { width: clamp(176px, 44%, 222px); left: max(-4px, calc(50% - 266px)); top: 92px; }
   .float--cupcake { width: 160px; left: calc(50% + 80px); top: 20px; }
   .float--pretzel { width: 160px; left: calc(50% + 100px); top: 270px; }
   .hero__mascot { width: 130px; left: 6px; bottom: -98px; }
