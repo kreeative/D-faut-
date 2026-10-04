@@ -1,3 +1,0 @@
-{
- "chunk-cookie": {"pick": "local:brand/poster-delicious.webp", "aspect": [1, 1], "cx": 0.651, "cy": 0.675, "dir": "menu", "widths": [800, 400], "cut": "remove-bg", "alpha_floor": 110, "pad": 0.04, "skip_existing": false}
-}

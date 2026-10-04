@@ -1,4 +1,4 @@
-/* Photo credits for The Bakery's menu photos, generated from tools/credits.json */
+/* Photo credits for The Bakery's menu photos, listed in the brand page footer (see README) */
 window.PHOTO_CREDITS = [
  {
   "item": "butter-croissant",
