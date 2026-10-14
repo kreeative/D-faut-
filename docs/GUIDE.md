@@ -71,10 +71,9 @@ En haut du fichier, la partie `:root` contient tes « styles Figma » sous forme
   --cream: #f6f1e7;    /* fond papier */
   --forest: #0a3323;   /* vert forêt : sections sombres, boutons */
   --orange: #f77f00;   /* orange du drapeau : accents */
-  --gold: #f0c36a;     /* or : italiques sur fond sombre */
-  --f-display: "Fraunces Variable", …;         /* police des titres */
-  --f-sans: "Instrument Sans Variable", …;     /* police du texte */
-  --t-h1: clamp(2.75rem, 1.8rem + 4.4vw, 5.75rem); /* taille du grand titre */
+  --gold: #f0c36a;     /* or : mots-clés des titres sur fond sombre */
+  --f-sans: "Instrument Sans Variable", …;     /* police unique : titres et texte */
+  --t-h1: clamp(2.6rem, 1.75rem + 4.2vw, 5.25rem); /* taille du grand titre */
 }
 ```
 
@@ -138,7 +137,7 @@ C'est la façon de travailler des développeurs. C'est aussi la plus proche de F
 | Frame, section | Balise `<section>`, `<div>` | `index.html` |
 | Auto layout | Flexbox, Grid (CSS) | `display: flex` ou `display: grid` dans `styles.css` |
 | Styles de couleur | Variables CSS | `--forest`, `--orange`… dans `:root` |
-| Styles de texte | Variables de taille, familles | `--t-h1`, `--f-display` |
+| Styles de texte | Variables de taille, famille | `--t-h1`, `--f-sans` |
 | Composant | Classe CSS réutilisée | `.bento__item`, `.btn`, `.tag` |
 | Variante | Classe « modificatrice » | `.bento__item--xl`, `.btn--accent` |
 | Frames mobile / ordinateur | Media queries | `@media (min-width: 64em) { … }` |
@@ -153,7 +152,7 @@ C'est la façon de travailler des développeurs. C'est aussi la plus proche de F
 
 1. **Comprendre l'existant.** Lecture du code source de gouv.ci : sections, liens, nombre d'images et de scripts, absence de recherche et de lien d'évitement, poids de la page. **Outil pour toi :** dans Chrome, clic droit puis **Inspecter**, onglet **Lighthouse**, qui note la performance et l'accessibilité d'une page.
 2. **Benchmark.** Portails publics de référence (GOV.UK, service-public.fr, ms.gov, ta capture) : recherche visible, démarches d'abord, compte citoyen, assistant.
-3. **Direction artistique.** Palette tirée du drapeau (orange, vert, fond crème, vert forêt profond), typographie Fraunces (titres) et Instrument Sans (texte), motif géométrique discret. **Outils :** https://fonts.google.com pour tester les polices, et https://fontsource.org pour télécharger les fichiers `.woff2` hébergés avec le site.
+3. **Direction artistique.** Palette tirée du drapeau (orange, vert, fond crème, vert forêt profond), typographie Instrument Sans (une seule famille, titres en semi-gras), motif géométrique discret. **Outils :** https://fonts.google.com pour tester les polices, et https://fontsource.org pour télécharger les fichiers `.woff2` hébergés avec le site.
 4. **Structure (wireframe).** Ordre des sections : recherche, flash infos, démarches, thèmes, carte des districts, actualités, galerie, gouvernement, avis.
 5. **Code.** Trois fichiers principaux : `index.html` (contenu et structure), `styles.css` (tout le style), `main.js` (menu, recherche avec suggestions, carte, assistant Akwaba, apparitions au défilement). Pas de framework : c'est le plus simple à comprendre et à modifier.
 6. **Mobile d'abord.** Conçu à 390 px puis élargi. Tests à 320, 390, 820 et 1280 px. **Outil pour toi :** dans Chrome, **Inspecter**, puis l'icône téléphone (Device Toolbar) pour voir le site à toutes les tailles.

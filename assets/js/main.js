@@ -467,6 +467,22 @@
       ainput.value = "";
       say(t);
     });
+
+    /* Sur l'accueil, le bouton reste rangé tant que le hero occupe le bas de l'écran :
+       il ne recouvre ni la recherche ni l'espace citoyen, et apparaît dès qu'on défile. */
+    var heroEl = document.querySelector(".hero");
+    if (heroEl) {
+      var tuckTick = false;
+      var updateTuck = function () {
+        tuckTick = false;
+        var tucked = heroEl.getBoundingClientRect().bottom > window.innerHeight - 90;
+        assist.classList.toggle("is-tucked", tucked && panel.hidden);
+      };
+      var requestTuck = function () { if (!tuckTick) { tuckTick = true; window.requestAnimationFrame(updateTuck); } };
+      window.addEventListener("scroll", requestTuck, { passive: true });
+      window.addEventListener("resize", requestTuck);
+      updateTuck();
+    }
   }
 
   /* --------------------------------------------------------------------------

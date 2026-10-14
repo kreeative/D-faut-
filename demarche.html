@@ -12,7 +12,6 @@
   <meta property="og:url" content="https://concept-portail-citoyen-ci.vercel.app/demarche.html">
   <link rel="canonical" href="https://concept-portail-citoyen-ci.vercel.app/demarche.html">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/fraunces-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -68,7 +67,7 @@
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navigation">
       <svg class="icon icon-menu" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
       <svg class="icon icon-close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
-      Menu
+      <span class="menu-btn__label">Menu</span>
     </button>
     <nav class="nav" id="navigation" aria-label="Navigation principale">
       <ul class="nav__list">
@@ -168,26 +167,32 @@
           </details>
         </div>
 
-        <p class="muted" style="font-size:.9rem">Dernière mise à jour de cette page&nbsp;: septembre 2026 (contenu de démonstration).</p>
+        <p class="page-updated">Dernière mise à jour de cette page&nbsp;: septembre 2026 (contenu de démonstration).</p>
       </article>
 
       <aside class="sidebar" aria-label="Actions et aide">
         <div class="card">
-          <h3 style="margin-top:0">Faire la démarche</h3>
-          <p>Accédez au portail officiel des démarches pour commencer.</p>
-          <p style="margin-top:.75rem"><a class="btn btn--primary" href="https://servicepublic.gouv.ci/">Commencer en ligne <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
-          <hr style="border:0;border-top:1px solid var(--line);margin:1.25rem 0">
-          <h3>Besoin d'aide&nbsp;?</h3>
-          <p>Une question sur votre situation&nbsp;? Écrivez au Gouvernement, le service compétent vous répondra.</p>
-          <p style="margin-top:.75rem"><a class="btn btn--ghost btn--sm" href="https://www.gouv.ci/ecrire-au-gouvernement"><svg aria-hidden="true" focusable="false"><use href="#i-mail"/></svg> Écrire au Gouvernement</a></p>
-          <hr style="border:0;border-top:1px solid var(--line);margin:1.25rem 0">
-          <div data-feedback>
-            <h3>Cette page vous a-t-elle été utile&nbsp;?</h3>
-            <div class="feedback__actions" style="margin-top:.5rem">
+          <div class="card__block">
+            <h3>Faire la démarche</h3>
+            <p>Accédez au portail officiel des démarches pour commencer.</p>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="https://servicepublic.gouv.ci/">Commencer en ligne <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+          <div class="card__block">
+            <h3>Besoin d'aide&nbsp;?</h3>
+            <p>Une question sur votre situation&nbsp;? Écrivez au Gouvernement, le service compétent vous répondra.</p>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="https://www.gouv.ci/ecrire-au-gouvernement"><svg aria-hidden="true" focusable="false"><use href="#i-mail"/></svg> Écrire au Gouvernement</a>
+            </div>
+          </div>
+          <div class="card__block" data-feedback>
+            <h3>Cette page vous <span class="nowrap">a-t-elle</span> été utile&nbsp;?</h3>
+            <div class="feedback__actions">
               <button class="btn btn--ghost btn--sm" type="button" data-vote="oui" aria-pressed="false"><svg aria-hidden="true" focusable="false"><use href="#i-thumb-up"/></svg> Oui</button>
               <button class="btn btn--ghost btn--sm" type="button" data-vote="non" aria-pressed="false"><svg aria-hidden="true" focusable="false"><use href="#i-thumb-down"/></svg> Non</button>
             </div>
-            <p class="feedback__thanks" role="status" hidden style="margin-top:.75rem"></p>
+            <p class="feedback__thanks" role="status" hidden></p>
           </div>
         </div>
       </aside>
@@ -236,7 +241,7 @@
         <li><a href="a-propos.html#accessibilite">Accessibilité</a></li>
         <li><a href="demarche.html">Exemple de page de démarche</a></li>
         <li><a href="https://kreeative.xyz">Kreeative — studio de design</a></li>
-        <li><a href="https://github.com/kreeative/gouv-ci-redesign-concept">Code source</a></li>
+        <li><a href="https://github.com/kreeative/D-faut-/tree/gouv-ci-concept">Code source</a></li>
       </ul>
     </nav>
   </div>
@@ -256,7 +261,7 @@
 <div class="assist" id="assist">
   <button class="assist__toggle btn btn--primary" type="button" aria-expanded="false" aria-controls="assist-panel">
     <span class="assist__avatar" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></span>
-    <span>Besoin d'aide&nbsp;?</span>
+    <span class="assist__label">Besoin d'aide&nbsp;?</span>
   </button>
   <section class="assist__panel" id="assist-panel" role="dialog" aria-labelledby="assist-title" aria-describedby="assist-desc" hidden>
     <div class="assist__head on-dark">

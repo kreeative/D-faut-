@@ -12,7 +12,6 @@
   <meta property="og:url" content="https://concept-portail-citoyen-ci.vercel.app/a-propos.html">
   <link rel="canonical" href="https://concept-portail-citoyen-ci.vercel.app/a-propos.html">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/fraunces-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -61,7 +60,7 @@
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navigation">
       <svg class="icon icon-menu" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
       <svg class="icon icon-close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
-      Menu
+      <span class="menu-btn__label">Menu</span>
     </button>
     <nav class="nav" id="navigation" aria-label="Navigation principale">
       <ul class="nav__list">
@@ -204,9 +203,9 @@
         <h3>Couleurs</h3>
         <p>La palette part du drapeau&nbsp;: orange (<code>#F77F00</code>) et vert (<code>#009E60</code>), posés sur un fond crème (<code>#F6F1E7</code>) qui évoque le papier et la lumière, avec un vert forêt profond (<code>#0A3323</code>) comme couleur institutionnelle pour les grandes sections, les boutons et le pied de page. L'orange sert d'accent (recherche, repères, district sélectionné), toujours associé à un texte sombre pour rester lisible. Un motif géométrique discret, inspiré des tissages, texture certains fonds.</p>
         <h3>Typographie</h3>
-        <p>Deux familles libres (licence SIL Open Font), hébergées avec le site pour éviter toute requête vers un tiers&nbsp;: <strong>Fraunces</strong> pour les titres, une serif variable à tailles optiques qui gagne en contraste et en caractère en grand format tout en restant robuste en petit, et <strong>Instrument Sans</strong>, une grotesque variable, pour l'interface et le texte courant. Une échelle fluide adapte les tailles à l'écran.</p>
+        <p>Une seule famille libre (licence SIL Open Font), hébergée avec le site pour éviter toute requête vers un tiers&nbsp;: <strong>Instrument Sans</strong>, une grotesque variable. Les titres jouent sur la graisse (semi-gras) et un approche serré, le texte courant sur une graisse régulière et un interlignage généreux&nbsp;; le mot-clé de chaque titre change de couleur, pas de police. Une échelle fluide adapte les tailles à l'écran.</p>
         <h3>Composants</h3>
-        <p>Hero photographique plein écran avec recherche en pilule, bande «&nbsp;Flash infos&nbsp;», grille «&nbsp;bento&nbsp;» des démarches, pilules de thèmes, carte interactive des 14 districts (tracés réels simplifiés, photo par district), actualités en mise en page magazine, galerie en mosaïque, bloc Conseil des ministres, retour citoyen, pied de page à grande signature typographique. Tous sont décrits dans une feuille de style unique, sans framework, avec des apparitions au défilement désactivées pour les personnes qui préfèrent moins d'animations.</p>
+        <p>Hero photographique plein écran avec recherche en pilule, bande «&nbsp;Flash infos&nbsp;», grille «&nbsp;bento&nbsp;» des démarches, tuiles de thèmes, carte interactive des 14 districts (tracés réels simplifiés, photo par district), actualités en mise en page magazine, galerie en mosaïque, bloc Conseil des ministres, retour citoyen, pied de page à grande signature typographique. Tous sont décrits dans une feuille de style unique, sans framework, avec des apparitions au défilement désactivées pour les personnes qui préfèrent moins d'animations.</p>
         <h3>Performance et sobriété</h3>
         <p>HTML, CSS et JavaScript écrits à la main, sans dépendance&nbsp;: hors photographies, la page d'accueil pèse environ 350&nbsp;Ko, polices et carte comprises (contre 752&nbsp;Ko pour le seul HTML de la page actuelle), et n'appelle aucun service externe. Les photos sont servies en plusieurs tailles selon l'écran. Le site reste lisible et navigable sans JavaScript.</p>
 
@@ -243,26 +242,28 @@
           <li>Photographies fournies par l'autrice du concept (drapeau en bord de mer, lagune, La Pyramide, Abidjan au crépuscule, cascades de Man)&nbsp;: tous droits réservés.</li>
           <li>Basilique Notre-Dame de la Paix, masque Zaouli, grande mosquée de Kong, échangeur d'Abidjan&nbsp;: crédits des photographes à confirmer avant toute publication.</li>
           <li>Limites des districts&nbsp;: <a href="https://www.geoboundaries.org/">geoBoundaries</a> (ADM1, Côte d'Ivoire), CC BY 4.0, simplifiées pour l'affichage.</li>
-          <li>Polices Fraunces et Instrument Sans&nbsp;: SIL Open Font License 1.1.</li>
+          <li>Police Instrument Sans&nbsp;: SIL Open Font License 1.1.</li>
         </ul>
         <p>Pour échanger sur ce concept&nbsp;: <a href="https://kreeative.xyz">kreeative.xyz</a>.</p>
       </article>
 
       <aside class="sidebar" aria-label="Informations sur le projet">
         <div class="card">
-          <h3 style="margin-top:0">Fiche du projet</h3>
-          <dl style="margin:0">
-            <dt class="muted" style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Autrice</dt>
-            <dd style="margin:0 0 .75rem">Anne-Kelly Kouyaté, Kreeative (Toronto)</dd>
-            <dt class="muted" style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Statut</dt>
-            <dd style="margin:0 0 .75rem">Concept non officiel, projet personnel</dd>
-            <dt class="muted" style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Date</dt>
-            <dd style="margin:0 0 .75rem">Septembre 2026</dd>
-            <dt class="muted" style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Périmètre</dt>
-            <dd style="margin:0 0 1rem">Page d'accueil, page type de démarche, principes d'accessibilité</dd>
+          <h3>Fiche du projet</h3>
+          <dl class="facts">
+            <dt>Autrice</dt>
+            <dd>Anne-Kelly Kouyaté, Kreeative (Toronto)</dd>
+            <dt>Statut</dt>
+            <dd>Concept non officiel, projet personnel</dd>
+            <dt>Date</dt>
+            <dd>Septembre 2026</dd>
+            <dt>Périmètre</dt>
+            <dd>Page d'accueil, page type de démarche, principes d'accessibilité</dd>
           </dl>
-          <p><a class="btn btn--primary" href="index.html">Voir la maquette</a></p>
-          <p style="margin-top:.5rem"><a class="btn btn--ghost" href="https://kreeative.xyz"><svg aria-hidden="true" focusable="false"><use href="#i-globe"/></svg> kreeative.xyz</a></p>
+          <div class="card__actions">
+            <a class="btn btn--primary" href="index.html">Voir la maquette <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--ghost" href="https://kreeative.xyz"><svg aria-hidden="true" focusable="false"><use href="#i-globe"/></svg> kreeative.xyz</a>
+          </div>
         </div>
       </aside>
     </div>
@@ -310,7 +311,7 @@
         <li><a href="a-propos.html#accessibilite">Accessibilité</a></li>
         <li><a href="demarche.html">Exemple de page de démarche</a></li>
         <li><a href="https://kreeative.xyz">Kreeative — studio de design</a></li>
-        <li><a href="https://github.com/kreeative/gouv-ci-redesign-concept">Code source</a></li>
+        <li><a href="https://github.com/kreeative/D-faut-/tree/gouv-ci-concept">Code source</a></li>
       </ul>
     </nav>
   </div>
@@ -330,7 +331,7 @@
 <div class="assist" id="assist">
   <button class="assist__toggle btn btn--primary" type="button" aria-expanded="false" aria-controls="assist-panel">
     <span class="assist__avatar" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></span>
-    <span>Besoin d'aide&nbsp;?</span>
+    <span class="assist__label">Besoin d'aide&nbsp;?</span>
   </button>
   <section class="assist__panel" id="assist-panel" role="dialog" aria-labelledby="assist-title" aria-describedby="assist-desc" hidden>
     <div class="assist__head on-dark">

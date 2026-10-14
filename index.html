@@ -16,7 +16,6 @@
   <meta property="og:url" content="https://concept-portail-citoyen-ci.vercel.app/">
   <link rel="canonical" href="https://concept-portail-citoyen-ci.vercel.app/">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/fraunces-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -88,7 +87,7 @@
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navigation">
       <svg class="icon icon-menu" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
       <svg class="icon icon-close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
-      Menu
+      <span class="menu-btn__label">Menu</span>
     </button>
     <nav class="nav" id="navigation" aria-label="Navigation principale">
       <ul class="nav__list">
@@ -123,7 +122,7 @@
           <label class="search__label" for="q">Que souhaitez-vous faire&nbsp;?</label>
           <div class="search__row">
             <svg aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
-            <input class="search__input" id="q" name="q" type="search" placeholder="Passeport, impôts, acte de naissance…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-suggestions" aria-autocomplete="list" aria-describedby="search-help">
+            <input class="search__input" id="q" name="q" type="search" placeholder="Passeport, impôts, CNI…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-suggestions" aria-autocomplete="list" aria-describedby="search-help">
             <button class="btn btn--accent search__btn" type="submit" aria-label="Rechercher">
               <span aria-hidden="true">Rechercher</span>
               <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
@@ -159,9 +158,11 @@
             <a class="hero__account-login" href="a-propos.html#espace-citoyen">Déjà un compte&nbsp;? Se connecter</a>
           </div>
         </div>
-        <div class="hero__stat"><strong>14</strong><span>districts<span class="hero__stat-more"> et 31 régions, avec des services adaptés à votre localité</span></span></div>
-        <div class="hero__stat"><strong>15+</strong><span>services en ligne<span class="hero__stat-more"> officiels réunis en une seule porte d'entrée</span></span></div>
-        <div class="hero__stat"><strong>24/7</strong><span>sur tous les écrans<span class="hero__stat-more">, à toute heure, sans application à installer</span></span></div>
+        <dl class="hero__stats">
+          <div class="hero__stat"><dt>14</dt><dd>districts</dd></div>
+          <div class="hero__stat"><dt>15+</dt><dd>services en ligne</dd></div>
+          <div class="hero__stat"><dt>24/7</dt><dd>sur tous les écrans</dd></div>
+        </dl>
       </aside>
     </div>
     <p class="hero__credit">Photo&nbsp;: drapeau ivoirien, bord de mer — © l'autrice du concept</p>
@@ -194,41 +195,40 @@
       <ul class="bento list-reset">
         <li class="bento__item bento__item--xl on-dark reveal" style="--i:0">
           <div class="bento__top"><span class="bento__num">01</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-id"/></svg></span></div>
-          <div>
+          <div class="bento__body">
             <span class="tag">Guide pas à pas</span>
             <h3><a href="demarche.html">Carte nationale d'identité</a></h3>
             <p>Première demande, renouvellement, pièces à fournir et suivi du dossier, expliqués simplement.</p>
             <div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div>
           </div>
-          <svg class="bento__deco" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-id"/></svg>
         </li>
         <li class="bento__item reveal" style="--i:1">
           <div class="bento__top"><span class="bento__num">02</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-passport"/></svg></span></div>
-          <div><h3><a href="https://servicepublic.gouv.ci/">Passeport</a></h3><p>Rendez-vous, pièces, retrait.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+          <div class="bento__body"><h3><a href="https://servicepublic.gouv.ci/">Passeport</a></h3><p>Rendez-vous, pièces, retrait.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
         </li>
         <li class="bento__item reveal" style="--i:2">
           <div class="bento__top"><span class="bento__num">03</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-file"/></svg></span></div>
-          <div><h3><a href="https://servicepublic.gouv.ci/">Acte de naissance</a></h3><p>Extrait en ligne ou en mairie.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+          <div class="bento__body"><h3><a href="https://servicepublic.gouv.ci/">Acte de naissance</a></h3><p>Extrait en ligne ou en mairie.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
         </li>
         <li class="bento__item bento__item--wide reveal" style="--i:3">
           <div class="bento__top"><span class="bento__num">04</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-coins"/></svg></span></div>
-          <div><h3><a href="https://e-impots.gouv.ci/">Impôts et déclarations</a></h3><p>Déclarer, payer et obtenir vos attestations sur e-impôts, sans vous déplacer.</p><div class="bento__meta"><span class="tag">Service en ligne</span><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+          <div class="bento__body"><h3><a href="https://e-impots.gouv.ci/">Impôts et déclarations</a></h3><p>Déclarer, payer et obtenir vos attestations sur e-impôts, sans vous déplacer.</p><div class="bento__meta"><span class="tag">Service en ligne</span><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
         </li>
         <li class="bento__item reveal" style="--i:4">
           <div class="bento__top"><span class="bento__num">05</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-health"/></svg></span></div>
-          <div><h3><a href="https://ipscnam.ci/enrolement-cmu/">Couverture maladie</a></h3><p>S'enrôler à la CMU, obtenir sa carte.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+          <div class="bento__body"><h3><a href="https://ipscnam.ci/enrolement-cmu/">Couverture maladie</a></h3><p>S'enrôler à la CMU, obtenir sa carte.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
         </li>
         <li class="bento__item reveal" style="--i:5">
           <div class="bento__top"><span class="bento__num">06</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg></span></div>
-          <div><h3><a href="https://www.cepici.gouv.ci/">Créer une entreprise</a></h3><p>Le guichet unique du CEPICI.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+          <div class="bento__body"><h3><a href="https://www.cepici.gouv.ci/">Créer une entreprise</a></h3><p>Le guichet unique du CEPICI.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
         </li>
         <li class="bento__item reveal" style="--i:6">
           <div class="bento__top"><span class="bento__num">07</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-scale"/></svg></span></div>
-          <div><h3><a href="https://e-justice.ci/">Casier judiciaire</a></h3><p>Extrait via e-Justice.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+          <div class="bento__body"><h3><a href="https://e-justice.ci/">Casier judiciaire</a></h3><p>Extrait via e-Justice.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
         </li>
         <li class="bento__item bento__item--cta reveal" style="--i:7">
           <div class="bento__top"><span class="bento__num">+</span><span class="bento__icon"><svg aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span></div>
-          <div><h3><a href="https://servicepublic.gouv.ci/">Toutes les démarches</a></h3><p>Le portail officiel des démarches administratives.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
+          <div class="bento__body"><h3><a href="https://servicepublic.gouv.ci/">Toutes les démarches</a></h3><p>Le portail officiel des démarches administratives.</p><div class="bento__meta"><span class="bento__arrow"><svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span></div></div>
         </li>
       </ul>
     </div>
@@ -244,16 +244,16 @@
         </div>
       </div>
       <ul class="themes reveal" style="--i:1">
-        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-id"/></svg> Papiers et citoyenneté</a></li>
-        <li><a href="https://ipscnam.ci/enrolement-cmu/"><svg aria-hidden="true" focusable="false"><use href="#i-health"/></svg> Santé et protection sociale</a></li>
-        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-grad"/></svg> Éducation et formation</a></li>
-        <li><a href="https://www.cepici.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg> Emploi et entreprise</a></li>
-        <li><a href="https://e-impots.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-coins"/></svg> Impôts et finances</a></li>
-        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-car"/></svg> Transports et permis</a></li>
-        <li><a href="https://sigfu.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-home"/></svg> Logement et foncier</a></li>
-        <li><a href="https://e-justice.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-shield"/></svg> Sécurité et justice</a></li>
-        <li><a href="https://servicepublic.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-leaf"/></svg> Agriculture et environnement</a></li>
-        <li><a href="https://data.gouv.ci/"><svg aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg> Numérique et données</a></li>
+        <li><a href="https://servicepublic.gouv.ci/"><span class="themes__icon"><svg aria-hidden="true" focusable="false"><use href="#i-id"/></svg></span><span class="themes__label">Papiers et citoyenneté</span></a></li>
+        <li><a href="https://ipscnam.ci/enrolement-cmu/"><span class="themes__icon"><svg aria-hidden="true" focusable="false"><use href="#i-health"/></svg></span><span class="themes__label">Santé et protection sociale</span></a></li>
+        <li><a href="https://servicepublic.gouv.ci/"><span class="themes__icon"><svg aria-hidden="true" focusable="false"><use href="#i-grad"/></svg></span><span class="themes__label">Éducation et formation</span></a></li>
+        <li><a href="https://www.cepici.gouv.ci/"><span class="themes__icon"><svg aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg></span><span class="themes__label">Emploi et entreprise</span></a></li>
+        <li><a href="https://e-impots.gouv.ci/"><span class="themes__icon"><svg aria-hidden="true" focusable="false"><use href="#i-coins"/></svg></span><span class="themes__label">Impôts et finances</span></a></li>
+        <li><a href="https://servicepublic.gouv.ci/"><span class="themes__icon"><svg aria-hidden="true" focusable="false"><use href="#i-car"/></svg></span><span class="themes__label">Transports et permis</span></a></li>
+        <li><a href="https://sigfu.gouv.ci/"><span class="themes__icon"><svg aria-hidden="true" focusable="false"><use href="#i-home"/></svg></span><span class="themes__label">Logement et foncier</span></a></li>
+        <li><a href="https://e-justice.ci/"><span class="themes__icon"><svg aria-hidden="true" focusable="false"><use href="#i-shield"/></svg></span><span class="themes__label">Sécurité et justice</span></a></li>
+        <li><a href="https://servicepublic.gouv.ci/"><span class="themes__icon"><svg aria-hidden="true" focusable="false"><use href="#i-leaf"/></svg></span><span class="themes__label">Agriculture et environnement</span></a></li>
+        <li><a href="https://data.gouv.ci/"><span class="themes__icon"><svg aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg></span><span class="themes__label">Numérique et données</span></a></li>
       </ul>
     </div>
   </section>
@@ -344,9 +344,9 @@
             <text class="map__label" x="196.1" y="183.4" text-anchor="middle">Denguélé</text>
             <text class="map__label" x="300.9" y="392.5" text-anchor="middle">Woroba</text>
             <text class="map__label" x="859.4" y="343.6" text-anchor="middle">Zanzan</text>
-            <text class="map__label" x="594.8" y="411.7" text-anchor="middle">Vallée du Bandama</text>
+            <text class="map__label" x="594.8" y="400" text-anchor="middle"><tspan x="594.8">Vallée du</tspan><tspan x="594.8" dy="1.1em">Bandama</tspan></text>
             <text class="map__label" x="152.2" y="629.4" text-anchor="middle">Montagnes</text>
-            <text class="map__label" x="367.3" y="612.0" text-anchor="middle">Sassandra-Marahoué</text>
+            <text class="map__label" x="367.3" y="600" text-anchor="middle"><tspan x="367.3">Sassandra-</tspan><tspan x="367.3" dy="1.1em">Marahoué</tspan></text>
             <text class="map__label" x="679.3" y="612.9" text-anchor="middle">Lacs</text>
             <text class="map__label map__label--small" x="544.0" y="622.8" text-anchor="middle">Yamoussoukro</text>
             <text class="map__label" x="487.6" y="793.4" text-anchor="middle">Gôh-Djiboua</text>
@@ -392,16 +392,18 @@
           <h3><a href="https://www.gouv.ci/actualite/hopital-general-de-ferkessedougou-un-pavillon-pediatrique-pour-rapprocher-les-soins-des-enfants-3741">Hôpital général de Ferkessédougou&nbsp;: un pavillon pédiatrique pour rapprocher les soins des enfants</a></h3>
         </article>
       </div>
+      <p class="news__credit">Photo à la une&nbsp;: La Pyramide, Plateau, Abidjan — © l'autrice du concept.</p>
       <div class="council reveal">
         <span class="council__icon"><svg aria-hidden="true" focusable="false"><use href="#i-file"/></svg></span>
         <div class="council__text">
           <strong>Conseil des ministres du 23 septembre 2026</strong>
           <span>Communiqué officiel, au format PDF.</span>
         </div>
-        <a class="btn btn--primary btn--sm" href="https://www.gouv.ci/uploads/publications/179019067632.pdf">Lire le communiqué <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
-        <a class="btn btn--ghost btn--sm" href="https://www.gouv.ci/publications/documents/Conseils%20des%20Ministres">Tous les conseils</a>
+        <div class="council__actions">
+          <a class="btn btn--primary btn--sm" href="https://www.gouv.ci/uploads/publications/179019067632.pdf">Lire le communiqué <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost btn--sm" href="https://www.gouv.ci/publications/documents/Conseils%20des%20Ministres">Tous les conseils</a>
+        </div>
       </div>
-      <p class="muted" style="font-size:.78rem;margin-top:.9rem">Photo&nbsp;: La Pyramide, Plateau, Abidjan — © l'autrice du concept.</p>
     </div>
   </section>
 
@@ -455,7 +457,7 @@
       </div>
       <div class="feedback__list">
         <div class="feedback__panel reveal" data-feedback>
-          <h3>Cette page vous a-t-elle été utile&nbsp;?</h3>
+          <h3>Cette page vous <span class="nowrap">a-t-elle</span> été utile&nbsp;?</h3>
           <p>Une réponse en un clic, anonyme.</p>
           <div class="feedback__actions">
             <button class="btn btn--ghost btn--sm" type="button" data-vote="oui" aria-pressed="false"><svg aria-hidden="true" focusable="false"><use href="#i-thumb-up"/></svg> Oui</button>
@@ -520,7 +522,7 @@
         <li><a href="a-propos.html#accessibilite">Accessibilité</a></li>
         <li><a href="demarche.html">Exemple de page de démarche</a></li>
         <li><a href="https://kreeative.xyz">Kreeative — studio de design</a></li>
-        <li><a href="https://github.com/kreeative/gouv-ci-redesign-concept">Code source</a></li>
+        <li><a href="https://github.com/kreeative/D-faut-/tree/gouv-ci-concept">Code source</a></li>
       </ul>
     </nav>
   </div>
@@ -540,7 +542,7 @@
 <div class="assist" id="assist">
   <button class="assist__toggle btn btn--primary" type="button" aria-expanded="false" aria-controls="assist-panel">
     <span class="assist__avatar" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></span>
-    <span>Besoin d'aide&nbsp;?</span>
+    <span class="assist__label">Besoin d'aide&nbsp;?</span>
   </button>
   <section class="assist__panel" id="assist-panel" role="dialog" aria-labelledby="assist-title" aria-describedby="assist-desc" hidden>
     <div class="assist__head on-dark">

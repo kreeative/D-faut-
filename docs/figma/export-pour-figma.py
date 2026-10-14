@@ -94,7 +94,7 @@ def variant(markup, kind):
 
 
 # --- Styles ----------------------------------------------------------------
-css = css.replace('"Fraunces Variable"', '"Fraunces"').replace('"Instrument Sans Variable"', '"Instrument Sans"')
+css = css.replace('"Instrument Sans Variable"', '"Instrument Sans"')
 css = re.sub(r'url\("\.\./fonts/([^"]+)"\)', lambda m: f'url("{data_uri("assets/fonts/" + m.group(1))}")', css)
 css = css.replace(":root {", ".page {").replace("html:not(.js) .reveal", ".page .reveal")
 css = re.sub(r"(^|\n)html \{", r"\1.page {", css)
