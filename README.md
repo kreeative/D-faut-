@@ -46,3 +46,14 @@ assets/             # hero poster (add hero.mp4 here)
   (`:root`).
 - **Brand name** — replace `VANTÉ` throughout `index.html`.
 - **Models** — edit the `.card` articles in the `#models` section.
+
+---
+
+## `sacs/` — ANSE (maquette sacs)
+
+Site épuré de démonstration : chaque sac est détouré (`sacs/img/*.webp`) et posé
+dans un aplat de couleur ; le corps reste dans le cadre, les anses en sortent.
+Bandeau « maquette » en haut : les sacs ne sont pas vendus par ce site.
+
+Réglage par sac dans `sacs/index.html` (attribut `style`) :
+`--tint` couleur du cadre · `--w` largeur du sac · `--b` marge basse.
